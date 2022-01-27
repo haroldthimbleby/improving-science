@@ -30,6 +30,7 @@ data: # generate the Latex data files from data.js and downloaded Git repositori
 	-node data.js
 	@echo
 	@echo generate all data from the published models cited in the paper
+	@echo Note that we will be generating data from the papers repositories, and these may have been updated by their authors
 	cd models; run
 	
 tidyup: # remove all easily generated files except the main PDFs
@@ -67,10 +68,11 @@ reallytidyup: # better than tidyup - remove ALL files that can be recreated
 		
 pdf: # make PDF files paper-seb-main.pdf and paper-seb-supplementary-material.pdf
 	make data
-    # lots of latex runs to make sure the .aux files are all correct
+    # LOTS of latex runs to make sure the .aux files are all correctly synced
     # eg inserting the table of contents changes page numbering, so it needs formatting again, etc
 	xelatex paper-seb-supplementary-material.tex
 	bibtex paper-seb-supplementary-material
+	echo Do not worry bibtex cannot find database entries for "ref-16" etc as they are in another file
 	xelatex paper-seb-supplementary-material.tex
 	xelatex paper-seb-supplementary-material.tex
 	xelatex paper-seb-main.tex
@@ -79,6 +81,7 @@ pdf: # make PDF files paper-seb-main.pdf and paper-seb-supplementary-material.pd
 	xelatex paper-seb-supplementary-material.tex
 	xelatex paper-seb-supplementary-material.tex
 	xelatex paper-seb-main.tex
+	xelatex paper-seb-supplementary-material.tex
 	@echo "----------------------------------------------------------------"
 	@echo You have now got these PDFs:
 	@ls -C *paper*pdf
@@ -103,6 +106,9 @@ archive: # remove recoverable files in the directory then make the Latex and CSV
 	
 # for my private use
 # This creates (and preserves) a single PDF, reliable-models.pdf, maintained at http://www.harold.thimbleby.net
+singlefile: # make a single PDF file reliable-models.pdf (paper + appendix) all in one
+	make one-file
+
 one-file: paper-seb-main.pdf paper-seb-supplementary-material.pdf # concatenate files for my FTP site
 	pdfunite paper-seb-main.pdf paper-seb-supplementary-material.pdf reliable-models.pdf
 

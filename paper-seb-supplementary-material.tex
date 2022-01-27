@@ -19,8 +19,9 @@
       % \bibcite{bad-code}{{31}{2020}{{Richards and Boudnik}}{{Richards and Boudnik}}}
       \newcount\mainNumberOfReferences \mainNumberOfReferences=0
       \def\bibcite#1#2{\global\advance\mainNumberOfReferences by 1\oldbibcite{#1}{#2}}
+      \IfFileExists{paper-seb-main.aux}{%
       \input paper-seb-main.aux
-      %\inputifexists{paper-seb-main.aux}{You need to run Latex on paper-seb-main.tex because we need its aux file}
+      }{\typeout{You will need to run Latex on paper-seb-main.tex because we need its aux file}}
       }
 \makeatother
 
@@ -97,7 +98,7 @@
 \def\mysection#1{\section{#1}\sectioncontents{#1}}
 \def\mysubsection#1{\subsection{#1}\subsectioncontents{#1}}
 
-%\newpage
+%\newpage  
 
 \makeatletter
 \let \bslash = \@backslashchar
@@ -111,9 +112,12 @@
 \noindent\vbox{% The table of contents
 \def\contents#1#2{\vskip 0mm \noindent{\bfseries #1} \dotfill\ #2\\}
 \def\subcontents#1#2{\hbox to 1em{}{#1} \dotfill\ #2\\}
-\noindent\input generated-supplementary.toc
-%\inputifexists{generated-supplementary.toc}{you need to Latex supplementary-material.tex again}
+\noindent
+\IfFileExists{generated-supplementary.toc}{%
+      \input generated-supplementary.toc
+      }{\typeout{You will need to run Latex again on paper-seb-supplementary.tex because we need its .toc file}}
 }
+
 \newwrite\contentsfile
 \immediate\openout\contentsfile=generated-supplementary.toc
 
@@ -153,6 +157,7 @@ Clearly, at least while this paper's concepts are tested and mature, SEBs will n
 There are other ideas to help make SEBs work, but it is clear they are part of the solution. We must not let perfection be the enemy of the good. SEBs don't need to be perfect on day one, but they do need to get going in some shape or form to start making their vital contribution.
 
 \mysubsection{Relationships of SEBs to Ethics Boards}
+
 
 \begin{enumerate}\raggedright
 \item 
@@ -196,9 +201,9 @@ The book \emph{Why Programs Fail\/} \cite{wpf} is a very good practical guide to
 Software Engineering includes the following topics, which are discussed at more length below:
 \vskip 2ex
 
-\vbox{\noindent\input generated-minicontents.tex
-%\inputifexists{generated-minicontents.tex}{You need to run Latex again on supplementary-material.tex to generate the minicontents file}
-}
+\vbox{\noindent\IfFileExists{generated-minicontents.tex}{%
+      \input generated-minicontents.tex
+      }{\typeout{You will need to run Latex again on paper-seb-supplementary.tex because we need its generated-minicontents.tex file}}}
 
 \newwrite\minicontentsfile
 \immediate\openout\minicontentsfile=generated-minicontents.tex
@@ -642,7 +647,7 @@ This is exactly the same table as table \ref{table-summary} from the main paper,
 \def\unnumberedrefname{{\reftitle}}
 \renewcommand\refname{\subsectioncounter\ {\unnumberedrefname}}
 
-\initialiseBibliography{{\alph{subsection} \reftitle}}{\the\bibciten}{}
+\initialiseBibliography{{\alph{subsection} \reftitle}}{\the\bibciten}{} 
 
 \begin{thebibliography}{999}
 \subsectioncontents{\unnumberedrefname}
@@ -660,4 +665,5 @@ This is exactly the same table as table \ref{table-summary} from the main paper,
 \immediate\closeout\infofile
 \immediate\closeout\contentsfile
 \immediate\closeout\minicontentsfile
+
 \end{document}  

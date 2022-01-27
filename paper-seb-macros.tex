@@ -75,9 +75,11 @@
 
 % read in any constants defined from the JSON data
 \input generated-constants.tex
+\IfFileExists{generated-info-for-main.tex}{%
 \input generated-info-for-main.tex
+}{\typeout{No generated-info-for-main.tex - error ignored, but you need to latex paper-seb-supplementary-material.tex to generate it}}
+
 %\inputifexists{generated-constants.tex}{You need to run node data.js to make this file}
-%\inputifexists{generated-info-for-main.tex}{No generated-info-for-main.tex - error ignored, but you need to latex paper-seb-supplementary-material.tex to generate it}
 
 \def\supplement{Supplemental Material}
 
