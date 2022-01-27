@@ -1,0 +1,663 @@
+\PassOptionsToPackage{hyphens}{url}
+\documentclass{article}
+\renewcommand\thesubsection{\thesection.\alph{subsection}}
+%\usepackage{hyperref}
+%\usepackage{refcount}
+\usepackage{url}
+\usepackage{doi}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{amsmath,amssymb}
+\def\httpURL#1{\href{http://#1}{\textcolor{blue}{#1}}}
+\def\LONGhttpURL#1#2{\href{http://#1}{\textcolor{blue}{#2}}}
+
+\input paper-seb-macros.tex
+
+\makeatletter
+      \renewcommand{\thefootnote}{\arabic{footnote}}
+      {\let\oldbibcite=\bibcite
+      % \bibcite{bad-code}{{31}{2020}{{Richards and Boudnik}}{{Richards and Boudnik}}}
+      \newcount\mainNumberOfReferences \mainNumberOfReferences=0
+      \def\bibcite#1#2{\global\advance\mainNumberOfReferences by 1\oldbibcite{#1}{#2}}
+      \input paper-seb-main.aux
+      %\inputifexists{paper-seb-main.aux}{You need to run Latex on paper-seb-main.tex because we need its aux file}
+      }
+\makeatother
+
+\begin{document}
+
+\title{\textbf{\supplement}\vskip 2ex \mytitle\vskip 2ex}
+
+\author{Harold Thimbleby, \texttt{harold@thimbleby.net}}
+
+%\orcid{0000-0003-2222-4243}
+
+% To make various LaTeX processors do the right thing with page size.
+\def\pprw{8.5in}
+\def\pprh{11in}
+\special{papersize=\pprw,\pprh}
+\setlength{\paperwidth}{\pprw}
+\setlength{\paperheight}{\pprh}
+\setlength{\pdfpagewidth}{\pprw}
+\setlength{\pdfpageheight}{\pprh}
+
+\def\href#1{#1}
+
+\maketitle
+
+% this will be used to save cross references that can be used in the main paper too
+\newwrite\infofile
+\immediate\openout\infofile=generated-info-for-main.tex
+
+\def\dotalph#1{\ifnum\csname c@#1\endcsname>0 .\alph{#1}\fi}
+
+% writing to the aux file, this file generates labels like
+% \newlabel{supplementary-best-practice}{{2}{5}{Software engineering best practice}{section.2}{}}
+% whereas the main file using IEEEtrans class generates
+% \newlabel{table-summary}{{I}{5}} or \newlabel{jvs-policy}{{V}{4}} etc
+
+\makeatletter
+\def\globalLabel#1{% we also need journal code-policies to be used in the main paper...
+\immediate\write\infofile{\bslash newlabel{#1}{{\arabic{section}}{\thepage}{DUMMYA}{DUMMYB}{DUMMYC}}}
+% as well as in the current document....
+\immediate\write\@auxout{\string\newlabel{#1}{{\arabic{section}\dotalph{subsection}}{\thepage}{AAA}{BBB}{CCC}}}
+}
+\makeatother
+
+% start supplementary material's page counters to continue on from the paper's page numbering
+%\setcounterpageref{page}{LastPage}
+%\addtocounter{page}{1} % otherwise we start with the same page that the main paper ended on (we want to be on the next page:-)!
+
+\setcounter{section}{0}
+\def\n#1{{\sf\bfseries ({#1})}}
+
+\newdimen \www 
+\setbox0=\hbox{\n{viii}~}
+\www=\wd0 \advance \www by .4em
+\def\nnInContents#1#2{\hbox to \www {\hfill\n{#1}~\hskip .4em} #2\\}
+
+\setbox0=\hbox{\sfdefault\large(00)}
+\newdimen\howwide \howwide=\wd0 \howwide=2.5em
+
+\def\sec#1#2#3{\setbox0=\hbox{\n{#1}~~}\leftskip \wd0
+%\begin{flushleft}
+\subsubsection*{\setbox0=\hbox{\n{#1}~~}\hskip -\wd0\copy0 \bfseries
+\immediate\write\minicontentsfile{\bslash nnInContents{#1}{#3}}%
+{#2}\starredsubsectioncontents{\hbox to \howwide{\hfill (#1)} #3}}
+%\end{flushleft}
+\leavevmode
+\vskip 1ex
+\par\leftskip 0in}
+
+\def\highlightsec#1#2#3{\sec{#1}{{#2}}{{#3}}}
+\def\highlightmysubsection#1{\subsection{{#1}}\subsectioncontents{{#1}}}
+\def\changemysubsection#1{\subsection{{#1}}\subsectioncontents{{#1}}}
+\def\changemysection#1{\section{{#1}}\sectioncontents{{#1}}}
+\def\highlightmysection#1{\section{{#1}}\sectioncontents{{#1}}}
+\def\mysection#1{\section{#1}\sectioncontents{#1}}
+\def\mysubsection#1{\subsection{#1}\subsectioncontents{#1}}
+
+%\newpage
+
+\makeatletter
+\let \bslash = \@backslashchar
+\makeatother
+
+%\renewcommand{\thesubsection}{\alph{subsection}}
+\def\sectioncontents#1{\immediate\write\contentsfile{\bslash contents{\arabic{section} #1}{\thepage}}}
+\def\subsectioncontents#1{\immediate\write\contentsfile{\bslash subcontents{\alph{subsection}\ #1}{\thepage}}}
+\def\starredsubsectioncontents#1{\immediate\write\contentsfile{\bslash subcontents{#1}{\thepage}}}
+
+\noindent\vbox{% The table of contents
+\def\contents#1#2{\vskip 0mm \noindent{\bfseries #1} \dotfill\ #2\\}
+\def\subcontents#1#2{\hbox to 1em{}{#1} \dotfill\ #2\\}
+\noindent\input generated-supplementary.toc
+%\inputifexists{generated-supplementary.toc}{you need to Latex supplementary-material.tex again}
+}
+\newwrite\contentsfile
+\immediate\openout\contentsfile=generated-supplementary.toc
+
+\newpage
+\mysection{Further issues for Software Engineering Boards (SEBs)}
+
+\highlightmysubsection{Brief definition}
+Software Engineering Boards, henceforth SEBs, will be used to help and assure that critical code, including epidemic modeling, is of high standard, to provide assurance for scientific papers, Government public health and other policies, etc, that the code used is of appropriate quality for its intended uses.  
+
+Further details of the SEB proposal is in the main paper. Here we raise further issues for SEBs (additional to those covered in the main paper's introduction to SEBs), potential limitations and possible responses that can be addressed over time:
+
+\begin{enumerate}\raggedright
+\item 
+Until there are national qualifications, nobody --- certainly nobody without professional training in software --- really knows just how bad (or good) they are at software engineering.
+
+\item
+When code is taken seriously, concerns may be raised on programmers' contributions to research, intellectual property rights, and co-authoring \cite{vancouver}. Software engineering is a hard, creative discipline, and getting epidemiological (and other scientific) models to work is generally a significant challenge, on a par with the setting up and exploring the mathematical models themselves. Often software engineers will need to explore boundary cases of models, and this typically involves hard technical mathematics \cite{hamming}. Often the software engineers will be solving entirely new problems and contributing to the research. How this is handled needs exploring. How software engineers are appropriately credited and cited for their contributions also needs exploring.
+
+\item 
+SEBs require policies on professional issues such as membership, transparency, and accountability.
+ 
+\item
+There should be a clear separation between the SEB members' activities as part of the Board, and their other activities, including professional advice, code development, or training (which is likely to be in demand from the same people who require formal approvals from the SEBs).
+
+\item
+Professional Engineering Bodies have a central role to play in professionalism, ranging from education and accreditation to providing professional structures and policies for SEBs. For example, should and if so how should the programming skills taught to computational scientists (epidemiologists, computational biologists, economists, computational chemists,~\ldots\@) be accredited?
+
+\item
+In the main paper, SEBs are viewed as a constructive contribution to good science, specifically helping improve the quality of epidemiological modeling. More generally, SEBs will have wider roles, for instance in overseeing software subject to medical device regulation \cite{fixit}.
+
+\item
+SEBs may fruitfully collaborate with other engineering disciplines to share and develop best practice. For example, engineers in other domains (e.g., civil engineers) routinely sign off projects, yet, on the other hand, they often overlook the quality of software engineering their projects implicitly rely on  --- for the same reasons as the scientific work discussed in this paper overlooks the dependence on quality software.
+
+\item
+Clearly, at least while this paper's concepts are tested and mature, SEBs will need to collaborate closely with research organizations, journals, and funding agencies in order to develop incremental developments to policies and processes that will be most effective, and which can be introduced most productively over time to the scientific community at large. Funding agencies may wish to support such strategic work, as they have previously funded one-off projects such as \cite{cosmos}.
+\end{enumerate}
+There are other ideas to help make SEBs work, but it is clear they are part of the solution. We must not let perfection be the enemy of the good. SEBs don't need to be perfect on day one, but they do need to get going in some shape or form to start making their vital contribution.
+
+\mysubsection{Relationships of SEBs to Ethics Boards}
+
+\begin{enumerate}\raggedright
+\item 
+Although SEBs may start with a checklist approach, like Ethics Boards generally do, it cannot be assumed that people approaching SEBs know enough about software engineering to perform adequate software assessments when there is any risk (as there is in public policy, medical apps, and so on). SEBs may also provide mentoring and training.
+
+\item
+Unlike Ethics Boards, which provide hands-off oversight, SEBs should provide professional advice, perhaps providing training or actually helping hands-on develop appropriately reliable software. During a pandemic SEBs would be very willing to do this, but in the long run it is not sustainable as voluntary labour, so all research, particularly medical research, should include support for professional software engineering. 
+
+\item 
+Ethics Boards typically require researchers to fill in forms and provide details, which is a feasible approach as researchers know if they are doing experiments on children, for instance, so the forms are relatively easy to fill in (if often quite tedious). On the other hand, few healthcare and medical researchers understand software and programming, so they are \emph{not\/} able to fill in useful software forms on their own. SEBs need to know how well engineered the software really is, not how good its developers \emph{think\/} it is. As typical programs are enormous, SEBs are either going to need resources to evaluate programs, or they will need to supervise independent bodies that can do it for them. 
+
+\item
+SEBs should have a two-way collaboration with Ethics Boards. 
+
+\begin{itemize}
+\item SEBs have to deal with ethical concerns, and how they may be implemented in code. One of the papers \cite{ethics-paper} in the survey (discussed later in this \supplement) is a case in point, as is the growing cross-fertilization between AI and ethics \citeeg{ai-ethics}.
+
+\item Ethics Boards also have to deal with software, and it is clear that they often fail to do this effectively. The case of the retraction of a peer reviewed articles for \emph{The Lancet\/} \cite{science-lancet1,science-lancet2,lancet-learning} and the \emph{Journal of Vascular Surgery\/} \cite{jvs1,jvs2,jvs3}, discussed in the main paper, are cases in point.
+\end{itemize}
+
+\item
+Like some Ethics Boards, SEBs might become, or be perceived as becoming, onerous and heavy handed --- as if the Board is not interested in ethics but only in following a bureaucratic pathway. It seems essential, then, that SEBs have (and perhaps are chaired by) experienced, practicing, professional software engineers to avoid this problem. 
+\end{enumerate}
+
+\changemysubsection{SEBs are necessary but not sufficient}
+The main paper provides evidence and argues that SEBs (or equivalent) are necessary to help improve the quality of science, specifically science relying, explicitly or implicitly, on tools or methods based in software. 
+
+SEBs address the problems identified at the laboratory end of doing science; they do not address the processes of review, editorial control, and action based on claimed results. As shown in the review of \plural{\dataN}{paper}, only some journals have code policies, and the policies are not enforced. In other words, improving the professionalization of software engineering has to proceed from doing science, which the paper covers, to the downstream issues of review and publication. SEBs may work with journals, funding agencies and even international standards agencies to improve broader awareness of professional software engineering, but this is a topic the present paper has not addressed. It needs doing.
+
+\mysection{Software engineering best practice}
+\label{supplementary-best-practice}
+\mysubsection{Introduction and standard references}
+
+This \supplement\ provides more explanations and justification for following standard software engineering practices that support reliable modeling, reliable research, and, most generally, reliable science. 
+
+The reader is referred to standard textbooks for more information \citeeg{sommerville,knight}, as well as to specialized texts that are more specifically addressed to software engineering in science \citeeg{cosmos}.
+
+The book \emph{Why Programs Fail\/} \cite{wpf} is a very good practical guide to developing better code, and will be found very accessible. Humphrey \cite{humphrey} outlines a thorough discipline for anyone wanting to become a good programmer. Improvement is such an important activity, Humphrey has also published a book to persuade managers of the benefits \cite{managers}. Further suggestions for background reading can be found throughout this section.
+
+\mysubsection{Essential components of best practice}
+Software Engineering includes the following topics, which are discussed at more length below:
+\vskip 2ex
+
+\vbox{\noindent\input generated-minicontents.tex
+%\inputifexists{generated-minicontents.tex}{You need to run Latex again on supplementary-material.tex to generate the minicontents file}
+}
+
+\newwrite\minicontentsfile
+\immediate\openout\minicontentsfile=generated-minicontents.tex
+
+\sec{0}{Without defining requirements, not enough skilled effort will be put into designing and implementing reliable software --- or excess effort will be wasted}{Requirements}
+It is not always necessary to program well if the code to be produced is for fun, experimenting, or for demonstrations. On the other hand, if code is intended for life-critical applications, then it is worth putting more engineering effort into it. The first step of software engineering, then, is to assess the requirements, specifically the reliability requirements of the code that is going to be produced. 
+
+In practice, requirements and expectations change. Early experimental code, developed informally, may well be built on later to support models intended to inform public policy, for instance. Unfortunately, prototypes may impress project leaders who then want to rush into production software because, it seems, ``it obviously works.'' Fortunately, best practice software engineering can be adopted at any stage, particularly by using \emph{reverse engineering}. In reverse engineering, one carefully works out (generally partly automatically) what has already been implemented. This specification, carefully reviewed, is then used as the basis for a more rigorous software engineering process that implements a more reliable version of the system.
+
+\highlightsec{1}{Without formal methods, there is no rigorous and checked specification of a program, so nobody --- including its developers --- will know exactly what it is supposed to do}{Formal methods}
+
+{In the physical world, to do something as simple as design and build a barbecue, you would need to use elementary mathematics to calculate how many bricks to buy. To build something more substantial, such as block of flats, you would need to use structural engineering (with certified structural engineers) to ensure the building was safe. Although programming lends itself to mathematical analysis, it is surprising that few programmers use explicit mathematics at all in the design and implementation of software.} 
+
+{The type and use of mathematics used in software engineering is formal methods. Not using formal methods ensures the resulting code is unsafe and unreliable. Of particular relevance to scientific modeling: there must be an explicit use of formal methods to ensure  mathematical models (such as differential equations) are correctly implemented in code (and to understand the any limitations of doing so).}
+
+Formal methods require sophisticated knowledge of logic \cite{cbc}, as well as practical knowledge of using appropriate formal methods tools (Alloy, HOL, PVS, SPARK, and \emph{many\/} others). Using the right tools is essential for reliable programming, because the tools do quickly and reliably what, done by hand, would be slow and error-prone. Standard tools cover verification, static analysis of code, version control, documentation, and so on --- this paper explains why some of these activities are essential for reliable programming below. 
+
+Crucially, tools are designed to catch common human errors that we are all prone to. Many tools are designed to avoid common human errors arising \emph{in the first place\/}; notably, the MISRA C toolset simply stops the developer using the most error-prone features of normal C, and hence improves the quality of programming with little effort.
+
+Many programming languages and programming environments have integrated features that support formal methods. For example, Hoare's triples \cite{hoare} (and formal thinking based on similar ideas) are readily supported by assertions, as either provided explicitly in a programming language or through a simple API\@. In particular, assertions readily support contracts, an important rigorous way of programming: assertions allow the program, the programming language, or tools (as the case may be) to automatically (and hence rigorously) check essential details of the program. Hoare's original 1969 paper \cite{hoare} is very strongly recommended because it is a classic paper that has stood the test of time; in the 1960s it was leading research, but now it can be read as an excellent introduction, given how the field of software engineering has advanced and become more specialized and sophisticated over the decades since. Hoare is also a very good writer.
+
+Formal methods have the huge advantage that they ``think differently'' and therefore help uncover design problems and bugs that can be found in no other way. Because formal methods are logical, mathematical theories (safety properties, and so forth) can be expressed and checked (often automatically); this provides a very high degree of insight into a program's details, and hence supports fault tolerance (e.g., redundancy). Ultimately, formal methods provides good reasons to believe the quality of the final code --- that it does what it is supposed to do. Unfortunately, because formal methods are mathematical, few programmers have experience of using them. Fortunately tools are widely available to help use formal methods very effectively.
+
+\sec{2}{Without defensive programming, any errors --- in data, code, hardware, or in use --- will go unnoticed and be uncorrected}{Defensive programming} Defensive programming is based on a range of methods, including error checking, independent calculation (using multiple implementations written by independent programmers), assertions, regression testing, etc. Notoriously, what are often unconsciously dismissed as trivial concerns frequently lead to the hardest to diagnose errors, such as buggy handling of ``well-known, trivial'' things like numbers \cite{numerals}. The great advantage of defensive programming is that it detects, and may be able to recover from, bugs that have been missed earlier in the development process (such as typos in the code). Defensive programming requires professional training to be used effectively, for example it is not widely known that some choices of programming language make defensive programming unnecessarily hard \cite{heedless}.
+
+A special case of defensive programming appropriate for pandemic modeling is mixing methods. Do not rely on one programming method, but mix methods (e.g., different numerical methods) to use and compare multiple approaches to the modeling.
+
+\highlightsec{3}{Using inappropriate programming languages undermines reliability}{Using dependable programming languages}
+Many popular languages are popular because they are easy to use, which is not the same as being reliable to use. The fewer constraints a language imposes, the easier it \emph{seems\/} to be to program in, but the lack of constraints means the language cannot provide the checks stricter languages do. C, for instance, which is one of the languages widely used for modeling \cite{tweet,plos}, is not a good choice for a reliable programming language --- it has many intrinsic weaknesses that are well-known to professionals, but which frequently trap inexperienced programmers. (This is not the place for a review \cite{heedless} but Excel is even worse in this regard.) In particular, C is not a portable language (unless extreme care is taken), which means models will work differently on different types of computer. SPARK Ada is one example of a much more appropriate programming language to use. SPARK Ada also has the advantage that most Ada programmers are better qualified than most C programmers.
+
+\sec{4}{Version control and open source organizes and helps software development}{Open source and version control}
+It is appreciated that the models may change and be adapted as new data and insights become available. Changing models makes it even harder to ensure that they are correct, and thus emphasizes the relevance of the core message this paper: we have to find ways to make computer models more reliable, inspectable, and verifiable. Version control keeps a record of what code was used when, and enables reconstruction of earlier versions of code that has been used. Version control is supported by many tools (such as Git, Subversion, etc). 
+
+If version control is not used, one has no idea what the current program actually is. {Version control is essential for \emph{reproducibility\/}: \cite{basic-reproducibilty,reproducibility} it enables efforts to duplicate work to start with the exact version that was used in any published paper, provided that the published paper discloses the version and a URL for the relevant repository. Note that version control should also be used for data and web site data used by code, otherwise the results reported are not replicable.}
+
+{If results cannot be reproduced, has anything reliable been contributed? When a modeling paper presents results from a model, it is important to reproduce those results without using the same code. Better still, research should be reproduced without sharing libraries or APIs (for example, results from a model using R might be reproduced using Mathematica --- this is a case of $N$ (where, in this case, $N=2$) version Programming \cite{NVP}). Reproducing the same results relying on the same codebase tells you little. The more independent reproductions of results the greater the evidence for belief in the implications.}
+
+Clearly, with the transformations a program from avian flu in Thailand \cite{avianFluModel} to COVID-19 in the United States and in Great Britain \cite{ICmodel} taking place over many years, version control would have been very helpful to keep proper track of the changes. Note that professional version control repositories also provide secure off-site back up, ensuring the long-term access to the code and documentation --- this would avoid loss of \supplement\ problems, as occurred in \cite{flu-model}.
+
+Most version control systems would, in addition, enable open source methods so the code could be shared --- and reviewed --- by a wider community. Open source is not a panacea, however; it raises many trade-offs. Particularly for world-wide concerns like pandemic modeling, it increases diversity in the software developers, and fosters a diverse scientific collaboration. Open source can raise people's standards --- some countries \cite{excel1,excel2} are using Excel models to manage COVID-19, and open source projects properly implemented would help these people enormously. 
+
+Open source raises important licensing and management questions to ensure the quality of contributions. A salutary open source case is NPM, where lawyers from a company called Kik triggered Azer Ko\c{c}ulu, that is, a \emph{single\/} programmer, to remove all his code from a repository. This caused problems to many thousands of JavaScript programmers worldwide who could no longer compile anything --- ironically, including Kik itself \cite{npm}. 
+
+Critically in the case of epidemic modeling, open source democratizes the model development and interpretation, and enables properly-informed public debate. Note that many (if not most) successful open source projects have had a closed team of highly dedicated and directly employed developers \cite{open-source}. 
+
+\sec{5}{Without professional testing, there is no acceptable evidence that a program works under real conditions}{Rigorous testing}
+In poorly-run software development it is very easy to miss bugs, because the flawed thinking that inserted bugs in the code is going to be the same flawed thinking with the same misconceptions that tries to detect them. Rigorous testing includes methods like fault injection. Here, the idea is that if testing finds no bugs, that may be because the testing is not rigorous enough rather than that the program actually has no bugs. Fault injection inserts random bugs, and then testing gives statistical insights into the number of bugs in a program (depending on how many deliberate bugs it successfully finds). 
+
+It is very tempting to test code while it is being built, save some or all of the code on a repository, but forget to check that the code has not changed out of recognition of the earlier tests --- tests should be saved so that modified code can easily be tested again. For example, if a test reveals a bug, the bug should be fixed \emph{and\/} the test needs to be re-run to check the fix worked (and did not introduce other bugs previously eliminated). 
+
+It is important that code is saved and then downloaded to a clean site, confirmed it is consistent, and a new build made (preferably by an independent tester), which is then re-tested. If this procedure (or equivalent) is not followed, there is no assurance that the code made available with the paper is complete and works reliably.
+
+There are many other important testing methods \cite{sommerville,knight,NVP}.
+
+\highlightsec{6}{Without documentation and record keeping, nobody --- least of all the programmer --- knows what code is supposed to do or how to get it to do it}{Good documentation and record keeping}
+Documentation covers internal documentation (how code works), developer (how to include it in other programs), configuration (how to configure and compile the code in different environments), external documentation (how the code is used), and help (documentation available while using the program). 
+
+{For critical projects, such as for pandemic modeling, all documentation (including software) should be formally controlled, typically digitally signed and backed up in secure repositories. One would also expect a structured assurance case to be made, both to help the authors understand and complete their own reasoning and to help reviewers scrutinize it \cite{assurance-case}.
+}
+
+For purely scientific purposes, perhaps the most important form of internal is internal documentation: how to understand how and why the code works. This is different from developer documentation, which is how to \emph{use\/} the code in other programs. For example, code for solving a differential equation needs explaining --- what method does it use, what assumptions does it have? In contrast, the developer documentation for differentiation would say things like it solves ordinary differential equations with parameters $e$ for the function $f$ with the independent variable $x$ in the interval $[u,v]$, or whatever, but \emph{how\/} it solves equations is of little interest to the developer who just needs to use it. How code works --- internal documentation --- is essential for the epidemiologist, or more generally any scientist. An example of a simple SIR epidemiological model's internal documentation can be found at \url{http://www.harold.thimbleby.net/sir} 
+
+There are many tools to help manage documentation (Javadoc, Doxygen, \ldots). Literate programming is one very effective way of documenting code, and has been used for very large programming projects \cite{LP}. Literate programming has also been used directly to help publish clearer and more rigorous papers based on code \cite{relit} --- a paper that also includes a wider review of the issues.
+
+Documentation should be supplemented by details of algorithms and proofs of correctness (or references to appropriate literature). All the documentation needs to be available to enable others to correctly download, install and correctly use a program --- and to enable them, should they wish, to repurpose it reliably for their own work. In addition, documentation requires specifications and, in turn, \emph{their\/} documentation. 
+
+A important role of documentation is to cover configuration: how to get code to work --- without configuration, code is generally useless. The most basic is a README file, which explains how to get going; more useful approaches to configuration include make files, which are programs that do the configuration automatically.
+
+Without proper record keeping, code becomes almost impossible to maintain if programmers leave the project. Note that computer tools can make record keeping, laboratory books etc, trivial --- if they are used.
+
+\sec{7}{If code is not usable, even if it is ``correct'' it will not be used and interpreted correctly}{Usability}
+\globalLabel{supplementary-material-makefiles}
+Usability is an important consideration: \cite{hci1,hci2} is the program usable by its intended users so they can obtain correct results? Often the programmers developing code know it so well they misjudge how easy it will be for anyone else to use it --- this is a very serious problem for the lone programmer (possibly working in another country) supporting a research team. Usability is especially important when programs are to be used by other researchers and by non-programmers, including epidemiologists.
+
+{In publishing science, an important class of user includes the scientists and others who will use or replicate the work described. When code used in research is non-trivial, it is essential that the process of successfully downloading code and configuring it to run is made as usable as possible. Typically so-called makefiles are provided, which are shell scripts or apps that run on the target machine, establish its hardware and other features, then automatically configure and compile the code to work on that machine. Makefiles typically also provide demo and test runs and other helpful features. Other approaches to improve usability are zip files, so every relevant file can be conveniently downloaded in one step, and using standard repositories, such as GitHub which allow new forks to be made, and so on.}
+
+\sec{8}{Without using existing solutions (libraries, APIs, etc) reinventing code merely reinvents bugs}{Reusing quality solutions}
+Reusing quality code (mathematical functions, database operations, user interface features, connectivity, etc) avoids having to develop it oneself, saves time and avoids the risks of introducing new bugs. The more code that is reused, the more likely many people will have contributed to improving it --- for example, reusing a standard database package will provide Atomicity, Consistency, Isolation, and Durability (so-called ACID properties) without any further work (nor even needing to understanding what useful guarantees these basic properties ensure). 
+
+Note that reusing code assumes the originators of the code followed good software engineering practice --- particularly including good documentation; equally, if the code being developed building on it follows good software engineering practice, it too can be shared and further improved as it gets more exposure. Its quality improves through having scrutiny by the wider community, and in successful cases, leading to consensus on the best methods. Indeed, reuse, scrutiny, and consensus are the foundations of good science.
+
+Anticipating reuse during program development is called \emph{flexibility}, where various programming techniques can greatly enhance the ease and reliability of reuse \cite{flexibility}.
+
+A special case of reuse is to use software tools to help with software development. The tools (if appropriately chosen) have been carefully developed and widely tested. Tools enable software developers to avoid or solve complex programming problems (including maintenance) repeatedly and with ease.
+
+\sec{9}{Poor programmers often fix bugs rather than the causes of bugs: complexity and obfuscation}{Simplicity} 
+When a program doesn't quite do what is wanted, it is tempting to add more features or variables, or to treat the problem as an ``exception'' and program around it --- which inserts more code and, almost certainly, more bugs. This way lies over-fitting, a problem familiar from statistics (and machine learning). Programs can be made over-complex and they can then do anything; an over-complex program may seem correct by accident. Instead, the hallmarks of good science are that of parsimony and simplicity; if a simple program can do what is needed it is more likely to be correct. A simpler program is easier to prove correct, easier to program, and easier to debug. A special case of needing simplicity is when fixing bugs: instead of fixing bugs one at a time, one should be fixing the \emph{reasons\/} why the bugs have happened. Generally, when bugs are fixed, programmers should determine \emph{why\/} the bugs occurred, and thence repair the program more strategically.
+
+
+\highlightsec{10}{International standards have been developed to support critical software development}{Compliance with standards}
+
+To ensure adherence to best practice and, importantly, to avoid being unaware of relevant methodologies, professional software development projects adopt and adhere to relevant standards, such as ISO/IEC/IEEE 90003:2018 \cite{iso}. However, for safety-critical models or models of national policy significance, much stronger standards such as aviation software standards, such as RTCA DO-178C/EUROCAE ED-12C \cite{178C}, commonly called DO-178C, will be more appropriate. Publications should then cite the  standards to which their computer models comply. 
+
+Note that medical device regulation, which has its own standards, is lagging behind professional software engineering practice, and currently provides no useful guidance for critical software development \cite{fixit}.
+
+\sec{11}{Effective multidisciplinary teamwork is essential because no individual has the capacity to develop non-trivial reliable software}{Effective multidisciplinary teamwork}
+
+As this long list illustrates, Software Engineering is a complex and wide-ranging subject. Software engineering cannot be done effectively by individuals working alone (for instance, code review is impossible for individuals to perform effectively), even without considering the complexities of the domain the code is intended for (in the present case, including pandemic modeling, mathematical modeling, public health policy, etc). Multidisciplinary teamwork is essential.
+
+Modern software is complex, and no one person can have the skills to understand all relevant aspects of all but the most trivial of programs. Furthermore, programming is a cognitively demanding task, and causes loss of situational awareness (that is, cognitive ``overload'' making one unable to track requirements beyond those thought to be directly related to the specific task in hand). The main solution to both problems is teamwork, to bring fresh insights, different mindsets and skills to the task.
+ 
+Peer review of code is an essential teamwork practice in reliable program development: \cite{peerReview,knight} it is easy to make programming mistakes that one is unaware of, and an independent peer review process is required to help identify such unnoticed errors. 
+
+Almost all software will be used by other people, and user interface design is the field concerned with developing usable and effective software. A fundamental component of user interface design is working with users and user testing: without engaging users, developers are very likely to introduce quirks that make systems less usable (often less safe) than they should be. In short, users have to be brought into the software team too.
+
+\highlightsec{12}{Computing technologies are advancing rapidly, and best practice in software engineering is continually evolving}{Continuous Professional Development (CPD)}
+
+As computing technology continues to develop rapidly --- especially as new programming tools and systems are introduced --- best practice in software engineering is also rapidly evolving. Continuous Professional Development (CPD) is essential. 
+
+Ironically, the more organized CPD the more likely the content itself will lag behind. There is an argument for two-way links between universities (and other research organizations), research science developers, including enabling developers to undertake part-time research degrees. Research degrees teach not just current best-practice but also how to stay abreast of the relevant technologies and literature as it develops.
+
+The UK's Software Sustainability Institute is one initiative that is making important contributions \cite{ssi-report,ssi-url}, and its web site will no doubt remain timely and up to date in a way that this paper cannot.
+
+Note that CPD is not just a matter of learning current best practice, but a continual process as best practice itself continually evolves. {In software engineering, a current (as of 2021) initiative concerns reproducible code artifacts and badging papers to clearly show the approaches they take \cite{acm-artifacts}, and this will in due course have a direct impact on software engineering standards in other fields.}
+
+\highlightsec{13}{Other factors \ldots}{Security and other factors}
+Of course, there are many other factors to be considered for the professional development of critical code, such as using appropriate methods to ensure cybersecurity \cite{security-engineering,cyber-cacm}, particularly while also being able to up- and download secure updates.
+
+For pandemic modeling specifically, understanding the limitations of numerical methods (in particular, how numerical methods are affected by the choice of programming language and style of programming) is critical.\footnote{{For example \cite{example-numerical-error} was noticed to use literal numbers at too high a precision for the chosen language, where conformant implementations use IEEE 754 double precision 64-bit floating point. Such an error typically has an undefined impact on results, and unfortunately is easy to overlook as the program almost certainly ignores the error when running.}} Hamming \cite{hamming} is considered a classic, but there is a huge choice available.
+
+{For reasons of space, the present paper does not discuss the issues raised by AI, nor the many very important, non-trivial social and professional concerns, which have complex implications for software engineering practice, such as managing programming teams, data ethics, privacy, legal liability \cite{Schneier}, or software as a matter in law, as in disputes over model results or disputes over ownership of code \cite{electronic-evidence}.}
+
+\mysection{Code, data and publication}
+\immediate\write\infofile{\bslash newlabel{on-code-data-publication}{{\arabic{section}}{\thepage}{XXX}{YYYY}{ZZZZ}}}
+
+There is no fundamental difference between code and data, and no distinction that is relevant for scientific publication purposes. There is no distinction one can imagine that cannot easily, even accidentally, be circumvented. In other words, a journal's data policies and code policies should be the identical --- and the conventionally stricter data policies should also apply to code. It is baffling that some journals have data policies that are weaker than their data policies; it is certainly indefensible to have no code policies at all.
+
+{Significant cyber-vulnerabilities result from there being no difference between code and data. For example: an email arrives, which brings data to a user. The user opens an attachment, perhaps a word processor text document, which is more data. The word processor runs macros in the text document --- but now it is code. The macros move data onto the user's disc. The data there then runs as code, and corrupts the user's data across the disc --- which includes both data and code stored in files. And so on. Each step of a computer virus infection crosses over non-existent ``boundaries'' between data and code \cite{viruses}.}
+
+This section's discussion may sound like arcane and irrelevant pedantry, but these issues are at the very foundations of Computer Science.\footnote{{Many of the foundational issues were explored thoroughly by Christopher Strachey and others in the 1960s; Strachey's classic lectures are reprinted in an accessible 2000 publication \cite{strachey}. Being originally a very old paper this classic introduction is much easier to read than many more recent discussions of the foundations of Computer Science.}} If we ignore or misunderstand these basic things --- or overlook them in policies and procedures --- bugs are the inevitable (and confusing) consequence.
+
+The main paper points out that data is often embedded in code as ``magic numbers.'' Let's now explain how. 
+
+A fragment of program code might say
+
+\begin{center}\texttt{x = 324.9+sin(theta*pi/2);}\end{center}
+
+This is clearly all source code, but the number 324.9 above is likely to be some sort of relevant data, though it might be a physical constant whose value does not depend at all on \emph{this\/} experiment. The next hard-coded value mentioned in the calculation is difficult to categorize: is the value of $\pi$ empirical data or is it part of a standard formula? Historically, even $\pi$ was definitely an empirical value, but today it is a mathematical constant --- except in experiments to determine its value empirically. The point is, the distinctions between data, program and even mathematical constants are purely a matter of perspective.
+
+Unfortunately, there is data that is extremely easy to overlook (and therefore is very hard to manage). You may assume that the function \texttt{sin}, as used in the calculation example above, is the standard trigonometric function for calculating sines (and because of $\pi$, you assume it is taking radians as the parameter type) but almost all programming languages allow \texttt{sin} to be any function whatsoever. Confusingly, it is generally a different function when the code is run on a different computer.
+
+It is impossible to tell. More complex code will often have many facts ``hard wired'' into the code --- so in fact the code contains data. Code can even read in formulas from data and compile them to perform further calculations, and so on. Equally, data can control the flow of code. For example, data summarizing patients may include their gender, but the program processes males and females differently. Then data starts becoming like code. 
+
+{Many computer programs blur the distinctions deliberately, to create virtual machines. Data is then run on the virtual machine as program. Many programs provide standard features to do this, such as LISP's and JavaScript's \texttt{eval} functions. Henderson's book \cite{henderson} builds an elegant Pascal program to run \emph{any\/} LISP program as data, and then shows that the LISP program can run itself running other programs, so it is now its own code and \emph{its\/} data --- despite being purely data to the Pascal program. There are numerous advantages to doing this, including: the Pascal program is not just reading data, but structured data that must conform to the rules of LISP; the LISP running itself runs faster than the original Pascal running LISP, even though the Pascal virtual machine is still doing it in the recursive case; LISP is a much more powerful language than Pascal, so a virtual machine can be used to escape the barriers of a limited implementation such as Pascal. In short, any distinctions between code and data are impossible to maintain.}
+
+In the present paper, we knowingly built on this blur between data and code. However, what we did was not unusual except in our explicit and rigorous approach to managing and summarizing data reliably in the paper.
+
+The paper and its \supplement\ are typeset in \LaTeX, a popular typesetting language. \LaTeX\ not only has text (as you are reading right now) but it also has code. For example, ``\LaTeX'' was typeset by running the code for a macro called \verb|\LaTeX|, which then calculated how to position the letters as they are wanted. When $\pi$ was written above, the code that generated what you read actually said \verb|$\pi$| --- so is this data that just says $\pi$ or is it code that tells the computer to change character sets from Latin to Greek, and then uses \verb|\pi| as a program variable name to select a particular glyph from the data about typesetting Greek characters? The distinctions are all a bit moot. In other words, the publication itself is data to a \LaTeX\ program, and within that data it includes further programs. Indeed, \LaTeX\ is run on a virtual machine, in exactly the same way that Henderson's LISP is, and doing so provides the same advantages.
+
+The data for this paper's survey was itself originally written as literal text in \LaTeX: it meant that \LaTeX\ could process it to produce a typeset table (as in the \supplement\ above). As the extent of the data grew, it rapidly became apparent that \LaTeX\ is a poor choice to manage structured data. A simple JavaScript program was written to convert the \LaTeX\ data into JSON (which is much more readable than \LaTeX) and also generate CSV files that can be processed in standard office software such as Excel, which some readers may prefer. In fact, examining and comparing the same data in the contrasting formats, this typeset file, in JSON, and in Excel (reading the generated CSV) provided multiple different perspectives of the data that increased redundancy and confidence that the data was correct and correctly handled. 
+
+{It is important to note that using such techniques is quite routine in science publication, though often pre-existing tools are used to streamline the process (and to ensure that it is more widely understood). The paper \cite{paper-usesRMarkdown}, for example, in addition to using a typesetting system for publication, also placed its code in a repository using R Markdown \cite{RMarkdown}, a programming environment based on R designed for generating and documenting lab books --- almost the polar opposite of \LaTeX, which is designed for publication but can be used for programming.}
+
+Finally note that what may look like magic numbers used throughout the present paper (such as the $\the\dataN$, as in ``\plural{\dataN}{paper} were evaluated'') are all in fact named, calculated and placed \emph{in situ\/} directly from computations performed on the JSON paper's data.
+
+\changemysection{The Speigelhalter trustworhiness questions}
+\globalLabel{supplementary-Speigelhalter-section}
+
+David Speigelhalter is concerned how statistics is often misused and misunderstood. In his \emph{The Art of Statistics\/} \cite{Speigelhalter} Speigelhalter brings together his advice for making reliable statistical claims: they need to be accessible, intelligible, assessable, and usable --- the claims need to be properly accountable. Speigelhalter proposes ten questions to ask when confronted with any claim based on statistical evidence. Some of his questions are quite general, and might be applied to any sort of scientific claims, but all have analogous questions that could be addressed to software code or papers relying on code --- analogues are suggested in \textbf{bold} below. 
+
+What might seem like dauntingly technical software issues are no more demanding than the basic statistical issues that are regularly acceded to; failing to ask them is as risky as dismissing statistical scrutiny.
+
+\def\questionsection#1{\changemysubsection{#1}}
+\def\question#1{\item \emph{#1\/}}
+\def\sequestion#1{\begin{itemize}\raggedright\item[$\blacktriangleright$] \textbf{#1}\end{itemize}}
+
+\questionsection{How trustworthy are the numbers?}
+\newcounter{resumeCounter}
+
+\begin{enumerate}
+\question{How rigorously has the study been done?} For example, check for `internal validity,' appropriate design and wording of questions, pre-registration of the protocol, take a representative sample, using randomization, and making a fair comparison with a control group.
+
+\sequestion{How rigorously has the software engineering been done? Section \ref{supplementary-best-practice} in the \supplement\ provides a list of important issues that must be addressed for any reliable software.}
+
+\sequestion{``Internal validity'' assumes that there is evidence the programmers had uncertainty in the code's reliability and checked it. Were different methods used and compared, or was all confidence put into a single implementation? What internal consistency checks does the implementation have? Were invariants and assertions defined and checked? }
+
+\question{What is the statistical uncertainty/confidence in the findings?} Check margins of error, confidence intervals, statistical significance, multiple comparisons, systemic bias.
+
+\sequestion{How are the claims presented that give us confidence in the code that they are based on? Are there discussions of invariants, independent checks for errors, and so on? Again, \supplement\ section \ref{supplementary-best-practice} provides further discussion of such issues.}
+
+
+\question{Is the summary appropriate?} Check appropriate use of averages, variability, relative and absolute risks.
+
+\sequestion{If the claims are exploratory, weaker standards of coding can be used; if the claims are a basis for critical decisions, then there should be evidence of using appropriate software engineering (such as defensive programming) to provide appropriate confidence in the results claimed.}
+\setcounter{resumeCounter}{\value{enumi}}
+\end{enumerate}
+\questionsection{How trustworthy is the source?}
+\begin{enumerate}
+\setcounter{enumi}{\value{resumeCounter}}
+\question{How reliable is the source of the story?} Consider the possibility of a biased source with conflicts of interest, and check publication is independently peer-reviewed. Ask yourself, `Why does this source want me to hear this story?'
+
+\sequestion{The source of many science stories is the output of running some code. How reliable is this code? What evidence is there that the code was well-engineered so its reliability can be trusted?}
+
+\question{Is the story being spun?} Be aware of the use of framing, emotional appeal through quoting anecdotes about extreme cases, misleading graphs, exaggerated headlines, big-sounding numbers.
+
+\sequestion{Be wary of AI and ML which may have been trained by chance or specifically (if not deliberately) to get the results described.}
+
+\question{What am I not being told?} This is perhaps the most important question of all. Think about cherry-picked results, missing information that would conflict with the story, and lack of independent comment.
+
+\sequestion{Cherry picking with code is often unconscious and is very common: when running code produces the ``cherries'' for a paper it is tempting to stop testing the code and just assume it is running correctly. So, what evidence is there that the code was rigorously developed and cherry picking avoided?}
+
+\setcounter{resumeCounter}{\value{enumi}}
+\end{enumerate}
+\questionsection{How trustworthy is the interpretation?}
+\begin{enumerate}
+\setcounter{enumi}{\value{resumeCounter}}
+\question{How does the claim fit with what else is known?} Consider the context, appropriate comparators, including historical data, and what other studies have shown, ideally in a meta-analysis.
+
+\sequestion{Is there any discussion of the code and how does it compare with other peer-reviewed publications using code used for similar purposes?}
+
+\question{What's the claimed explanation for what has been seen?} Vital issues are correlation v.\ causation, regression to the mean, inappropriate claim that a non-significant result means `no effect,' confounding attribution, prosecutor's fallacy.
+
+\sequestion{These are all good statistical questions. The software engineering analogy is: are the claims backed up by a sufficiently detailed discussion of the algorithms and software engineering that justify the appropriateness of the chosen software implementation? The \supplement\ list in section \ref{supplementary-best-practice} provides examples of expected explanations for the trustworthiness of running some code.}
+
+\question{How relevant to the story is the audience?} Think about generalizability, whether the people being studied are special case, has there been an extrapolation from mice to people.
+
+\sequestion{Generalizability is equivalent to is the code available, easy to understand and use for more general purposes --- including further work and checking the reproducibility of the claims being made?}
+
+\question{Is the claimed effect important?} Check whether the magnitude of the effect is practically significant, and be especially wary of claims of `increased risk.'
+\end{enumerate}
+
+\newcount\temporary \temporary=\mainNumberOfReferences
+\newcount\temporaryPlusOne \temporaryPlusOne=\temporary
+\advance \temporaryPlusOne by 1
+
+\bibliographystyle{plos2015}
+
+\global \newdimen \shortercol 
+\renewenvironment{thebibliography}[1]{%
+	\section*{\uppercase{\refname}}
+    \startBibliography
+    \raggedright
+    \parindent=0em
+    \setbox0=\hbox{\hskip 1ex[#1]}
+    \labelwidth=\wd0
+    \advance \labelwidth by 1ex
+    \shortercol=\columnwidth \advance \shortercol by -\labelwidth
+}{}
+
+\makeatletter    
+    \renewcommand{\bibitem}[2][DEFAULT]{%
+    	\if@filesw \immediate\write\@auxout{\string\bibcite{#2}{{{\the\bibciten}{}{{}}{{}}}}}\fi
+        \parshape 2 0em \columnwidth \labelwidth \shortercol
+        \leavevmode\hbox to \labelwidth{\hfill[\the\bibciten]\hskip 1ex}%
+        \global\advance\bibciten by 1
+        \ignorespaces 
+    }
+\makeatother
+
+\initialiseBibliography{Additional references for \supplement}{\temporaryPlusOne}{References numbered 1--\the\temporary\ appear in the reference list in the main paper.}
+
+\immediate\write\infofile{\bslash def\bslash MaxMainPaperCitationNumber{\the\temporary}}
+
+\bibliography{paper-seb-supplementary-material.bib}
+
+\highlightmysection{Summary of pilot survey}
+\label{data-methods-section}
+\highlightmysubsection{Assessment criteria and methods}\label{data-methods-subsection}
+A survey sampled of recent papers that were published online in July 2020, accepted for publication after peer review in \the\numberOfJournals\ high-profile, highly competitive leading peer-reviewed journals, namely \journalBreakdown. Papers were selected from the journals' July 2020 new online listings where the paper's title implied that code had been used in the research. Commentary, correspondence and editorials were excluded. The sample represents what the editorial and the broader peer review community considers to be good practice. 
+
+The selection process will have certainly missed some papers that use code, but the criterion selects papers where the wording of the title indicates that the authors consider code to be a component of the scientific contribution. Indeed, all sampled papers used code in their research.  Although there is unavoidable subjectivity in the paper evaluations and uncontrolled bias from using a single evaluator (the author of this paper), it is hoped that using a sample of \plural{\dataN}{paper} from \plural{\numberOfJournals}{diverse journal} is sufficient to randomize errors so that they largely cancel out, and the overall trends as discussed in this paper are reliable. It should be noted that, except where a paper provides a URL to a code repository, much code was disorganized so possibly not all code was reviewed because it was too hard to find (some emails to authors have not been responded to). 
+ 
+Since almost every scientific paper relies on generic computer code (calculating statistics, plotting graphs, storing and manipulating data, accessing internet resources, etc), the baseline of papers using code was not assessed. Papers whose title indicated their contribution included or relied on bespoke code were selected, and all those clearly relied heavily on their own specifically developed code. Papers that may have relied on bespoke code but whose titles made no such implication were not assessed.
+
+There is considerable debate over what good commenting practice is, but this is because comments have many roles --- from helping students to get marks in assessments, asserting intellectual rights, reminding the developer of things to do, managing version control, to explaining the code to third parties. Different programming languages also develop ``cultures'' that encourage different approaches for comments (examples include R Markdown, Mathematica Notebooks, JavaDoc, Haskell's Haddock, and so on). For scientific code, however, the explanatory role is critical, and this is what was assessed in this survey. Note that comments used for explanation does not preclude any other uses.
+
+The completeness or executability of code was not assessed, although if code was obviously incomplete this was noted. Whether code runs as claimed is a matter of research integrity, which is beyond the scope of this survey. What is relevant to the study is whether the code is described in sufficient detail that the methods used can be scrutinized. Obviously being able to run the code will help, but clarity in documentation and comments is critical. It is more like ``can we see the critical pages from your lab book so we understand what you did?'' rather than ``can we have free run of your laboratory?''
+
+As an informal survey, intended to establish whether the issues in epidemic modeling were more widespread, and given the very poor level of documentation found in scientific code, it was not felt necessary to have independent or blind assessment.
+
+The data was recorded in JSON (JavaScript Object Notation), which is a simple standard data format. A typical entry in the data file looks like this (with long field values truncated for clarity):
+
+\input generated-example-data.tex
+
+The data was written out by hand, after reading and reviewing each paper in the survey. In total there are \countFields\ data fields available for documenting papers, but not all need be used for each paper; for example, the field \texttt{hasCodeTested} defaults to \texttt{false}, so it need not be set --- it is also an error to set it if another field asserts there is no code to evaluate! (A separate JSON data structure maps the data fields to English descriptions, along with default values if they are optional descriptors.)
+
+A JavaScript program sanity checks the JSON data. The sanity checks found a few errors (e.g., it checks that if there are comments of any sort then there must be some accessible code; it checks the DOI is accessible, etc), which led to a productive double-checking of all the facts of the original papers --- and correcting all the errors. Some papers that had had no code available during the first assessment had uploaded code by the time of the double-checking.\footnote{{Note that double-checking was performed by the same person as the first assessment, though with the benefit of a six month gap to bring a degree of independence}.} A field \texttt{doubleChecked} was added to supplement the original data field \texttt{accessed} to track the process of double-checking the data; the sanity checks then of course checked all \texttt{doubleChecked} fields were completed.
+
+Note that since JSON data is JavaScript code, it was convenient to combine the data, the data sanity checking, and the analysis all in a single file. Hence, running the data generates the core human-readable information used in this paper.
+
+The JavaScript data+program generates files from the JSON, with all the definitions; these files were then included in both the main paper and in this \supplement, so when the paper or \supplement\ is typeset all tables and specific data items are typeset automatically, consistently and reliably by \LaTeX\@.\footnote{Because of its approach to automatic typesetting, this journal requires that no files are explicitly \texttt{input} into \LaTeX, so a simple JavaScript program is used to recursively expand all \texttt{input} commands before submission. If the source files are available for download after this paper is accepted, they will therefore contain no \texttt{input} commands, but they will contain comments at the appropriate points in the expanded source code explaining the sources of the \texttt{input} data.} For example, the register \texttt{\bslash dataN} is set to the value \the\dataN, which is the total number of papers assessed in the JSON data, and the macro \texttt{\bslash journalBreakdown} is defined directly from the data to be the following text (when typeset in \LaTeX):
+
+\begin{quote}
+\journalBreakdown 
+\end{quote}
+
+--- which is the breakdown of the total $N=\the\dataN$ by journal name. The \emph{exact\/} same text was also used in the main paper. 
+
+An interesting consequence of this automatic approach is that as the author found themselves starting to write text such as:
+
+\begin{quote}
+\tt Code repositories were used by \plural{\countUsesVersionControlRepository}{paper} \ldots
+\end{quote}
+
+it motivated extending the JavaScript data processing so that \emph{all\/} specific quantities mentioned in the paper are traceable directly back to the JSON data. The phrase above is now in fact written in \LaTeX\ in the paper as follows:
+
+\begin{quote}\tt\small
+Code repositories were used by \\
+\bslash plural\{\bslash countUsesVersionControlRepository\}\{paper\} \ldots
+\end{quote}
+
+where {\tt\small \bslash plural} automatically writes a word (``paper'' in this case) in singular or plural form as required (in this case, the variable \texttt{countUsesVersionControlRepository} = \the\countUsesVersionControlRepository). When typeset the text above is generated with the relevant number or numbers inserted from the JSON data. 
+
+Some of the files generated from the JSON data are Unix shell scripts. For example, details of all the papers with GitHub repositories are automatically collected into a shell script so the repositories can be cloned locally and then measured to generate table \ref{table-repo-summary}, as used in the main paper.
+
+The full JavaScript JSON data and processing code (including the makefile) is provided in this paper's repository, as described in the main paper.
+
+\highlightmysubsection{Detecting and defending against error}
+\label{detecting-against-error}
+It must be emphasized that an automatically-guaranteed same number appearing in multiple different contexts is an extremely effective way of defending against common Human Factors errors. 
+
+% check it works for other numbers 
+%\countUsesVersionControlRepository=296
+
+Normally, when we write \the\countUsesVersionControlRepository\ in a paper, we proof read it as ``just a number'' and the sentence would likely seem to make as much sense if the number was 
+\newcount\t
+\t=\countUsesVersionControlRepository
+\divide \t by 10
+\newcount\fraction
+\fraction=\countUsesVersionControlRepository
+\newcount\tent \tent=\t \multiply \tent by 10
+\advance\fraction by -\tent
+\the\t.\the\fraction,
+\t=\countUsesVersionControlRepository
+\advance \t by -1
+\the\t,
+\t=\countUsesVersionControlRepository
+\advance \t by 1
+\the\t, or
+\t=\countUsesVersionControlRepository
+\multiply \t by 10
+\the\t\ --- we hardly bother to pay attention because we know what we are reading; at least we know what we meant to write. It is very hard to spot one's own typos. 
+
+\begin{itemize}\raggedright
+\item
+The first and last errors above are examples of the very common error of ``out by ten'' (common partly because the correct number, \the\countUsesVersionControlRepository\ looks very similar to \t=\countUsesVersionControlRepository
+\divide \t by 10
+\the\t.\the\fraction, and \the\countUsesVersionControlRepository.0 also looks very similar to 
+\t=\countUsesVersionControlRepository
+\multiply \t by 10
+\the\t) \cite{fixit}. 
+
+\item
+The middle two errors above are examples of the common error of ``out by one,'' or ``fence post errors'' frequently made by mixing up counting fences or the posts (there is usually one more post than fence panel) \cite{fixit}.
+\end{itemize}
+
+All the discussion and examples above were generated automatically, and have been checked  correct for other base values than \the\countUsesVersionControlRepository. This approach, too, considerably helps defend against common Human Factors errors. For example, if we set \texttt{\bslash countUsesVersionControlRepository}=\the\countUsesVersionControlRepository\ to be 2348, say, then all of the sentences say something unexpected and so have to be more carefully proof-read, significantly reducing confirmation bias.
+
+If any of the numbers used in a paper were safety critical (e.g., lives directly depend on their correct values) then further checks would have been made to help detect and avoid errors. For example, \LaTeX\ makes it very easy to check that numbers fall within reasonable ranges, or have any other required safety properties. For the present paper, a potential problem is that the paper is typeset \emph{before\/} the JSON data has been analyzed; in which case, none of the variables, like \texttt{\bslash countUsesVersionControlRepository}, will have been correctly set and their values could be undefined or nonsense.
+
+\newcount\min \min=5
+\newcount\max \max=20
+%\countUsesVersionControlRepository=4
+\ifnum \countUsesVersionControlRepository>\max countUsesVersionControlRepository is far too large! \fi
+\ifnum \countUsesVersionControlRepository<\min countUsesVersionControlRepository is far too small! \fi
+\ifnum \countUsesVersionControlRepository>\max
+	\else 
+		\ifnum \countUsesVersionControlRepository<\min
+			\else
+								\textbf{This is \emph{automatic\/} confirmation that $$\the\min \leq \mbox{\tt countUsesVersionControlRepository} \leq \the\max$$ and therefore falls within pre-defined sanity limits for this paper.}
+		\fi
+\fi
+
+The corresponding error messages would not normally be printed in a paper like this --- they would normally be reported by stopping a \LaTeX\ run, that is before the paper can be distributed and cause confusion.
+
+\highlightmysubsection{Code policies of sampled journals}
+\globalLabel{supplementary-journal-policies-section}
+
+It is noteworthy that none of the journals sampled permit any reliable style of managing data in published papers, such as described above in section \ref{detecting-against-error}. In particular, for all the papers that had accessible code, the code included explicit (and relevant) data that was not archived \emph{as\/} data in the journal repositories.
+\\
+
+{\sf
+\noindent\textbf{Extract from \emph{Royal Society Open Science\/} author guidelines} \\
+--- It is a condition of publication that authors make the primary data, materials (such as statistical tools, protocols, software) and code publicly available. These must be provided at the point of submission for our Editors and reviewers for peer-review, and then made publicly available at acceptance. [\ldots] As a minimum, sufficient information and data are required to allow others to replicate all study findings reported in the article. Data and code should be deposited in a form that will allow maximum reuse. As part of our open data policy, we ask that data and code are hosted in a public, recognized repository, with an open licence (CC0 or CC-BY) clearly visible on the landing page of your dataset.
+
+\vskip 3mm
+{\raggedleft\scriptsize
+\url{royalsociety.org/journals/authors/author-guidelines/#data} \\
+accessed 29 July 2020.\par
+}
+
+\noindent\textbf{Extract from \emph{Nature Digital Medicine\/} author guidelines}\\
+--- A condition of publication in a Nature Research journal is that authors are required to make materials, data, code, and associated protocols promptly available to readers without undue qualifications. [\ldots] A condition of publication in a Nature Research journal is that authors are required to make unique materials promptly available to others without undue qualifications. 
+
+{\vskip 3mm\scriptsize
+\raggedleft
+\url{www.nature.com/nature-research/editorial-policies/reporting-standards#availability-of-data} \\
+accessed 29 July 2020.\par
+}
+
+\noindent\textbf{Extract from \emph{Lancet Digital Health\/} author guidelines}\\
+--- Has detailed data policies, but no code policy.
+{\vskip 3mm
+\raggedleft\scriptsize
+\url{marlin-prod.literatumonline.com/pb-assets/Lancet/authors/tldh-info-for-authors.pdf}
+\\
+accessed 29 July 2020.\par
+}
+
+\noindent\textbf{Extract from \emph{Journal of Vascular Surgery\/} author guidelines}\\
+--- Has detailed data policies, but no code policy. While no \emph{Journal of Vascular Surgery\/} papers were surveyed, the following statement on data policies is relevant for section \ref{jvs-policy} in the main paper:
+
+The authors are required to produce the data on which the manuscript is based for examination by the Editors or their assignees, should they request it. [\ldots] The authors should consider including a footnote in the manuscript indicating their willingness to make the original data available to other investigators through electronic media to permit alternative analysis and/or inclusion in a meta-analysis.
+{\vskip 3mm
+\raggedleft\scriptsize
+\url{www.editorialmanager.com/jvs/account/JVS_Instructions%20for%20Authors2020.pdf}
+\\
+accessed 29 July 2020.\par
+}
+}
+
+\highlightmysubsection{Assessments and criteria}
+
+\def\flagStyle#1{\textcolor{red}{\sf #1}}
+
+Legend:\\
+\input generated-legend.tex
+
+\newpage
+
+{
+\def\citenum#1{\cite{#1}}
+\begin{longtable}{@{}cp{2.25in}p{2.25in}@{}}
+\sf\bfseries Ref&\sf\bfseries Data&\sf\bfseries Code \\ \hline \endhead 
+\input generated-assessments.tex
+\end{longtable}
+}
+
+\highlightmysubsection{Summary of assessments}
+
+\immediate\write\infofile{\bslash newlabel{supplementary-summary-table}{{\arabic{section}}{\thepage}{DUMMY1}{DUMMY2}{DUMMY3}}}
+
+\begin{center}
+\input generated-summary-table.tex
+\end{center}
+
+This is exactly the same table as table \ref{table-summary} from the main paper, reproduced here for convenience. See section \ref{data-methods-section}.\ref{data-methods-subsection} in this \supplement\ for details of the process that generated it.
+
+\stepcounter{subsection}
+\def\reftitle{References for sampled papers}
+\def\unnumberedrefname{{\reftitle}}
+\renewcommand\refname{\subsectioncounter\ {\unnumberedrefname}}
+
+\initialiseBibliography{{\alph{subsection} \reftitle}}{\the\bibciten}{}
+
+\begin{thebibliography}{999}
+\subsectioncontents{\unnumberedrefname}
+\raggedright
+
+% horrible hack -- we want to refer to surveyed papers in the main body, but only in the
+% figure summarising github repos, so we do it specially....
+
+\def\maprepo#1{\immediate\write\infofile{\bslash expandafter\bslash def \bslash csname cite-#1\bslash endcsname{[\the\bibciten]}}}
+
+\input generated-supplementary-references.tex
+
+\end{thebibliography}
+
+\immediate\closeout\infofile
+\immediate\closeout\contentsfile
+\immediate\closeout\minicontentsfile
+\end{document}  

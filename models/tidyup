@@ -1,0 +1,2 @@
+rm -rf git-*
+rm -f generated-repos.tex

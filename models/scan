@@ -1,0 +1,61 @@
+# creates (and deletes) temporary files data data-summary
+
+echo "\\\begin{tabular}{|l|r|rrr@{\\\hskip .75ex}l|}\\\hline"
+echo "&\multicolumn{1}{c|}{\\\bf PDF paper}&\multicolumn{4}{c|}{\\\bf Repository code \\\& data}\\\\\\ \\\cline{2-6}"
+echo "\\\multicolumn{1}{|c|}{\\\bf Github repository}&\\\multicolumn{1}{c|}{\\\bf Number}&\\\multicolumn{1}{c}{\\\bf Number}&\\\multicolumn{1}{c}{\\\bf Code}&\\\multicolumn{2}{c|}{\\\bf Data}\\\\\\"
+echo "\\\multicolumn{1}{|c|}{\\\bf and paper citation}&\\\multicolumn{1}{c|}{\\\bf of pages}&\\\multicolumn{1}{c}{\\\bf of files}&\\\multicolumn{1}{c}{\\\bf kLOC}&\\\multicolumn{2}{c|}{\\\bf bytes} \\\\\\ \\\hline\\\hline"
+
+for i in git-*; do
+# unzip any zip/gzip files and remove them so they aren't double-counted
+    # find $i  -name "*.zip" -or -name "*.gz" -execdir echo unzip --qq "{}" \; 
+    find $i -name "*.zip" -execdir unzip -o -qq "{}" \; -exec rm {} \;
+    find $i -name "*.gz" -execdir gunzip -q "{}" \; #-exec rm {} \;
+done
+
+# file used to collect data so it can be averaged
+rm -f sizes
+
+for i in git-*; do
+	# the .git directory is git housekeeping, and ignored here
+    find $i -type f -exec wc -cl "{}" \; | grep -v "/\.git/" > data;
+    export fileCount=`cat data|wc -l`    
+    # files of length 0 actually have 1 line, but no terminating \n
+    awk '
+    function round(value) { a=int(value); if(value-a>=0.5) a++; return a; }
+    function kloc(n) { 
+    	k=round(n/1000); if( k >= 1 ) return sprintf("%s", k);
+    	k=round(n/100); if( k >= 1 ) return sprintf("0.%s", k);
+    	k=round(n/10); if( k >= 1 ) return sprintf("0.0%s", k);
+		k=round(n); if( k >= 1 ) return sprintf("0.00%s", k);
+		return "---";
+    }
+	function byteunits(n) {
+		if( n == 0 ) return "\\multicolumn{2}{c|}{---}";
+		if( n < 1000 ) return sprintf("%s&", n);
+		if( n < 1000000 ) return sprintf("%s&kb", round(n/1000));
+		return sprintf("%s&Mb", round(n/1000000));
+	}
+/.*.(c|cpp|hpp|h|in|R|rds|Rproj|py|sh|m|js|java|css)$/ { inc=$1; if( inc==0 ) inc = 1; code += inc }
+{ inc=$1; if( inc==0 ) inc = 1; total += inc }
+!/.*.(c|cpp|hpp|h|R|rds|Rproj|py|sh|md|m)$/ { bytes += $2 }
+/.*zip$/ { print "zip file should have been expanded and deleted: ", $3 }
+END { t="'$i'";
+fileCount=ENVIRON["fileCount"]
+t=substr(t,5); 
+u=t;
+gsub(/_/,".",u)
+printf "\\reponame{%s}{%s} & \\csname pagelength-%s\\endcsname & \\commarise{%d} & %s & %s \\\\\n", t, u, u, fileCount, kloc(code), byteunits(bytes)
+printf "%d\t%d\t%d\n", fileCount, code, bytes >> "sizes"
+if( u == "covid-sim" ) printf "%d\n", kloc(code) > "../generated-covidsimSummary.tex"
+}' data 
+done | sort -f -t : -k 1 | sed s/_/\\\\_/g
+awk 'function round(value) { a=int(value); if(value-a>=0.5) a++; return a; }
+function byteunits(n) {
+		if( n < 1000 ) return sprintf("%d&", n);
+		if( n < 1000000 ) return sprintf("%ds&kb", round(n/1000));
+		return sprintf("%d&Mb", round(n/1000000));
+	}
+BEGIN {nlines=0;nfiles=0; nkloc=0; nbytes=0;}
+{nlines++; nfiles=nfiles+$1;nkloc=nkloc+$2;nbytes=nbytes+$3;}
+END {printf "\\hline \\multicolumn{1}{|r|}{{\\bf Average} ($N=%d$)}&\\makeAverage{\\the\\gitPages}{%d}&%d& %d& %s\\\\\n", nlines, nlines, round(nfiles/nlines), round(nkloc/nlines/1000), byteunits(nbytes/nlines) }' sizes
+echo "\\\hline \\\end{tabular}"

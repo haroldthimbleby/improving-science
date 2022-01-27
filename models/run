@@ -1,0 +1,6 @@
+# recover Fergusons covidsim repo
+rm -rf "git-covid-sim"
+git clone "http://github.com/mrc-ide/covid-sim" "git-covid-sim"
+
+. ../generated-allGitRepos.sh
+. scan > ../generated-repos.tex
