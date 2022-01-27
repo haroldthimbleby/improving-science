@@ -82,6 +82,13 @@ pdf: # make PDF files paper-seb-main.pdf and paper-seb-supplementary-material.pd
 	xelatex paper-seb-supplementary-material.tex
 	xelatex paper-seb-main.tex
 	xelatex paper-seb-supplementary-material.tex
+	@echo Unfortunately, paper-seb-main.tex has items in its bibiography that cross-refer to more bibliography items, so we need another run of bibtex etc
+	bibtex paper-seb-main
+	xelatex paper-seb-main.tex
+	@echo and then the references in paper-seb-supplementary-material.tex are renumbered to follow on paper-seb-main.tex
+	xelatex paper-seb-supplementary-material.tex
+	@echo and paper-seb-main.tex refers to those numbers... so it needs updating again
+	xelatex paper-seb-main.tex
 	@echo "----------------------------------------------------------------"
 	@echo You have now got these PDFs:
 	@ls -C *paper*pdf

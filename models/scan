@@ -59,3 +59,6 @@ BEGIN {nlines=0;nfiles=0; nkloc=0; nbytes=0;}
 {nlines++; nfiles=nfiles+$1;nkloc=nkloc+$2;nbytes=nbytes+$3;}
 END {printf "\\hline \\multicolumn{1}{|r|}{{\\bf Average} ($N=%d$)}&\\makeAverage{\\the\\gitPages}{%d}&%d& %d& %s\\\\\n", nlines, nlines, round(nfiles/nlines), round(nkloc/nlines/1000), byteunits(nbytes/nlines) }' sizes
 echo "\\\hline \\\end{tabular}"
+
+rm -f sizes
+
