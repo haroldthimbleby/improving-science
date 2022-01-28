@@ -6,7 +6,7 @@
 
 ### 27 January 2022
 
-A PDF of the typeset paper is available at [reliable-models.pdf](http://www.harold.thimbleby,net/reliable-models.pdf)
+A PDF of the typeset paper is available at [reliable-models.pdf](http://www.harold.thimbleby.net/reliable-models.pdf)
 
 To generate all data or typeset the paper, you will need a Unix system with make, node, latex and bibtex. For convenience, a CSV file is included in this repository which you could re-generate yourself from the master JSON data if you have `node` or some other way of running the JavaScript file `data.js`).
 
