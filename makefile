@@ -9,7 +9,7 @@ help: # list make build options
 	@echo
 	@echo basic use is:
 	@echo "  	" make pdf
-	@echo ... which makes clean PDF documents
+	@echo ... which makes thw PDF documents
 	@echo Then say make tidyup to delete easily rebuilt files
 	@echo
 		
@@ -49,14 +49,15 @@ tidyup: # remove all easily generated files except the main PDFs
 	@echo "	" generated-constants.tex - Generated common definitions and constants
 	@echo "	" generated-legend.tex - Legend for the main assessment table
 	@echo "	" generated-data-check.html - Convenient list of data sources with DOIs in HTML
-	@echo If any are missing, rerun node data.js - or run make clean 
+	@echo If any are missing, rerun node data.js 
  
 reallytidyup: # better than tidyup - remove ALL files that can be recreated
-	@echo Remove ALL files that can be recreated, including PDFs and files made by processing the JSON data
+	@echo Remove ALL files that can be recreated, including PDFs and files made by processing the JSON data 
+	@echo excluding CSV file as some people may not have node to extract the CSV from data.js
 	make tidyup
 	rm -f paper-seb-*.pdf
 	# remove other files made by running node data.js
-	rm -f flagData.nb allData.csv data-check.html
+	rm -f flagData.nb data-check.html
 	# this was created if we did a make one-file -- the original name of the PDF, ftpeed to http://www.harold.thimbleby.net/reliable-models.pdf
 	rm -f reliable-models.pdf
 	# finally, remove all the recoverable stuff in the models directory

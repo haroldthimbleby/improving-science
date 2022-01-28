@@ -1025,7 +1025,7 @@ for (var i = 0; i < data.length; i++) {
     for (var f in descriptionsOfFields)
         s += csvise(data[i][f], f == lastflag);
 }
-saveFile("generated-allData.csv", s, "All data expressed in CSV");
+saveFile("CSV-generated-data.csv", s, "All data from data.js expressed in CSV for convenience");
 
 s = "";
 var spagelengths = "";
