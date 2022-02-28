@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: paper-seb-main.aux
+The style file: plos2015.bst
+Database file #1: paper-seb-main.bib
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--empty pages in redmill
+Warning--empty author in iec61508
+You've used 79 entries,
+            3058 wiz_defined-function locations,
+            1115 strings with 23270 characters,
+and the built_in function-call counts, 136768 in all, are:
+= -- 17148
+> -- 835
+< -- 10
++ -- 647
+- -- 207
+* -- 11868
+:= -- 15198
+add.period$ -- 339
+call.type$ -- 79
+change.case$ -- 8
+chr.to.int$ -- 18
+cite$ -- 81
+duplicate$ -- 9559
+empty$ -- 13353
+format.name$ -- 244
+if$ -- 31665
+int.to.chr$ -- 0
+int.to.str$ -- 79
+missing$ -- 615
+newline$ -- 440
+num.names$ -- 78
+pop$ -- 1037
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1130
+stack$ -- 0
+substring$ -- 28993
+swap$ -- 1483
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 624
+width$ -- 81
+write$ -- 942
+(There were 2 warnings)

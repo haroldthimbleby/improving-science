@@ -1,11 +1,26 @@
 % These macros allow the paper and the supplementary material to share a single sequence of bibliography citations
 
+\renewcommand\thesubsection{(\thesection.\alph{subsection})}
+\renewcommand\thesubsubsection{(\thesection.\alph{subsection}.\emph{\roman{subsubsection}\/})}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{longtable}
+
+\def\httpURL#1{\href{http://#1}{\textcolor{blue}{#1}}}
+\def\LONGhttpURL#1#2{\href{http://#1}{\textcolor{blue}{#2}}}
+
+\makeatletter
+    \def\do@url@hyp{\do/}
+    \usepackage{moreverb,url}
+    %    \renewcommand{\thefootnote}{\arabic{footnote}}
+\makeatother
+
 \DeclareUrlCommand\doi{\def\UrlLeft{{\textrm{DOI}}~}}
 \DeclareUrlCommand\url{\def\UrlLeft{{\textrm{URL}}~}}
 	
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
-\def\mytitle{Computational science reviewed: \hbox{A (fixable) failure of software~engineering}}
+\def\mytitle{Computational science: \hbox{A (fixable) failure of software~engineering}}
 %Achieving professional software engineering \hbox{in scientific research}}
 
 \def \citeeg#1{(e.g., \cite{#1})}
@@ -64,7 +79,7 @@
 \fi}
 
 % initialisBibliography <title> <starting number> <introductory text>
-\newcount\bibciten \bibciten=0
+\newcount \bibciten \bibciten=0
 \def\initialiseBibliography#1#2#3{%
 	\global\def\refname{#1}
     \global\bibciten=#2
@@ -75,11 +90,39 @@
 
 % read in any constants defined from the JSON data
 \input generated-constants.tex
-\IfFileExists{generated-info-for-main.tex}{%
 \input generated-info-for-main.tex
-}{\typeout{No generated-info-for-main.tex - error ignored, but you need to latex paper-seb-supplementary-material.tex to generate it}}
-
-%\inputifexists{generated-constants.tex}{You need to run node data.js to make this file}
+\input generated-metadata.tex
 
 \def\supplement{Supplemental Material}
+
+% calculation used in table-repo-summary in main.tex, and also referred to in supplement.tex as an example calculation
+% paper submitted June 2019, published April 2020
+
+\input generated-clone-date.tex
+\newcount \pubdelayinmonths
+\pubdelayinmonths=\cloneyear
+\advance \pubdelayinmonths by -2019 % submitted in 2019
+\multiply \pubdelayinmonths by 12
+\advance \pubdelayinmonths by -6 % submitted in June
+\advance \pubdelayinmonths by \clonemonth
+
+\def\monthname#1{\ifcase#1 \or 
+January\or 
+February\or 
+March\or 
+April\or 
+May\or 
+June\or 
+July\or 
+August\or 
+September\or 
+October\or 
+November\or 
+December\fi}
+
+\def\clonewhen{\monthname{\clonemonth} \cloneyear}
+
+\newenvironment{change}
+	{\color{black}}
+	{\color{black}}
 

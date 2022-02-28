@@ -4,3 +4,11 @@ git clone "http://github.com/mrc-ide/covid-sim" "git-covid-sim"
 
 . ../generated-allGitRepos.sh
 . scan > ../generated-repos.tex
+
+# check that PostoperativeOutcomes_RiskNet README.md has not been updated
+echo CHECK THAT REPO FOR PostoperativeOutcomes_RiskNet HAS NOT CHANGED
+if cmp original-git-PostoperativeOutcomes_RiskNet-README.md git-PostoperativeOutcomes_RiskNet/*.md;
+then echo README.md has not been updated
+else echo WARNING --- README.md has been updated --- WARNING
+fi
+

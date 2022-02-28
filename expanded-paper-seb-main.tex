@@ -1,0 +1,1272 @@
+\PassOptionsToPackage{hyphens}{url}
+% expand plos-header.tex
+% Template for PLoS
+% Version 3.5 March 2018
+%
+% % % % % % % % % % % % % % % % % % % % % %
+%
+% -- IMPORTANT NOTE
+%
+% This template contains comments intended 
+% to minimize problems and delays during our production 
+% process. Please follow the template instructions
+% whenever possible.
+%
+% % % % % % % % % % % % % % % % % % % % % % % 
+%
+% Once your paper is accepted for publication, 
+% PLEASE REMOVE ALL TRACKED CHANGES in this file 
+% and leave only the final text of your manuscript. 
+% PLOS recommends the use of latexdiff to track changes during review, as this will help to maintain a clean tex file.
+% Visit https://www.ctan.org/pkg/latexdiff?lang=en for info or contact us at latex@plos.org.
+%
+%
+% There are no restrictions on package use within the LaTeX files except that 
+% no packages listed in the template may be deleted.
+%
+% Please do not include colors or graphics in the text.
+%
+% The manuscript LaTeX source should be contained within a single file (do not use \input, \externaldocument, or similar commands).
+%
+% % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- FIGURES AND TABLES
+%
+% Please include tables/figure captions directly after the paragraph where they are first cited in the text.
+%
+% DO NOT INCLUDE GRAPHICS IN YOUR MANUSCRIPT
+% - Figures should be uploaded separately from your manuscript file. 
+% - Figures generated using LaTeX should be extracted and removed from the PDF before submission. 
+% - Figures containing multiple panels/subfigures must be combined into one image file before submission.
+% For figure citations, please use "Fig" instead of "Figure".
+% See http://journals.plos.org/plosone/s/figures for PLOS figure guidelines.
+%
+% Tables should be cell-based and may not contain:
+% - spacing/line breaks within cells to alter layout or alignment
+% - do not nest tabular environments (no tabular environments within tabular environments)
+% - no graphics or colored text (cell background color/shading OK)
+% See http://journals.plos.org/plosone/s/tables for table guidelines.
+%
+% For tables that exceed the width of the text column, use the adjustwidth environment as illustrated in the example table in text below.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- EQUATIONS, MATH SYMBOLS, SUBSCRIPTS, AND SUPERSCRIPTS
+%
+% IMPORTANT
+% Below are a few tips to help format your equations and other special characters according to our specifications. For more tips to help reduce the possibility of formatting errors during conversion, please see our LaTeX guidelines at http://journals.plos.org/plosone/s/latex
+%
+% For inline equations, please be sure to include all portions of an equation in the math environment.  For example, x$^2$ is incorrect; this should be formatted as $x^2$ (or $\mathrm{x}^2$ if the romanized font is desired).
+%
+% Do not include text that is not math in the math environment. For example, CO2 should be written as CO\textsubscript{2} instead of CO$_2$.
+%
+% Please add line breaks to long display equations when possible in order to fit size of the column. 
+%
+% For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
+%
+% When adding superscript or subscripts outside of brackets/braces, please group using {}.  For example, change "[U(D,E,\gamma)]^2" to "{[U(D,E,\gamma)]}^2". 
+%
+% Do not use \cal for caligraphic font.  Instead, use \mathcal{}
+%
+% % % % % % % % % % % % % % % % % % % % % % % % 
+%
+% Please contact latex@plos.org with any questions.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
+
+% amsmath and amssymb packages, useful for mathematical formulas and symbols
+\usepackage{amsmath,amssymb}
+
+% Use adjustwidth environment to exceed column width (see example table in text)
+\usepackage{changepage}
+
+% Use Unicode characters when possible
+\usepackage[utf8x]{inputenc}
+
+% textcomp package and marvosym package for additional characters
+\usepackage{textcomp,marvosym}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+% Use nameref to cite supporting information files (see Supporting Information section for more info)
+\usepackage{nameref,hyperref}
+
+% line numbers
+\usepackage[right]{lineno}
+
+% ligatures disabled
+\usepackage{microtype}
+%\DisableLigatures[f]{encoding = *, family = * }
+
+% color can be used to apply background shading to table cells only
+\usepackage[table]{xcolor}
+
+% array package and thick rules for tables
+\usepackage{array}
+
+% create "+" rule type for thick vertical lines
+\newcolumntype{+}{!{\vrule width 2pt}}
+
+% create \thickcline for thick horizontal lines of variable length
+\newlength\savedwidth
+\newcommand\thickcline[1]{%
+  \noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+  \cline{#1}%
+  \noalign{\vskip\arrayrulewidth}%
+  \noalign{\global\arrayrulewidth\savedwidth}%
+}
+
+% \thickhline command for thick horizontal lines that span the table
+\newcommand\thickhline{\noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+\hline
+\noalign{\global\arrayrulewidth\savedwidth}}
+
+
+% Remove comment for double spacing
+%\usepackage{setspace} 
+%\doublespacing
+
+% Text layout
+\raggedright
+\setlength{\parindent}{0.5cm}
+\textwidth 5.25in 
+\textheight 8.75in
+
+% Bold the 'Figure #' in the caption and separate it from the title/caption with a period
+% Captions will be left justified
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+\renewcommand{\figurename}{Fig}
+
+% Use the PLoS provided BiBTeX style
+\bibliographystyle{plos2015}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+% Header and Footer with logo
+\usepackage{lastpage,fancyhdr,graphicx}
+\usepackage{epstopdf}
+%\pagestyle{myheadings}
+\pagestyle{fancy}
+\fancyhf{}
+%\setlength{\headheight}{27.023pt}
+%\lhead{\includegraphics[width=2.0in]{PLOS-submission.eps}}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
+\fancyheadoffset[L]{2.25in}
+\fancyfootoffset[L]{2.25in}
+\lfoot{\today}
+
+%% Include all macros below
+
+\newcommand{\lorem}{{\bf LOREM}}
+\newcommand{\ipsum}{{\bf IPSUM}}
+
+%% END MACROS SECTION
+% end expanding plos-header.tex
+
+\renewcommand\thesubsection{(\thesection.\alph{subsection})}
+\usepackage{hyperref}
+
+\def\httpURL#1{\href{http://#1}{\textcolor{blue}{#1}}}
+\def\LONGhttpURL#1#2{\href{http://#1}{\textcolor{blue}{#2}}}
+
+\makeatletter
+    \def\do@url@hyp{\do/}
+    \usepackage{moreverb,url}
+    %    \renewcommand{\thefootnote}{\arabic{footnote}}
+\makeatother
+
+% expand paper-seb-macros.tex
+% These macros allow the paper and the supplementary material to share a single sequence of bibliography citations
+
+\DeclareUrlCommand\doi{\def\UrlLeft{{\textrm{DOI}}~}}
+\DeclareUrlCommand\url{\def\UrlLeft{{\textrm{URL}}~}}
+	
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\def\mytitle{Computational science: \hbox{A (fixable) failure of software~engineering}}
+%Achieving professional software engineering \hbox{in scientific research}}
+
+\def \citeeg#1{(e.g., \cite{#1})}
+
+\def\inputifexists#1#2{\IfFileExists{#1}{\input{#1}}{\typeout{No file #1. #2}}}
+
+% calculate percentages
+\newcount \t
+\newcount \tu
+\def\pc#1#2{\t = #1%
+\multiply \t by 100000%
+\divide \t by #2% ?? 0 times percentage
+\tu = \t
+\divide \t by 1000% percentage, but no idea of remainder
+\multiply \t by 1000% 1000 times percentage, with 00 as bottom digits
+\advance \tu by -\t% bottom two digits
+\divide \t by 1000\relax%
+% round to nearest integer
+% if ending in > .5 round up
+% if ending in exactly .5 round towards nearest even number
+\ifnum \tu > 500 % round up
+	\advance \t by 1 
+\else
+	\ifnum \tu = 500 
+		\ifodd \t % it's odd, so round up to even number 
+			\advance \t by 1
+		\else % leave rounded to even number 	
+		\fi
+	\fi
+\fi
+\the\t\%}
+
+% insert commas into large numbers
+\def\commarise#1{%[#1]
+	\t=#1
+    \divide \t by 1000
+    \ifnum \t > 0
+    	\the\t,%
+    	\tu=#1
+    	\multiply \t by 1000
+    	\advance \tu by -\t
+		\ifnum \tu < 100 0\fi
+		\ifnum \tu < 10 0\fi
+		\the\tu
+    \else
+    	#1%
+    \fi
+}
+
+% simple macro to use a number register to pluralise (add an s) to words....
+% \plural{\t}{fred} => \the\t\ freds if plural, or => one fred if singular
+\def\plural#1#2{\ifnum #1=1 
+	one #2%
+\else
+	\the#1\ #2s%
+\fi}
+
+% initialisBibliography <title> <starting number> <introductory text>
+\newcount\bibciten \bibciten=0
+\def\initialiseBibliography#1#2#3{%
+	\global\def\refname{#1}
+    \global\bibciten=#2
+    \global\def\startBibliography{#3}
+}
+
+\def\bibskip{\vskip 1ex} % the gap between bib items generated by data.js
+
+% read in any constants defined from the JSON data
+% expand generated-constants.tex
+\def\journalBreakdown{\emph{Lancet Digital Health\/} ($N=6$), \emph{Nature Digital Medicine\/} ($N=12$) and \emph{Royal Society Open Science\/} ($N=14$)}
+\def\tabularJournalBreakdown{&\hbox to 3em {\hfill 6}\hskip 1em \emph{Lancet Digital Health}\\&\hbox to 3em {\hfill 12}\hskip 1em \emph{Nature Digital Medicine}\\&\hbox to 3em {\hfill 14}\hskip 1em \emph{Royal Society Open Science}\\}
+\global\newcount \dataN \global\dataN=32
+\global\newcount \countAuthors \global\countAuthors=264
+\global\newcount \countHasBreach \global\countHasBreach=11
+\global\newcount \countHasPolicy \global\countHasPolicy=26
+\global\newcount \countUsesVersionControlRepository \global\countUsesVersionControlRepository=10
+\global\newcount \counthasDataRepository \global\counthasDataRepository=9
+\global\newcount \countNoCodeInRepo \global\countNoCodeInRepo=1
+\global\newcount \numberOfJournals \global\numberOfJournals=3
+\global\newcount \countCodetested \global\countCodetested=0
+\global\newcount \hasDevelopedRigorously \global\hasDevelopedRigorously=0
+% end expanding generated-constants.tex
+% expand generated-info-for-main.tex
+\newlabel{supplementary-material-makefiles}{{2}{11}{DUMMYA}{DUMMYB}{DUMMYC}}
+\newlabel{on-code-data-publication}{{3}{14}{XXX}{YYYY}{ZZZZ}}
+\newlabel{supplementary-Speigelhalter-section}{{4}{17}{DUMMYA}{DUMMYB}{DUMMYC}}
+\def\MaxMainPaperCitationNumber{64}
+\newlabel{supplementary-journal-policies-section}{{5}{25}{DUMMYA}{DUMMYB}{DUMMYC}}
+\newlabel{supplementary-summary-table}{{5}{30}{DUMMY1}{DUMMY2}{DUMMY3}}
+\expandafter\def \csname cite-MetricSelectionFramework\endcsname{[97]}
+\expandafter\def \csname cite-PENet\endcsname{[101]}
+\expandafter\def \csname cite-PostoperativeOutcomes.RiskNet\endcsname{[103]}
+\expandafter\def \csname cite-philter-ucsf\endcsname{[104]}
+\expandafter\def \csname cite-AI-CDSS-Cardiovascular-Silo\endcsname{[105]}
+\expandafter\def \csname cite-SiameseChange\endcsname{[107]}
+\expandafter\def \csname cite-dryad.1g1jwstrw\endcsname{[108]}
+\expandafter\def \csname cite-rsos.192210\endcsname{[109]}
+\expandafter\def \csname cite-ichHKrWj7hqlznOaR6NQVzITgp40dlqWvWAgAxyafiQ\endcsname{[110]}
+\expandafter\def \csname cite-rsos.200566\endcsname{[111]}
+\expandafter\def \csname cite-?view.only=87ae173f775b40d79d6cd0fdcf6d4a9c\endcsname{[112]}
+\expandafter\def \csname cite-dryad.vx0k6djnr\endcsname{[115]}
+\expandafter\def \csname cite-lactModel\endcsname{[116]}
+\expandafter\def \csname cite-LRM\endcsname{[118]}
+\expandafter\def \csname cite-1\endcsname{[119]}
+\expandafter\def \csname cite-manifold-ga\endcsname{[124]}
+\expandafter\def \csname cite-blast-ct\endcsname{[126]}
+% end expanding generated-info-for-main.tex
+
+\def\supplement{Supplemental Material}
+% end expanding paper-seb-macros.tex
+
+% expand generated-page-lengths.tex
+\expandafter\def\csname pagelength-MetricSelectionFramework\endcsname{17}
+\expandafter\def\csname pagelength-PENet\endcsname{9}
+\expandafter\def\csname pagelength-PostoperativeOutcomes.RiskNet\endcsname{10}
+\expandafter\def\csname pagelength-philter-ucsf\endcsname{8}
+\expandafter\def\csname pagelength-AI-CDSS-Cardiovascular-Silo\endcsname{6}
+\expandafter\def\csname pagelength-SiameseChange\endcsname{9}
+\expandafter\def\csname pagelength-lactModel\endcsname{13}
+\expandafter\def\csname pagelength-LRM\endcsname{22}
+\expandafter\def\csname pagelength-manifold-ga\endcsname{7}
+\expandafter\def\csname pagelength-blast-ct\endcsname{8}
+\newcount \gitPages \gitPages=109
+\newcount \totalPages \totalPages=341
+% end expanding generated-page-lengths.tex
+
+\begin{document}
+
+\vspace*{0.2in}
+
+% Title must be 250 characters or less.
+\begin{flushleft}
+{\Large
+\textbf\newline{\mytitle} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
+}
+\newline
+% Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
+\\
+Harold Thimbleby
+\\
+\bigskip
+See Change Fellow in Digital Health
+\\
+\bigskip
+
+% Current address notes
+
+% Use the asterisk to denote corresponding authorship and provide email address in note below.
+\begin{tabular}{@{}ll}Current Address: &62 Cyncoed Road, Cardiff, CF23 5SH, Wales\\
+&\texttt{harold@thimbleby.net}\\
+&ORCID 0000-0003-2222-4243
+\end{tabular}
+
+%\orcid{0000-0003-2222-4243}
+
+\end{flushleft}
+% Please keep the abstract below 300 words
+\section*{Abstract}
+\noindent
+\emph{Background:} Computer code underpins modern science. While scientific models are routinely peer reviewed, the algorithms and the quality of code implementing them often avoid scrutiny; therefore the details of many scientific conclusions cannot be rigorously justified. 
+
+\noindent\emph{Problem:} Assumptions in scientific code are hard to scrutinize as they are rarely made explicit. Additionally, both algorithms and code have bugs, unknown and accidental assumptions that have unwanted effects. Code is fallible, so any interpretation that relies on code is therefore fallible, and if the code is not clearly structured and published with adequate documentation, the code cannot be usefully scrutinized. In turn, scientific claims cannot be properly scrutinized.
+
+\noindent\emph{Methodology:} This paper critiques the quality of software engineering practice (particularly as relied on in COVID-19 pandemic research driving international public health interventions), and undertakes a pilot survey of peer reviewed computational modeling papers ($N=\the\dataN$) published in leading scientific journals. 
+
+\noindent\emph{Results:} Scientists rarely assure the quality of code they rely on, rarely make complete code available, and rarely provide adequate documentation to understand or use their code reliably.
+
+\noindent\emph{Solutions:} Code can be improved using software engineering. This paper argues for specific solutions:
+
+\newdimen \mywidth \mywidth=\textwidth
+\advance \mywidth by -1em
+\parshape 2 0em \textwidth 1.5em \mywidth 
+\noindent 
+\hbox to 1.5em{ 1.\hfill}Professional software engineers can help and should be involved, particularly in critical research; 
+
+\parshape 2 0em \textwidth 1.5em \mywidth 
+\noindent 
+\hbox to 1.5em{ 2.\hfill}``Software Engineering Boards'' (analogous to Ethics or Institutional Review Boards) should be instigated and used; 
+
+\parshape 2 0em \textwidth 1.5em \mywidth 
+\noindent 
+\hbox to 1.5em{ 3.\hfill}Code, when used, should be considered an intrinsic part of any publication, and therefore should be formally reviewed by competent software engineers. 
+
+\noindent
+The \supplement\ provides a summary of professional software engineering best practice relevant to scientific research and publication.
+
+%\end{abstract}
+
+\vfill\begin{quote}
+\hfill``Criticism is the mother of methodology.''
+ 
+\hfill Robert P Abelson, \emph{Statistics as Principled Argument\/} \cite{abelson}\end{quote}
+\vfill
+\paragraph*{Keywords:} 
+Computational science; Software Engineering; Reproducibility; Scrutiny
+
+\newpage\section*{Author summary}
+
+%\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{HT}}]
+Harold Thimbleby PhD, FRCP (Edinburgh), Hon.\ FRSA, Hon.\ FRCP is See Change Fellow in Digital Health at Swansea University, Wales. His research focuses on human error and computer system design, particularly for healthcare. 
+%In addition to over 340 peer reviewed and 188 invited publications, Harold has written several books, including \emph{Press On\/} (MIT Press, 2007), which was winner of the American Association of Publishers best book in computer science award.
+Harold won the British Computer Society Wilkes Medal. He is emeritus Gresham Professor of Geometry (a chair founded in 1597), and has been a Royal Society-Leverhulme Trust Senior Research Fellow and a Royal Society-Wolfson Research Merit Award holder. His latest book is  \emph{Fix IT: How to see and solve the problems of digital healthcare\/} \cite{fixit}.  See his web site, \texttt{www.harold.thimbleby.net}, for more details.
+\linenumbers
+
+%\maketitle
+
+\section{Introduction}\label{problems}
+Computational methods are comparatively new, powerful, and very flexible tools for scientists. Computational methods rely on programming, but unfortunately poor programming is very easy use to apparently get results with; such results are likely to be misleading. The role of computational methods can be compared to statistics, another useful scientific tool. Poor statistics is much easier to do than good statistics, and there are many examples of science being let down by na\"\i vely planned and poorly implemented statistics. Often scientists do not realize the limitations of their own statistical skills, so careful scientists generally work closely with professional statisticians.
+
+{I}{n good science}, all statistics, methods and results have to be reported very carefully and in precise detail. For example, a statistical claim might be summarized as follows:
+
+\begin{quote}\raggedright
+\setbox0=\hbox{``}
+\sf\hskip -\wd0\box0 %Random intercept linear mixed model suggesting significant time by intervention-arm interaction effect. 
+\ldots\ Bonferroni adjusted estimated mean difference between intervention-arms at 8-weeks 2.52 ~($\sf 95\% \mbox{\sf ~CI~} 0.78, 4.27, p = 0.0009$). Between group effect size $\sf d = 0.55 ~(95\% \mbox{\sf ~CI~} 0.32, 0.77)$.'' \cite{example-stats}\end{quote}
+
+This typical wording briefly summarizes confidence intervals, $p$ levels, and so on, to present statistical results so the paper's claims can be seen to be complete, easy to interpret, and easy to scrutinize. It is a \emph{lingua franca}. It may look technical, but it is written in the standard and now widely accepted form for summarizing statistics. 
+
+Scientists write like this --- and conferences and journals require it --- because statistical claims need to be properly accountable and documented in a clear way. Speigelhalter \cite{Speigelhalter} says statistical information needs to be accessible, intelligible, assessable, and usable; he also suggests probing questions to help assess statistical quality (see \supplement\ section~\ref{supplementary-Speigelhalter-section}). Results should not be uncritically accepted just because they are claimed.
+
+The skill and effort required to do statistics so it can be communicated clearly and correctly, as above, is not to be taken for granted. Scientists work closely with competent, often specialist, statisticians who engage with the research from experiment design through to analysis and publication. Further, it is assumed that statistics will be peer reviewed, and that review will often lead to improvement. 
+
+Scientists accept that statistics is a distinct, professional science, itself subject of research and continual improvement. Among other implications of the depth and progress of the field of statistics, undergraduate statistics options for general scientists are insufficient training for rigorous work in science --- their main value, perhaps, is to help scientists to understand the value of collaborating with specialist statisticians. Collaboration with statisticians is particularly important when new types of work are undertaken, where the statistical pitfalls have not already been well-explored.
+
+Except in the most trivial of cases, all numbers and graphs, along with the statistics underlying them will be generated by computer. Indeed, computers are now very widely used, not just to calculate statistics, but to run the models (the term is defined below), do the data sampling and processing, and even to operate the sensors that generate the data that is analyzed. Computers are used to run human-participant surveys, such as web-based surveys. The data --- including the databases and bibliographic sources --- and code to analyze it is all stored and manipulated on computers. Computers even help with the word processing and typesetting of research.
+
+In short, computers, data, and computer code are central to modern science. However, using code raises many critical questions: formats, backup, cyber-vulnerability, version control, integrity checking (e.g., managing human error), auditing, debugging and testing, and more. Software code, like statistics, is also subject to unintentional bias \cite{Ben,se-bias}.  All these issues are non-trivial concerns requiring technical expertise to manage well. 
+
+A common oversight in scientific papers is to present a model, such as a set of differential equations, but omit how that model is transformed into code that generates the results the paper summarizes; if so, the code may have problems that cannot be identified as there is no specification to reference it to.
+
+Failure to properly document and explain computer code undermines the scientific value of the models and the results they generate, in the same way as failure to properly articulate statistics undermines the value of any scientific claims. Indeed, as few papers use code that is as well-understood and as well-researched as standard statistical procedures (such as Bonferroni corrections), the scientific problems of poorly reported code are widespread. 
+
+%When relevant details of models are omitted (or are not described in recognisable ways), it is impossible to properly scrutinise claims. Describing a model used, perhaps mathematically, or providing the code (e.g., to download) that implements it is as inadequate as just providing raw data without details of the statistics analysis supporting the claim. 
+
+We would not believe a statistical claim that was obtained from some \emph{ad hoc\/} analysis with a new fangled method devised just for one project --- instead, we demand statistics that is recognizable, even traditional, so we are assured we understand what has been done and how reliable results were obtained. An interesting overlap with statistical and software engineering scrutiny is the many papers that just disclose as part of their methodology that they used a particular statistical package (e.g., ``Data analyses were performed using SAS 9.2 (SAS Institute, Cary, North Carolina, USA)\@.'' yet \emph{how\/} those analyses might have been performed is not discussed. The problem is that admitting using SAS 9.2 or any other named system does not really help scrutiny, as such systems can do anything with the data. A reviewer, if nobody else, needs to actually examine the statistical code itself and its documentation to assess whether the analysis presented in the paper is reliable. 
+
+It is recognized that to make critical claims, models need to be run under varying assumptions \cite{whitty}, yet somehow it is easy to overlook that the code that implements the models also needs to be carefully tested under varying assumptions to uncover and fix bugs and biases. Being able to understand (at least in principle) the exact code used in implementing a model is critical to having confidence in the results that rely on it. Unfortunately code is rarely considered a substantial part of the science to which it contributes. 
+
+This paper reviews a selection of papers in leading international journals, and finds that both papers and journal policies take code for granted. This paper then argues that, just as is routine for statistics, code and results from code (and the data it is run on) need to be discussed and presented in a way that properly assure belief in any claims derived from using them. Specifically, code should be developed and discussed in a sufficiently professional, rigorous, and recognizable way that is able to support clear presentation and scrutiny. Developing justifiably reliable code is the concern of the field of \emph{software engineering}, which will be discussed further below, as well as more substantially in this paper's \supplement). 
+
+This paper shows that unreliable computational dependencies in science are widespread. Furthermore, code is rarely published in any useful form or professionally scrutinized, and therefore the code itself does not contribute to furthering reliable science, for instance through replication or reproduction. In short, the quality of much modern science seems to be undermined because the code it relies on is rarely of adequate quality \emph{for the uses to which it is put}. 
+
+This paper explores the extent of these software engineering problems in published science. The paper additionally suggests some ways forward. The \supplement\ is an integral part of the suggested solutions. In particular, the \supplement\ section~\ref{supplementary-Speigelhalter-section} summarizes Speigelhater's uncontroversial statistics probes and draws explicit analogies for the critical assessment of the quality of scientific code.
+
+\subsection{The role of code in science and scientific publication}
+%Yet without code, models could not be run. 
+
+For the purposes of this paper, models map theory and parameters to describe phenomena, typically to make predictions or to test and refine the models. With the possible exception of theoretical research, all but the simplest models require computers to evaluate; indeed even theoretical mathematics is now routinely performed by computer systems.
+
+Whereas the mathematical form of a model may be concise and readily explained, even a basic computational representation of a model can easily run to thousands of lines of code, and its parameters --- its data --- may also be extensive. The chance that a thousand lines of hand-written code is error free is negligible, and therefore good practice demands that checks and constraints should be applied to improve its reliability. How to do this well is the concern of software engineering, and is discussed throughout this paper. 
+
+While scientific research may rely on relatively easily-scrutinized mathematical models, or models that seem in principle easy to mathematize, the models that are run on computers to obtain the results published are sometimes not disclosed, and even when they are (certainly in all cases reviewed later in this paper) they are long, complex, inscrutable and (our survey shows) lack adequate documentation. Therefore the models are very likely to be unreliable \emph{in principle}. If code is not well-documented, this is not only a problem for reviewers and scientists reading the research to understand the intention of the code, but it also causes problems for the original researchers themselves: how can they understand its thinking well enough (e.g., a few weeks or months later) to maintain it correctly if has not been clearly documented? Without documentation, including a reasoned case to assure that the approach taken is sound \cite{assurance-case}, how do researchers, let alone reviewers, know exactly what they are doing?
+
+Without substantial documentation it is impossible to scrutinize code properly. Consider just the single line ``\texttt{y = k*exp(x)}'' where there can be \emph{no\/} concept of its correctness \emph{unless\/} there is also an explicitly stated relation between the code and the mathematical specifications. What does it mean? What does \texttt{k} mean --- is it a basic constant or the result of some previous complex calculation? Does the code mean what was intended? What are the assumptions on \texttt{y} and do they hold invariantly? Moreover, as code generally consists of thousands of such lines, with numerous inter-dependencies, plus calling on many complex libraries of support code, it is inevitable that the \emph{collective\/} meaning will be unknown. A good programer would (in the example here) at least check that \texttt{k} and \texttt{x} are in range and that \texttt{k*exp} was behaving as expected (e.g., in case of overflow).
+
+Without explicit links to the relevant models (typically mathematics, depending on the claims), it is impossible to reason whether any code is correct, and in turn it is impossible to scientifically scrutinize results obtained from using the code. Not providing code and documentation, providing partial code, or providing code without the associated reasoning is analogous to claiming ``statistical results are significant'' without any discussion of the relevant methods and statistical details that justify making such a claim. If such an unjustified pseudo-statistical claim was made in a scientific paper, a reviewer would be justified in asking whether a competent experiment had even been performed. It would be generous to ask the author to provide the missing details so the paper could be better reviewed on resubmission. 
+
+Contrary to the views expressed in the present paper, some authors have asserted that code is to provide insight into models, rather than precise (generally numerical) analyses summarising data \cite{assessing-quality}. On the contrary, if code is inadequate, ``insights'' it provides will be flawed, and flawed in unquantified and unknown ways. Indeed, none of the papers sampled (described below in section~\ref{survey-section}) claimed their papers were using code for insight; all claimed, explicitly or implicitly, that their code outputs were integral to their peer reviewed results.
+
+Clearly, like statistics, programming (coding) can be done poorly and reported poorly, or it can be done well and reported well --- and any mix between these extremes. The question is whether it matters, \emph{when\/} it matters, and when it does, \emph{what\/} can be done to \emph{appropriately\/} help improve the quality of code (and discussions about the code) in scientific work.
+
+%This paper explores the role of code in scientific research. Initially focusing on examples from pandemic modelling (because of its relevance to serious matters of public health) this paper shows that scientific culture, including editorial processes, have not adapted to the increasingly dominant role of code and managing the risks of its fallibility. The paper then suggests how to improve, including building mutual engagement across the science and software engineering communities.
+
+\subsection{Bugs, code and programming}\label{knowledge}
+Critiques of data and model assumptions are very common \cite{critiques,diagnosis-reviews} but program code is rarely mentioned. Yet data and program are formally equivalent (see further discussion in \supplement, section \ref{on-code-data-publication}). Program code has as great an affect on results as the data. Code is harder to scrutinize, which means errors in code can have more subtle effects on results.
+
+It should be noted that almost all code contains ``magic numbers'' --- that is, data masquerading as code. This common practice ensures that published data is very rarely all of the data because it omits the magic numbers. This emphasizes the need for repositories to require the inclusion of code so all data is actually available. 
+
+Bugs can be understood as discrepancies between what code is intended to do and what it actually does. Many bugs cause erroneous results, but bugs may be ``fail safe'' by causing a program to crash so no incorrect result can be delivered. Better, contracts and assertions are essential defensive programming technique that block compilation or block execution with incorrect results; they turn bugs into safe termination. None of the code examined for this paper includes either. 
+
+If code is not documented it cannot be clear what it is intended to do, so it is not possible to detect and eliminate bugs. Indeed, even with good documentation, \emph{intentional bugs\/} will remain, that is, code that correctly implements the wrong things. For instance, in numerical modeling, using an inappropriate method can introduce errors that are not ``bugs'' in the sense of incorrectly implementing what was wanted (e.g., ill-conditioning), but are bugs in the sense of producing incorrect results --- that is, what was wanted was wrong. Misuse of random numbers (e.g., using standard libraries without testing them) is a common cause of bugs \cite{knuth}.
+
+\iffalse Following the Dunning-Kruger Effect \cite{dunning-kruger,dunning-kruger-numeracy}, unqualified programmers over-estimate their programming skills because they do not have the skills to recognize their lack of knowledge, specifically in the present case, knowledge of basic software engineering. Dunning and Kruger go on to say,
+
+\begin{quote}\sf\raggedright\setbox0=\hbox{``}\hskip -\wd0\copy0 People usually choose what they think is the most reasonable and optimal option \hbox{[\hskip 2pt\ldots]} The failure to recognize that one has performed poorly will instead leave one to assume that one has performed well; as a result, the incompetent will tend to grossly overestimate their skills and abilities. \hbox{[\hskip 2pt\ldots]} Not only do these people reach erroneous conclusions and make unfortunate choices, but their incompetence robs them of the metacognitive ability to realize it.''\end{quote}
+
+Unlike many skills (skating, brain surgery, \ldots) programming, typical of much engineering, is one where errors can go unnoticed for long periods of time --- things seem to work nicely right up to the moment they fail. The worse programmers are, the more trivial bugs they tend to make, but trivial bugs are easy to find so, ironically, being a poor programmer \emph{increases\/} one's self-assessment because debugging seems very productive. It is easy for poor programmers and their associates to believe they are better than they actually are. 
+%This is fertile ground for the better-than-average bias \cite{dunning-kruger}.
+
+It sounds harsh to call programmers incompetent, but challenged with the complexity of programs and the complexity of the domains programs are applied in, we are all incompetent and succumb to the limitations of our cognitive resources, suffering blindspots in our thinking \cite{fixit}. We \emph{all\/} make mistakes we are unaware of. If we do not have the benefit of professional qualifications that have assessed us objectively, we generally have a higher opinion of our own competence than is justified.
+
+{Everyone is subject to Human Factors (including the author of the present paper, e.g., as discussed in \cite{enigma}): for instance, the standard cognitive bias of confirmation bias encourages us to look for bugs when code fails to do what is expected and then debug it to produce better results, but if code generates expected results not to bother to debug it further. This of course tends to make code increasingly conform to prior expectations, whether or not those expectations are scientifically justified. Typically, there was no prior specification of the code, so the code should be right, especially after all the debugging to make it ``correct''! Thus coding routinely suffers from HARKing (Hypothesizing After the Results are Known \cite{harking}), a methodological trap widely recognized in statistics.}
+
+Computers themselves are also a part of the problem. Na\"\i vely modifying a program (as may occur during debugging) typically makes it more complex, more \emph{ad hoc}, and less scrutable. Programs can be written so that it is not possible to determine what they do or how they do it (whether deliberate obfuscation or accidentally), except by running them, if indeed it is possible to exactly reproduce the necessary context to do so \cite{framework}. The point is, introducing bugs should be avoided so far as possible in the first place, and programs should routinely have assertions and other methods to detect those bugs that are introduced (see this paper's \supplement\ for more discussion of standard programming methodologies).
+\fi
+
+\section{State of the art in pandemic modeling}
+A review of epidemic modeling \cite{science-review} says, ``we use the words `computational modelling' loosely,'' and then, curiously, the review discusses exclusively mathematical modeling, implying that for the authors, and for the peer reviewers, there is no conscious role for code or computation as such. It appears that the new insights, advances, rigor, and problems that computers bring to research are not considered relevant. 
+
+A systematic review \cite{diagnosis-reviews} of published COVID models for individual diagnosis and prognosis in clinical care, including apps and online tools, noted the common failure to follow standard TRIPOD guidelines \cite{tripod}. (TRIPOD guidelines ignore code completely.) The review \cite{diagnosis-reviews} ignored the mapping from models to their implementation, yet if code is unreliable, the model \emph{cannot\/} be reliably used, and cannot be reliably interpreted. It should be noted that flowcharts, which the review did consider, are programs intended for direct human use. Flowcharts, too, should be designed as carefully as code, for exactly the same reason: it is hard to program reliably. 
+
+A high-profile 2020 COVID-19 model \cite{nature-summary,ICmodel} uses a modified 2005 computer program \cite{avianFluModel,originalICmodel} for H5N1 in Thailand; it did not model air travel or other factors required for later western COVID-19 modeling. The 2020 model forms part of a series of papers \cite{ICmodel,avianFluModel,originalICmodel} none of which provide details of their code. 
+
+A co-author disclosed \cite{tweet} that the code was thousands of lines long and was undocumented C code. As Ferguson, the original code author, noted in an interview, 
+
+\begin{quote}\raggedright
+\setbox0=\hbox{``}
+\sf\hskip -\wd0\box0 
+For me the code is not a mess, but it's all in my head, completely undocumented. Nobody would be able to use it~\ldots
+'' \cite{ferguson-interview}\end{quote}
+
+This comment was made by a respected, influential world-leading scientist, with many peer-reviewed publications, a respectable $h$-index\footnote{$h$-index: the largest value of $h$ such that at least $h$ papers by the author have each been cited at least $h$ times. The figure cited for Ferguson was obtained from Google Scholar on 20 January 2022. (Typical $h$ values vary by discipline.)} of 93. Ferguson should be well aware of the standards of coding used in at least his own field. This comment, quoted above, is therefore likely to be representative of the standards of the field as a whole.
+
+Ferguson's admission is tantamount to saying that the published scientific findings are not reproducible.\footnote{A constructive discussion of software engineering approaches to reproducibility can be found in \cite{basic-reproducibilty}.} This is problematic, especially as the code would have required many non-trivial modifications to update it for COVID-19 with different assumptions; moreover, the code would have had to have been updated very rapidly in response to the urgent COVID-19 crisis. If this C code had been made available for review, the reviewers would not have known how to evaluate it without the relevant documentation. It is, in fact, hard to imagine how a large undocumented program could have been repeatedly modified over fifteen years without becoming incoherent. If code is undocumented, there would be an understandable temptation to modify it arbitrarily to get desired results; worse, without documentation and proper commenting, it is methodologically impossible to distinguish legitimate attempts at debugging from merely fudging the results. In contrast, if code is properly documented, the documentation defines the original intentions (including formally using mathematics to do so), and therefore any modifications will need to be justified and explained --- or the theory revised.
+
+The programming language C which was used is not a dependable language; to develop reliable code in C requires professional tools and skills. Moreover, C code is not portable, which limits making it available for other scientists to use safely (C notoriously gets different results with different compliers, libraries, or hardware). The \supplement\ discusses these issues further.
+
+Ferguson, author of the code, says of the criticisms of his code, ``However, none of the criticisms of the code affects the mathematics or science of the simulation'' \cite{thumbs-up}. Indeed. The problem the current paper is raising is that the theoretical epidemiology may be fine, but if it is not mapped into code that correctly implements the models, then the program's output cannot be relied on without independent evidence. In science, this is the normal requirement of \emph{reproducibility}.
+
+The code in \cite{nature-summary,ICmodel} has been ``reproduced,'' as reported in \emph{Nature\/} \cite{codecheck,thumbs-up}, but this so-called reproduction merely confirmed the code could be run again and produced comparable results (compared, apparently, to an Excel spreadsheet!). That can be achieved at this low level of sophistication is hardly surprising, regardless of the quality of the code. There was no scientific insight that merits the use of the word ``reproduction.'' If reproducibility is to be a useful scientific criterion, an \emph{independently\/} developed model needs to produce equivalent results (called $N$ version programming, a standard software engineering practice \cite{NVP}) like public health surely requires --- as, indeed, Ferguson's own influenza paper \cite{nvp-ferguson} argues. Meanwhile, it is a shame that using software for scientific models has enabled the bar to reproducibility, as understood by journals such as \emph{Nature}, to be lowered to a mechanical level that is only sufficient to detect some forms of dishonesty, as opposed to methodological limitations, which is the point of reproducing work.
+
+Because of the recognized importance of the Ferguson paper, a project started to document its code  \cite{refactoring}.\footnote{The system is open source, available at \url{github.com/mrc-ide/covid-sim} version (19 July 2021). It is
+\newcount\u
+\newcount\v
+\newcount\w
+\newcount\frac
+% expand generated-covidsimSummary.tex
+25
+% end expanding generated-covidsimSummary.tex
+kLOC (thousands of lines of code) written in C++ with Python, R, sh, YML/JSON, etc, not C\@.}
+Documenting the code now may describe what it does, \emph{including\/} its bugs, but it is unlikely to explain what it was intended to have done. If nothing else, as the code is documented, bugs will be found, which will then be fixed (refactoring), and so the belatedly-documented code will not be the code that was used in the published models. It is well-known that documenting code helps improve it, so it is surprising to find an undocumented model being used in the first place. The revised code has now been published, and it has been heavily criticized \citeeg{bad-code}, supporting the concerns expressed in the present paper.
+
+Some epidemiology papers \citeeg{pseudo} publish models in pseudo-code, a simplified form of programming. Pseudo-code looks deceptively like real code that might be copied to try to reproduce it, but pseudo-code introduces invisible and unknown simplifications. Pseudo-code, properly used, can give a helpful impression of the overall approach of an algorithm, certainly, but pseudo-code alone is not a surrogate for code: using it is arguably even worse than not publishing code at all. Pseudo-code is not precise enough to help anyone scrutinize a model; copying pseudo-code introduces bugs. An extensive criticism of pseudo-code, and discussion of tools for reliable publication of code can be found elsewhere \cite{relit}. {The \supplement\ provides further discussion of reproducibility.}
+
+\subsection{Science beyond epidemiology}
+A short 2022 summary of typical problems of software engineering impacting science generally appears in \emph{Nature} \cite{nature-review}, describing diverse and sometimes persistent problems encountered during research in cognitive neuroscience, psychology, chemistry, nuclear magnetic resonance, mechanical and aerospace engineering, genomics, oceanography, and in migration. The paper \cite{nature-review} unfortunately makes some misleading comments about the simplicity of software engineering, e.g., ``If code cannot be bug-free, it can at least be developed so that any bugs are relatively easy to find.''
+
+Guest and Martin \cite{psychological-modeling} in another 2022 paper promote the use of computational modeling, arguing that through writing code, one debugs scientific thinking. Psychology, Guest and Martin's focus, has an interesting relationship with software, as computational models are often used to model cognition and to compare results with human (or animal) experiments \cite{psychological-modeling}. In this field, the computation does not just generate results, but is used to explicitly explore the assumptions and structures of the scientific frameworks from which the models are derived. Computational models can even be used to perform experiments that would be unethical on live participants, for instance involving lesioning (damaging) artificial neural networks. It should be noted that such use of cognitive models is controversial --- on the one hand, the software allows experiments to be (apparently) precisely specified and reproduced, but on the other hand in their quest for psychological realism the models themselves have become very complex and it is no longer clear what the science is precisely (e.g., ACT-R, one widely-used theory for simulating and understanding human cognition, has been under development since 1973 and is now a 120 kLOC Common LISP and Python system \cite{actr}; and of course any paper using ACT-R would require additional code on top of the basic framework).
+
+The psychology paper \cite{psychological-modeling} demonstrates building an example computational model from scratch to illustrate their own framework of computational science. In fact their example model has no psychological content: a simple numerical test is performed, but the psychology of why the result is counterintuitive --- the psychological content --- is not explored. Be that as it may, they develop a mathematical specification and discuss a short Python program they claim implements it. 
+
+The Python code is presented without derivation or discussion, as if software engineering is trivial. The program listed in the paper certainly runs without error (ignoring typographical errors due to the journal's publishers), but ironically it does not implement the mathematical specification explicitly provided for it, thus unintentionally undermining the argument of the paper. One might argue the bug is trivial (the program prints \texttt{False} when it should print \texttt{b}), but to dismiss such a bug would be comparable to dismissing a statistical error that says $p=\mbox{\tt False}$ which would be nonsense --- if a program printed that, one would be justified in suspecting the quality of the entire program and its analyses. Inadvertently, it would seem, then, that the paper shows that just writing code does not help debug scientific thinking: instead, code must first be derived in a rigorous way and actually be correct (at least when finished). Otherwise, computational modeling with inadequate software engineering will very likely introduce errors into scientific thinking.
+
+    Code generally for any field of scientific modeling needs to be carefully documented and explained because all code has tacit assumptions, bugs and cybersecurity vulnerabilities \cite{Ben,nature-review,se-bias} that, if not articulated \emph{and properly managed}, can affect results in unknown ways that may undermine any claims. People reading the code will not know how to obtain good, let alone better results, because they do not know exactly what was intended in the first place. The problem is analogous to the problem of failing to elaborate statistical claims properly: failure to do so suggests that the claims may have unknown limitations or even downright flaws.
+
+Even good quality code has, on average, a defect every 100 lines --- and {such a low} rate is only achieved by experienced industrial software developers \cite{ourReview}. World-class software can attain maybe 1 bug per 1,000 lines of code. Code developed for experimental research purposes will have higher rates of bugs than professional industrial software, because the code is less well-defined and evolves as the researchers gain new insights into their models. In addition, and perhaps more widely recognized, code --- especially but not exclusively mathematical code --- can be subject to numerical errors \cite{hamming}. It is therefore inevitable that typical modeling code has many bugs (reference \cite{NVP} is a slightly-dated but very insightful discussion). Such bugs undermine confidence in model results. 
+
+Only if there is access to the \emph{actual\/} code and data (in the specific version that was used for preparing the paper) does anyone know what researchers have done, but merely making code available (for instance, providing it in their \supplement\ with papers, putting it in repositories, or using open source) is not sufficient. It is noteworthy that some papers disclosed that they had access to special hardware.
+
+Some COVID-19 papers \citeeg{unfinished} make unfinished, incomplete code available. While some \citeeg{unfinished,lancet-unfinished} do make what they call ``documented'' code available, they provide no more than superficial comments. This is \emph{not\/} documentation as properly understood. Such comments do not explain code, explain contracts, nor explain algorithms. Some readers of the present paper may not recognize these technical software terms; contracts, for instance, originated in work in the 1960s \cite{hoare}, and are now well-established practice in reliable programming {(see the \supplement\ for a checklist of many relevant, professional software engineering concepts and resources)}.
+
+If full code is made available, it may be technically ``reproducible,'' but the scientific point is to be able to understand and challenge, potentially refute, the findings; to do that, much more is required than merely being able to run the code \cite{notebooks,popper}.
+
+Even if a computer can run it, badly-written code (as found in \emph{all\/} the research reviewed in the present paper {and indeed in computer science research itself \cite{machine-learning-reproducibility}}) is inscrutable. Only if there is access to \emph{adequate\/} documentation can anyone know what the researchers \emph{intended\/} to do. Without all three (code, data, adequate documentation), there are dangers that a paper simplifies or exaggerates the results reported, and that omissions, bugs and errors in the code or data, generally unnoticed by the paper's authors and reviewers, will have affected the results they report \cite{relit}. 
+
+Making outline code (including pseudo-code) available without proper documentation and without discussing its limitations is unethical: it encourages others to reproduce and build on poor work. 
+
+\makeatletter
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{#1: #2}%
+  \ifdim \wd\@tempboxa >\hsize
+    \textbf{#1}: #2\par
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother
+
+\begin{table*}
+\begin{center}
+\begin{tabular}{|rl|} \hline
+\the\numberOfJournals&Journals\\
+\the\dataN&Papers:\\
+\tabularJournalBreakdown
+\the\countAuthors&Published authors\\
+\the\totalPages&Published journal pages\\
+July 2020&Sample month\\ \hline
+\end{tabular}
+\end{center}
+
+%\newcount \total
+%\total=\dataN
+%\multiply \total by 4 % three reviewers, one editor
+%\advance \total by \countAuthors
+%\the\total\
+%leading scientists assuming authors, 1 editor, and 3 reviewers per paper, but not counting acknowledged colleagues et al, covering  (plus appendices and supporting material) in total.
+%
+\caption{Overview of peer-reviewed paper sample.}
+\label{table-overview}
+\end{table*}
+
+\begin{table*}
+\begin{center}\normalsize
+% expand generated-summary-table.tex
+\begin{tabular}{|rrrc|}\hline
+Number of papers sampled relying on code&32&100\%&\\\hline\hline
+\multicolumn{4}{|l|}{\textbf{Access to code}}\\
+Have some or all code available&12&38\%&\\
+Some or all code in principle available on request&8&25\%&\\
+No code available&12&38\%&\\\hline
+\multicolumn{4}{|l|}{{\textbf{Evidence of basic good software engineering practice}}}\\
+{Evidence program designed rigorously}&{0}&{0\%}&\\
+{Evidence source code properly tested}&{0}&{0\%}&\\
+{Other methods, e.g., independent coding methods}&{1}&{3\%}&\\\hline
+\multicolumn{4}{|l|}{\textbf{Documentation and comments}}\\
+Substantial code documentation and comments&2&6\%&\\
+Comments explain some code intent&3&9\%&\\
+Procedural comments (e.g., author, date, copyright)&10&31\%&\\
+No usable comments&17&53\%&\\\hline
+\multicolumn{4}{|l|}{\textbf{Repository use}}\\
+Code repository (e.g., GitHub) --- 1 was empty&10&31\%&\\
+Data repository (e.g., Dryad or GitHub)&9&28\%&\\\hline
+\multicolumn{4}{|l|}{\textbf{Adherence to journal code policy (if any)}}\\
+Papers published in journals with code policies&26&81\%&\\
+Clear breaches of code policy (if any) & 11&42\%&($N=26$)\\
+\hline\end{tabular}
+% end expanding generated-summary-table.tex
+\end{center}
+
+\caption{Summary of survey results.}
+\label{table-summary}
+\end{table*}
+
+\begin{table*}[t]
+
+\def\reponame#1#2{{\tt #1} \csname cite-#2\endcsname}
+
+\expandafter\def\csname pagelength-covid-sim\endcsname{20}
+\expandafter\def\csname cite-covid-sim\endcsname{\cite{ICmodel}}
+
+% divide #1 by #2
+\newcount \uu
+\newcount \vv
+\def\makeAverage#1#2{%
+	\uu=#1
+	\vv=#2
+	\divide \uu by \vv
+	\the\uu
+}
+
+% expand generated-clone-date.tex
+% date generated by running generated-allGitRepos.sh downloading Git repos
+\def\clonedate {31 January 2022}
+\def\cloneyear {2022}
+\def\clonemonth {01}
+% end expanding generated-clone-date.tex
+\begin{center}
+
+\expandafter \advance \gitPages by \csname pagelength-covid-sim\endcsname
+
+% expand generated-repos.tex
+\begin{tabular}{|l|r|rrr@{\hskip .75ex}l|}\hline
+&\multicolumn{1}{c|}{\bf PDF paper}&\multicolumn{4}{c|}{\bf Repository code \& data}\\ \cline{2-6}
+\multicolumn{1}{|c|}{\bf Github repository}&\multicolumn{1}{c|}{\bf Number}&\multicolumn{1}{c}{\bf Number}&\multicolumn{1}{c}{\bf Code}&\multicolumn{2}{c|}{\bf Data}\\
+\multicolumn{1}{|c|}{\bf and paper citation}&\multicolumn{1}{c|}{\bf of pages}&\multicolumn{1}{c}{\bf of files}&\multicolumn{1}{c}{\bf kLOC}&\multicolumn{2}{c|}{\bf bytes} \\ \hline\hline
+\reponame{AI-CDSS-Cardiovascular-Silo}{AI-CDSS-Cardiovascular-Silo} & \csname pagelength-AI-CDSS-Cardiovascular-Silo\endcsname & \commarise{206} & 143 & 64&Mb \\
+\reponame{blast-ct}{blast-ct} & \csname pagelength-blast-ct\endcsname & \commarise{44} & 2 & 87&Mb \\
+\reponame{covid-sim}{covid-sim} & \csname pagelength-covid-sim\endcsname & \commarise{229} & 25 & 734&Mb \\
+\reponame{lactModel}{lactModel} & \csname pagelength-lactModel\endcsname & \commarise{20} & 2 & 165&kb \\
+\reponame{LRM}{LRM} & \csname pagelength-LRM\endcsname & \commarise{125} & 8 & 2&Mb \\
+\reponame{manifold-ga}{manifold-ga} & \csname pagelength-manifold-ga\endcsname & \commarise{11} & 1 & \multicolumn{2}{c|}{---} \\
+\reponame{MetricSelectionFramework}{MetricSelectionFramework} & \csname pagelength-MetricSelectionFramework\endcsname & \commarise{44} & 4 & 236&kb \\
+\reponame{PENet}{PENet} & \csname pagelength-PENet\endcsname & \commarise{115} & 8 & 3&Mb \\
+\reponame{philter-ucsf}{philter-ucsf} & \csname pagelength-philter-ucsf\endcsname & \commarise{1987} & 13 & 32&Mb \\
+\reponame{PostoperativeOutcomes\_RiskNet}{PostoperativeOutcomes.RiskNet} & \csname pagelength-PostoperativeOutcomes.RiskNet\endcsname & \commarise{1} & --- & \multicolumn{2}{c|}{---} \\
+\reponame{SiameseChange}{SiameseChange} & \csname pagelength-SiameseChange\endcsname & \commarise{5} & 1 & 1&kb \\
+\hline \multicolumn{1}{|r|}{{\bf Average} ($N=11$)}&\makeAverage{\the\gitPages}{11}&253& 19& 84&Mb\\
+\hline \end{tabular}
+% end expanding generated-repos.tex
+\vskip 1ex
+\small Citation numbers $>$ \MaxMainPaperCitationNumber\ can be found in the \supplement
+\\
+\small Repository clones downloaded and automatically summarized \clonedate
+\end{center}
+\newcount \pubdelayinmonths
+\pubdelayinmonths=\cloneyear
+\advance \pubdelayinmonths by -2020
+\multiply \pubdelayinmonths by 12
+\advance \pubdelayinmonths by -4 % published in April
+\advance \pubdelayinmonths by \clonemonth
+\caption{Sizes of repositories, with approximate sizes of code (in kLOC) and data for all available GitHub repositories reviewed in the survey, plus \texttt{covid-sim} \cite{ICmodel} for comparison. Sizes are approximate because in all repositories code and data are conceptually interchangeable (an issue explained in the \supplement), so choices were made in the survey to avoid double-counting. Many repositories rely on downloading additional code and data, which is not counted in the table as the additional required material is not in the repository cited in the paper. Paper \csname cite-PostoperativeOutcomes.RiskNet\endcsname\ has nothing in its repository except a single file still saying ``Code coming soon...'' despite, at the time of cloning and checking repositories, \the\pubdelayinmonths\ months had already elapsed since the paper referring to the code was published.}
+\label{table-repo-summary}
+\end{table*}
+
+\section{A pilot survey of peer-reviewed research relying on code}
+\label{survey-section}
+The problems of unreliable code are not limited to COVID-19 modeling papers, which, understandably, were perhaps rushed into publication. For instance, a 2009 paper reporting a model of H5N1 pandemic mitigation strategies \cite{flu-model} provides no details of its code. Its \supplement, which might have provided code, no longer exists.
+
+Almost all scientific papers rely on generic computer code (for statistics or for plotting graphs, and so on) but what is of interest is whether, and, if so, to what extent, code developed \emph{specifically\/} as part of or to support a research contribution can be understood by colleagues and scientifically scrutinized. We therefore undertook a survey of recent papers in leading peer reviewed journals.
+
+\subsection{Methodology}
+A sample of \plural{\dataN}{recent paper} covering a broad range of science were selected. The papers were selected from the leading journals \journalBreakdown. 
+
+The two journals \emph{Nature Digital Medicine\/} and \emph{Lancet Digital Health\/} were selected as leading specialist science journals in an area where correctness of scientific modeling has safety-critical implications, and \emph{Royal Society Open Science\/} was selected as a leading general science journal. All papers sampled are Open Access, although for some papers some or all of the associated data has restricted access. Table \ref{table-overview} is an overview of the sample.  
+
+Papers were selected from the journals' July 2020 new online listings where the paper's title implied that code had been used in the research. Commentary, correspondence, and editorials were excluded. The sample is intended to be large enough and objective enough to avoid the selection bias in the papers that motivated the current paper (the sample excludes the motivating papers discussed above as they were not published in the sampled journals), so that the sample may be considered to fairly represent what the editorial and the broader peer review community in leading journals considers to be good practice for computationally-based science. The selection criterion selected papers where the title implies the authors themselves considered code to be a significant component of the scientific contribution, and, indeed, all sampled papers relied on code in their research. 
+
+The sample may be considered to be small given the importance of the research questions and relative to the diversity and huge number of scientific papers,\footnote{Using Google Scholar it is estimated that over 40,000 papers meeting the title criteria were published in the month of July 2020.} but (\emph{a\/}) the selected journals are clearly leading scientific journals that conform to and set the standards for scientific publishing practice generally; (\emph{b\/}) as will be clear from the following discussion, there is little variation across the sample, which implies that a larger sample would not have been usefully more insightful; and (\emph{c\/})
+the survey is not intended to be a formal, systematic sample of scientific research in general, but is intended to be sufficient to dispel the possibility that the issues described above earlier in this paper are isolated practice, perhaps an idiosyncrasy of a few authors or of a particular field, or perhaps due to a chance selection bias (e.g., the Ferguson papers were reviewed above because of Ferguson's public profile and the importance of dependable pandemic research, but they might have just happened to be software engineering outliers); (\emph{d\/}) finally, the code/data policies of the journals condoned at the time of the sample and continue to condone in 2022 poor practice (see \supplement\ section  \ref{supplementary-journal-policies-section}).
+
+The \the\dataN\ papers cover a range of specialities, and it is unlikely that non-specialists can properly assess the code from the point of view of the specialism, not least because many of the papers sampled require specialist code libraries (and in the right combinations of versions) to be run that not everyone will have or be able to install. Code quality was therefore assessed by reading it --- due to the paper authors' complex and/or narrative interpretation of data, code, data and hardware/operating system dependencies, no assessment was made whether the code provided actually reproduced a paper's specific claims. Indeed, if we trust the papers that their code was actually run and provides the results as reported, then merely running their code (when provided in full) merely checks the paper/code consistency, but will not assess the quality or reliability of the code.
+
+%Assessing code quality has been a lively topic in software engineering for decades, and has international standards (ISO/IEC 9126, updated to ISO 25000). Here, code is assessed\footnote{The author of this paper has been assessing undergraduate and postgraduate computer science student code since the 1970s, using double marking and moderation.} using the n criteria of \cite{software-quality} as a marking scheme with scores out of 100/n.
+
+The full methodology, data and analysis, as well as many software engineering and Human Factors techniques to help improve reliability and reproducibility used in the preparation of the present paper, are provided in the \supplement, which is also available from a repository (see details at the end of this paper).
+
+%\emph{It is important that this survey is not taken as an evaluation of any specific paper: individual measurements are inevitably noisy. Instead, the aim is to form a view of scientific publishing generally. Mean scores, as summarized in table \ref{table-summary} and \ref{table-quality}, are more reliable measurements than the individual paper score breakdowns provided in the \supplement.}
+
+\subsection{Summary of results}
+The sample selection criteria necessarily identified scientific research with software engineering contributions. 
+
+No evidence of verification and validation was seen. There was only one example of basic software engineering methods, namely independent coding. There was no evidence of any critical assessment of code, suggesting that scientists writing papers take it for granted that their code works as they intend. No competent programmer would take it for granted that their code was correct without following rigorous methods, such as formal methods, regression testing, test driven design, etc. (See the \supplement\ for definitions and a list of standard methods.)
+
+Much code depended on substantial manual intervention to compile it. All code (where actually provided) was sufficiently complex that, if it was supposed to be used or scrutinized, required more substantial documentation than was provided.
+
+On the whole, on the basis of the sample evidence, scientists do not make their code available, and rarely provide adequate documentation (see table \ref{table-summary}). 
+
+It is noteworthy that the papers themselves, typically a few published pages, are very small compared to the code they rely on; the papers represent much less authoring effort than the code and data that they rely on for their claims and correctness (see table \ref{table-repo-summary}). With one minor exception (which may have been accidental), no papers reported anything on any software engineering methodologies, which is astonishing given the scale of some of the software effort supporting the papers (table \ref{table-repo-summary}). 
+
+None of the papers used any specific software engineering methods, such as open source \cite{open-source} and other standard methodologies provided in the \supplement, to help manage their processes and help improve quality. Although software stability \cite{stability} is a relatively new concept, understood as methodologies, such as portability, to provide long-term value of software, it is curious that none of the papers made any attempt at stability (however understood) despite the irony that all the papers were published in archival journals.\footnote{Reason this paper does not directly assess the quality of software in the surveyed papers include: many papers did not provide complete software; it was not possible to find correct versions of all software systems to run the models; also, no papers provided adequate test suites so that correct operation of software could be confirmed objectively.}
+
+\emph{Nature Digital Medicine\/} and \emph{Royal Society Open Science\/} have clear data and code policies (see \supplement\ section \ref{supplementary-journal-policies-section}), but actual practice falls short: \the\countHasBreach\ out of the \plural{\countHasPolicy}{paper} (\pc{\countHasBreach}{\countHasPolicy}) published in them and sampled in the survey manifestly breach their code policies. In contrast, \emph{Lancet Digital Health\/}, despite substantial data policies, has no code policy at all to breach. The implication of these results is that the fields, and the editorial expertise of leading journals, misunderstand and dismiss code policies, or they are technically unable to assess them --- and, if so, they also fail to say they are unable to assess them. This lack of expertise is consistent with the limited awareness of software engineering best practice that is manifest in the published papers (and resources) themselves.
+
+Code repositories were used by \plural{\countUsesVersionControlRepository}{paper} (\pc{\countUsesVersionControlRepository}{\dataN}), though \plural{\countNoCodeInRepo}{paper} in the survey claimed to have code on GitHub but there was no code in the repository, only the comment ``Code coming soon\ldots'' (checked at the time of doing the review, then double-checked as detailed in the references in the \supplement, as well as most recently on % expand generated-clone-date.tex
+% date generated by running generated-allGitRepos.sh downloading Git repos
+\def\clonedate {31 January 2022}
+\def\cloneyear {2022}
+\def\clonemonth {01}
+% end expanding generated-clone-date.tex
+while checking table \ref{table-repo-summary}): in other words, the repository had never been used and the code could not been looked at, let alone reviewed.\footnote{GitHub records show that it had not been deleted after paper submission.} This is a pity because GitHub provides help and targeted warnings and hints like ``No description, website, or topics provided [\ldots] no releases published.'' The lack of code is ironic: the paper concerned \csname cite-PostoperativeOutcomes.RiskNet\endcsname\ has as its title ``\emph{Development and validation\/} of a deep neural network model [\ldots]'' (our emphasis), yet it provides no code or development processes for the runnable model it claims to validate, so nobody else (including referees) can check any of the paper's specific claims.
+
+Sizes of all GitHub repositories are summarized in table \ref{table-repo-summary} (since many papers not using GitHub do not have all code available, non-GitHub code sizes are not easily compared and are not listed). 
+
+Overall, there was no evidence that any code had been developed carefully, {let alone by using recognized professional software engineering methods}. In particular, 
+\ifnum \countCodetested=0
+no papers
+\else only \plural{\countCodetested}{paper}
+\fi in the survey provide any claims or evidence of effective testing, for instance with evidence that tests were run on clean builds. {While it may sound unrealistic to ask for evidence on software quality in a paper written for another field of science, the need is no less than the need for standard levels of rigor in statistics reporting, as discussed in the opening of this paper.}
+
+Data repositories (the Dryad Digital Repository, Figshare or similar) were used by \plural{\counthasDataRepository}{paper} to provide structured access to their data. Unlike GitHub, which is a general purpose repository, Dryad has scientifically-informed guidelines on handling data, and all papers that used Dryad provided more than just their raw data --- they provided a little, sometimes substantial, documentation for their data. At the time of writing, Dryad is not helpful for managing code --- its model appears to be founded on the requirement that once published papers must refer to exactly the data they used, so further refinements on the data (or code) are taboo, even with version control.
+
+Key findings from the survey are summarized in tables \ref{table-summary} and \ref{table-repo-summary}, and are discussed in greater detail in the \supplement. 
+
+\section{Discussion}
+Effective access to quality code is not routine in science. Using structured repositories that provide suggestions for and which encourage good practice (such as Dryad and GitHub), and requiring their use, would be a lever to improve the quality and value of code and documentation in published papers. The evidence suggests that, generally, some but not all manually developed code is uploaded to a repository just before submitting the paper in order to ``go through the motions.'' In the surveyed papers there is no clear evidence (over the survey period) that any published code was maintained using the repositories.
+
+The \supplement\ provides a summary of the analysis and full citations for all papers in the sample.
+
+\subsection{A call to action}\label{summary}
+Computer programs are the laboratories of modern scientists, and should be used with a comparable level of care that virologists use in their laboratories --- lab books and all \cite{notebooks} --- and for the same reasons: computer bugs accidentally cultured in one laboratory can infect research and policy worldwide. Given the urgency of rigorously understanding COVID-19, any epidemic for that matter, it is essential that epidemiologists engage professional software engineers to help develop reliable laboratory methodologies. For instance, code lab books can be generated and signed easily.
+
+Software used for informing public health policy, medical research or other medical applications is \emph{critical software}. Professional critical software development, as used in aviation and the nuclear power industry, is (put briefly) based on \emph{correct by construction}: \cite{cbc} effectively, design it right first time, {supported by numerous rigorous techniques, such as formal methods, to manage error. (See extensive discussion in this paper's \supplement.)}\ Not coincidentally, these are \emph{exactly\/} the right methods to ensure code is both dependable and scrutable. Conversely, not following these practices undermines the rigor of the science.
+
+An analogous situation arises in ethics. There are some sorts of research that are ethically unacceptable, but few people have the objectivity and ethical expertise to make sound ethical judgements, particularly when it comes to assessing their own work. Misuse of data, exploiting vulnerable people, and not obtaining informed consent are typical ethical problems. National funders, and others, therefore require Ethics Boards to formally review ethical quality. Medical journals will not publish research that has not undergone appropriate ethical review. 
+
+Analogously, and supplementing Ethics Boards, Software Engineering Boards would authorize as well as provide advice to guide the implementation of high-quality software engineering. Just as journals require conflicts of interest statements, data availability statements, and ethics board clearance, we should move to epidemic modeling papers --- and in due course, all scientific papers --- being required to include Software Engineering Board clearance statements as appropriate. {Software Engineers have a code of ethics that applies to \emph{their\/} work in epidemic modeling \cite{ethics-code}.}
+
+{The present paper did not explore data, because in almost all cases the code and data were explained so poorly and archived so haphazardly it would be impossible to know whether the author's intentions were being followed.\footnote{{For the present paper, all the code, data, analysis and documents are available for download in a single zip file.}} Some journals have policies that code is available (see the \supplement), but they should require that code is not just available in principle but \emph{actually works\/} on the relevant data. Ideally, the authors should test a clean deployed build of their code and save the results. Presumably a paper's authors must have run their code successfully on \emph{some\/} data (if any, but see section \ref{on-code-data-publication} in the \supplement) at least once, so preparing the code and data in a way that is reproducible should be a routine and uncontentious part of the rigorous development of  code underpinning \emph{any\/} scientific claims. This requirement is no more unreasonable than requesting good statistics, as discussed in the opening of the paper. And the solution is the same: relevant experts --- whether statisticians or software engineers --- need to be routinely available and engaged with the science. SEBs would be a straight forward way of helping achieve this.}
+
+There need to be many Software Engineering Boards (SEBs) to ensure convenient access and oversight, potentially at least one per university. Active, professional software engineers should be on these SEBs; this is not a job for people who are not qualified and experienced in the area or who are not actively connected with the true state of the art. There are many high-quality software companies (especially those in safety-critical areas like aviation and nuclear power) who would be willing and competent to help.
+
+Open Source generally improves the quality of software. SEBs will take account of the fact that open source software enables contributors to be located anywhere, typically without a formal contractual relationship with the leading researchers. Where appropriate, then, SEBs might require \emph{local\/} version control, unit testing, static analysis {and other quality control methods for which the lead scientist and software engineer remain responsible, and may even need to sign off (and certainly be signed off by the SEB\@).}\ {Software engineering publishers are already developing rigorous badging initiatives to indicate the level of formal review of the quality of software for use in peer reviewed publications \cite{acm-artifacts}.}\ {See this paper's \supplement\ for further suggestions.}
+
+A potential argument against SEBs is that they may become onerous, onerous to run and onerous to comply with their requirements. A more mature view is that SEBs need their processes to be adaptable and proportionate. If software being developed is of low risk, then less stringent engineering is required than if the software could cause frequent and critical outcomes, say in their impact on public health policy for a nation. Hence SEBs processes are likely to follow a risk analysis, perhaps starting with a simple checklist. {There are standard ways to do this, such as following IEC 61508:2010 \cite{redmill,iec61508} or similar. Following a risk analysis (based on safety assurance cases, controlled documents and so on, if appropriate to the domain), the Board would focus scrutiny where it is beneficial without obstructing routine science.}
+
+A professional organization, such as the UK Royal Academy of Engineering ideally working in collaboration with other national international bodies such as IFIP, should be asked to develop and support a framework for SEBs. SEBs could be quickly established to provide direct access to mature software engineering expertise for both researchers and for journals seeking competent peer reviewers. In addition, particularly during a pandemic, SEBs would provide direct access to their expertise for Governments and public policy organizations. Given the urgency, this paper recommends that \emph{ad hoc\/} SEBs should be established for this purpose.
+
+SEBs are a new suggestion, providing a supportive, collaborative process. Methodological suggestions already made in the literature include open source and specific software engineering methodologies to improve reproducibility \cite{basic-reproducibilty,open-source}. While \cite{ABCs-SE} provides an insightful framework to conceptualize approaches and compare their merits, there is clearly scope for much further research to provide an evidence base to motivate and assess appropriate interventions to help scientists do more rigorous and effective software engineering to support their research and publishing. These and further issues are discussed at greater length in the \supplement. 
+
+\subsection{Suggestions for further work}
+
+Although this study of software engineering in scientific research (specifically, in peer reviewed publications) was necessarily interpretive in nature, the corpus of data (namely, the selected \the\dataN\ papers) was rigorously gathered so that it could be later updated or extended in size or scope. However, the insights appear to be general.
+
+Further work to extend the scope of the survey beyond the basic requirements of the present paper is of course worthwhile, but  the following cases (listed in the next few paragraphs) suggest that the problem is widespread. We argue, then, that we should be focusing effort on avoiding problems and considering proposed solutions (see section \ref{summary}), not just assessing the problems highlighted in this paper with increasing scale or rigor. 
+
+\label{jvs-policy}
+\begin{enumerate}\raggedright
+\item
+The journal \emph{The Lancet\/} published and then subsequently retracted a paper on using hydroxychloroquine as a treatment for COVID \cite{lancet-retracted}. The paper was found to rely on fraudulent data \cite{science-lancet1,science-lancet2}. \emph{The Lancet\/} subsequently tightened its data policies \cite{lancet-learning}, for instance to require that more than one author must have directly accessed and verified the data reported in the manuscript. Curiously, the original (now retracted) paper declares 
+\begin{quote}\sf
+\setbox0=\hbox{``}\hskip -\wd0\copy0 \ldots\ all authors participated in critical revision of the manuscript for important intellectual content. MRM and ANP supervised the study. All authors approved the final manuscript and were responsible for the decision to submit for publication.'' \end{quote} 
+which seems to suggest that several original authors of the paper would have been happy to make the new declarations --- and, of course, if there is fraud (as was established in this case) it seems likely that authors who make the new declarations of accessing and verifying data are unlikely to make reliable declarations. 
+
+\hskip 1em\emph{The Lancet\/} still has no code publication policy (see the \supplement), and for more than one author to have ``direct access'' to the data they are very likely to access the data through the same code. If the code is faulty or fraudulent, an additional author's confirmation of the data is insufficient, and there is at least as much reason for code to be fraudulent (not least because code is much harder to scrutinize than data). Code needs more than one author to check it, and ideally reviewers independent of the authors so they do not share the same assumptions and systems (for instance shared libraries, let alone potential collusion in fraud).
+
+\item 
+In 2020 the \emph{Journal of Vascular Surgery\/} published a research paper \cite{jvs1}, which had to be retracted on ethical grounds \cite{jvs2,jvs3}: it was a na\"\i ve study and the editorial process was unaware of digital norms. Notably, the paper fails to provide access to its anonymized data (with or without qualification), and fails to define the data anonymization algorithm, and also fails to even mention the code that it developed and used to perform its study. The journal's data policy is itself very weak (the authors ``should consider'' including a footnote to offer limited access to the data) and, despite basic statistics policies, it has no policy at all for code (see \supplement\ section \ref{supplementary-journal-policies-section}). Ironically, the retracted article \cite{jvs1} is still online (as of August 2020) with no reference to any editorial statement to the effect that it has been retracted, despite this being trivial --- and necessary --- to achieve in the widely-accessed online medium.
+
+\item
+Medical research often aims to establish a formula to define a clinical parameter (such as body mass index, BMI) or to specify an optimal drug dose or other intervention for treatment. These formulas, for which there is conventional clinical evidence, are often used as the basis for computer code that provides advice or even directly controls interventions. Unfortunately a simple formula as may be published in a medical paper is \emph{never\/} sufficient to specify code to implement it safely. For example, clinical papers do not need to evaluate or manage user error when operating apps, and therefore the statistical results of the research will be idealistic compared to the outcomes using an app under real conditions --- which is what the clinical research is supposedly for. A widespread bug (and its fix) that is often overlooked is discussed in \cite{numerals}; the paper includes an example of a popular clinical calculator (based on published clinical research) that calculated nonsense, and potentially dangerous, results. The paper \cite{fda} summarizes evidence that such bugs, ignored by the clinical research literature, are commonplace in medical systems and devices.
+\end{enumerate}
+
+\section{Conclusions}
+We need to improve the quality of software engineering that supports science. While this paper was originally motivated by Ferguson's public statements \citeeg{tweet,ferguson-interview}, the wider evidence reviewed in shows that current coding practice makes for poor science. In the current pandemic, scientific modeling, such as track and trace \cite{excel-fiasco}, balancing COVID mutation pressures against vaccine shortages and delays between vaccinations \cite{science-delays}, etc, drive public policy and have a direct impact on quality of life.
+
+The challenge to scientific research is to manage software development to reduce the unnoticed and unknown impacts of bugs and poor programming practices. Computer code should be explicit, accessible (well-structured, etc), and properly documented. Papers should be explicit on their software methodologies, limitations and weaknesses, just as Whitty expressed more generally about the standards of science \cite{whitty}. Professional software methodologies should not be ignored.
+
+Unfortunately, while programming is easy, and is often taken for granted, programming \emph{well\/} is very difficult \cite{fixit}. We know from software research than ordinary programming is very buggy and unreliable. Simply put, without quality code and data, research is not open to scrutiny, let alone proper review, and its quality is suspect. Some have argued that availability of code and data ensure research is reproducible, but that is na\"\i ve criterion:  computer programs are easy to run and reproduce results, but being able to reproduce something of low quality does not make it more reliable \cite{reproducibility,relit,popper}. 
+
+Software Engineering Boards (as introduced in this paper) are a straight forward, constructive and practical way to support and improve computer-based science. This paper's \supplement\ summarizes the relevant professional software engineering practice that Software Engineering Boards would use, including discussing how and why software engineering helps improve code reliability, dependability, and quality.
+
+\section*{Supporting information}
+\newcount\csrefcount \csrefcount=0
+\def\csref{\global\advance\csrefcount by 1}
+\def\ethics#1{\paragraph*{Ethics}#1}
+\def\ack#1{\paragraph*{Acknowledgments}#1}
+\def\dataaccess#1{\paragraph*{Data and code access}#1}
+\def\aucontribute#1{\paragraph*{Author contribution}#1}
+\def\competing#1{\paragraph*{Competing interests}#1}
+\def\funding#1{\paragraph*{Funding}#1}
+
+\ack{The author is very grateful for comments from: \csref Ross Anderson, \csref Nicholas Beale, \csref Ann Blandford, \csref Paul Cairns, \csref Rod Chapman, \csref Jos\'e Corr\'ea de~S\`a, \csref Paul Curzon, \csref Jeremy Gibbons, \csref Richard Harvey, \csref Will Hawkins, \csref Ben Hocking, \csref Daniel Jackson, \csref Peter Ladkin, \csref Bev Littlewood, \csref Paolo Masci, Stephen Mason, \csref Robert Nachbar, \csref Martin Newby, \csref Patrick Oladimeji, \csref Claudia Pagliari, \csref Simon Robinson, \csref Jonathan Rowanhill, \csref John Rushby, \csref Susan Stepney, Prue Thimbleby, \csref Will Thimbleby, \csref Martyn Thomas, and \csref Ben Wilson provided very helpful comments.}
+%\the\csrefcount\ computer science reviewers.
+
+\ethics{This article presents research with ethical considerations but does not fall not within the usual scope of ethics policies.}
+
+\dataaccess{There is a full discussion of the methodology of this paper and its benefits in the \supplement, section \ref{on-code-data-publication}. All material is available for download at \url{github.com/haroldthimbleby/Software-Enginering-Boards} (which has been tested in a clean build, etc). The data is encoded in JSON\@. JavaScript code, conveniently in the same file as the JSON data, checks (with % expand generated-data.js-errors.tex
+      30
+% end expanding generated-data.js-errors.tex
+possible types of error report) and converts the JSON data into \LaTeX\ number registers and summary tables, etc, thus making it trivial to typeset results reliably in this paper and its \supplement\ (e.g., table \ref{table-summary} in this paper) \emph{directly\/} from the data. In addition, a standard CSV file is generated in case this is more convenient to use, for instance to browse in Excel or other spreadsheet application. All data, analysis, and details of the methods used can be found in the \supplement.}
+
+\aucontribute{Harold Thimbleby is the sole author. An preliminary outline of this paper, containing no supplementary material or data, was submitted to the UK Parliamentary Science and Technology Select Committee's inquiry into UK Science, Research and Technology Capability and Influence in Global Disease Outbreaks, under reference LAS905222, 7 April, 2020. The evidence, which was not peer reviewed and is only available after an explicit search, briefly summarizes the case for Software Engineering Boards, but without the detailed analysis and case studies of the literature, etc, that are in the present paper. It is available to the public \cite{parliamentary-evidence,my-parliamentary-evidence}.}
+
+\competing{The author declares no competing interests.}
+
+\funding{This work was jointly supported by See Change (M\&RA-P), Scotland (an anonymous funder), by the Engineering and Physical Sciences Research Council [grant EP/M022722/1], and by the Royal Academy of Engineering through the Engineering~X Pandemic Preparedness Programme [grant EXPP2021\textbackslash 1\textbackslash 186]. The funders had no involvement in the research or in this paper.}
+
+\nolinenumbers
+
+% Either type in your references using
+% \begin{thebibliography}{}
+% \bibitem{}
+% Text
+% \end{thebibliography}
+%
+% or
+%
+% Compile your BiBTeX database using our plos2015.bst
+% style file and paste the contents of your .bbl file
+% here. See http://journals.plos.org/plosone/s/latex for 
+% step-by-step instructions.
+% 
+
+{\raggedright
+\initialiseBibliography{References}{1}{}
+% \bibliographystyle{plos2015} - already provided in plos-header.tex
+% expand bibliography paper-seb-main.bbl
+\begin{thebibliography}{10}
+
+\bibitem{abelson}
+Abelson RP.
+\newblock Statistics as Principled Argument.
+\newblock Lawrence Erlbaum Associates; 1995.
+
+\bibitem{fixit}
+Thimbleby H.
+\newblock Fix IT: How to see and solve the problems of digital healthcare.
+\newblock Oxford University Press; 2021.
+
+\bibitem{example-stats}
+Richards D, Enrique A, Eilert N, Franklin M, Palacios J, Duffy D, et~al.
+\newblock A pragmatic randomized waitlist-controlled effectiveness and
+  cost-effectiveness trial of digital interventions for depression and anxiety.
+\newblock Nature Digital Medicine. 2020;3(85).
+\newblock doi:{10.1038/s41746-020-0293-8}.
+
+\bibitem{Speigelhalter}
+Speigelhalter D.
+\newblock The Art of Statistics: Learning from Data.
+\newblock Pelican Books; 2019.
+
+\bibitem{Ben}
+Shneiderman B.
+\newblock Opinion: {The} dangers of faulty, biased, or malicious algorithms
+  requires independent oversight.
+\newblock Proceedings National Academy of Sciences. 2016;113(48):13538--13540.
+\newblock doi:{10.1073/pnas.1618211113}.
+
+\bibitem{se-bias}
+Friedman B, Nissenbaum H.
+\newblock Bias in Computer Systems.
+\newblock ACM Transactions on Information Systems. 1996;14(3):330--347.
+\newblock doi:{10.1145/230538.230561}.
+
+\bibitem{whitty}
+Whitty CJM.
+\newblock What makes an academic paper useful for health policy?
+\newblock BMC Medicine. 2015;13:301.
+\newblock doi:{10.1186/s12916-015-0544-8}.
+
+\bibitem{assurance-case}
+Habli I, Alexander R, Hawkins R, Sujan M, McDermid J, Picardi C, et~al.
+\newblock Enhancing {COVID-19} decision making by creating an assurance case
+  for epidemiological models.
+\newblock BMJ Health {\&} Care Informatics. 2020;27(e100165):1--5.
+\newblock doi:{10.1136/bmjhci-2020-100165}.
+
+\bibitem{assessing-quality}
+Kelly D, Sanders R.
+\newblock Assessing the Quality of Scientific Software.
+\newblock First International Workshop on Software Engineering For
+  Computational Science and Engineering {\cite{assessing-quality-conference}};
+  2008.
+\newblock Available from:
+  \url{http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.526.5076}.
+
+\bibitem{critiques}
+Sayburn A.
+\newblock Covid-19: {Experts} question analysis suggesting half {UK} population
+  has been infected.
+\newblock BMJ. 2020;368:m1216.
+\newblock doi:{10.1136/bmj.m1216}.
+
+\bibitem{diagnosis-reviews}
+Wynants L, Van~Calster B, Bonten MMJ, Collins GS, Debray TPA, De~Vos M, et~al.
+\newblock Prediction models for diagnosis and prognosis of covid-19 infection:
+  {Systematic} review and critical appraisal.
+\newblock BMJ. 2020;369(m1328).
+\newblock doi:{10.1136/bmj.m1328}.
+
+\bibitem{knuth}
+Knuth DE.
+\newblock The Art of Computer Programming (Seminumerical algorithms). vol.~2.
+\newblock 3rd ed. Addison-Wesley; 1998.
+
+\bibitem{science-review}
+Heesterbeek H, Anderson RM, Andreasen V, Andreasen V, Bansal S, Angelis DD,
+  et~al.
+\newblock Modeling infectious disease dynamics in the complex landscape of
+  global health.
+\newblock Science. 2015;347(6227):265--270.
+\newblock doi:{10.1126/science.aaa4339}.
+
+\bibitem{tripod}
+Moons KG, Altman DG, Reitsma JB, Ioannidis JP, Macaskill P, Steyerberg EW,
+  et~al.
+\newblock Transparent Reporting of a multivariable prediction model for
+  Individual Prognosis or Diagnosis ({TRIPOD}): {Explanation} and elaboration.
+\newblock Annals of Internal Medicine. 2015;162(1):W1--73.
+\newblock doi:{10.7326/M14-0698}.
+
+\bibitem{nature-summary}
+Adam D.
+\newblock Modelling the pandemic: {The} simulations driving the world's
+  response to {COVID}-19.
+\newblock Nature. 2020;580:316--318.
+\newblock doi:{10.1038/d41586-020-01003-6}.
+
+\bibitem{ICmodel}
+Ferguson NM, Laydon D, Nedjati-Gilani G, Imai N, Ainslie K, Baguelin M, et~al..
+  Impact of non-pharmaceutical interventions ({NPI}s) to reduce {COVID}-19
+  mortality and healthcare demand; 16 March 2020.
+\newblock Available from:
+  \url{www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf}.
+
+\bibitem{avianFluModel}
+Ferguson NM, Cummings DAT, Fraser C, Cajka JC, Cooley PC, Burke DS.
+\newblock Strategies for mitigating an influenza pandemic.
+\newblock Nature. 2005;437:209--214.
+\newblock doi:{10.1038/nature04017}.
+
+\bibitem{originalICmodel}
+Ferguson NM, Cummings DAT, Fraser C, Cajka JC, Cooley PC, Burke DS.
+\newblock Strategies for mitigating an influenza pandemic.
+\newblock Nature. 2006;442:448--452.
+\newblock doi:{10.1038/nature04795}.
+
+\bibitem{tweet}
+Ferguson N. Tweet; 22 March 2020.
+\newblock Available from:
+  \url{twitter.com/neil_ferguson/status/1241835454707699713}.
+
+\bibitem{ferguson-interview}
+Leake J.
+\newblock {Neil Ferguson} interview: {No} 10's infection guru recruits game
+  developers to build coronavirus pandemic model.
+\newblock The Sunday Times. 29 March 2020;.
+
+\bibitem{basic-reproducibilty}
+Hinsen K.
+\newblock Software Development for Reproducible Research.
+\newblock Computing in Science {\&} Engineering. 2013;15(4):60--63.
+\newblock doi:{10.1109/MCSE.2013.91}.
+
+\bibitem{thumbs-up}
+Chawla DS.
+\newblock Critiqued coronavirus simulation gets thumbs up from code-checking
+  efforts.
+\newblock Nature. 8 June 2020;582:323--324.
+
+\bibitem{codecheck}
+Scheuber A, {van Elsland} SL. Codecheck confirms reproducibility of {COVID-19}
+  model results; 1 June 2020.
+\newblock Available from:
+  \url{www.imperial.ac.uk/news/197875/codecheck-confirms-reproducibility-covid-19-model-results}.
+
+\bibitem{NVP}
+{Hatton} L, {Roberts} A.
+\newblock How accurate is scientific software?
+\newblock IEEE Transactions on Software Engineering. 1994;20(10):785--797.
+\newblock doi:{10.1109/32.328993}.
+
+\bibitem{nvp-ferguson}
+Halloran ME, Ferguson NM, Eubank S, Longini IM, Cummings DAT, Lewis B, et~al.
+\newblock Modeling targeted layered containment of an influenza pandemic in the
+  United States.
+\newblock Proceedings of the National Academy of Sciences.
+  2008;105(12):4639--4644.
+\newblock doi:{10.1073/pnas.0706849105}.
+
+\bibitem{refactoring}
+Ferguson N. Tweet; 22 March 2020.
+\newblock Available from:
+  \url{twitter.com/neil_ferguson/status/1241835456947519492}.
+
+\bibitem{bad-code}
+Richards D, Boudnik K.
+\newblock {Neil} {Ferguson's} {Imperial} model could be the most devastating
+  software mistake of all time.
+\newblock The Telegraph. 16 May 2020;{\hskip -.25em}.
+
+\bibitem{pseudo}
+Zlojutro A, Rey D, Gardner L.
+\newblock A decision-support framework to optimize border control for global
+  outbreak mitigation.
+\newblock Nature Scientific Reports. 2019;9(2216).
+\newblock doi:{10.1038/s41598-019-38665-w}.
+
+\bibitem{relit}
+Thimbleby H, Williams D.
+\newblock A tool for publishing reproducible algorithms {\&} {A} reproducible,
+  elegant algorithm for sequential experiments.
+\newblock Science of Computer Programming. 2018;156:45--67.
+\newblock doi:{10.1016/j.scico.2017.12.010}.
+
+\bibitem{nature-review}
+Perkel JM.
+\newblock How to fix your scientific coding errors.
+\newblock Nature. 2022;602:172--173.
+\newblock doi:{10.1038/d41586-022-00217-0}.
+
+\bibitem{psychological-modeling}
+Guest O, Martin AE.
+\newblock How Computational Modeling Can Force Theory Building in Psychological
+  Science.
+\newblock Perspectives on Psychological Science. 2021;16(4):789--802.
+\newblock doi:{10.1177/1745691620970585}.
+
+\bibitem{actr}
+{ACT-R Research Group}. ACT-R; 2022.
+\newblock Available from: \url{act-r.psy.cmu.edu/software}.
+
+\bibitem{ourReview}
+Ladkin PB, Littlewood B, Thimbleby H, Thomas M.
+\newblock The {Law Commission} presumption concerning the dependability of
+  computer evidence.
+\newblock Digital Evidence and Electronic Signature Law Review. 2020;17.
+\newblock doi:{10.14296/deeslr.v17i0.5143 (NB See
+  \url{journals.sas.ac.uk/deeslr/article/view/5143} until the DOI is
+  resolved.)}.
+
+\bibitem{hamming}
+Hamming RW.
+\newblock Numerical Methods for Scientists and Engineers.
+\newblock Dover Publications Inc.; 1987.
+
+\bibitem{unfinished}
+Kissler SM, Tedijanto C, Goldstein E, Kissler SM, Tedijanto C, Goldstein E,
+  et~al.
+\newblock Projecting the transmission dynamics of {SARS-CoV-2} through the
+  postpandemic period.
+\newblock Science. 2020;doi:{10.1126/science.abb5793}.
+
+\bibitem{lancet-unfinished}
+Verity, R, Okell, C L, Dorigatti, Winskill IP, et~al.
+\newblock Estimates of the severity of coronavirus disease 2019: {A}
+  model-based analysis.
+\newblock Lancet. 2020;doi:{10.1016/S1473-3099(20)30243-7}.
+
+\bibitem{hoare}
+Hoare CAR.
+\newblock An axiomatic basis for computer programming.
+\newblock Communications of the ACM. 1969;12(10):576--580.
+\newblock doi:{10.1145/363235.363259}.
+
+\bibitem{notebooks}
+Schnell S.
+\newblock Ten Simple Rules for a Computational Biologist's Laboratory Notebook.
+\newblock PLoS Computational Biology. 2015;11(9):e1004385.
+\newblock doi:{10.1371/journal.pcbi.1004385}.
+
+\bibitem{popper}
+Popper KR.
+\newblock Conjectures and Refutations: {The} Growth of Scientific Knowledge.
+\newblock 2nd ed. Routledge; 2002.
+
+\bibitem{machine-learning-reproducibility}
+Thimbleby H.
+\newblock Give your computer's {IQ} a boost --- {{\emph{{Journal of Machine
+  Learning Research}}}}.
+\newblock Times Higher Education Supplement. 9 May, 2004;.
+
+\bibitem{flu-model}
+Sander B, Nizam A, {Garrison Jr} LP, Postma MJ, Halloran ME, {Longini Jr } IM.
+\newblock Economic evaluation of influenza pandemic mitigation strategies in
+  the us using a stochastic microsimulation transmission model.
+\newblock Value Health. 2009;12(2):226--233.
+\newblock doi:{10.1111/j.1524-4733.2008.00437.x}.
+
+\bibitem{open-source}
+Fomel S.
+\newblock Reproducible Research as a Community Effort: Lessons from the
+  {Madagascar Project}.
+\newblock Computing in Science {\&} Engineering. 2015;17(1):20--26.
+\newblock doi:{10.1109/MCSE.2014.94}.
+
+\bibitem{stability}
+Salama M, Bahsoon R, Lago P.
+\newblock Stability in Software Engineering: Survey of the State-of-the-Art and
+  Research Directions.
+\newblock IEEE Transactions on Software Engineering. 2021;47(7):1468--1510.
+\newblock doi:{10.1109/TSE.2019.2925616}.
+
+\bibitem{cbc}
+Woodcock JCP, Larsen PG, Bicarregui JC, Fitzgerald JS.
+\newblock Formal methods: {Practice} and experience.
+\newblock ACM Computing Surveys. 2009;41(4).
+\newblock doi:{10.1145/1592434.1592436}.
+
+\bibitem{ethics-code}
+ACM.
+\newblock Code of Ethics and Professional Conduct.
+\newblock ACM; 2020.
+\newblock Available from: \url{www.acm.org/code-of-ethics}.
+
+\bibitem{acm-artifacts}
+ACM.
+\newblock Artifact Review and Badging --- Current. vol. Artifact Review and
+  Badging Version 1.1.
+\newblock ACM; 2020.
+\newblock Available from:
+  \url{www.acm.org/publications/policies/artifact-review-and-badging-current}.
+
+\bibitem{redmill}
+Redmill F.
+\newblock Understanding the Use, Misuse and Abuse of Safety Integrity Levels.
+\newblock In: Lessons in System Safety, Eighth Safety-critical Systems
+  Symposium; 2000.Available from:
+  \url{homepages.cs.ncl.ac.uk/felix.redmill/publications/1%20SILs.pdf}.
+
+\bibitem{iec61508}
+IEC 61508:2010 CMV Commented version, Functional safety of
+  electrical/electronic/programmable electronic safety-related systems; 2010.
+\newblock Available from: \url{webstore.iec.ch/publication/22273}.
+
+\bibitem{ABCs-SE}
+Stol KJ, Fitzgerald B.
+\newblock The ABC of Software Engineering Research.
+\newblock ACM Transactions on Software Engingeering and Methodology.
+  2018;27(3).
+\newblock doi:{10.1145/3241743}.
+
+\bibitem{lancet-retracted}
+Mehra MR, Desai SS, Ruschitzka F, Patel AN.
+\newblock {RETRACTED}: {Hydroxychloroquine} or chloroquine with or without a
+  macrolide for treatment of {COVID}-19: {A} multinational registry analysis.
+\newblock The Lancet. 2020; p. 1--10.
+\newblock doi:{10.1016/S0140-6736(20)31180-6}.
+
+\bibitem{science-lancet1}
+Servick K, Enserink M.
+\newblock A mysterious company's coronavirus papers in top medical journals may
+  be unraveling.
+\newblock Science. 2020;doi:{10.1126/science.abd1337}.
+
+\bibitem{science-lancet2}
+Servick K.
+\newblock {COVID}-19 data scandal prompts tweaks to elite journal's review
+  process.
+\newblock Science. 2020;doi:{10.1126/science.abe8656}.
+
+\bibitem{lancet-learning}
+{The Editors}.
+\newblock Learning from a retraction.
+\newblock The Lancet. 2020;396:799.
+\newblock doi:{10.1016/S0140-6736(20)31958-9}.
+
+\bibitem{jvs1}
+Hardouin S, Cheng TW, Mitchell EL, Raulli SJ, Jones DW, Siracuse JJ, et~al.
+\newblock Prevalence of unprofessional social media content among young
+  vascular surgeons.
+\newblock Journal of Vascular Surgery. 2020;72(2):667--671.
+\newblock doi:{10.1016/j.jvs.2019.10.069}.
+
+\bibitem{jvs2}
+Baumann J.
+\newblock \#{MedBikini} Backlash Exposes Research Ethics Boards' Digital Gaps.
+\newblock Bloomberg Law. 29 July, 2020;.
+
+\bibitem{jvs3}
+{The Editors {(of \emph{Journal of Vascular Surgery\/})}}.
+\newblock {Editors' Statement Regarding ``Prevalence of unprofessional social
+  media content among young vascular surgeons''}.
+\newblock FaceBook. 2020;.
+
+\bibitem{numerals}
+Thimbleby H, Cairns P.
+\newblock Interactive numerals.
+\newblock Royal Society Open Science. 2017;4(4):160903.
+\newblock doi:{10.1098/rsos.160903}.
+
+\bibitem{fda}
+Zhang Y, Masci P, Jones P, Thimbleby H.
+\newblock User Interface Software Errors in Medical Devices.
+\newblock Biomedical Instrumentation {\&} Technology. 2019;53(3):182--194.
+\newblock doi:{10.2345/0899-8205-53.3.182}.
+
+\bibitem{excel-fiasco}
+Thimbleby H.
+\newblock The problem isn't {Excel}, it's unprofessional software engineering.
+\newblock BMJ. 2020;371(m4181).
+\newblock doi:{10.1136/bmj.m4181}.
+
+\bibitem{science-delays}
+Wadman M.
+\newblock Could too much time between doses drive the coronavirus to outwit
+  vaccines?
+\newblock Science. 2021;doi:{10.1126/science.abg5655}.
+
+\bibitem{reproducibility}
+Benureau FCY, Rougier NP.
+\newblock Re-run, Repeat, Reproduce, Reuse, Replicate: {Transforming} Code into
+  Scientific.
+\newblock Frontiers in Neuroinformatics. 2017;11(69).
+\newblock doi:{10.3389/fninf.2017.00069}.
+
+\bibitem{parliamentary-evidence}
+{House of Commons Science and Technology Committee}. The {UK} response to
+  covid-19: {Use} of scientific advice; 16 December 2020.
+\newblock Available from:
+  \url{committees.parliament.uk/publications/4165/documents/41300/default}.
+
+\bibitem{my-parliamentary-evidence}
+Thimbleby H.
+\newblock Written Evidence Submitted by {Harold Thimbleby} to The {UK} response
+  to covid-19: {Use} of scientific advice.
+\newblock C190005. {House of Commons Science and Technology Committee}
+  {\cite{parliamentary-evidence}}; 29 April 2020.
+\newblock Available from:
+  \url{committees.parliament.uk/work/91/default/publications/written-evidence/?SearchTerm=thimbleby}.
+
+\bibitem{assessing-quality-conference}
+Carver JC.
+\newblock First International Workshop on Software Engineering for
+  Computational Science {\&} Engineering.
+\newblock Computing in Science {\&} Engineering. 2009;11(2):7--11.
+\newblock doi:{10.1109/MCSE.2009.30}.
+
+\end{thebibliography}
+
+% end expanding bibliography paper-seb-main.bbl
+
+
+% Note that the supplementary material calculates how many references there are,
+% because it reads in this .tex file's .aux file so that it can cite the references 
+% above with the same number sequence. 
+%
+% It simple redefines \bibitem to work it out while it
+% defines all the citations from the bibliography above.
+%
+% The same technique allows the supplementary material to have 2 more bibliographies,
+% with consecutive numbering.
+}
+
+\end{document}
+
+%\immediate\write\@auxout{\string \newcount \string \savedlastReferenceNumber
+%\string \savedlastReferenceNumber=\the\savedlastReferenceNumber}
+
+%\def \allInOne {don't include header in supplemental material}
+%input paper-seb-supplementary-material.tex
+
+
+\label{LastPage}
+\end{document} 

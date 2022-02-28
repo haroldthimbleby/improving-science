@@ -1,7 +1,7 @@
 # makefile 
 help: # list make build options
 	@echo Use make with any of these options:
-	@grep "^[a-zA-Z]*:" makefile | sed "s/^/    /"
+	@grep "^[-a-zA-Z]*:" makefile | sed "s/^/    /"
 	@echo
 	@echo You may like to run
 	@echo "	" make config
@@ -19,11 +19,17 @@ config: # check you have the right configurations to run the systems
 	@echo Data was processed using node v12.13.0
 	@echo You have:; node -v | sed "s/^/    /"
 	@echo;echo "Latex was processed using XeTeX 3.141592653-2.6-0.999993 (TeX Live 2021)"
-	@echo You have:; xelatex -v | sed "s/^/    /"
+	@echo You have:; latex -v | sed "s/^/    /"
 	@echo;echo "Bibtex was processed using BibTeX 0.99d (TeX Live 2021)"
 	@echo You have:; bibtex -v | sed "s/^/    /"
 	@echo;echo "Git was processed using git version 2.32.0 (Apple Git-132)"
 	@echo You have:; git --version | sed "s/^/    /"
+	
+check-same: # check whether have got data and generated files exactly the same as last time
+	@check
+
+check-update: # update the data and generated file checksums after a successful run
+	@check update
 	
 data: # generate the Latex data files from data.js and downloaded Git repositories
 	@echo generate all files and analyses from JSON data in data.js
@@ -59,7 +65,7 @@ reallytidyup: # better than tidyup - remove ALL files that can be recreated
 	# remove other files made by running node data.js
 	rm -f flagData.nb data-check.html
 	# this was created if we did a make one-file -- the original name of the PDF, ftpeed to http://www.harold.thimbleby.net/reliable-models.pdf
-	rm -f reliable-models.pdf
+	rm -f paper-seb.pdf
 	# finally, remove all the recoverable stuff in the models directory
 	cd models; tidyup
 	rm -f allGitRepos.sh
@@ -71,25 +77,22 @@ pdf: # make PDF files paper-seb-main.pdf and paper-seb-supplementary-material.pd
 	make data
     # LOTS of latex runs to make sure the .aux files are all correctly synced
     # eg inserting the table of contents changes page numbering, so it needs formatting again, etc
-	xelatex paper-seb-supplementary-material.tex
-	bibtex paper-seb-supplementary-material
+	latex paper-seb-supplementary-material.tex > log
+	bibtex paper-seb-supplementary-material >> log
 	echo Do not worry bibtex cannot find database entries for "ref-16" etc as they are in another file
-	xelatex paper-seb-supplementary-material.tex
-	xelatex paper-seb-supplementary-material.tex
-	xelatex paper-seb-main.tex
-	bibtex paper-seb-main
-	xelatex paper-seb-main.tex
-	xelatex paper-seb-supplementary-material.tex
-	xelatex paper-seb-supplementary-material.tex
-	xelatex paper-seb-main.tex
-	xelatex paper-seb-supplementary-material.tex
+	latex paper-seb-supplementary-material.tex >> log
+	latex paper-seb-main.tex >> log
+	bibtex paper-seb-main >> log
+	latex paper-seb-main.tex >> log
+	latex paper-seb-main.tex >> log
 	@echo Unfortunately, paper-seb-main.tex has items in its bibiography that cross-refer to more bibliography items, so we need another run of bibtex etc
-	bibtex paper-seb-main
-	xelatex paper-seb-main.tex
+	bibtex paper-seb-main >> log
+	latex paper-seb-main.tex >> log
+	latex paper-seb-main.tex >> log
 	@echo and then the references in paper-seb-supplementary-material.tex are renumbered to follow on paper-seb-main.tex
-	xelatex paper-seb-supplementary-material.tex
-	@echo and paper-seb-main.tex refers to those numbers... so it needs updating again
-	xelatex paper-seb-main.tex
+	latex paper-seb-supplementary-material.tex >> log
+	@echo and the paper-seb-main.tex refers to those numbers... so it needs updating again
+	latex paper-seb-main.tex >> log
 	@echo "----------------------------------------------------------------"
 	@echo You have now got these PDFs:
 	@ls -C *paper*pdf
@@ -98,27 +101,30 @@ pdf: # make PDF files paper-seb-main.pdf and paper-seb-supplementary-material.pd
 	@echo Plus some .aux/.out/.blg/etc files you can delete by running make tidyup
 	@echo "----------------------------------------------------------------"
 	
-zip: # make a zip archive of everything in the directory
+zip: # make a zip archive of everything currently in the directory
 	@echo This zips everything in the current directory. Use make archive to delete junk before zipping
 	# to make sure zip file has no junk in it, just remove it
 	rm -f everything.zip
 	zip everything *
 	
-archive: # remove recoverable files in the directory then make the Latex and CSV etc data files for uploading to an archive
+archive: # clean up files for archiving  
 	make reallytidyup
-	make data
 	rm -f generated-*
-	rm -f everything.zip
-	make zip
-	echo Now upload *.zip
+	echo Now make zip - if you want a zip file
 	
-# for my private use
-# This creates (and preserves) a single PDF, reliable-models.pdf, maintained at http://www.harold.thimbleby.net
-singlefile: # make a single PDF file reliable-models.pdf (paper + appendix) all in one
-	make one-file
+push: # push any changed files to github
+	rm -rf models/git-* # remove models pulled from papers repositories (they are big)
+	rm -f *.out *.log *.dvi
+	rm -f paper-seb-main.pdf paper-seb-supplementary-material.pdf
+	
+# This creates (and preserves) a single PDF, paper-seb.pdf, maintained at http://www.harold.thimbleby.net as reliable-models.pdf
+one-file: # make a single PDF file paper-seb.pdf (paper + appendix) all in one
+	@make one.file
 
-one-file: paper-seb-main.pdf paper-seb-supplementary-material.pdf # concatenate files for my FTP site
-	pdfunite paper-seb-main.pdf paper-seb-supplementary-material.pdf reliable-models.pdf
+# this rule has a - in the name, so make help doesn't find it
+one.file: paper-seb-main.pdf paper-seb-supplementary-material.pdf # concatenate files for my FTP site
+	@echo make single PDF file paper-seb.pdf
+	pdfunite paper-seb-main.pdf paper-seb-supplementary-material.pdf paper-seb.pdf
 
 zipData: # just make a zip archive of the data (as required for Dryad repository)
 	make data
@@ -127,12 +133,13 @@ zipData: # just make a zip archive of the data (as required for Dryad repository
 	zip dryad-data README.md data.js
 
 plos: # expand all LaTeX files (to flatten \input etc) for PLOS, then make PDFs
+	make pdf
+	make one-file
 	node expand.js
-	xelatex expanded-paper-seb-supplementary-material.tex
-	xelatex expanded-paper-seb-supplementary-material.tex
-	xelatex expanded-paper-seb-supplementary-material.tex
-	xelatex expanded-paper-seb-main.tex
-	xelatex expanded-paper-seb-main.tex
-	pdfunite expanded-paper-seb-main.pdf expanded-paper-seb-supplementary-material.pdf reliable-models.pdf
-	echo you now have expanded*pdf as well as the expanded source files expanded*tex and reliable-models.pdf which combines them as a single file
+	latex expanded-paper-seb-supplementary-material.tex > log
+	latex expanded-paper-seb-main.tex >> log
+	cp paper-seb.pdf tmp
+	pdfunite expanded-paper-seb-main.pdf expanded-paper-seb-supplementary-material.pdf paper-seb.pdf >> log
+	cmp paper-seb.pdf tmp
+	echo you now have expanded*pdf as well as the expanded source files expanded*tex and paper-seb.pdf which combines them as a single file
     

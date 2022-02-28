@@ -1,4 +1,4 @@
-# creates (and deletes) temporary files data data-summary
+# creates (and deletes) temporary files data.tmp
 
 echo "\\\begin{tabular}{|l|r|rrr@{\\\hskip .75ex}l|}\\\hline"
 echo "&\multicolumn{1}{c|}{\\\bf PDF paper}&\multicolumn{4}{c|}{\\\bf Repository code \\\& data}\\\\\\ \\\cline{2-6}"
@@ -12,13 +12,13 @@ for i in git-*; do
     find $i -name "*.gz" -execdir gunzip -q "{}" \; #-exec rm {} \;
 done
 
-# file used to collect data so it can be averaged
-rm -f sizes
+# files used to collect data so it can be averaged
+rm -f sizes.tmp data.tmp
 
 for i in git-*; do
 	# the .git directory is git housekeeping, and ignored here
-    find $i -type f -exec wc -cl "{}" \; | grep -v "/\.git/" > data;
-    export fileCount=`cat data|wc -l`    
+    find $i -type f -exec wc -cl "{}" \; | grep -v "/\.git/" > data.tmp;
+    export fileCount=`cat data.tmp|wc -l`    
     # files of length 0 actually have 1 line, but no terminating \n
     awk '
     function round(value) { a=int(value); if(value-a>=0.5) a++; return a; }
@@ -45,9 +45,9 @@ t=substr(t,5);
 u=t;
 gsub(/_/,".",u)
 printf "\\reponame{%s}{%s} & \\csname pagelength-%s\\endcsname & \\commarise{%d} & %s & %s \\\\\n", t, u, u, fileCount, kloc(code), byteunits(bytes)
-printf "%d\t%d\t%d\n", fileCount, code, bytes >> "sizes"
+printf "%d\t%d\t%d\n", fileCount, code, bytes >> "sizes.tmp"
 if( u == "covid-sim" ) printf "%d\n", kloc(code) > "../generated-covidsimSummary.tex"
-}' data 
+}' data.tmp
 done | sort -f -t : -k 1 | sed s/_/\\\\_/g
 awk 'function round(value) { a=int(value); if(value-a>=0.5) a++; return a; }
 function byteunits(n) {
@@ -57,8 +57,8 @@ function byteunits(n) {
 	}
 BEGIN {nlines=0;nfiles=0; nkloc=0; nbytes=0;}
 {nlines++; nfiles=nfiles+$1;nkloc=nkloc+$2;nbytes=nbytes+$3;}
-END {printf "\\hline \\multicolumn{1}{|r|}{{\\bf Average} ($N=%d$)}&\\makeAverage{\\the\\gitPages}{%d}&%d& %d& %s\\\\\n", nlines, nlines, round(nfiles/nlines), round(nkloc/nlines/1000), byteunits(nbytes/nlines) }' sizes
+END {printf "\\hline \\multicolumn{1}{|r|}{{\\bf Average} ($N=%d$)}&\\makeAverage{\\the\\gitPages}{%d}&%d& %d& %s\\\\\n", nlines, nlines, round(nfiles/nlines), round(nkloc/nlines/1000), byteunits(nbytes/nlines) }' sizes.tmp
 echo "\\\hline \\\end{tabular}"
 
-rm -f sizes
+rm -f sizes.tmp data.tmp
 

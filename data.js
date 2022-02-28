@@ -66,6 +66,14 @@ var descriptionsOfFields = {
         documentation: "Evidence that source code was developed rigorously",
         flag: "$\\sf S_{{\\mbox{\\scriptsize rigorous}}}$"
     },
+    hasToolBasedDevelopment: {
+       documentation: "Evidence of any tool-based development",
+        flag: "$\\sf S_{{\\mbox{\\scriptsize tools}}}$"
+    },
+    hasOpenSourceDevelopment: {
+       documentation: "Team or open source development",
+        flag: "$\\sf S_{{\\mbox{\\scriptsize open source}}}$"
+    },
     hasOtherTechniques: {
         documentation: "Other evidence of good practice; see details in summary table",
         flag: "$\\sf S_{{\\mbox{\\scriptsize otherSE}}}$"
@@ -110,7 +118,7 @@ var descriptionsOfFields = {
         documentation: "Number of pages"
     },
     reference: {
-        // reference number is automatically generated, but you can override it if you want to 
+        // unique reference number is automatically generated, but you can override it if you want to 
         // refer to a particular paper in the Latex papers
         documentation: "Internal Latex citation identifier (needs to be unique, which is checked)"
     },
@@ -127,7 +135,7 @@ var descriptionsOfFields = {
         essential: 1
     },
     error: {
-        documentation: "Set to an error string if required"
+        documentation: "Set to an error string if needed"
     }
 };
 
@@ -392,9 +400,10 @@ var data = [{
         hasCodeInPrinciple: 1,
         hasOtherTechniques: 1,
         hasGoodComment: 1,
-        codeComment: "Code available for private view, though some code available with minor comments. Paper describes using two contrasting methods to help confirm correctness",
+        codeComment: "Code available for private view, though some code available with minor comments. Paper describes using two contrasting methods to help confirm correctness, ``As an additional check, I also coded the calculation of D based on a probabilistic approach, using genotype frequencies in each population to calculate the expected frequencies of each possible two-genotype combination (electronic supplementary material, table S1). Essentially identical results were obtained.'' but the contrasting method is not available",
         codeURL: "datadryad.org/stash/share/ichHKrWj7hqlznOaR6NQVzITgp40dlqWvWAgAxyafiQ",
-        pages: 9
+        pages: 9,
+        reference: "onlyPaperWithChecks"
             },
     {
         accessed: "22 July 2020",
@@ -737,12 +746,12 @@ var countFields = 0;
 for (var i in descriptionsOfFields)
     countFields++;
 
-s = "\\def\\countFields{" + countFields + "}\n\\noindent\\texttt{\n\\hspace*{2em}\\{";
-var sep = "\\hspace*{2em}";
+s = "\\def\\countFields{" + countFields + "}\n\\noindent\\texttt{\n\\hspace*{\\codeIndent}\\{";
+var sep = "\\hspace*{\\codeIndent}";
 var chosen = data[0];
 const maxlength = 40;
 for (i in chosen) {
-    s += sep + "\\newline\n\\hspace*{4em} " + i + ": ";
+    s += sep + "\\newline\n\\hspace*{2\\codeIndent} " + i + ": ";
     if (typeof chosen[i] == "string") {
         s += "\"";
         for (j = 0; j < Math.min(maxlength, chosen[i].length); j++)
@@ -751,7 +760,7 @@ for (i in chosen) {
     } else s += chosen[i];
     sep = ",";
 }
-s += "\\newline\n\\hspace*{2em}\\}\n}\n";
+s += "\\newline\n\\hspace*{\\codeIndent}\\}\n}\n";
 saveFile("generated-example-data.tex", s, "LaTeX example of JSON data");
 
 //--------------------
@@ -778,6 +787,7 @@ fields.sort();
 var where = "";
 var nowhere = "      "; // reset where once first error reported
 var errorCount = 0; // report total at end of run...
+var warnCount = 0; // report total at end of run...
 
 function error(i, s) { // i is the data entry, so we can record the error in the data[i].error field for later
     if (i < 0) where = nowhere;
@@ -786,6 +796,15 @@ function error(i, s) { // i is the data entry, so we can record the error in the
     errorCount++;
     if (i >= 0)
         data[i].error += s + "<br/>";
+}
+
+function warn(i, s) { // i is the data entry, so we can record the error in the data[i].error field for later
+    if (i < 0) where = nowhere;
+    console.log(where + s);
+    where = nowhere;
+    warnCount++;
+    if (i >= 0)
+        data[i].warn += s + "<br/>";
 }
 
 // before any errors are reported, make sure error field is defined
@@ -851,9 +870,12 @@ for (var i = 0; i < data.length; i++) {
             error(i, "If it has code, it must have type of comment information set");
         if (isTrue(d.hasNoCode))
             error(i, "Can't have hasNoCode if any code flag is set");
-    }
+    } else if( isTrue(d.hasOpenSourceDevelopment) )
+    	error(i, "How can you have team or open source development without any code?");
     if (isFalse(hasVisibleCode) && (d.hasCodeTested || d.hasDevelopedRigorously))
         error(i, "Can only have hasCodeTested, or hasDevelopedRigorously set if it has visible code");
+    if (isFalse(hasVisibleCode) && d.hasDevelopedRigorously)
+        error(i, "Can really only have hasDevelopedRigorously if it has visible code");
     if (isFalse(hasVisibleCode) && isFalse(d.hasNoCode) && isFalse(d.hasCodeInPrinciple)) {
         error(i, "Must have hasNoCode or hasCodeInPrinciple set if no other code flag set");
     }
@@ -913,7 +935,7 @@ for (var i = 0; i < data.length; i++) {
 
 for (var f in descriptionsOfFields)
     if (descriptionsOfFields[f].usage <= 0)
-        error(-1, "** Field " + f + " never used in data");
+        warn(-1, "** Warning: field " + f + " never used in data; default value used");
 
     // flags make more sense to the reader if they appear in this related order...
 var flagOrder = ["hasCodePolicy",
@@ -924,8 +946,10 @@ var flagOrder = ["hasCodePolicy",
     "hasNoCode",
     "hasCodeInPrinciple",
     "hasDirectCode",
-  "hasDevelopedRigorously",
+    "hasDevelopedRigorously",
     "hasCodeTested",
+    "hasToolBasedDevelopment",
+    "hasOpenSourceDevelopment",
     "hasOtherTechniques",
     "hasNoComment",
     "hasTrivialComment",
@@ -938,7 +962,7 @@ for (var i in descriptionsOfFields)
     if (definedq(descriptionsOfFields[i].flag) && !flagOrder.includes(i))
         error(-1, "** flag " + i + " is not in flagOrder[]");
 
-    // check all flags in flagOrder are in descriptionsOfFields
+// check all flags in flagOrder are in descriptionsOfFields
 for (var i = 0; i < flagOrder.length; i++) {
     var f = flagOrder[i];
     if (!definedq(descriptionsOfFields[f]))
@@ -1048,14 +1072,26 @@ for (var i = 0; i < data.length; i++) {
     }
 }
 s += "( echo \"% date generated by running generated-allGitRepos.sh downloading Git repos\";\n" +
-    "echo \\\\\\\\def\\\\\\\\clonedate {`date \"+%e %B %Y\"`}\n" +
+    "echo \\\\\\\\def\\\\\\\\clonedate {\\\\\\\\ignorespaces `date \"+%e %B %Y\"`}\n" +
     "echo \\\\\\\\\def\\\\\\\\cloneyear {`date \"+%Y\"`}\n" +
     "echo \\\\\\\\def\\\\\\\\clonemonth {`date \"+%m\"`}\n" +
     ") > ../generated-clone-date.tex\n";
 
-s += "\n# how many errors can data.js find?\ngrep \"error(\" ../data.js|wc -l>../generated-data.js-errors.tex\n";
+// variables to be defined in file generated-metadata.tex by running the shell script
 
-saveFile("generated-allGitRepos.sh", s, "Shell script to download all available " + n + " GitHub repositories \n         generated-clone-date.tex - Running the shell script also saves download date of GitHub clones")
+s += "\n(echo % shell-script calculated metavariables; echo \"\\\\\\newcount \\\\\\JSONerrorCount\";"; // newcounts on separate lines so they are counted correctly by wc -l
+s += "echo \"\\\\\\newcount \\\\\\dataVariableCount\") > ../generated-metadata.tex\n"
+
+// count of errors to \JSONerrorCount
+s += "\n# how many errors can data.js find?\necho \"\\\\\\JSONerrorCount =\" `grep \"error(\" ../data.js|wc -l` >> ../generated-metadata.tex\n";
+
+// count of variables (number registers plus macro definitions) to \JSONvariableCount
+s += "\n# how many variables does data.js define?\necho \"\\\\\\dataVariableCount =\" >> ../generated-metadata.tex\n";
+s += "egrep \"(newcount)|(\\\\\\\\def)\" ../data.js|wc -l >> ../generated-metadata.tex\n";
+// unfortunately that count will be one too high as it counts the line above as well!
+s += "echo \"\\\\\\advance \\\\\\dataVariableCount by -1\" >> ../generated-metadata.tex\n";
+
+saveFile("generated-allGitRepos.sh", s, "Shell script to download all available " + n + " GitHub repositories \n         generated-clone-date.tex - Running the shell script also saves download date of GitHub clones\n         generated-metadata.tex - shell-script generated LaTeX variable values")
     //console.log(spagelengths);
 spagelengths += "\\newcount \\gitPages \\gitPages=" + gitpagelengths + "\n";
 spagelengths += "\\newcount \\totalPages \\totalPages=" + totalpagelengths + "\n";
@@ -1131,7 +1167,9 @@ t.hasSubstantialcomment = 0;
 t.hasCodePolicy = 0;
 t.hasCodeTested = 0;
 t.hasDevelopedRigorously = 0;
+t.hasToolBasedDevelopment = 0;
 t.hasOtherTechniques = 0;
+t.hasOpenSourceDevelopment = 0;
 
 for (var i = 0; i < data.length; i++) { // calculate totals
     for (var j in t)
@@ -1149,9 +1187,13 @@ function percent(n, outOf) {
     return n + "&" + r + "\\%";
 }
 
-function changePercent(n, outOf) {
+function NandPercent(n, outOf) {
     var r = Math.round(100 * n / outOf);
     return "{" + n + "}&{" + r + "\\%}";
+}
+function changeNandPercent(n, outOf) {
+    var r = Math.round(100 * n / outOf);
+    return "{\\begin{change}" + n + "\\end{change}}&{\\begin{change}" + r + "\\%\\end{change}}";
 }
 
 t.hasNoProperComments = N - t.hasGoodComment;
@@ -1165,9 +1207,11 @@ s += "Some or all code in principle available on request&" + percent(t.hasCodeIn
 s += "No code available&" + percent(t.hasNoCode, N) + "&\\\\\\hline\n";
 
 s += "\\multicolumn{4}{|l|}{{\\textbf{Evidence of basic good software engineering practice}}}\\\\\n";
-s += "{Evidence program designed rigorously}&" + changePercent(t.hasDevelopedRigorously, N) + "&\\\\\n";
-s += "{Evidence source code properly tested}&" + changePercent(t.hasCodeTested, N) + "&\\\\\n";
-s += "{Other methods, e.g., independent coding methods}&" + changePercent(t.hasOtherTechniques, N) + "&\\\\\\hline\n";
+s += "Evidence program designed rigorously&" + NandPercent(t.hasDevelopedRigorously, N) + "&\\\\\n";
+s += "Evidence source code properly tested&" + NandPercent(t.hasCodeTested, N) + "&\\\\\n";
+s += "\\begin{change}Evidence of any tool-based development\\end{change}&" + changeNandPercent(t.hasToolBasedDevelopment, N) + "&\\\\\n";
+s += "\\begin{change}Team or open source based development\\end{change}&" + changeNandPercent(t.hasOpenSourceDevelopment, N) + "&\\\\\n";
+s += "Other methods, e.g., independent coding methods&" + NandPercent(t.hasOtherTechniques, N) + "&\\\\\\hline\n";
 
 s += "\\multicolumn{4}{|l|}{\\textbf{Documentation and comments}}\\\\\n";
 s += "Substantial code documentation and comments&" + percent(t.hasSubstantialcomment, N) + "&\\\\\n";
@@ -1235,6 +1279,7 @@ s += "\\global\\newcount \\counthasDataRepository \\global\\counthasDataReposito
 s += "\\global\\newcount \\countNoCodeInRepo \\global\\countNoCodeInRepo=" + t.hasEmptyRepo + "\n";
 s += "\\global\\newcount \\numberOfJournals \\global\\numberOfJournals=" + numberOfJournals + "\n";
 s += "\\global\\newcount \\countCodetested \\global\\countCodetested=" + t.hasCodeTested + "\n";
+s += "\\global\\newcount \\hasDevelopedRigorously \\global\\hasDevelopedRigorously=" + t.hasDevelopedRigorously + "\n";
 
 saveFile("generated-constants.tex", s, "Generated common definitions and constants");
 
@@ -1286,3 +1331,6 @@ saveFile("generated-open-doi.sh", s, "Shell script to open all DOIs");
 
 // since so much noise is generated summmarise error warnings...
 console.log("\n" + (!errorCount ? "** No noticed errors to report" : ("** " + plural(errorCount, "error") + " reported")));
+
+console.log("\n" + (!warnCount ? "** No noticed warnings to report" : ("** " + plural(warnCount, "warning") + " reported")));
+
