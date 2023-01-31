@@ -1,6 +1,0 @@
-s/hskip .DIFadd{\([^}]*\)}/hskip \1 /g
-
-s/vskip .DIFadd{\([^}]*\)}/vskip \1 /g
-
-s/vskip .DIFaddFL{\([^}]*\)}/vskip \1 /g
-
