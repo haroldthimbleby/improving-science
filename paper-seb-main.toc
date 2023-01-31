@@ -1,0 +1,25 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Background}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.a}Related code quality concerns}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.b}Computable papers}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.c}RAP: Reproducible Analytical Pipelines}{7}{subsection.2.3}%
+\contentsline {section}{\numberline {3}The statistics/code analogy}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.a}The siren call of over-fitting code}{10}{subsection.3.1}%
+\contentsline {section}{\numberline {4}The conventional role of code}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.a}The deceptive simplicity of code}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.b}The low status of coding}{13}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.c}The critical role of code is often ignored}{13}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.d}Bugs, code and programming}{14}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.e}Long-term problems of unreliable code}{14}{subsection.4.5}%
+\contentsline {section}{\numberline {5}State of the art}{15}{section.5}%
+\contentsline {subsection}{\numberline {5.a}Case study: Pandemic modeling}{15}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.b}Concerns with reproducibility}{16}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.c}Beyond pandemic modeling}{17}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.d}The narrow emphasis on data}{18}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Extending RAP to RAP{\tt +}}{19}{section.6}%
+\contentsline {section}{\numberline {7}The paper as a scientific laboratory}{20}{section.7}%
+\contentsline {section}{\numberline {8}Call to action}{21}{section.8}%
+\contentsline {subsection}{\numberline {8.a}Action must be interdisciplinary}{22}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.b}Methodological statements}{23}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.c}Benefits beyond science}{24}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Conclusions}{24}{section.9}%
