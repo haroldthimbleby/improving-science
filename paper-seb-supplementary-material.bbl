@@ -1,194 +1,261 @@
 \begin{thebibliography}{10}
 
 \bibitem{vancouver}
-{Vancouver Group}.
-\newblock Uniform requirements for manuscripts submitted to biomedical
-  journals.
-\newblock JAMA. 1997;277(11):927--934.
-\newblock doi:{10.1001/jama.1997.03540350077040}.
+{Vancouver Group} (1997) ``Uniform requirements for manuscripts submitted to
+  biomedical journals,'' {\em JAMA}, \textbf{277}(11):927--934.
+\newblock \doi{10.1001/jama.1997.03540350077040}
 
 \bibitem{cosmos}
-Stepney S, Polack FAC, Alden K, Andrews PS, Bown JL, Droop A, et~al.
-\newblock Engineering Simulations as Scientific Instruments: A Pattern
-  Language.
-\newblock Springer; 2018.
+Stepney, S. \emph{et al.} (2018) {\em Engineering Simulations as Scientific
+  Instruments: A Pattern Language}, Springer.
 
 \bibitem{ai-ethics}
-Misselhorn C.
-\newblock Artificial Morality. {Concepts}, Issues and Challenges.
-\newblock Social Science and Public Policy. 2018;55:161--169.
-\newblock doi:{10.1007/s12115-018-0229-y}.
+Misselhorn, C. (2018) ``Artificial morality. {Concepts}, issues and
+  challenges,'' {\em Social Science and Public Policy}, \textbf{55}:161--169.
+\newblock \doi{10.1007/s12115-018-0229-y}
 
-\bibitem{sommerville}
-Sommerville I.
-\newblock Software Engineering.
-\newblock 10th ed. Pearson; 2015.
+\bibitem{science-lancet1}
+Servick, K. and Enserink, M. (2020) ``A mysterious company's coronavirus papers
+  in top medical journals may be unraveling,'' {\em Science}.
+\newblock \doi{10.1126/science.abd1337}
 
-\bibitem{knight}
-Knight J.
-\newblock Fundamentals of Dependable Computing for Software Engineers.
-\newblock CRC Press; 2012.
+\bibitem{science-lancet2}
+Servick, K. (2020) ``{COVID}-19 data scandal prompts tweaks to elite journal's
+  review process,'' {\em Science}.
+\newblock \doi{10.1126/science.abe8656}
+
+\bibitem{lancet-learning}
+{The Editors} (2020) ``Learning from a retraction,'' {\em The Lancet},
+  \textbf{396}:799.
+\newblock \doi{10.1016/S0140-6736(20)31958-9}
+
+\bibitem{jvs1}
+Hardouin, S., Cheng, T.~W., Mitchell, E.~L., Raulli, S.~J., Jones, D.~W.,
+  Siracuse, J.~J. and Farber, A. (2020) ``Prevalence of unprofessional social
+  media content among young vascular surgeons,'' {\em Journal of Vascular
+  Surgery}, \textbf{72}(2):667--671.
+\newblock \doi{10.1016/j.jvs.2019.10.069}
+
+\bibitem{jvs2}
+Baumann, J. (29 July, 2020) ``\#{MedBikini} backlash exposes research ethics
+  boards' digital gaps,'' {\em Bloomberg Law}.
+\newblock
+  \url{news.bloomberglaw.com/}\midurl{pharma-}\midurl{and-}\midurl{life-}\midurl{sciences/}\midurl{medbikini-}\midurl{backlash-}\midurl{exposes-}\midurl{research-}\midurl{ethics-}\midurl{boards-}\midurl{digital-}\midurl{gaps}
+
+\bibitem{jvs3}
+{The Editors {(of \emph{Journal of Vascular Surgery\/})}} (2020) ``{Editors'
+  Statement Regarding ``Prevalence of unprofessional social media content among
+  young vascular surgeons''},'' {\em FaceBook}.
+\newblock
+  \url{www.facebook.com/TheJVascSurg/photos/a.611986142331744/1381024778761206/?type=3&theater},
+  and copied to journal home page \url{www.jvascsurg.org} Accessed 30 July
+  2020.
+
+\bibitem{swebok}
+Bourque, P. and Fairley, R., eds. (2014) {\em Guide to the Software Engineering
+  Body of Knowledge}, (Version 3.0), IEEE Computer Society.
+\newblock \url{www.swebok.org}
 
 \bibitem{wpf}
-Zeller A.
-\newblock Why Programs Fail: A Guide to Systematic Debugging.
-\newblock Morgan Kaufmann; 2006.
+Zeller, A. (2006) {\em Why Programs Fail: A Guide to Systematic Debugging},
+  Morgan Kaufmann.
 
 \bibitem{humphrey}
-Humphrey WS.
-\newblock PSP: A Self-Improvement Process for Software Engineers.
-\newblock Addison Wesley; 2005.
+Humphrey, W.~S. (2005) {\em PSP: A Self-Improvement Process for Software
+  Engineers}, Addison Wesley.
 
 \bibitem{managers}
-Humphrey WS.
-\newblock Winning with Software: An Executive Strategy.
-\newblock Addison-Wesley Professional; 2001.
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt\  (2001) {\em Winning with
+  Software: An Executive Strategy}, Addison-Wesley Professional.
+
+\bibitem{differential-equations}
+Boldo, S., Cl{\'{e}}ment, F., Filli{\^{a}}tre, J.-C., Mayero, M., Melquiond, G.
+  and Weis, P. (2014) ``Trusting computations: {A} mechanized proof from
+  partial differential equations to actual program,'' {\em Computers and
+  Mathematics with Applications}, \textbf{68}:325--352.
+\newblock \doi{10.1016/j.camwa.2014.06.004}
+
+\bibitem{numerals}
+Thimbleby, H. and Cairns, P. (2017) ``Interactive numerals,'' {\em Royal
+  Society Open Science}, \textbf{4}(4):160903.
+\newblock \doi{10.1098/rsos.160903}
 
 \bibitem{heedless}
-Thimbleby H.
-\newblock Heedless Programming: Ignoring Detectable Error is a Widespread
-  Hazard.
-\newblock Software --- Practice {\&} Experience. 2012;42(11):1393--1407.
-\newblock doi:{10.1002/spe.1141}.
+Thimbleby, H. (2012) ``Heedless programming: Ignoring detectable error is a
+  widespread hazard,'' {\em Software --- Practice {\&} Experience},
+  \textbf{42}(11):1393--1407.
+\newblock \doi{10.1002/spe.1141}
 
 \bibitem{plos}
-Chao DL, Halloran ME, Obenchain VJ, {Longini Jr} IM.
-\newblock FluTE, a Publicly Available Stochastic Influenza Epidemic Simulation
-  Model.
-\newblock PLOS Computational Biology. 2010;6(1):e1000656.
-\newblock doi:{10.1371/journal.pcbi.1000656}.
+Chao, D.~L., Halloran, M.~E., Obenchain, V.~J. and {Longini Jr}, I.~M. (2010)
+  ``{FluTE}, a publicly available stochastic influenza epidemic simulation
+  model,'' {\em PLOS Computational Biology}, \textbf{6}(1):e1000656.
+\newblock Source code available at \url{GitHub.com/dlchao/FluTE},
+  \doi{10.1371/journal.pcbi.1000656}
 
 \bibitem{excel1}
-Abir M, Nelson C, Chan EW, Al-Ibrahim H, Cutter C, Patel K, et~al.
-\newblock RAND Critical Care Surge Response Tool: An Excel-Based Model for
-  Helping Hospitals Respond to the COVID-19 Crisis.
-\newblock RAND Corporation; 2020.
-\newblock Available from: \url{www.rand.org/pubs/tools/TLA164-1.html}.
+Abir, M., Nelson, C., Chan, E.~W., Al-Ibrahim, H., Cutter, C., Patel, K. and
+  Bogart, A. (2020) {\em {RAND} Critical Care Surge Response Tool: {An}
+  Excel-Based Model for Helping Hospitals Respond to the {COVID-19} Crisis},
+  RAND Corporation.
+\newblock
+  \url{www.rand.org/}\midurl{pubs/}\midurl{tools/}\midurl{TLA164-}\midurl{1.html}
 
 \bibitem{excel2}
-Alvarez NM, Gonzalez-Gonzalez E, Trujillo-de Santiago G.
-\newblock Modeling {COVID-19} epidemics in an Excel spreadsheet:
-  {Democratizing} the access to first-hand accurate predictions of epidemic
-  outbreaks.
-\newblock MedRxiv. 2020;doi:{10.1101/2020.03.23.20041590}.
+Alvarez, N.~M., Gonzalez-Gonzalez, E. and Trujillo-de Santiago, G. (2020)
+  ``Modeling {COVID-19} epidemics in an excel spreadsheet: {Democratizing} the
+  access to first-hand accurate predictions of epidemic outbreaks,'' {\em
+  MedRxiv}.
+\newblock Preprint, \doi{10.1101/2020.03.23.20041590}
 
 \bibitem{npm}
-Schlueter IZ.
-\newblock Blog: kik, left-pad, and npm.
-\newblock NPM Blog; 23 March 2016.
-\newblock Available from:
-  \url{blog.npmjs.org/post/141577284765/kik-left-pad-and-npm}.
-
-\bibitem{LP}
-Knuth DE.
-\newblock Literate programming. vol.~27.
-\newblock Center for the Study of Language and Information Publication Lecture
-  Notes; 1992.
+Schlueter, I.~Z. (23 March 2016) {\em Blog: kik, left-pad, and npm}, NPM Blog.
+\newblock Accessed 10 April 2020,
+  \url{blog.npmjs.org/}\midurl{post/}\midurl{141577284765/}\midurl{kik-}\midurl{left-}\midurl{pad-}\midurl{and-}\midurl{npm}
 
 \bibitem{hci1}
-Shneiderman B, Plaisant C, Cohen M, {\emph{et al}}.
-\newblock Designing the User Interface: Strategies for Effective Human-Computer
-  Interaction.
-\newblock 6th ed. Pearson; 2016.
-\newblock Available from: \url{www.cs.umd.edu/hcil/DTUI6}.
+Shneiderman, B., Plaisant, C., Cohen, M. and {\emph{et al}} (2016) {\em
+  Designing the User Interface: Strategies for Effective Human-Computer
+  Interaction}, Pearson, 6th~ed.
+\newblock \url{www.cs.umd.edu/}\midurl{hcil/}\midurl{DTUI6}
 
 \bibitem{hci2}
-Thimbleby H.
-\newblock Press On: Principles of Interaction Programming.
-\newblock MIT Press; 2007.
+Thimbleby, H. (2007) {\em Press On: Principles of Interaction Programming}, MIT
+  Press.
 
 \bibitem{flexibility}
-Hanson C, Sussman GJ.
-\newblock Software design for flexibility: How to avoid programming yourself
-  into a corner.
-\newblock MIT Press; 2021.
+Hanson, C. and Sussman, G.~J. (2021) {\em Software design for flexibility: How
+  to avoid programming yourself into a corner}, MIT Press.
 
 \bibitem{iso}
-{ISO/IEC JTC 1/SC 7 Software and systems engineering Committees}.
-\newblock Software engineering --- Guidelines for the application of ISO
-  9001:2015 to computer software.
-\newblock International Organization for Standardization (ISO); 2015.
-\newblock Available from: \url{www.iso.org/standard/74348.html}.
+{ISO/IEC JTC 1/SC 7 Software and systems engineering Committees} (2015) {\em
+  Software engineering --- Guidelines for the application of ISO 9001:2015 to
+  computer software}, International Organization for Standardization (ISO).
+\newblock \url{www.iso.org/}\midurl{standard/}\midurl{74348.html}
 
 \bibitem{178C}
-{RTCA Committee SC-205}.
-\newblock DO-178C --- Software Considerations in Airborne Systems and Equipment
-  Certification.
-\newblock RTCA; 2011.
-\newblock Available from: \url{my.rtca.org/NC__Product?id=a1B36000001IcmqEAC}.
+{RTCA Committee SC-205} (2011) {\em DO-178C --- Software Considerations in
+  Airborne Systems and Equipment Certification}, RTCA.
+\newblock \url{my.rtca.org/}\midurl{NC__Product?id=a1B36000001IcmqEAC}
 
 \bibitem{peerReview}
-Baum T, {Le\ss mann} H, Schneider K.
-\newblock The Choice of Code Review Process: A Survey on the State of the
-  Practice.
-\newblock In: Lecture Notes in Computer Science. vol. 10611 of Product-Focused
-  Software Process Improvement: 18th International Conference; 2017. p.
-  111--127.
+Baum, T., {Le\ss mann}, H. and Schneider, K. (2017) ``The choice of code review
+  process: A survey on the state of the practice,'' {\em in Lecture Notes in
+  Computer Science}, vol.~\textbf{10611} of Product-Focused Software Process
+  Improvement: 18th International Conference, pp.~111--127.
+\newblock \doi{10.1007/978-3-319-69926-4_9}
 
 \bibitem{ssi-report}
-Brett A, Croucher M, Haines R, Hettrick S, Hetherington J, Stillwell M, et~al.
-\newblock State of the Nation Report for Research Software Engineers.
-\newblock Research Software Engineer Network; 2017.
-\newblock Available from: \url{zenodo.org/record/495360#.Xyfuyi2ZOCM}.
+Brett, A., Croucher, M., Haines, R., Hettrick, S., Hetherington, J., Stillwell,
+  M. and Wyatt, C. (2017) {\em State of the Nation Report for Research Software
+  Engineers}, Research Software Engineer Network.
+\newblock \url{zenodo.org/}\midurl{record/}\midurl{495360#.Xyfuyi2ZOCM},
+  \doi{10.5281/zenodo.495360}
 
 \bibitem{ssi-url}
-{Software Sustainability Institute}. Web site; 2020.
-\newblock Available from: \url{software.ac.uk}.
+{Software Sustainability Institute} (2020) {\em Web site}.
+\newblock Accessed 3 August 2020, \url{software.ac.uk}
 
 \bibitem{security-engineering}
-Anderson R.
-\newblock Security Engineering.
-\newblock 3rd ed. Wiley; 2020.
+Anderson, R. (2020) {\em Security Engineering}, Wiley, 3rd~ed.
 
 \bibitem{cyber-cacm}
-Shostack A, Zurko ME.
-\newblock Secure Development Tools and Techniques Need More Research That Will
-  Increase Their Impact and Effectiveness in Practice.
-\newblock Communications of the ACM. 2020;63(5):39--41.
-\newblock doi:{10.1145/3386908}.
+Shostack, A. and Zurko, M.~E. (2020) ``Secure development tools and techniques
+  need more research that will increase their impact and effectiveness in
+  practice,'' {\em Communications of the ACM}, \textbf{63}(5):39--41.
+\newblock \doi{10.1145/3386908}
 
 \bibitem{Schneier}
-Schneier B.
-\newblock Click Here To Kill Everybody --- Security and Survival in a
-  Hyper-connected World.
-\newblock W. W. Norton {\&} Company, Inc; 2018.
+Schneier, B. (2018) {\em Click Here To Kill Everybody --- Security and Survival
+  in a Hyper-connected World}, W. W. Norton {\&} Company, Inc, New York, United
+  States.
 
 \bibitem{electronic-evidence}
-Mason S, Seng D.
-\newblock Electronic Evidence.
-\newblock 4th ed. Humanities Digital Library; 2017.
+Mason, S. and Seng, D. (2017) {\em Electronic Evidence}, Humanities Digital
+  Library, 4th~ed.
+\newblock (NB See
+  \url{humanities-digital-library.org/index.php/hdl/catalog/book/electronicevidence}
+  until DOI is resolved), \doi{10.14296/517.9781911507079}
+
+\bibitem{simon-artificial}
+Simon, H.~A. and Laird, J. (2019) {\em Sciences of the Artificial}, MIT Press,
+  3rd~ed.
+
+\bibitem{dunning-kruger}
+Kruger, J. and Dunning, D. (1999) ``Unskilled and unaware of it: {How}
+  difficulties in recognizing one's own incompetence lead to inflated
+  self-assessments,'' {\em Journal of Personality and Social Psychology},
+  \textbf{77}(6):1121--1134.
+\newblock \doi{10.1037/0022-3514.77.6.1121}
+
+\bibitem{dunning-kruger-numeracy}
+Nuhfer, E., Fleisher, S., Cogan, C., Wirth, K. and Gaze, E. (2017) ``How random
+  noise and a graphical convention subverted behavioral scientists'
+  explanations of self-assessment data: {Numeracy} underlies better
+  alternatives,'' {\em Numeracy}, \textbf{10}(1):4.
+\newblock \doi{10.5038/1936-4660.10.1.4}
+
+\bibitem{enigma}
+Thimbleby, H. (2016) ``Human factors and missed solutions to {Enigma} design
+  weaknesses,'' {\em Cryptologia}, \textbf{40}(2):177--202.
+\newblock \doi{10.1080/01611194.2015.1028680}
+
+\bibitem{harking}
+Kerr, N.~L. (1998) ``{HARKing}: {H}ypothesizing after the results are known,''
+  {\em Personality and Social Psychology Review}, \textbf{2}(3):196--217.
+\newblock \doi{10.1207/s15327957pspr0203\_4}
+
+\bibitem{framework}
+Thimbleby, H., Anderson, S.~O. and Cairns, P. (1999) ``A framework for
+  modelling trojans and computer virus infection,'' {\em Computer Journal},
+  \textbf{41}:444--458.
+\newblock \doi{10.1093/comjnl/41.7.444}
 
 \bibitem{viruses}
-Thimbleby H, Anderson SO, Cairns P.
-\newblock A Framework for Modelling Trojans and Computer Virus Infection.
-\newblock Computer Journal. 1999;41(7):444--458.
-\newblock doi:{10.1093/comjnl/41.7.444}.
+Thimbleby, H., Anderson, S.~O. and Cairns, P. (1999) ``A framework for
+  modelling trojans and computer virus infection,'' {\em Computer Journal},
+  \textbf{41}(7):444--458.
+\newblock \doi{10.1093/comjnl/41.7.444}
 
 \bibitem{strachey}
-Strachey C.
-\newblock Fundamental Concepts in Programming Languages.
-\newblock Higher-Order and Symbolic Computation. 2000;13:11--49.
-\newblock doi:{10.1023/A:1010000313106}.
+Strachey, C. (2000) ``Fundamental concepts in programming languages,'' {\em
+  Higher-Order and Symbolic Computation}, \textbf{13}:11--49.
+\newblock \doi{10.1023/A:1010000313106}
 
 \bibitem{henderson}
-Henderson P.
-\newblock Functional Programming: Application and Implementation.
-\newblock Computer Science. Prentice-Hall International; 1980.
+Henderson, P. (1980) {\em Functional Programming: Application and
+  Implementation}, Prentice-Hall International.
 
 \bibitem{RMarkdown}
-Xie Y, Allaire JJ, Grolemund G.
-\newblock R Markdown: The Definitive Guide.
-\newblock Chapman {\&} Hall/CRC; 2020.
+Xie, Y., Allaire, J.~J. and Grolemund, G. (2020) {\em R Markdown: The
+  Definitive Guide}, Chapman {\&} Hall/CRC.
 
-\bibitem{latex-calculus}
-Fuster R.
-\newblock The {\texttt{calculator}} and {\texttt{calculus}} packages:
-  Arithmetic and functional calculations inside {\LaTeX}.
-\newblock TUGboat. 2012;33(3):265--271.
+\bibitem{lancet-retracted}
+Mehra, M.~R., Desai, S.~S., Ruschitzka, F. and Patel, A.~N. (2020)
+  ``{RETRACTED}: {Hydroxychloroquine} or chloroquine with or without a
+  macrolide for treatment of {COVID}-19: {A} multinational registry analysis,''
+  {\em The Lancet}, \textbf{{online}}:1--10.
+\newblock \doi{10.1016/S0140-6736(20)31180-6}
+
+\bibitem{fda}
+Zhang, Y., Masci, P., Jones, P. and Thimbleby, H. (2019) ``User interface
+  software errors in medical devices,'' {\em Biomedical Instrumentation {\&}
+  Technology}, \textbf{53}(3):182--194.
+\newblock \doi{10.2345/0899-8205-53.3.182}
+
+\bibitem{stability}
+Salama, M., Bahsoon, R. and Lago, P. (2021) ``Stability in software
+  engineering: Survey of the state-of-the-art and research directions,'' {\em
+  IEEE Transactions on Software Engineering}, \textbf{47}(7):1468--1510.
+\newblock \doi{10.1109/TSE.2019.2925616}
 
 \bibitem{RS-policy}
-Hurst P.
-\newblock Data sharing and mining.
-\newblock Royal Society. 2022;doi:{10.25504/FAIRsharing.dIDAzV}.
+Hurst, P. (2022) {\em Data sharing and mining}, Royal Society.
+\newblock \doi{10.25504/FAIRsharing.dIDAzV}
 
-\end{thebibliography}
+\bibitem{latex-calculus}
+Fuster, R. (2012) ``The {\texttt{calculator}} and {\texttt{calculus}} packages:
+  {Arithmetic} and functional calculations inside {\LaTeX},'' {\em TUGboat},
+  \textbf{33}(3):265--271.
+
+\endofbibliography\end{thebibliography}
