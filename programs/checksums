@@ -1,0 +1,38 @@
+if [ x$1 = xupdate ]; then 
+	# if updating checksums, save the date before the checksums are made, otherwise it will always seem to change
+	echo Last checksum updates were done on `date` > checksums-meta.txt
+fi
+(
+	find . -type f -exec echo '{}' ';' | while read file; do
+		if [ "$file" != "./checksums.txt" ]; then 
+			# the checksum would change if we included the checksum records themselves, so we skip it
+        	type=`file -b --mime-type "$file" | sed 's|/.*||'`
+        	if [ $type = "text" ]; then
+        		cksum "$file"
+        	fi 
+		fi
+    done 
+    find . -name "*.pdf" -exec echo '{}' ';' | while read file; do
+    	cksum "$file"
+    done
+) > newchecksums.txt 
+
+echo `cat newchecksums.txt|wc -l` files checksummed
+
+if [ x$1 = xupdate ]; then 
+	echo Updated old checksums record, checksums.txt
+	mv newchecksums.txt checksums.txt
+else
+	cat checksums-meta.txt
+	if diff checksums.txt newchecksums.txt > tmp; then 
+			echo No checksum differences - all results are the same as the last time make check-update was run
+		else 
+			echo Detailed checksum differences:
+			cat tmp	 
+			echo Run make check-update to bring checksums up to date with current results
+	fi
+	rm -f newchecksums.txt tmp
+fi
+
+
+ 

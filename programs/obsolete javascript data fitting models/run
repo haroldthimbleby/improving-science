@@ -1,0 +1,6 @@
+echo This is obsolete, upgraded and replaced by the plot.nb mathematica notebook
+echo but it may be somewhat helpful if you don't have mathematica
+
+node fittingData.js | grep def > ../generated/modelsAt5.tex
+awk -f fittingModels.awk fittingData.js > ../generated/fittingModels-data.tex
+

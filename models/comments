@@ -1,0 +1,30 @@
+for i in git-*; do
+    if [ $i != git-AI-CDSS-Cardiovascular-Silo -a $i != git-LRM -a $i != git-PENet -a $i != git-blast-ct -a $i != git-covid-sim -a $i != git-lactModel -a $i != git-philter-ucsf -a $i != git-MetricSelectionFramework -a $i != git-manifold-ga -a $i != git-SiameseChange ]; then
+    echo Repo $i
+        # sql js java R m py cpp hpp h
+        echo "  " C type in $i
+        find $i \( -name "*.java" -or -name "*.h" -or -name "*.js" -or -name "*.py" -or -name "*.cpp" \) -exec cat {} \; | awk '
+                BEGIN {inComment=0}
+                /\/\// {print "      ",$0}
+                /\/\*/ {inComment=1}
+                {if(inComment) print "      ",$0} 
+                /\*\// {inComment=0}
+            ' 
+        echo "  " R type in $i
+        find $i \( -name "*.R" \) -exec cat {} \; | awk '
+                /#/ {print "      ",$0}
+            '  
+        echo "  " m type in $i
+        find $i \( -name "*.m" \) -exec cat {} \; | awk '
+                /%/ {print "      ",$0}
+            '  
+        echo "  " SQL type in $i
+        find $i \( -name "*.sql" \) -exec cat {} \; | awk '
+                BEGIN {inComment=0}
+                /--/ {print "      ",$0}
+                /\/\*/ {inComment=1}
+                {if(inComment) print "      ",$0} 
+                /\*\// {inComment=0}
+            ' 
+    fi
+done
