@@ -3,6 +3,9 @@ if [ x$1 = xupdate ]; then
 	echo Last checksum updates were done on `date` > checksums-meta.txt
 fi
 (
+# could use git ls-tree --full-tree -r --name-only HEAD
+# to just get list of files in the git repo
+
 	find . -type f -exec echo '{}' ';' | while read file; do
 		if [ "$file" != "./checksums.txt" ]; then 
 			# the checksum would change if we included the checksum records themselves, so we skip it
