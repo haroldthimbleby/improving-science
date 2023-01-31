@@ -34,6 +34,24 @@ Wing, J.~M. (2008) ``Computational thinking and thinking about computing,''
 McOwen, P.~W. and Curzon, P. (2020) {\em The Power of Computational Thinking},
   World Scientific Publishing.
 
+\bibitem{ICmodel}
+Ferguson, N.~M. \emph{et al.} (16 March 2020) {\em Impact of non-pharmaceutical
+  interventions ({NPI}s) to reduce {COVID}-19 mortality and healthcare demand}.
+\newblock
+  \url{www.imperial.ac.uk/}\midurl{media/}\midurl{imperial-}\midurl{college/}\midurl{medicine/}\midurl{sph/}\midurl{ide/}\midurl{gida-}\midurl{fellowships/}\midurl{Imperial-}\midurl{College-}\midurl{COVID19-}\midurl{NPI-}\midurl{modelling-}\midurl{16-}\midurl{03-}\midurl{2020.pdf}
+
+\bibitem{avianFluModel}
+Ferguson, N.~M., Cummings, D. A.~T., Fraser, C., Cajka, J.~C., Cooley, P.~C.
+  and Burke, D.~S. (2005) ``Strategies for containing an emerging influenza
+  pandemic in {Southeast Asia},'' {\em Nature}, \textbf{437}:209--214.
+\newblock \doi{10.1038/nature04017}
+
+\bibitem{originalICmodel}
+Ferguson, N.~M., Cummings, D. A.~T., Fraser, C., Cajka, J.~C., Cooley, P.~C.
+  and Burke, D.~S. (2006) ``Strategies for mitigating an influenza pandemic,''
+  {\em Nature}, \textbf{442}:448--452.
+\newblock \doi{10.1038/nature04795}
+
 \bibitem{reproducibility-crisis}
 Baker, M. (2016) ``1,500 scientists lift the lid on reproducibility,'' {\em
   Nature}, \textbf{533}(7604):452--454.
@@ -350,24 +368,6 @@ Moons, K.~G., Altman, D.~G., Reitsma, J.~B., Ioannidis, J.~P., Macaskill, P.,
 Adam, D. (2020) ``Modelling the pandemic: {The} simulations driving the world's
   response to {COVID}-19,'' {\em Nature}, \textbf{580}:316--318.
 \newblock \doi{10.1038/d41586-020-01003-6}
-
-\bibitem{ICmodel}
-Ferguson, N.~M. \emph{et al.} (16 March 2020) {\em Impact of non-pharmaceutical
-  interventions ({NPI}s) to reduce {COVID}-19 mortality and healthcare demand}.
-\newblock
-  \url{www.imperial.ac.uk/}\midurl{media/}\midurl{imperial-}\midurl{college/}\midurl{medicine/}\midurl{sph/}\midurl{ide/}\midurl{gida-}\midurl{fellowships/}\midurl{Imperial-}\midurl{College-}\midurl{COVID19-}\midurl{NPI-}\midurl{modelling-}\midurl{16-}\midurl{03-}\midurl{2020.pdf}
-
-\bibitem{avianFluModel}
-Ferguson, N.~M., Cummings, D. A.~T., Fraser, C., Cajka, J.~C., Cooley, P.~C.
-  and Burke, D.~S. (2005) ``Strategies for containing an emerging influenza
-  pandemic in {Southeast Asia},'' {\em Nature}, \textbf{437}:209--214.
-\newblock \doi{10.1038/nature04017}
-
-\bibitem{originalICmodel}
-Ferguson, N.~M., Cummings, D. A.~T., Fraser, C., Cajka, J.~C., Cooley, P.~C.
-  and Burke, D.~S. (2006) ``Strategies for mitigating an influenza pandemic,''
-  {\em Nature}, \textbf{442}:448--452.
-\newblock \doi{10.1038/nature04795}
 
 \bibitem{tweet}
 Ferguson, N. (22 March 2020) {\em Tweet}.
