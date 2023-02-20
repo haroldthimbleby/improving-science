@@ -18,7 +18,7 @@
 #
 
 APPENDIX = supplemental material
-osversion = Darwin Kernel Version 20.6.0: Mon Aug 29 04:31:06 PDT 2022; root:xnu-7195.141.39~2/RELEASE_X86_64
+osversion = Darwin Kernel Version 22.3.0: Thu Jan  5 20:53:49 PST 2023; root:xnu-8792.81.2~2/RELEASE_X86_64
 			
 help: # Explain how to use \texttt{make}, and list all available options for using \texttt{make}.
 	@echo Use make with any of these options:
@@ -37,13 +37,13 @@ check-versions: # Check that you have the right software and software versions t
 	@echo
 	@$(call checkVersion,awk,awk version 20200816,)
 	@$(call checkVersion,bibtex,BibTeX 0.99d (TeX Live 2021),)
-	@$(call checkVersion,git,git version 2.32.0 (Apple Git-132),)
+	@$(call checkVersion,git,git version 2.37.1 (Apple Git-137.1),)
 	@$(call checkVersion,latex,pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2021),)
 	@$(call checkVersion,node,v12.13.0, node)
 	@echo
 	@echo "Originally this makefile was run on MacOS $(osversion)"
 	@echo "You are running                           `uname -v`"
-	@if [ "$(osversion)" = "`uname -v`" ]; then echo ... "(OS versions are the same)"; else echo ... which are different "(you may just have a more recent version)"; fi
+	@if [ "$(osversion)" = "`uname -v`" ]; then echo ... "(These OS versions are the same)"; else echo ... which are different "(you may just have a more recent version)"; fi
 	@echo
 	@echo PS we ran Mathematica 12.2.0.0 but "it's" too hard to run it in make. See make mathematica
 	@echo
@@ -92,9 +92,9 @@ readme@md:
 readme: # Update the \texttt{README.md} file. You only need to do this if you've edited the makefile and changed the \texttt{make} options available, or edited \texttt{README.md-src}. (\texttt{README.md} is written in markdown wth Git formats so you know how to do everything on the repository; the \texttt{README.md} file is easiest to read on the Git site.).
 	make readme@md > README.md
 
-tidyup: # Tidyup before doing a git commit. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the \LaTeX\ data include files.
+tidyup: # Tidyup before doing a git commit. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the \LaTeX\ data include files. Do not remove the .aux files, as \LaTeX\ runs much more smoothly with them.
 	@echo Remove all basic files that can easily be regenerated, except the main PDFs and the generated files that are included in Latex files
-	rm -f paper-seb-*.aux paper-seb-*.bbl paper-seb-*.blg summarise.aux data-check.html 
+	rm -f paper-seb-*.bbl paper-seb-*.blg data-check.html 
 	# Don't delete generated/* as it's helpful to keep all the generated files around so Latex can be used directly...
 	@# rm generated/* 
 	rm -rf *.log *.out *.dvi
