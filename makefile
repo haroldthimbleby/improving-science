@@ -104,8 +104,8 @@ tidyup: # Tidyup before doing a git commit. Remove all easily generated files, a
 	cd models; tidyup
  
 really-tidyup: # More thorough than \texttt{make tidyup} --- remove \emph{all} files that can be recreated.
-	@echo Remove ALL files that can be recreated, including PDFs and files made by processing the JSON data 
-	make tidyup
+	@echo Remove all files that can be recreated, including PDFs and files made by processing the JSON data 
+	make tidyup 
 	rm -f paper-seb-*.pdf
 	rm -f expanded*
 		
