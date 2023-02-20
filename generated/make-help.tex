@@ -1,0 +1,29 @@
+% 1 - make all
+% 2 - make archive
+% 3 - make check-same
+% 4 - make check-update
+% 5 - make check-versions
+% 6 - make data
+% 7 - make expand
+% 8 - make help
+% 9 - make help-brief
+% 10 - make mathematica
+% 11 - make one-file
+% 12 - make pdf
+% 13 - make push
+% 14 - make readme
+% 15 - make really-tidyup
+% 16 - make tidyup
+% 17 - make zip
+% 18 - make zip-data
+{\sf\begin{tabular}{rp{4.5in}}
+\texttt{make all}&   Analyze the data, then typeset the main PDF files (\texttt{paper-seb-main.pdf} and \texttt{paper-seb-supplementary-material.pdf}).\\
+\multicolumn{1}{l@{\vdots}}{}&\\
+\texttt{make data}&   Analyze the data, and generate all the data files, the Unix scripts, the CSV, and \LaTeX\ files (including the \LaTeX\ summary of this makefile), etc. In particular, this runs \texttt{node programs/data.js}, downloads the Git repositories used in the pilot survey, and then analyzes them. Note that downloading all the repositories in a reasonable time needs decent internet bandwidth.\\
+\multicolumn{1}{l@{\vdots}}{}&\\
+\texttt{make help}&   Explain how to use \texttt{make}, and list all available options for using \texttt{make}.\\
+\multicolumn{1}{l@{\vdots}}{}&\\
+\texttt{make one-file}&   Make a single PDF file paper-seb.pdf (i.e., paper + appendix) all in one.\\
+\multicolumn{1}{l@{\vdots}}{}&\\
+\texttt{make tidyup}&   Tidyup before doing a git commit. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the \LaTeX\ data include files.\\
+\end{tabular}}

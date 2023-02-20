@@ -92,19 +92,21 @@ readme@md:
 readme: # Update the \texttt{README.md} file. You only need to do this if you've edited the makefile and changed the \texttt{make} options available, or edited \texttt{README.md-src}. (\texttt{README.md} is written in markdown wth Git formats so you know how to do everything on the repository; the \texttt{README.md} file is easiest to read on the Git site.).
 	make readme@md > README.md
 
-tidyup: # Remove all easily generated files, except the main PDFs and the large Git repositories needed for the pilot survey.
-	@echo Remove all basic files that can easily be regenerated, except the main PDFs
-	rm -f paper-seb-*.aux generated/* paper-seb-*.bbl paper-seb-*.blg summarise.aux data-check.html 
+tidyup: # Tidyup before doing a git commit. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the \LaTeX\ data include files.
+	@echo Remove all basic files that can easily be regenerated, except the main PDFs and the generated files that are included in Latex files
+	rm -f paper-seb-*.aux paper-seb-*.bbl paper-seb-*.blg summarise.aux data-check.html 
+	# Don't delete generated/* as it's helpful to keep all the generated files around so Latex can be used directly...
+	@# rm generated/* 
 	rm -rf *.log *.out *.dvi
 	@echo This has left these generated PDFs you can either keep or delete manually
 	-@ls paper*.pdf
+	@echo Remove all the recoverable stuff in the models directory
+	cd models; tidyup
  
 really-tidyup: # More thorough than \texttt{make tidyup} --- remove \emph{all} files that can be recreated.
 	@echo Remove ALL files that can be recreated, including PDFs and files made by processing the JSON data 
 	make tidyup
 	rm -f paper-seb-*.pdf
-	@echo Remove all the recoverable stuff in the models directory
-	cd models; tidyup
 	rm -f expanded*
 		
 all: # Analyze the data, then typeset the main PDF files (\texttt{paper-seb-main.pdf} and \texttt{paper-seb-supplementary-material.pdf}).
