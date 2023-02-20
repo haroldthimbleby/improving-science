@@ -1,0 +1,32 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}Background}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.a}{\color {blue}\uwave {Related code quality concerns}}}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.b}{\color {red}\sout {The statistics/computation analogy}}}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.b}{\color {blue}\uwave {Computable papers}}}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.c}{\color {blue}\uwave {RAP: Reproducible Analytical Pipelines}}}{6}{subsection.2.3}%
+\contentsline {section}{\numberline {3}{\color {blue}\uwave {The statistics/code analogy}}}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.a}{\color {red}\sout {The role of code }}{\color {red}\sout {in science and scientific publication}}}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.a}The siren call of over-fitting code}{8}{subsection.3.1}%
+\contentsline {section}{\numberline {4}{\color {blue}\uwave {The conventional role of code}}}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.a}The deceptive simplicity of code}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.b}{\color {blue}\uwave {The low status of coding}}}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.c}{\color {red}\sout {The central role of code is ignored}}}{12}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.c}{\color {blue}\uwave {The critical role of code is often ignored}}}{12}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.d}Bugs, code and programming}{13}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.e}{\color {red}\sout {The long-term }}{\color {blue}\uwave {Long-term }}problems of unreliable code}{13}{subsection.4.5}%
+\contentsline {section}{\numberline {5}State of the art{\color {red}\sout {in computational modeling}}}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.a}{\color {blue}\uwave {Case study: Pandemic modeling}}}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.b}{\color {blue}\uwave {Concerns with reproducibility}}}{15}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.c}{\color {red}\sout {Concerns with reproducibility}}}{15}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.c}{\color {red}\sout {Computational science }}{\color {red}\sout {beyond }}{\color {blue}\uwave {Beyond }}pandemic modeling}{16}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Improving {\color {red}\sout {the computational sciences}}{\color {blue}\uwave {science that uses code}}}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.a}The {\color {blue}\uwave {narrow }}emphasis on data}{18}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.b}{\color {red}\sout {s: Generalized reproducible }}{\color {red}\sout {analytical pipelines}}}{19}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.b}{\color {blue}\uwave {Generalizing RAP to }}{\color {blue}\uwave {RAP+}}}{20}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.c}{\color {blue}\uwave {The paper as a scientific laboratory}}}{21}{subsection.6.3}%
+\contentsline {section}{\numberline {7}{\color {red}\sout {A call }}{\color {blue}\uwave {Call }}to action}{22}{section.7}%
+\contentsline {subsection}{\numberline {7.a}Action must be {\color {red}\sout {mutual and }}interdisciplinary}{23}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.b}Methodological statements}{24}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.c}{\color {red}\sout {The paper as a scientific laboratory}}{\color {blue}\uwave {Benefits beyond science}}}{25}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.d}{\color {red}\sout {Benefits beyond computational science}}}{26}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Conclusions}{26}{section.8}%

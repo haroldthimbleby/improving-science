@@ -36,7 +36,7 @@ check-versions: # Check that you have the right software and software versions t
 	@echo Different versions may well work fine - but be cautious
 	@echo
 	@$(call checkVersion,awk,awk version 20200816,)
-	@$(call checkVersion,Bibtex,BibTeX 0.99d (TeX Live 2021),)
+	@$(call checkVersion,bibtex,BibTeX 0.99d (TeX Live 2021),)
 	@$(call checkVersion,git,git version 2.32.0 (Apple Git-132),)
 	@$(call checkVersion,latex,pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2021),)
 	@$(call checkVersion,node,v12.13.0, node)
@@ -59,8 +59,6 @@ check-update: # Update the data and generated file checksums after a successful 
 data: # Analyze the data, and generate all the data files, the Unix scripts, the CSV, and \LaTeX\ files (including the \LaTeX\ summary of this makefile), etc. In particular, this runs \texttt{node programs/data.js}, downloads the Git repositories used in the pilot survey, and then analyzes them. Note that downloading all the repositories in a reasonable time needs decent internet bandwidth.
 	@echo Generate all files and analyses from the JSON data in programs/data.js
 	-node programs/data.js
-	@echo Generate the sizes of the Javascript least squares/Lagrange model functions
-	cd models-data-fitting; run
 	@echo Generate all data from the published models cited in the paper
 	@echo Note that we will be generating data from the paper repositories, and these may have been updated by their authors. This step takes a while, as there is a lot of data to download.
 	cd models; ./run

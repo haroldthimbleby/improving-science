@@ -8,7 +8,7 @@ git clone "http://github.com/mrc-ide/covid-sim" "git-covid-sim"
 # check that PostoperativeOutcomes_RiskNet README.md has not been updated
 # otherwise sections in the paper need fixing!
 
-echo CHECK THAT REPO FOR PostoperativeOutcomes_RiskNet HAS NOT CHANGED
+echo NOW WE CHECK THAT REPO FOR PostoperativeOutcomes_RiskNet HAS NOT CHANGED
 if cmp original-git-PostoperativeOutcomes_RiskNet-README.md git-PostoperativeOutcomes_RiskNet/*.md;
    then 
         echo README.md has not been changed
