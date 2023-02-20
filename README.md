@@ -21,7 +21,11 @@ Everything works using `make`.
 
 First, here's a quick overview of how the system works behind the scenes inside `make`.
 
-To generate all data or typeset the paper, you will need a Unix system with: awk, bibtex, latex, make, node, sed, and zip (plus the usual rm, echo, etc). 
+To generate all data or typeset the paper, you will need a Unix system with: awk, bibtex, git, latex, make, node, sed, and zip (plus the usual echo, egrep, grep, rm, sh, test, etc). 
+
+Mathematica is also used, though all the files it generates are in the Git repository, so you can get away without being able to run Mathematica yourself. 
+
+(Note: Mathematica has a curious defect that it seems, so far as I can tell, to be incompatible with using make. I've used Mathematica notebooks here, and as soon as you look at a notebook it gets updated with a timestamp even if you didn't edit it. So make will always re-run notebooks, and even then you cannot guarantee Mathematica will run them, as you have to run them by hand, so far as I can tell.)
 
 The file `programs/data.js` includes both the JSON data and a JavaScript program that checks the data, analyses it, and generates most of the various data files &mdash; the CSV file, lots of LaTeX files used in the paper, and others.
 
@@ -108,7 +112,7 @@ Here are all the available options:
 
 * `make tidyup`
 
-    Remove all easily generated files, except the main PDFs and the large Git repositories needed for the pilot survey.
+    Tidyup before doing a git commit. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the Latex data include files.
 
 * `make zip`
 
