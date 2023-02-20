@@ -10,7 +10,7 @@
 
 ## Basics
 
-A PDF of the typeset paper and appendix is available at [`http://www.harold.thimbleby.net/reliable-models.pdf`](http://www.harold.thimbleby.net/reliable-models.pdf). It's also available in this repository.
+A PDF of the typeset paper and appendix is available at [`http://www.harold.thimbleby.net/paper-seb.pdf`](http://www.harold.thimbleby.net/paper-seb.pdf). It's also available in this repository.
 
 All data is defined and stored in human-readable JSON format in the file `programs/data.js` - though there is more in the directory `models`, which has downloaded many Git repos and analyzed them.
 

@@ -157,7 +157,7 @@ push: # Push any changed files to Git, along with the PDF files.
 	# rm -f paper-seb-main.pdf paper-seb-supplementary-material.pdf
 	git push -u origin master
 	
-# This creates (and preserves) a single PDF, paper-seb.pdf, separately maintained at http://www.harold.thimbleby.net as reliable-models.pdf
+# This creates (and preserves) a single PDF, paper-seb.pdf, separately maintained at http://www.harold.thimbleby.net as reliable-models.pdf (which it links to)
 one-file: # Make a single PDF file paper-seb.pdf (i.e., paper + appendix) all in one.
 	@make one.file
 
