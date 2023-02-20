@@ -1,0 +1,257 @@
+\begin{thebibliography}{10}
+
+\bibitem{vancouver}
+{Vancouver Group} (1997) ``Uniform requirements for manuscripts submitted to
+  biomedical journals,'' {\em JAMA}, \textbf{277}(11):927--934.
+\newblock \doi{10.1001/jama.1997.03540350077040}
+
+\bibitem{cosmos}
+Stepney, S. \emph{et al.} (2018) {\em Engineering Simulations as Scientific
+  Instruments: A Pattern Language}, Springer.
+
+\bibitem{ai-ethics}
+Misselhorn, C. (2018) ``Artificial morality. {Concepts}, issues and
+  challenges,'' {\em Social Science and Public Policy}, \textbf{55}:161--169.
+\newblock \doi{10.1007/s12115-018-0229-y}
+
+\bibitem{science-lancet1}
+Servick, K. and Enserink, M. (2020) ``A mysterious company's coronavirus papers
+  in top medical journals may be unraveling,'' {\em Science}.
+\newblock \doi{10.1126/science.abd1337}
+
+\bibitem{science-lancet2}
+Servick, K. (2020) ``{COVID}-19 data scandal prompts tweaks to elite journal's
+  review process,'' {\em Science}.
+\newblock \doi{10.1126/science.abe8656}
+
+\bibitem{lancet-learning}
+{The Editors} (2020) ``Learning from a retraction,'' {\em The Lancet},
+  \textbf{396}:799.
+\newblock \doi{10.1016/S0140-6736(20)31958-9}
+
+\bibitem{jvs1}
+Hardouin, S., Cheng, T.~W., Mitchell, E.~L., Raulli, S.~J., Jones, D.~W.,
+  Siracuse, J.~J. and Farber, A. (2020) ``Prevalence of unprofessional social
+  media content among young vascular surgeons,'' {\em Journal of Vascular
+  Surgery}, \textbf{72}(2):667--671.
+\newblock \doi{10.1016/j.jvs.2019.10.069}
+
+\bibitem{jvs2}
+Baumann, J. (29 July, 2020) ``\#{MedBikini} backlash exposes research ethics
+  boards' digital gaps,'' {\em Bloomberg Law}.
+\newblock
+  \url{news.bloomberglaw.com/}\midurl{pharma-}\midurl{and-}\midurl{life-}\midurl{sciences/}\midurl{medbikini-}\midurl{backlash-}\midurl{exposes-}\midurl{research-}\midurl{ethics-}\midurl{boards-}\midurl{digital-}\midurl{gaps}
+
+\bibitem{jvs3}
+{The Editors {(of \emph{Journal of Vascular Surgery\/})}} (2020) ``{Editors'
+  Statement Regarding ``Prevalence of unprofessional social media content among
+  young vascular surgeons''},'' {\em FaceBook}.
+\newblock
+  \url{www.facebook.com/TheJVascSurg/photos/a.611986142331744/1381024778761206/?type=3&theater},
+  and copied to journal home page \url{www.jvascsurg.org} Accessed 30 July
+  2020.
+
+\bibitem{swebok}
+Bourque, P. and Fairley, R., eds. (2014) {\em Guide to the Software Engineering
+  Body of Knowledge}, (Version 3.0), IEEE Computer Society.
+\newblock \url{www.swebok.org}
+
+\bibitem{wpf}
+Zeller, A. (2006) {\em Why Programs Fail: A Guide to Systematic Debugging},
+  Morgan Kaufmann.
+
+\bibitem{humphrey}
+Humphrey, W.~S. (2005) {\em PSP: A Self-Improvement Process for Software
+  Engineers}, Addison Wesley.
+
+\bibitem{managers}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt\  (2001) {\em Winning with
+  Software: An Executive Strategy}, Addison-Wesley Professional.
+
+\bibitem{differential-equations}
+Boldo, S., Cl{\'{e}}ment, F., Filli{\^{a}}tre, J.-C., Mayero, M., Melquiond, G.
+  and Weis, P. (2014) ``Trusting computations: {A} mechanized proof from
+  partial differential equations to actual program,'' {\em Computers and
+  Mathematics with Applications}, \textbf{68}:325--352.
+\newblock \doi{10.1016/j.camwa.2014.06.004}
+
+\bibitem{numerals}
+Thimbleby, H. and Cairns, P. (2017) ``Interactive numerals,'' {\em Royal
+  Society Open Science}, \textbf{4}(4):160903.
+\newblock \doi{10.1098/rsos.160903}
+
+\bibitem{heedless}
+Thimbleby, H. (2012) ``Heedless programming: Ignoring detectable error is a
+  widespread hazard,'' {\em Software --- Practice {\&} Experience},
+  \textbf{42}(11):1393--1407.
+\newblock \doi{10.1002/spe.1141}
+
+\bibitem{plos}
+Chao, D.~L., Halloran, M.~E., Obenchain, V.~J. and {Longini Jr}, I.~M. (2010)
+  ``{FluTE}, a publicly available stochastic influenza epidemic simulation
+  model,'' {\em PLOS Computational Biology}, \textbf{6}(1):e1000656.
+\newblock Source code available at \url{GitHub.com/dlchao/FluTE},
+  \doi{10.1371/journal.pcbi.1000656}
+
+\bibitem{excel1}
+Abir, M., Nelson, C., Chan, E.~W., Al-Ibrahim, H., Cutter, C., Patel, K. and
+  Bogart, A. (2020) {\em {RAND} Critical Care Surge Response Tool: {An}
+  Excel-Based Model for Helping Hospitals Respond to the {COVID-19} Crisis},
+  RAND Corporation.
+\newblock
+  \url{www.rand.org/}\midurl{pubs/}\midurl{tools/}\midurl{TLA164-}\midurl{1.html}
+
+\bibitem{excel2}
+Alvarez, N.~M., Gonzalez-Gonzalez, E. and Trujillo-de Santiago, G. (2020)
+  ``Modeling {COVID-19} epidemics in an excel spreadsheet: {Democratizing} the
+  access to first-hand accurate predictions of epidemic outbreaks,'' {\em
+  MedRxiv}.
+\newblock Preprint, \doi{10.1101/2020.03.23.20041590}
+
+\bibitem{npm}
+Schlueter, I.~Z. (23 March 2016) {\em Blog: kik, left-pad, and npm}, NPM Blog.
+\newblock Accessed 10 April 2020,
+  \url{blog.npmjs.org/}\midurl{post/}\midurl{141577284765/}\midurl{kik-}\midurl{left-}\midurl{pad-}\midurl{and-}\midurl{npm}
+
+\bibitem{hci1}
+Shneiderman, B., Plaisant, C., Cohen, M. and {\emph{et al}} (2016) {\em
+  Designing the User Interface: Strategies for Effective Human-Computer
+  Interaction}, Pearson, 6th~ed.
+\newblock \url{www.cs.umd.edu/}\midurl{hcil/}\midurl{DTUI6}
+
+\bibitem{hci2}
+Thimbleby, H. (2007) {\em Press On: Principles of Interaction Programming}, MIT
+  Press.
+
+\bibitem{flexibility}
+Hanson, C. and Sussman, G.~J. (2021) {\em Software design for flexibility: How
+  to avoid programming yourself into a corner}, MIT Press.
+
+\bibitem{iso}
+{ISO/IEC JTC 1/SC 7 Software and systems engineering Committees} (2015) {\em
+  Software engineering --- Guidelines for the application of ISO 9001:2015 to
+  computer software}, International Organization for Standardization (ISO).
+\newblock \url{www.iso.org/}\midurl{standard/}\midurl{74348.html}
+
+\bibitem{178C}
+{RTCA Committee SC-205} (2011) {\em DO-178C --- Software Considerations in
+  Airborne Systems and Equipment Certification}, RTCA.
+\newblock \url{my.rtca.org/}\midurl{NC__Product?id=a1B36000001IcmqEAC}
+
+\bibitem{peerReview}
+Baum, T., {Le\ss mann}, H. and Schneider, K. (2017) ``The choice of code review
+  process: A survey on the state of the practice,'' {\em in Lecture Notes in
+  Computer Science}, vol.~\textbf{10611} of Product-Focused Software Process
+  Improvement: 18th International Conference, pp.~111--127.
+\newblock \doi{10.1007/978-3-319-69926-4_9}
+
+\bibitem{ssi-report}
+Brett, A., Croucher, M., Haines, R., Hettrick, S., Hetherington, J., Stillwell,
+  M. and Wyatt, C. (2017) {\em State of the Nation Report for Research Software
+  Engineers}, Research Software Engineer Network.
+\newblock \url{zenodo.org/}\midurl{record/}\midurl{495360#.Xyfuyi2ZOCM},
+  \doi{10.5281/zenodo.495360}
+
+\bibitem{ssi-url}
+{Software Sustainability Institute} (2020) {\em Web site}.
+\newblock Accessed 3 August 2020, \url{software.ac.uk}
+
+\bibitem{security-engineering}
+Anderson, R. (2020) {\em Security Engineering}, Wiley, 3rd~ed.
+
+\bibitem{cyber-cacm}
+Shostack, A. and Zurko, M.~E. (2020) ``Secure development tools and techniques
+  need more research that will increase their impact and effectiveness in
+  practice,'' {\em Communications of the ACM}, \textbf{63}(5):39--41.
+\newblock \doi{10.1145/3386908}
+
+\bibitem{Schneier}
+Schneier, B. (2018) {\em Click Here To Kill Everybody --- Security and Survival
+  in a Hyper-connected World}, W. W. Norton {\&} Company, Inc, New York, United
+  States.
+
+\bibitem{electronic-evidence}
+Mason, S. and Seng, D. (2017) {\em Electronic Evidence}, Humanities Digital
+  Library, 4th~ed.
+\newblock (NB See
+  \url{humanities-digital-library.org/index.php/hdl/catalog/book/electronicevidence}
+  until DOI is resolved), \doi{10.14296/517.9781911507079}
+
+\bibitem{simon-artificial}
+Simon, H.~A. and Laird, J. (2019) {\em Sciences of the Artificial}, MIT Press,
+  3rd~ed.
+
+\bibitem{dunning-kruger}
+Kruger, J. and Dunning, D. (1999) ``Unskilled and unaware of it: {How}
+  difficulties in recognizing one's own incompetence lead to inflated
+  self-assessments,'' {\em Journal of Personality and Social Psychology},
+  \textbf{77}(6):1121--1134.
+\newblock \doi{10.1037/0022-3514.77.6.1121}
+
+\bibitem{dunning-kruger-numeracy}
+Nuhfer, E., Fleisher, S., Cogan, C., Wirth, K. and Gaze, E. (2017) ``How random
+  noise and a graphical convention subverted behavioral scientists'
+  explanations of self-assessment data: {Numeracy} underlies better
+  alternatives,'' {\em Numeracy}, \textbf{10}(1):4.
+\newblock \doi{10.5038/1936-4660.10.1.4}
+
+\bibitem{enigma}
+Thimbleby, H. (2016) ``Human factors and missed solutions to {Enigma} design
+  weaknesses,'' {\em Cryptologia}, \textbf{40}(2):177--202.
+\newblock \doi{10.1080/01611194.2015.1028680}
+
+\bibitem{harking}
+Kerr, N.~L. (1998) ``{HARKing}: {H}ypothesizing after the results are known,''
+  {\em Personality and Social Psychology Review}, \textbf{2}(3):196--217.
+\newblock \doi{10.1207/s15327957pspr0203\_4}
+
+\bibitem{framework}
+Thimbleby, H., Anderson, S.~O. and Cairns, P. (1999) ``A framework for
+  modelling trojans and computer virus infection,'' {\em Computer Journal},
+  \textbf{41}:444--458.
+\newblock \doi{10.1093/comjnl/41.7.444}
+
+\bibitem{viruses}
+Thimbleby, H., Anderson, S.~O. and Cairns, P. (1999) ``A framework for
+  modelling trojans and computer virus infection,'' {\em Computer Journal},
+  \textbf{41}(7):444--458.
+\newblock \doi{10.1093/comjnl/41.7.444}
+
+\bibitem{strachey}
+Strachey, C. (2000) ``Fundamental concepts in programming languages,'' {\em
+  Higher-Order and Symbolic Computation}, \textbf{13}:11--49.
+\newblock \doi{10.1023/A:1010000313106}
+
+\bibitem{henderson}
+Henderson, P. (1980) {\em Functional Programming: Application and
+  Implementation}, Prentice-Hall International.
+
+\bibitem{lancet-retracted}
+Mehra, M.~R., Desai, S.~S., Ruschitzka, F. and Patel, A.~N. (2020)
+  ``{RETRACTED}: {Hydroxychloroquine} or chloroquine with or without a
+  macrolide for treatment of {COVID}-19: {A} multinational registry analysis,''
+  {\em The Lancet}, \textbf{{online}}:1--10.
+\newblock \doi{10.1016/S0140-6736(20)31180-6}
+
+\bibitem{fda}
+Zhang, Y., Masci, P., Jones, P. and Thimbleby, H. (2019) ``User interface
+  software errors in medical devices,'' {\em Biomedical Instrumentation {\&}
+  Technology}, \textbf{53}(3):182--194.
+\newblock \doi{10.2345/0899-8205-53.3.182}
+
+\bibitem{stability}
+Salama, M., Bahsoon, R. and Lago, P. (2021) ``Stability in software
+  engineering: Survey of the state-of-the-art and research directions,'' {\em
+  IEEE Transactions on Software Engineering}, \textbf{47}(7):1468--1510.
+\newblock \doi{10.1109/TSE.2019.2925616}
+
+\bibitem{RS-policy}
+Hurst, P. (2022) {\em Data sharing and mining}, Royal Society.
+\newblock \doi{10.25504/FAIRsharing.dIDAzV}
+
+\bibitem{latex-calculus}
+Fuster, R. (2012) ``The {\texttt{calculator}} and {\texttt{calculus}} packages:
+  {Arithmetic} and functional calculations inside {\LaTeX},'' {\em TUGboat},
+  \textbf{33}(3):265--271.
+
+\endofbibliography\end{thebibliography}

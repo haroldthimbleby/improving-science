@@ -1,0 +1,668 @@
+\begin{thebibliography}{100}
+
+\bibitem{a=b}
+Petkovsek, M., Wilf, H. and Zeilberger, D. (1996) {\em {$A=B$}}, A~K~Peters.
+  Ltd.
+\newblock \url{www2.math.upenn.edu/}\midurl{~wilf/}\midurl{AeqB.html}
+
+\bibitem{write-for-life}
+Quindlen, A. (2022) {\em Write for your life}, Random House.
+
+\bibitem{abelson}
+Abelson, R.~P. (1995) {\em Statistics as Principled Argument}, Lawrence Erlbaum
+  Associates.
+
+\bibitem{nature-chatgpt}
+Editorial (2023) ``Tools such as {ChatGPT} threaten transparent science; here
+  are our ground rules for their use,'' {\em Nature}, \textbf{613}:612.
+\newblock \doi{10.1038/d41586-023-00191-1}
+
+\bibitem{sommerville}
+Sommerville, I. (2015) {\em Software Engineering}, Pearson, 10th~ed.
+
+\bibitem{knight}
+Knight, J. (2012) {\em Fundamentals of Dependable Computing for Software
+  Engineers}, CRC Press.
+
+\bibitem{computational-thinking-wing}
+Wing, J.~M. (2008) ``Computational thinking and thinking about computing,''
+  {\em Philosophical Transactions of the {Royal Society A}: {M}athematical,
+  Physical and Engineering Sciences}, \textbf{366}(1881):3717--3725.
+\newblock \doi{10.1098/rsta.2008.0118}
+
+\bibitem{computational-thinking}
+McOwen, P.~W. and Curzon, P. (2020) {\em The Power of Computational Thinking},
+  World Scientific Publishing.
+
+\bibitem{ICmodel}
+Ferguson, N.~M. \emph{et al.} (16 March 2020) {\em Impact of non-pharmaceutical
+  interventions ({NPI}s) to reduce {COVID}-19 mortality and healthcare demand}.
+\newblock
+  \url{www.imperial.ac.uk/}\midurl{media/}\midurl{imperial-}\midurl{college/}\midurl{medicine/}\midurl{sph/}\midurl{ide/}\midurl{gida-}\midurl{fellowships/}\midurl{Imperial-}\midurl{College-}\midurl{COVID19-}\midurl{NPI-}\midurl{modelling-}\midurl{16-}\midurl{03-}\midurl{2020.pdf}
+
+\bibitem{avianFluModel}
+Ferguson, N.~M., Cummings, D. A.~T., Fraser, C., Cajka, J.~C., Cooley, P.~C.
+  and Burke, D.~S. (2005) ``Strategies for containing an emerging influenza
+  pandemic in {Southeast Asia},'' {\em Nature}, \textbf{437}:209--214.
+\newblock \doi{10.1038/nature04017}
+
+\bibitem{originalICmodel}
+Ferguson, N.~M., Cummings, D. A.~T., Fraser, C., Cajka, J.~C., Cooley, P.~C.
+  and Burke, D.~S. (2006) ``Strategies for mitigating an influenza pandemic,''
+  {\em Nature}, \textbf{442}:448--452.
+\newblock \doi{10.1038/nature04795}
+
+\bibitem{reproducibility-crisis}
+Baker, M. (2016) ``1,500 scientists lift the lid on reproducibility,'' {\em
+  Nature}, \textbf{533}(7604):452--454.
+\newblock \doi{10.1038/533452a}
+
+\bibitem{rescience}
+Rougier, N.~P. \emph{et al.} (2017) ``Sustainable computational science: the
+  {ReScience} initiative,'' {\em PeerJ Computer Science}, \textbf{3}(e142).
+\newblock \doi{10.7717/peerj-cs.142}
+
+\bibitem{temperature}
+Chang, H. (2007) {\em Inventing Temperature: Measurement and Scientific
+  Progress}, Oxford Studies in the Philosophy of Science.
+
+\bibitem{form}
+von Hippel, M. (2022) ``Crucial computer program for particle physics at risk
+  of obsolescence,'' {\em Quanta Magazine}.
+\newblock
+  \url{www.quantamagazine.org/}\midurl{crucial-}\midurl{computer-}\midurl{program-}\midurl{for-}\midurl{particle-}\midurl{physics-}\midurl{at-}\midurl{risk-}\midurl{of-}\midurl{obsolescence-}\midurl{20221201}
+
+\bibitem{acm-algorithms}
+Bemer, R.~W. (1958) ``Techniques department: Policy statement,'' {\em
+  Communications of the ACM}, \textbf{1}(1):5--7.
+
+\bibitem{hoare-correctness}
+Hoare, C. A.~R. (2007) ``The ideal of program correctness: {Third} {Computer}
+  {Journal} lecture,'' {\em The Computer Journal}, \textbf{50}(3):254--260.
+\newblock \doi{10.1093/comjnl/bxl078}
+
+\bibitem{jupyter-study}
+Pimentel, J.~F., Murta, L., Braganholo, V. and Freire, J. (2019) ``A
+  large-scale study about quality and reproducibility of {Jupyter} notebooks,''
+  {\em in 2019 IEEE/ACM 16th International Conference on Mining Software
+  Repositories {(MSR)}}, pp.~507--517.
+\newblock \doi{10.1109/MSR.2019.00077}
+
+\bibitem{trisovic}
+Trisovic, A., Lau, M.~K., Pasquier, T. and Crosas, M. (2022) ``A large-scale
+  study on research code quality and execution nature research,'' {\em
+  Scientific Data}, \textbf{9}(60).
+\newblock \doi{10.1038/s41597-022-01143-6}
+
+\bibitem{machine-learning-reproducibility}
+Thimbleby, H. (9 May, 2004) ``Give your computer's {IQ} a boost ---
+  {{\emph{{Journal of Machine Learning Research}}}},'' {\em Times Higher
+  Education Supplement}.
+\newblock
+  \url{www.timeshighereducation.co.uk/}\midurl{story.asp?sectioncode=26&storycode=176549}
+
+\bibitem{no-raw-data}
+Miyakawa, T. (2022) ``No raw data, no science: {Another} possible source of the
+  reproducibility crisis,'' {\em Molecular Brain}, \textbf{13}(24):1--6.
+\newblock \doi{10.1186/s13041-020-0552-2}
+
+\bibitem{data-access}
+Gabelica, M., Boj{\v c}i{\' c}, R. and Puljak, L. (2020) ``Many researchers
+  were not compliant with their published data sharing statement: mixed-methods
+  study,'' {\em Journal of Clinical Epidemiology}.
+\newblock \doi{0.1016/j.jclinepi.2022.05.019}
+
+\bibitem{reproducible-manifesto}
+Munaf{\`o}, M.~R., Nosek, B.~A., Bishop, D. V.~M., Button, K.~S., Chambers,
+  C.~D., Percie~du Sert, N., Simonsohn, U., Wagenmakers, E.-J., Ware, J.~J. and
+  Ioannidis, J. P.~A. (2017) ``A manifesto for reproducible science,'' {\em
+  Nature Human Behaviour}, \textbf{1}(1):0021.
+\newblock \doi{10.1038/s41562-016-0021}
+
+\bibitem{TOP}
+Nosek, B.~A. \emph{et al.} (2015) ``Promoting an open research culture:
+  {A}uthor guidelines for journals could help to promote transparency,
+  openness, and reproducibility,'' {\em Science},
+  \textbf{348}(6242):1422--1425.
+\newblock \doi{10.1126/science.aab2374}
+
+\bibitem{TOP-wiki}
+Alter, G. \emph{et al.} (2022) {\em Guidelines for {Transparency} and
+  {Openness} {Promotion} {(TOP)} in journal policies and practices ``{The}
+  {TOP} {Guidelines}''}.
+\newblock \url{osf.io/}\midurl{9f6gx/}\midurl{wiki/}\midurl{Guidelines}
+
+\bibitem{MMR-fraud}
+Godlee, F., Smith, J. and Marcovitch, H. (2011) ``Wakefield's article linking
+  {MMR} vaccine and autism was fraudulent,'' {\em BMJ}, \textbf{342}(c7452).
+\newblock \doi{10.1136/bmj.c7452}
+
+\bibitem{misconduct-issues}
+Fanelli, D. (2009) ``How many scientists fabricate and falsify research? {A}
+  systematic review and meta-analysis of survey data,'' {\em {PLOS ONE}},
+  \textbf{4}(5):e5738.
+\newblock \doi{10.1371/journal.pone.0005738}
+
+\bibitem{elns}
+Machina, H.~K. and Wild, D.~J. (2013) ``Electronic laboratory notebooks
+  progress and challenges in implementation,'' {\em Journal of Laboratory
+  Automation}, \textbf{18}(4):264--268.
+\newblock \doi{0.1177/2211068213484471}
+
+\bibitem{perkel-review}
+Perkel, J.~M. (6 May 2021) ``Reactive, reproducible, collaborative:
+  Computational notebooks evolve,'' {\em Nature}, \textbf{593}:156--157.
+\newblock \doi{10.1038/d41586-021-01174-w}
+
+\bibitem{LP}
+Knuth, D.~E. (1984) ``Literate programming,'' {\em The Computer Journal},
+  \textbf{27}(2):97--111.
+\newblock \doi{10.1093/comjnl/27.2.97}
+
+\bibitem{LP-book}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt\  (1992) {\em Literate
+  programming}, vol.~\textbf{27} of {CSLI} Lecture Notes, Center for the Study
+  of Language and Information Publication, Stanford, {CA}.
+
+\bibitem{relit}
+Thimbleby, H. and Williams, D. (2018) ``A tool for publishing reproducible
+  algorithms {\&} {A} reproducible, elegant algorithm for sequential
+  experiments,'' {\em Science of Computer Programming}, \textbf{156}:45--67.
+\newblock \url{GitHub.com/}\midurl{haroldthimbleby/}\midurl{relit},
+  \doi{10.1016/j.scico.2017.12.010}
+
+\bibitem{notebook-patent}
+Gray, T.~W. and Wolfram, S. (26 March 2013) {\em Method and system for
+  presenting input expressions and evaluations of the input expressions on a
+  workspace of a computational system}, US patent no{\@.} 8,407,580~B2.
+
+\bibitem{jupyter-history}
+Granger, B.~E. and P{\'e}rez, F. (2021) ``Jupyter: {Thinking} and storytelling
+  with code and data,'' {\em Computing in Science {\&} Engineering},
+  \textbf{23}(2):7--14.
+\newblock \doi{10.1109/MCSE.2021.3059263}
+
+\bibitem{knitr}
+Xie, Y. (2015) {\em Dynamic Documents with {R} and knitr}, CRC, second~ed.
+
+\bibitem{spec-led-design}
+Thimbleby, H. (1999) ``Specification-led design for interface simulation,
+  collecting use-data, interactive help, writing manuals, analysis, comparing
+  alternative designs, etc,'' {\em Personal Technologies},
+  \textbf{4}(2):241--254.
+\newblock \url{harold.thimbleby.net/}\midurl{ansim}, \doi{10.1007/BF01885563}
+
+\bibitem{RAPstandard}
+{Office for National Statistics} (2022) {\em Using reproducible analytical
+  pipelines ({RAP}) to improve statistics}.
+\newblock
+  \url{https:/}\midurl{/}\midurl{code.statisticsauthority.gov.uk/}\midurl{case-}\midurl{studies/}\midurl{using-}\midurl{reproducible-}\midurl{analytical-}\midurl{pipelines-}\midurl{rap-}\midurl{to-}\midurl{improve-}\midurl{statistics/}\midurl{}
+
+\bibitem{rap}
+Upson, M. (2017) {\em Reproducible analytical pipelines}.
+\newblock
+  \url{dataingovernment.blog.gov.uk/}\midurl{2017/}\midurl{03/}\midurl{27/}\midurl{reproducible-}\midurl{analytical-}\midurl{pipeline}
+
+\bibitem{goldacre}
+Goldacre, B. (2022) {\em Better, broader, safer: {Using} health data for
+  research and analysis}, Department of Health and Social Care.
+\newblock
+  \url{www.gov.uk/}\midurl{government/}\midurl{publications/}\midurl{better-}\midurl{broader-}\midurl{safer-}\midurl{using-}\midurl{health-}\midurl{data-}\midurl{for-}\midurl{research-}\midurl{and-}\midurl{analysis}
+
+\bibitem{turing-way}
+Ainsworth, R. \emph{et al.} (July 2022) {\em {The Turing Way: A Handbook for
+  Reproducible Data Science}}, vol.~\textbf{v1.0.3}, Zenodo.
+\newblock \url{the-}\midurl{turing-}\midurl{way.netlify.app/}\midurl{welcome},
+  \doi{10.5281/zenodo.3233853}
+
+\bibitem{apa-statistics}
+Glen, S. (2022) {\em Reporting Statistics APA Style}, Statistics How To.
+\newblock
+  \url{www.statisticshowto.com/}\midurl{probability-}\midurl{and-}\midurl{statistics/}\midurl{reporting-}\midurl{statistics-}\midurl{apa-}\midurl{style}
+
+\bibitem{Mariusz-reporting}
+Cicho{\'n}, M. (2020) ``Reporting statistical methods and outcome of
+  statistical analyses in research articles,'' {\em Pharmacological Reports},
+  \textbf{72}(3):481--485.
+\newblock \doi{10.1007/s43440-020-00110-5}
+
+\bibitem{science-statistics-recommendations}
+ (2022) {\em Science journals: editorial policies}.
+\newblock
+  \url{https:/}\midurl{/}\midurl{www.science.org/}\midurl{content/}\midurl{page/}\midurl{science-}\midurl{journals-}\midurl{editorial-}\midurl{policies}
+
+\bibitem{example-stats}
+Richards, D. \emph{et al.} (2020) ``A pragmatic randomized waitlist-controlled
+  effectiveness and cost-effectiveness trial of digital interventions for
+  depression and anxiety,'' {\em Nature Digital Medicine}, \textbf{3}(85).
+\newblock \doi{10.1038/s41746-020-0293-8}
+
+\bibitem{Spiegelhalter}
+Spiegelhalter, D. (2019) {\em The Art of Statistics: Learning from Data},
+  Pelican Books.
+
+\bibitem{paul-hci}
+Cairns, P. (2007) ``{HCI}{\ldots} not as it should be: inferential statistics
+  in {HCI} research,'' {\em in BCS-HCI '07: Proceedings of the 21st {British}
+  {HCI} {Group} Annual {Conference on People and Computers}: {HCI}{\ldots} but
+  not as we know it}, vol.~\textbf{1}, pp.~195--201.
+
+\bibitem{pnas-stats}
+Johnson, V.~E. (2013) ``Revised standards for statistical evidence,'' {\em
+  Proceedings National Academy of Sciences}, \textbf{110}(48):19313--19317.
+\newblock \doi{10.1073/pnas.1313476110}
+
+\bibitem{Ben}
+Shneiderman, B. (2016) ``Opinion: {The} dangers of faulty, biased, or malicious
+  algorithms requires independent oversight,'' {\em Proceedings National
+  Academy of Sciences}, \textbf{113}(48):13538--13540.
+\newblock \doi{10.1073/pnas.1618211113}
+
+\bibitem{se-bias}
+Friedman, B. and Nissenbaum, H. (1996) ``Bias in computer systems,'' {\em ACM
+  Transactions on Information Systems}, \textbf{14}(3):330--347.
+\newblock \doi{10.1145/230538.230561}
+
+\bibitem{sas9.2}
+Laurain, E., Ayav, C., Erpelding, M.-L., Kessler, M., Brian{\c{c}}on, S.,
+  Brunaud, L. and Frimat, L. (2022) ``Targets for parathyroid hormone in
+  secondary hyperparathyroidism: is a ``one-size-fits-all'' approach
+  appropriate? {A} prospective incident cohort study,'' {\em BMC nephrology},
+  \textbf{15}:132.
+\newblock \doi{10.1186/1471-2369-15-132}
+
+\bibitem{whitty}
+Whitty, C. J.~M. (2015) ``What makes an academic paper useful for health
+  policy?'' {\em BMC Medicine}, \textbf{13}:301.
+\newblock \doi{10.1186/s12916-015-0544-8}
+
+\bibitem{over-fit}
+Hawkins, D.~M. (2004) ``The problem of overfitting,'' {\em Journal of Chemical
+  Information and Modeling}, \textbf{44}:1--12.
+\newblock \doi{10.1021/ci0342472}
+
+\bibitem{may-simple}
+May, R.~M. (1976) ``Simple mathematical models with very complicated
+  dynamics,'' {\em Nature}, \textbf{261}:459--467.
+\newblock \doi{10.1038/261459a0}
+
+\bibitem{dyson}
+Dyson, F. (2004) ``A meeting with {Enrico Fermi},'' {\em Nature},
+  \textbf{427}:297.
+\newblock \doi{10.1038/427297a}
+
+\bibitem{assurance-case}
+Habli, I., Alexander, R., Hawkins, R., Sujan, M., McDermid, J., Picardi, C. and
+  Lawton, T. (2020) ``Enhancing {COVID-19} decision making by creating an
+  assurance case for epidemiological models,'' {\em BMJ Health {\&} Care
+  Informatics}, \textbf{27}(e100165):1--5.
+\newblock \doi{10.1136/bmjhci-2020-100165}
+
+\bibitem{assessing-quality}
+Kelly, D. and Sanders, R. (2008) {\em Assessing the Quality of Scientific
+  Software}, First International Workshop on Software Engineering For
+  Computational Science and Engineering {(see
+  \cite{assessing-quality-conference}}), Leipzig.
+\newblock
+  \url{citeseerx.ist.psu.edu/}\midurl{viewdoc/}\midurl{summary?doi=10.1.1.526.5076}
+
+\bibitem{fixit}
+Thimbleby, H. (2021) {\em Fix IT: How to see and solve the problems of digital
+  healthcare}, Oxford University Press.
+
+\bibitem{cite-code}
+Katz, D.~S. \emph{et al.} (2021) ``Recognizing the value of software: {A}
+  software citation guide [version 2; peer review: 2 approved] {Previously}
+  titled: ``{The} importance of software citation''{\hskip 0pt},'' {\em
+  F1000Research}, \textbf{9}(1257).
+\newblock \doi{10.12688/f1000research.26932.2}
+
+\bibitem{prisma}
+Page, M.~J. \emph{et al.} (2021) ``The {PRISMA} 2020 statement: {An} updated
+  guideline for reporting systematic reviews,'' {\em Systematic Reviews},
+  \textbf{10}(89):1--11.
+\newblock \doi{10.1186/s13643-021-01626-4}
+
+\bibitem{engima}
+Thimbleby, H. (2016) ``Human factors and missed solutions to {Enigma} design
+  weaknesses,'' {\em Cryptologia}, \textbf{40}(2):177--202.
+\newblock \doi{10.1080/01611194.2015.1028680}
+
+\bibitem{critiques}
+Sayburn, A. (2020) ``Covid-19: {Experts} question analysis suggesting half {UK}
+  population has been infected,'' {\em BMJ}, \textbf{368}:m1216.
+\newblock \doi{10.1136/bmj.m1216}
+
+\bibitem{diagnosis-reviews}
+Wynants, L. \emph{et al.} (2020) ``Prediction models for diagnosis and
+  prognosis of covid-19 infection: {Systematic} review and critical
+  appraisal,'' {\em BMJ}, \textbf{369}(m1328).
+\newblock \doi{10.1136/bmj.m1328}
+
+\bibitem{knuth}
+Knuth, D.~E. (1998) {\em The Art of Computer Programming (Seminumerical
+  Algorithms)}, vol.~\textbf{2}, Addison-Wesley, 3rd~ed.
+
+\bibitem{essence-of-software}
+Jackson, D. (2021) {\em The Essence of Software}, Princeton University Press.
+
+\bibitem{popper-conjectures-refutations}
+Popper, K.~R. (2002) {\em Conjectures and Refutations: {The} Growth of
+  Scientific Knowledge}, Routledge, 2nd~ed.
+
+\bibitem{science-review}
+Heesterbeek, H. \emph{et al.} (2015) ``Modeling infectious disease dynamics in
+  the complex landscape of global health,'' {\em Science},
+  \textbf{347}(6227):265--270.
+\newblock \doi{10.1126/science.aaa4339}
+
+\bibitem{tripod}
+Moons, K.~G., Altman, D.~G., Reitsma, J.~B., Ioannidis, J.~P., Macaskill, P.,
+  Steyerberg, E.~W., Vickers, A.~J., Ransohoff, D.~F. and Collins, G.~S. (2015)
+  ``Transparent reporting of a multivariable prediction model for individual
+  prognosis or diagnosis ({TRIPOD}): {Explanation} and elaboration,'' {\em
+  Annals of Internal Medicine}, \textbf{162}(1):W1--73.
+\newblock \doi{10.7326/M14-0698}
+
+\bibitem{nature-summary}
+Adam, D. (2020) ``Modelling the pandemic: {The} simulations driving the world's
+  response to {COVID}-19,'' {\em Nature}, \textbf{580}:316--318.
+\newblock \doi{10.1038/d41586-020-01003-6}
+
+\bibitem{tweet}
+Ferguson, N. (22 March 2020) {\em Tweet}.
+\newblock
+  \url{twitter.com/}\midurl{neil_ferguson/}\midurl{status/}\midurl{1241835454707699713}
+
+\bibitem{ferguson-interview}
+Leake, J. (29 March 2020) ``{Neil Ferguson} interview: {No} 10's infection guru
+  recruits game developers to build coronavirus pandemic model,'' {\em The
+  Sunday Times}.
+\newblock
+  \url{www.thetimes.co.uk/}\midurl{article/}\midurl{neil-}\midurl{ferguson-}\midurl{interview-}\midurl{no-}\midurl{10s-}\midurl{infection-}\midurl{guru-}\midurl{recruits-}\midurl{game-}\midurl{developers-}\midurl{to-}\midurl{build-}\midurl{coronavirus-}\midurl{pandemic-}\midurl{model-}\midurl{zl5rdtjq5}
+
+\bibitem{basic-reproducibilty}
+Hinsen, K. (2013) ``Software development for reproducible research,'' {\em
+  Computing in Science {\&} Engineering}, \textbf{15}(4):60--63.
+\newblock \doi{10.1109/MCSE.2013.91}
+
+\bibitem{forsyth}
+Ahrens, J.~H. and Dieter, U. (1973) ``Extensions of {Forsythe's} method for
+  random sampling from the normal distribution,'' {\em Mathematics of
+  Computation}, \textbf{27}:927--937.
+\newblock \doi{10.1090/S0025-5718-1973-0329190-8}
+
+\bibitem{Normal-Distributions}
+Ahrens, J.~H. and Dieter, U. (1972) ``Computer methods for sampling from the
+  exponential and normal distributions,'' {\em Communications of the ACM},
+  \textbf{15}(10):873--882.
+\newblock \doi{10.1145/355604.361593}
+
+\bibitem{misra}
+{The MISRA Consortium Limited} (2020) {\em {MISRA} Compliance: 2020 --
+  Achieving compliance with {MISRA} Coding Guidelines}, MISRA Consortium.
+\newblock \url{www.misra.org.uk}
+
+\bibitem{spark}
+Barnes, J. (2003) {\em High Integrity Software: The {SPARK} Approach to Safety
+  and Security}, Addison Wesley.
+
+\bibitem{haskell}
+O'Sullivan, B., Stewart, D. and Goerzen, J. (2008) {\em Real World Haskell},
+  O'Reilly Media.
+\newblock \url{book.realworldhaskell.org}
+
+\bibitem{thumbs-up}
+Chawla, D.~S. (8 June 2020) ``Critiqued coronavirus simulation gets thumbs up
+  from code-checking efforts,'' {\em Nature}, \textbf{582}:323--324.
+\newblock
+  \url{www.nature.com/}\midurl{articles/}\midurl{d41586-}\midurl{020-}\midurl{01685-}\midurl{y}
+
+\bibitem{codecheck}
+Scheuber, A. and {van Elsland}, S.~L. (1 June 2020) {\em Codecheck confirms
+  reproducibility of {COVID-19} model results}.
+\newblock
+  \url{www.imperial.ac.uk/}\midurl{news/}\midurl{197875/}\midurl{codecheck-}\midurl{confirms-}\midurl{reproducibility-}\midurl{covid-}\midurl{19-}\midurl{model-}\midurl{results}
+
+\bibitem{NVP}
+{Hatton}, L. and {Roberts}, A. (1994) ``How accurate is scientific software?''
+  {\em IEEE Transactions on Software Engineering}, \textbf{20}(10):785--797.
+\newblock \doi{10.1109/32.328993}
+
+\bibitem{nvp-ferguson}
+Halloran, M.~E. \emph{et al.} (2008) ``Modeling targeted layered containment of
+  an influenza pandemic in the {United States},'' {\em Proceedings of the
+  National Academy of Sciences}, \textbf{105}(12):4639--4644.
+\newblock
+  \url{www.pnas.org/}\midurl{content/}\midurl{105/}\midurl{12/}\midurl{4639},
+  \doi{10.1073/pnas.0706849105}
+
+\bibitem{notebooks}
+Schnell, S. (2015) ``Ten simple rules for a computational biologist's
+  laboratory notebook,'' {\em PLoS Computational Biology},
+  \textbf{11}(9):e1004385.
+\newblock \doi{10.1371/journal.pcbi.1004385}
+
+\bibitem{nih-policy}
+{National Institutes of Health} (2020; effective date January 25, 2023) {\em
+  Final {NIH} Policy for Data Management and Sharing},
+  vol.~\textbf{NOT-OD-21-013}, Office of The Director, National Institutes of
+  Health.
+\newblock
+  \url{grants.nih.gov/}\midurl{grants/}\midurl{guide/}\midurl{notice-}\midurl{files/}\midurl{NOT-}\midurl{OD-}\midurl{21-}\midurl{013.html}
+
+\bibitem{nih-nature}
+Kozlov, M. (16 February 2022) ``{NIH} issues a seismic mandate: {Share} data
+  publicly,'' {\em Nature}.
+\newblock
+  \url{www.nature.com/}\midurl{articles/}\midurl{d41586-}\midurl{022-}\midurl{00402-}\midurl{1}
+
+\bibitem{refactoring}
+Ferguson, N. (22 March 2020) {\em Tweet}.
+\newblock
+  \url{twitter.com/}\midurl{neil_ferguson/}\midurl{status/}\midurl{1241835456947519492}
+
+\bibitem{bad-code}
+Richards, D. and Boudnik, K. (16 May 2020) ``{Neil} {Ferguson's} {Imperial}
+  model could be the most devastating software mistake of all time,'' {\em The
+  Telegraph}.
+\newblock
+  \url{www.telegraph.co.uk/}\midurl{technology/}\midurl{2020/}\midurl{05/}\midurl{16/}\midurl{neil-}\midurl{fergusons-}\midurl{imperial-}\midurl{model-}\midurl{could-}\midurl{devastating-}\midurl{software-}\midurl{mistake}
+
+\bibitem{pseudo}
+Zlojutro, A., Rey, D. and Gardner, L. (2019) ``A decision-support framework to
+  optimize border control for global outbreak mitigation,'' {\em Nature
+  Scientific Reports}, \textbf{9}(2216).
+\newblock \doi{10.1038/s41598-019-38665-w}
+
+\bibitem{chinese}
+Thimbleby, H. (2003) ``The {Directed Chinese Postman} problem,'' {\em Software
+  --- Practice {\&} Experience}, \textbf{33}(11):1081--1096.
+\newblock \url{harold.thimbleby.net/}\midurl{cpp/}\midurl{index.html},
+  \doi{10.1002/spe.540}
+
+\bibitem{flu-model}
+Sander, B., Nizam, A., {Garrison Jr}, L.~P., Postma, M.~J., Halloran, M.~E. and
+  {Longini Jr}, I.~M. (2009) ``Economic evaluation of influenza pandemic
+  mitigation strategies in the {US} using a stochastic microsimulation
+  transmission model,'' {\em Value Health}, \textbf{12}(2):226--233.
+\newblock \doi{10.1111/j.1524-4733.2008.00437.x}
+
+\bibitem{nature-review}
+Perkel, J.~M. (2022) ``How to fix your scientific coding errors,'' {\em
+  Nature}, \textbf{602}:172--173.
+\newblock \doi{10.1038/d41586-022-00217-0}
+
+\bibitem{psychological-modeling}
+Guest, O. and Martin, A.~E. (2021) ``How computational modeling can force
+  theory building in psychological science,'' {\em Perspectives on
+  Psychological Science}, \textbf{16}(4):789--802.
+\newblock \doi{10.1177/1745691620970585}
+
+\bibitem{actr}
+{ACT-R Research Group} (2022) {\em {ACT-R}}.
+\newblock \url{act-}\midurl{r.psy.cmu.edu/}\midurl{software}
+
+\bibitem{ourReview}
+Ladkin, P.~B., Littlewood, B., Thimbleby, H. and Thomas, M. (2020) ``The {Law
+  Commission} presumption concerning the dependability of computer evidence,''
+  {\em Digital Evidence and Electronic Signature Law Review},
+  \textbf{17}:1--14.
+\newblock \doi{10.14296/deeslr.v17i0.5143}
+
+\bibitem{hamming}
+Hamming, R.~W. (1987) {\em Numerical Methods for Scientists and Engineers},
+  Dover Publications Inc.
+
+\bibitem{unfinished}
+Kissler, S.~M., Tedijanto, C., Goldstein, E., Grad, Y.~H. and Lipsitch, M.
+  (2020) ``Projecting the transmission dynamics of {SARS-CoV-2} through the
+  postpandemic period,'' {\em Science}, \textbf{368}(6493):860--868.
+\newblock \doi{10.1126/science.abb5793}
+
+\bibitem{lancet-unfinished}
+Verity \emph{et al.} (2020) ``Estimates of the severity of coronavirus disease
+  2019: {A} model-based analysis,'' {\em Lancet}, \textbf{20}(6):669--677.
+\newblock \doi{10.1016/S1473-3099(20)30243-7}
+
+\bibitem{hoare}
+Hoare, C. A.~R. (1969) ``An axiomatic basis for computer programming,'' {\em
+  Communications of the ACM}, \textbf{12}(10):576--580.
+\newblock \doi{10.1145/363235.363259}
+
+\bibitem{preclinical-reproducibility}
+Freedman, L.~P., Cockburn, I.~M. and Simcoe, T.~S. (2015) ``The economics of
+  reproducibility in preclinical research,'' {\em PLOS Biology},
+  \textbf{13}(6):e1002165.
+\newblock \doi{10.1371/journal.pbio.1002165}
+
+\bibitem{fair}
+Wilkinson, M.~D. \emph{et al.} (2016) ``The {FAIR} guiding principles for
+  scientific data management and stewardship,'' {\em Scientific Data},
+  \textbf{3}(160018):1--9.
+\newblock \doi{10.1038/sdata.2016.18}
+
+\bibitem{fair-principles}
+Wood-Charlson, E.~M., Crockett, Z., Erdmann, C., Arkin, A.~P. and Robinson,
+  C.~B. (2022) ``Ten simple rules for getting and giving credit for data,''
+  {\em PLoS Computational Biology}, \textbf{18}(9):e1010476.
+\newblock \doi{10.1371/ journal.pcbi.1010476}
+
+\bibitem{Executable-Paper}
+Gabriela, A. and Capone, R. (2011) ``Executable paper {Grand Challenge}
+  workshop,'' {\em Procedia Computer Science}, \textbf{4}:577--578.
+\newblock \doi{10.1016/j.procs.2011.04.060}
+
+\bibitem{RMarkdown}
+Xie, Y., Allaire, J.~J. and Grolemund, G. (2020) {\em R Markdown: The
+  Definitive Guide}, Chapman {\&} Hall/CRC.
+
+\bibitem{lepton}
+Li-Thiao-T{\' e}, S. (2012) ``Literate program execution for reproducible
+  research and executable papers,'' {\em Procedia Computer Science},
+  \textbf{9}:439--448.
+\newblock International Conference on Computational Science, ICCS 2012,
+  \doi{10.1016/j.procs.2012.04.047}
+
+\bibitem{cbc}
+Woodcock, J. C.~P., Larsen, P.~G., Bicarregui, J.~C. and Fitzgerald, J.~S.
+  (2009) ``Formal methods: {Practice} and experience,'' {\em ACM Computing
+  Surveys}, \textbf{41}(4):1--36.
+\newblock \doi{10.1145/1592434.1592436}
+
+\bibitem{ethics-code}
+ACM (2020) {\em Code of Ethics and Professional Conduct}, ACM.
+\newblock Accessed 23 April 2020,
+  \url{www.acm.org/}\midurl{code-}\midurl{of-}\midurl{ethics}
+
+\bibitem{acm-artifacts}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt\  (2020) {\em Artifact
+  Review and Badging --- Current}, vol.~\textbf{Version 1.1}, ACM.
+\newblock
+  \url{www.acm.org/}\midurl{publications/}\midurl{policies/}\midurl{artifact-}\midurl{review-}\midurl{and-}\midurl{badging-}\midurl{current}
+
+\bibitem{redmill}
+Redmill, F. (2000) ``Understanding the use, misuse and abuse of safety
+  integrity levels,'' {\em in Lessons in System Safety, Eighth Safety-critical
+  Systems Symposium}.
+\newblock Revised,
+  \url{homepages.cs.ncl.ac.uk/}\midurl{felix.redmill/}\midurl{publications/}\midurl{1%20SILs.pdf}
+
+\bibitem{iec61508}
+{IEC Technical Committee TC 65} (2010) {\em {IEC 61508:2010 CMV} commented
+  version, functional safety of electrical/electronic/programmable electronic
+  safety-related systems}.
+\newblock \url{webstore.iec.ch/}\midurl{publication/}\midurl{22273}
+
+\bibitem{hoare-unreasonable}
+Hoare, C. A.~R. (1996) ``How did software get so reliable without proof?'' {\em
+  in Lecture Notes in Computer Science}, vol.~\textbf{1051}, Springer,
+  pp.~1--17.
+\newblock \doi{10.1007/3-540-60973-3_77}
+
+\bibitem{open-source}
+Fomel, S. (2015) ``Reproducible research as a community effort: {Lessons} from
+  the {Madagascar Project},'' {\em Computing in Science {\&} Engineering},
+  \textbf{17}(1):20--26.
+\newblock \doi{10.1109/MCSE.2014.94}
+
+\bibitem{ABCs-SE}
+Stol, K.-J. and Fitzgerald, B. (2018) ``The {ABC} of software engineering
+  research,'' {\em ACM Transactions on Software Engineering and Methodology},
+  \textbf{27}(3):1--51.
+\newblock \doi{10.1145/3241743}
+
+\bibitem{mrb}
+Lakens, D. (2023) ``Methods-review boards could avert wasted research,'' {\em
+  Nature}, \textbf{613}.
+
+\bibitem{landauer}
+Landauer, T.~K. (1995) {\em The Trouble with Computers: {Usefulness},
+  Usability, and Productivity}, MIT Press.
+
+\bibitem{thimbleby-landauer}
+Thimbleby, H. (1996) ``The trouble with computers: {Usefulness}, usability, and
+  productivity (by {Thomas} {K.~Landauer}),'' {\em Computational Linguistics},
+  \textbf{22}(2):265--276.
+
+\bibitem{jpm}
+{Heineman, Jr.}, B.~W. (2013) ``The {JP Morgan} ``{Whale}'' report and the
+  ghosts of the financial crisis,'' {\em Harvard Business Review}.
+\newblock
+  \url{https:/}\midurl{/}\midurl{hbr.org/}\midurl{2013/}\midurl{01/}\midurl{the-}\midurl{jp-}\midurl{morgan-}\midurl{whale-}\midurl{report-}\midurl{and}
+
+\bibitem{jpm-report}
+Cavanagh, M., ed. (2013) {\em Report of JPMorgan Chase {\&} Co{\@}. Management
+  Task Force Regarding 2012 CIO Losses}, JPMorgan Chase {\&} Co{\@}.
+
+\bibitem{excel-fiasco}
+Thimbleby, H. (2020) ``The problem isn't {Excel}, it's unprofessional software
+  engineering,'' {\em BMJ}, \textbf{371}(m4181).
+\newblock \doi{10.1136/bmj.m4181}
+
+\bibitem{science-delays}
+Wadman, M. (2021) ``Could too much time between doses drive the coronavirus to
+  outwit vaccines?'' {\em Science}.
+\newblock \doi{10.1126/science.abg5655}
+
+\bibitem{reproducibility}
+Benureau, F. C.~Y. and Rougier, N.~P. (2018) ``Re-run, repeat, reproduce,
+  reuse, replicate: {Transforming} code into scientific contributions,'' {\em
+  Frontiers in Neuroinformatics}, \textbf{11}(69).
+\newblock \doi{10.3389/fninf.2017.00069}
+
+\bibitem{parliamentary-evidence}
+{House of Commons Science and Technology Committee} (16 December 2020) {\em The
+  {UK} response to covid-19: {Use} of scientific advice}.
+\newblock
+  \url{committees.parliament.uk/}\midurl{publications/}\midurl{4165/}\midurl{documents/}\midurl{41300/}\midurl{default}
+
+\bibitem{my-parliamentary-evidence}
+Thimbleby, H. (29 April 2020) {\em Written Evidence Submitted by {Harold
+  Thimbleby} to The {UK} response to covid-19: {Use} of scientific advice},
+  (C190005), {House of Commons Science and Technology Committee} {(see
+  \cite{parliamentary-evidence})}.
+\newblock
+  \url{committees.parliament.uk/}\midurl{work/}\midurl{91/}\midurl{default/}\midurl{publications/}\midurl{written-}\midurl{evidence/}\midurl{?SearchTerm=thimbleby}
+
+\endofbibliography\end{thebibliography}
