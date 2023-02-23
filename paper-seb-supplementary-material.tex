@@ -44,10 +44,16 @@
 
 % pageref gives us a hyperlink which looks unsightly, so we do it this way...
 \makeatletter
+
 \def\rememberpage{\immediate\write\@auxout{\bslash gdef\bslash SupplementalLastPage{\thepage}}}
+
+% putting \typeout in the right footer will get repeated warnings (which I hope will be noticed!)
+% to complement the red text in the footer itself on every page
+\@ifundefined{SupplementalLastPage}{\rfoot{\supplement\ \thepage\ \textcolor{red}{\bf(Rerun to get number of pages)}\typeout{* Rerun to get correct number of pages in the running footer}}}{\rfoot{\supplement\ \thepage/\SupplementalLastPage}}
+
 \makeatother
 
-\rfoot{\supplement\ \thepage/\SupplementalLastPage}
+%\rfoot{\supplement\ \thepage/\SupplementalLastPage}
 \lfoot{\today}
 \cfoot{}
 \lhead{}
