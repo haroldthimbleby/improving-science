@@ -8,9 +8,12 @@
     \usepackage{color}
     \usepackage{amsmath,amssymb}
     \usepackage{fancyhdr}
+    
     \usepackage{graphicx}
-\usepackage{amssymb}
-\usepackage{epstopdf}
+	\PassOptionsToPackage{dvipdfmx}{graphicx}
+	
+	\usepackage{amssymb}
+	\usepackage{epstopdf}
     \def\httpURL#1{\href{http://#1}{\textcolor{blue}{#1}}}
     \def\LONGhttpURL#1#2{\href{http://#1}{\textcolor{blue}{#2}}}    
     \input paper-seb-macros.tex
