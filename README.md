@@ -1,4 +1,3 @@
-# 20 February 2023
 # All data and files for the paper "Improving science that uses code"
 ### NB README.md is generated from README.md-src by running `make readme`
 
