@@ -1,4 +1,4 @@
-944159779 202 ./generated/metadata.tex
+1508483786 202 ./generated/metadata.tex
 3370534805 9809 ./generated/over-fitting-code-section.tex
 2300925087 21 ./generated/kloc.tex
 867446762 14921 ./generated/supplementary-references.tex
@@ -23,10 +23,12 @@
 1041497797 903 ./generated/example-data.tex
 402804168 1534 ./generated/make-help.tex
 4264320733 1335 ./generated/constants.tex
+3266463651 27176 ./paper-seb-supplementary-material.log
 1146326300 19936 ./paper-seb-supplementary-material.aux
-3584428176 64 ./checksums-meta.txt
+2179435167 64 ./checksums-meta.txt
 2081080013 12271 ./paper-seb-supplementary-material.bib
-4000861441 1258 ./newchecksums.txt
+3986211164 250 ./finddefs
+929941640 1341 ./newchecksums.txt
 1682415355 29041 ./paper-seb-main.bbl
 1320245964 3997 ./paper-seb-macros.tex
 3284964375 12271 ./makefile
@@ -38,28 +40,29 @@
 557838265 2230 ./paper-seb-main.toc
 768240004 128138 ./paper-seb-main.tex
 838558402 22974 ./revisedCompJ.bst
-4145748222 6594 ./README.md
+235172833 6329 ./README.md
 4213287376 17332 ./comjnl.cls
+2418012314 6818 ./paper-seb-supplementary-material.out
 3304723820 55716 ./programs/RAP-diagrams.nb
 2028927903 591 ./programs/make-metadata.sh
-3305655529 364821 ./programs/over-fitting-section.nb
+988650985 366417 ./programs/over-fitting-section.nb
 3922282636 1307 ./programs/checksums
 3767717840 60659 ./programs/data.js
 1371086219 2573 ./programs/expand.js
 4101716103 5760 ./programs/obsolete javascript data fitting models/fittingData.js
 163605096 1142 ./programs/obsolete javascript data fitting models/fittingModels.awk
 1482902627 374 ./programs/obsolete javascript data fitting models/run
-518577792 30 ./.gitignore
-4042993378 122739 ./paper-seb-supplementary-material.tex
-1665424786 3157 ./README.md-src
+901009918 36 ./.gitignore
+2363610263 123199 ./paper-seb-supplementary-material.tex
+2958404047 2818 ./README.md-src
 3908345064 48865 ./paper-seb-main.bib
-1439320526 41 ./.git/ORIG_HEAD
-2841683288 331 ./.git/config
+1517530581 41 ./.git/ORIG_HEAD
+1544873272 364 ./.git/config
 3819906048 23 ./.git/HEAD
 684386549 240 ./.git/info/exclude
-4272284376 4650 ./.git/logs/HEAD
-4272284376 4650 ./.git/logs/refs/heads/master
-1036534006 3134 ./.git/logs/refs/remotes/origin/master
+3189134583 7238 ./.git/logs/HEAD
+1251486778 6524 ./.git/logs/refs/heads/master
+94583073 4216 ./.git/logs/refs/remotes/origin/master
 76865375 73 ./.git/description
 2912878280 896 ./.git/hooks/commit-msg.sample
 2199226393 4898 ./.git/hooks/pre-rebase.sample
@@ -74,10 +77,10 @@
 920823 1374 ./.git/hooks/pre-push.sample
 3864416837 3650 ./.git/hooks/update.sample
 2974268060 2783 ./.git/hooks/push-to-checkout.sample
-1104536437 41 ./.git/refs/heads/master
-1104536437 41 ./.git/refs/remotes/origin/master
-1935478637 28 ./.git/COMMIT_EDITMSG
-2270344915 123 ./.git/FETCH_HEAD
+1468834404 41 ./.git/refs/heads/master
+3012672699 41 ./.git/refs/remotes/origin/master
+4162857691 23 ./.git/COMMIT_EDITMSG
+4047504216 123 ./.git/FETCH_HEAD
 3671144029 18129 ./paper-seb-main.aux
 288728931 10824 ./paper-seb-supplementary-material.bbl
 3035051325 122 ./response-to-referees/sedcommands
@@ -97,10 +100,10 @@
 1489574 184592 ./generated/import.pdf
 1091512607 644664 ./generated/excel.pdf
 1861882178 306512 ./generated/notebook.pdf
-71924160 200393 ./generated/mathematicaplot.pdf
+310397624 200393 ./generated/mathematicaplot.pdf
 274442489 132680 ./generated/basic.pdf
 1096894036 474898 ./paper-seb-main.pdf
 832290904 2227581 ./paper-seb.pdf
-3705243915 1426108 ./paper-seb-supplementary-material.pdf
+1699082825 1426317 ./paper-seb-supplementary-material.pdf
 668475035 67074 ./response-to-referees/response 30 Jan 2022.pdf
 4137110720 629503 ./response-to-referees/diff.pdf
