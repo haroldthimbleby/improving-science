@@ -112,7 +112,7 @@ Here are all the available options:
 
 * `make tidyup`
 
-    Tidyup before doing a Git commit. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the Latex data include files. Do not remove the .aux files, as Latex runs much more smoothly with them.
+    Tidyup typically before doing a Git commit or making a zip file. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the Latex data include files. Do not remove the .aux files, as Latex runs much more smoothly with them.
 
 * `make zip`
 
