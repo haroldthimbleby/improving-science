@@ -40,12 +40,13 @@ check-versions: # Check that you have the right software and software versions t
 	@$(call checkVersion,git,git version 2.37.1 (Apple Git-137.1),)
 	@$(call checkVersion,latex,pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2021),)
 	@$(call checkVersion,node,v12.13.0, node)
+	@$(call checkVersion,wolframscript,WolframScript 1.5.0 for MacOSX-x86-64)
 	@echo
 	@echo "Originally this makefile was run on MacOS $(osversion)"
 	@echo "You are running                           `uname -v`"
 	@if [ "$(osversion)" = "`uname -v`" ]; then echo ... "(These OS versions are the same)"; else echo ... which are different "(you may just have a more recent version)"; fi
 	@echo
-	@echo We ran Mathematica 12.2.0.0
+	@echo For interactive notebooks, we ran Mathematica 12.2.0.0
 	@echo
 	
 check-same: # After you have done a \texttt{make data} or \texttt{make pdf}, you can check whether you have reproduced all data and generated files exactly the same (more precisely, it checks that they are the same as they were the last time \texttt{make check-update} was run).
