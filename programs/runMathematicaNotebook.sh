@@ -50,7 +50,8 @@ echo Run Mathematica script to evaluate notebook $1 for its side-effects, like d
 $WOLFRAMSCRIPT -f $script -script $1
 err=$?
 
-#rm $script
+echo Remove tmp file $script
+rm $script
 
 exit $err
 
