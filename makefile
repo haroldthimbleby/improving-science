@@ -3,7 +3,7 @@
 #
 # entries of the form:
 #
-#     target-name : latex documentation
+#     target-name : ... # latex documentation
 #
 # are automatically summarized by make help, make help-brief and make (with no parameters)
 #
@@ -29,7 +29,7 @@ help: # Explain how to use \texttt{make}, and list all available options for usi
 	@echo "	" make check-versions
 	@echo
 	
-checkVersion = if test "`$1 --version | head -n 1`" = "$2"; then echo "   $3 $2 --- is OK"; else echo "*** WARNING: $1 scripts were previously processed using $2. Your $1 version (`$1 --version | head -n 1`) needs checking"; fi
+checkVersion = if test "`$1 --version | head -n 1`" = "$2"; then echo "   $3 $2 --- is OK"; else echo "*** WARNING: $1 scripts were previously processed using $2. Your $1 version (`$1 --version | head -n 1`) needs checking or using cautiously"; fi
 
 check-versions: # Check that you have the right software and software versions to run everything.
 	@echo Checking you have a suitable configuration ...
@@ -167,7 +167,12 @@ push: # Push any *important* changed files to Git, along with updated PDF files.
 	# rm -f paper-seb-main.pdf paper-seb-supplementary-material.pdf
 	git push -u origin master
 	
-# This creates (and preserves) a single PDF, paper-seb.pdf, separately maintained at http://www.harold.thimbleby.net as reliable-models.pdf (which it links to)
+# This, next, creates (and preserves) a single PDF, paper-seb.pdf, separately maintained at http://www.harold.thimbleby.net as reliable-models.pdf (which it links to)
+
+# PS I'd rather say $APPENDIX than supplementary material (if that's what $APPENDIX is), but it 
+# needs make to expand the definition, whereas in the comment, we're using grep to grab the text
+# so APPENDIX won't get expanded
+
 one-file: # Make a single PDF file paper-seb.pdf (i.e., paper + supplementary material) all in one.
 	@make one.file
 
