@@ -1,14 +1,12 @@
 1508483786 202 ./generated/metadata.tex
-1031412264 9901 ./generated/over-fitting-code-section.tex
+140437291 9926 ./generated/over-fitting-code-section.tex
 2300925087 21 ./generated/kloc.tex
 867446762 14921 ./generated/supplementary-references.tex
 3306640990 673 ./generated/minicontents.tex
 4011494684 731 ./generated/over-fitting-data.tex
 1450257934 1604 ./generated/open-doi.sh
 880614867 2864 ./generated/supplementary.toc
-3719749952 9643 ./generated/stand-alone-over-fitting-code.log
 811798312 2105 ./generated/repos.tex
-2855230696 1264 ./generated/stand-alone-over-fitting-code.aux
 2045687782 21297 ./generated/flagData.nb
 3833856178 1629 ./generated/summary-table.tex
 2532269189 11712 ./generated/data-check.html
@@ -20,18 +18,20 @@
 1353634676 166 ./generated/clone-date.tex
 896516222 20900 ./generated/data.csv
 1296602757 655 ./generated/info-for-main.tex
-25689292 11194 ./generated/stand-alone-over-fitting-code.tex
+4260624992 11219 ./generated/stand-alone-over-fitting-code.tex
 6924333 707 ./generated/page-lengths.tex
 1041497797 903 ./generated/example-data.tex
 76317473 1614 ./generated/make-help.tex
 4264320733 1335 ./generated/constants.tex
+3431064824 27326 ./paper-seb-supplementary-material.log
 3766112223 20193 ./paper-seb-supplementary-material.aux
-369172386 64 ./checksums-meta.txt
+3133326251 64 ./checksums-meta.txt
 2081080013 12271 ./paper-seb-supplementary-material.bib
-4038723655 1381 ./newchecksums.txt
+428416466 1315 ./newchecksums.txt
 1682415355 29041 ./paper-seb-main.bbl
 1043339201 4177 ./paper-seb-macros.tex
 1191050888 13063 ./makefile
+1853957467 4750 ./paper-seb-main.out
 2816485165 1341 ./models/comments
 3185540887 13 ./models/tidyup
 2321891020 4387 ./models/scan
@@ -40,15 +40,16 @@
 557838265 2230 ./paper-seb-main.toc
 768240004 128138 ./paper-seb-main.tex
 838558402 22974 ./revisedCompJ.bst
-3741572426 6310 ./README.md
+1339466575 6460 ./README.md
 4213287376 17332 ./comjnl.cls
-2475449248 66212 ./programs/RAP-diagrams.nb
+2418012314 6818 ./paper-seb-supplementary-material.out
+136679380 66211 ./programs/RAP-diagrams.nb
 279084988 26 ./programs/CHECK.TXT
 3593356434 57311 ./programs/t.nb
 2028927903 591 ./programs/make-metadata.sh
 1621235054 38274 ./programs/t.txt
 3510057798 70803 ./programs/RAP-diagrams copy.nb
-3655792614 374128 ./programs/over-fitting-section.nb
+2040569761 374566 ./programs/over-fitting-section.nb
 3922282636 1307 ./programs/checksums
 2535174126 1482 ./programs/runMathematicaNotebook.sh
 3767717840 60659 ./programs/data.js
@@ -65,9 +66,9 @@
 1544873272 364 ./.git/config
 3819906048 23 ./.git/HEAD
 684386549 240 ./.git/info/exclude
-3266735956 7936 ./.git/logs/HEAD
-2826972708 7222 ./.git/logs/refs/heads/master
-3666090859 4832 ./.git/logs/refs/remotes/origin/master
+2260582117 8529 ./.git/logs/HEAD
+2684571599 7815 ./.git/logs/refs/heads/master
+873496258 5140 ./.git/logs/refs/remotes/origin/master
 76865375 73 ./.git/description
 2912878280 896 ./.git/hooks/commit-msg.sample
 2199226393 4898 ./.git/hooks/pre-rebase.sample
@@ -82,11 +83,12 @@
 920823 1374 ./.git/hooks/pre-push.sample
 3864416837 3650 ./.git/hooks/update.sample
 2974268060 2783 ./.git/hooks/push-to-checkout.sample
-129649434 41 ./.git/refs/heads/master
-129649434 41 ./.git/refs/remotes/origin/master
-3198484668 31 ./.git/COMMIT_EDITMSG
+1215763287 41 ./.git/refs/heads/master
+1215763287 41 ./.git/refs/remotes/origin/master
+816094885 54 ./.git/COMMIT_EDITMSG
 4047504216 123 ./.git/FETCH_HEAD
 3671144029 18129 ./paper-seb-main.aux
+2317615479 32656 ./paper-seb-main.log
 288728931 10824 ./paper-seb-supplementary-material.bbl
 3035051325 122 ./response-to-referees/sedcommands
 3038294181 163 ./response-to-referees/diff-fixes.tex
@@ -102,9 +104,8 @@
 3612785152 14120 ./response-to-referees/diff.aux
 1029462422 781 ./response-to-referees/response 30 Jan 2022.aux
 2060350463 107325 ./response-to-referees/paper-seb-main (original).tex
-3431138335 98687 ./generated/stand-alone-over-fitting-code.pdf
-1616021997 359107 ./paper-seb-main.pdf
+2066337093 359017 ./paper-seb-main.pdf
 832290904 2227581 ./paper-seb.pdf
-80248053 531802 ./paper-seb-supplementary-material.pdf
+2637763317 531072 ./paper-seb-supplementary-material.pdf
 668475035 67074 ./response-to-referees/response 30 Jan 2022.pdf
 4137110720 629503 ./response-to-referees/diff.pdf
