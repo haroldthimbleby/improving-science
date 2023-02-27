@@ -45,7 +45,7 @@ check-versions: # Check that you have the right software and software versions t
 	@echo "You are running                           `uname -v`"
 	@if [ "$(osversion)" = "`uname -v`" ]; then echo ... "(These OS versions are the same)"; else echo ... which are different "(you may just have a more recent version)"; fi
 	@echo
-	@echo PS we ran Mathematica 12.2.0.0 but "it's" too hard to run it in make. See make mathematica
+	@echo We ran Mathematica 12.2.0.0
 	@echo
 	
 check-same: # After you have done a \texttt{make data} or \texttt{make pdf}, you can check whether you have reproduced all data and generated files exactly the same (more precisely, it checks that they are the same as they were the last time \texttt{make check-update} was run).
@@ -56,32 +56,41 @@ check-update: # Update the data and generated file checksums after a successful 
 	@echo Warning this can be a slow process if you have downloaded "(and not deleted!)" all the git repos
 	@programs/checksums update
 	
-data: # Analyze the data, and generate all the data files, the Unix scripts, the CSV, and \LaTeX\ files (including the \LaTeX\ summary of this makefile), etc. In particular, this runs \texttt{node programs/data.js}, downloads the Git repositories used in the pilot survey, and then analyzes them. Note that downloading all the repositories in a reasonable time needs decent internet bandwidth.
+data: # Analyze the data, and generate all the data files, the Unix scripts, the CSV, and \LaTeX\ files (including the \LaTeX\ summary of this makefile), etc. This \texttt{make} option runs \texttt{node programs/data.js}, downloads the Git repositories used in the pilot survey, and then analyzes them. Note that downloading all the repositories in a reasonable time needs decent internet bandwidth.
 	@echo Generate all files and analyses from the JSON data in programs/data.js
 	-node programs/data.js
 	@echo Generate all data from the published models cited in the paper
 	@echo Note that we will be generating data from the paper repositories, and these may have been updated by their authors. This step takes a while, as there is a lot of data to download.
 	cd models; ./run
 	@echo
+	@echo Generate all Mathematica data files
+	make mathematica
 	@echo Generate the make help summary for the $(APPENDIX)
 	make latex.tabular.data > generated/make-help.tex
 	# now we've generated all the data, count the variables, etc
 	programs/make-metadata.sh
 	
-raw.table.data: # PS not included in help list, as target contains a - character
-	@grep "^[-a-zA-Z]*:" makefile | sort -d | awk -F"#" '{ printf "%s %s\n", "make " $$1, $$2 }'
+raw.table.data: # PS not included in help list, as target contains a . character
+	@grep "^[-a-zA-Z]*:" makefile | sort -d | sed "s/:.*#/: #/" | awk -F"#" '{ printf "%s %s\n", "make " $$1, $$2 }'
 	
-latex.tabular.data:
-	@(make raw.table.data | awk -F: 'BEGIN { n=0 } { n++; printf "%% %s - %s\n", n, $$1 }' )
-	@(echo "{\\\\sf\\\\begin{tabular}{rp{4.5in}}"; make raw.table.data | awk -F: 'BEGIN { n=0; needdots=0 } { n++; if( n == 1 || n == 6 || n ==8 || n == 11 || n == 16 ) { if( needdots ) printf "\\multicolumn{1}{l@{\\vdots}}{}&\\\\\n"; needdots = 0; printf "\\texttt{%s}&%s\\\\\n", $$1, $$2; } else { needdots = 1; } }'; echo "\\\\end{tabular}}")
+latex.tabular.data: # The n==1, n==6 etc is to select interesting entries for the supplementary.tex file. Note that meanings of n are defined in this output (and in generated/make-help.tex if you ran \texttt{make} data).
+	@(echo % Edit makefile to change the selected make command choices, as follows:; make raw.table.data | awk -F: 'BEGIN { n=0 } { n++; printf "%% %s - %s\n", n, $$1 }' )
+	@(echo "\n{\\\\sf\\\\begin{tabular}{rp{4.5in}}"; make raw.table.data | awk -F: 'BEGIN { n=0; needdots=0 } { n++; if( n == 1 || n == 6 || n ==8 || n == 17 ) { if( needdots ) printf "   \\multicolumn{1}{l@{\\vdots}}{}&\\\\\n"; needdots = 0; printf "\n\\texttt{%s}&\n   %s\\\\\n", $$1, $$2; } else { needdots = 1; } }'; echo "\\\\end{tabular}}\n")
 	
 help-brief: # Just this basic list of \texttt{make} options, with no further details.
 	@make raw.table.data | awk -F: 'function wrap(s) { leng = 0; t = ""; for( i = 1; i <= length(s); i++ ) { if( ++leng > 65 && substr(s, i, 1) == " " ) { leng = 0; t = t "\n                            "; } else t = t substr(s, i, 1); } return t "\n"; } function delatex(s) { gsub("---", "-", s); gsub("\\\\LaTeX\\\\", "Latex", s); gsub("\\\\texttt", "", s); gsub("\\\\emph", "", s); gsub("{|}", "", s); return s; }; { printf "%25s%s\n", $$1, wrap(delatex($$2)) }' 
 	
-mathematica: # Curiously, Mathematica notebooks can't be run in a shell script (so make can't help much), but this make option will open all the Mathematica notebooks, though it won't run them automatically for you. Sigh.
-	@echo Best we can do in make is just to open all the Mathematica notebooks for you
-	@echo You then have to run Mathematica in each notebook to generate any results you want
-	open programs/RAP-diagrams.nb programs/over-fitting-section.nb
+mathematica-open: # Open each of the \emph{Mathematica} notebooks separately, so you can use and run them interactively.
+	open programs/RAP-diagrams.nb
+	open programs/over-fitting-section.nb
+	
+mathematica: generated/mathematicaplot.jpg generated/over-fitting-code-section.tex generated/basic.jpg generated/excel.jpg generated/import.jpg generated/notebook.jpg # Run \emph{Mathematica} to generate or update all mathematica-generated data files and variables.
+	
+generated/basic.jpg generated/excel.jpg generated/import.jpg generated/notebook.jpg: programs/RAP-diagrams.nb
+	cd programs; runMathematicaNotebook.sh RAP-diagrams.nb 
+	
+generated/mathematicaplot.jpg generated/over-fitting-code-section.tex: programs/over-fitting-section.nb
+	cd programs; runMathematicaNotebook.sh over-fitting-section.nb
 	
 readme@md:
 	@# macos awk doesn't have gensub, so we use sed as well as awk. Sigh
@@ -89,10 +98,10 @@ readme@md:
 	@make raw.table.data | sed 's/.texttt{\([^}]*\)}/`\1`/g' | sed 's/.emph{\([^}]*\)}/*\1*/g' | awk -F: 'function delatex(s) { gsub("^ *", "    ", s); gsub("---", "\\&mdash;", s); gsub("\\\\LaTeX\\\\", "Latex", s); gsub("{|}", "", s); return s; } { printf "\n* `%s`\n\n%s\n", $$1, delatex($$2) }'
 	@awk "BEGIN { printing = 0; preprinting = 0; } /%replace%/ { preprinting = 1; } { if( printing ) print; printing = preprinting; }" README.md-src
 	
-readme: # Update the \texttt{README.md} file. You only need to do this if you've edited the makefile and changed the \texttt{make} options available, or edited \texttt{README.md-src}. (\texttt{README.md} is written in markdown wth Git formats so you know how to do everything on the repository; the \texttt{README.md} file is easiest to read on the Git site.).
+readme: # Update the \texttt{README.md} file. You only need to do this if you've edited the \texttt{makefile} and changed the \texttt{make} options available, or edited \texttt{README.md-src}. (\texttt{README.md} is written in markdown wth Git formats so you know how to do everything on the repository; the \texttt{README.md} file is easiest to read on the Git site.).
 	make readme@md > README.md
 
-tidyup: # Tidyup before doing a git commit. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the \LaTeX\ data include files. Do not remove the .aux files, as \LaTeX\ runs much more smoothly with them.
+tidyup: # Tidyup before doing a Git commit. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the \LaTeX\ data include files. Do not remove the .aux files, as \LaTeX\ runs much more smoothly with them.
 	@echo Remove all basic files that can easily be regenerated, except the main PDFs and the generated files that are included in Latex files
 	rm -f paper-seb-*.blg data-check.html 
 	# Don't delete generated/* as it's helpful to keep all the generated files around so Latex can be used directly...
@@ -103,7 +112,7 @@ tidyup: # Tidyup before doing a git commit. Remove all easily generated files, a
 	@echo Remove all the recoverable stuff in the models directory
 	cd models; tidyup
  
-really-tidyup: # More thorough than \texttt{make tidyup} --- remove \emph{all} files that can be recreated.
+really-tidyup: # More thorough than \texttt{make tidyup} --- remove \emph{all} files that can be recreated. (This will mean next time you run \LaTeX\ you will have to ignore errors as the .aux files are re-created.)
 	@echo Remove all files that can be recreated, including PDFs and files made by processing the JSON data 
 	make tidyup 
 	rm -f paper-seb-*.pdf
@@ -151,14 +160,14 @@ archive: # Clean up all files (by doing \texttt{make really-tidyup}) that can ea
 	rm -f generated/*
 	make zip
 	
-push: # Push any changed files to Git, along with the PDF files.
+push: # Push any *important* changed files to Git, along with updated PDF files.
 	rm -rf models/git-* # remove models pulled from papers repositories (they are big)
 	rm -f *.out *.log *.dvi
 	# rm -f paper-seb-main.pdf paper-seb-supplementary-material.pdf
 	git push -u origin master
 	
 # This creates (and preserves) a single PDF, paper-seb.pdf, separately maintained at http://www.harold.thimbleby.net as reliable-models.pdf (which it links to)
-one-file: # Make a single PDF file paper-seb.pdf (i.e., paper + appendix) all in one.
+one-file: # Make a single PDF file paper-seb.pdf (i.e., paper + supplementary material) all in one.
 	@make one.file
 
 # this rule has a . in the target name (one.file), so make help doesn't find it (see the grep command in make help)

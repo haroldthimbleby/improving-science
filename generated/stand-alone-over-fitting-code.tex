@@ -23,15 +23,15 @@
 
 \noindent
 Poor code undermines scientific quality: poor code can generate plausible results from \emph{any\/} data, including even fictional science. A temptation is that %artificial world \cite{sciences-artificial}, built on
-adjusting the code's results gets more attention than the theoretical basis of the code's overall faithfulness to the experimental phenomena. \def\imageWidthCalculation{\multiply \imageWidth by 21 \divide \imageWidth by 28}
+adjusting the code's results gets more attention than the theoretical basis of the code's overall faithfulness to the experimental phenomena. % wolframscript (if being used) unnecessarily prints the next 2 lines, but they are needed!
+\def\imageWidthCalculation{\multiply \imageWidth by 21 \divide \imageWidth by 28}
 \def\figureStarDetails{*}
 \begin{figure\figureStarDetails}[t]
 { \newdimen \imageWidth 
   \imageWidth=\textwidth
   \imageWidthCalculation
   \begin{center}\includegraphics[width=\imageWidth]{generated/mathematicaplot.jpg}\end{center}}
-\caption{Much computational science is concerned with finding plausible multi-dimensional models that fit models to data with the aim of extrapolating or predicting new results from them. Shown here is notional sample of experimental 2D data (the dots), a linear least squares regression, and an exact polynomial model. The over-fitted polynomial model fits the sample
-\emph{exactly\/}, but since the experimental data is presumably subject to random error (indicated by the confidence interval, itself estimated) the linear model would generally be considered a better description of the experimental data.}
+\caption{Much computational science is concerned with finding plausible multi-dimensional models that fit models to data with the aim of extrapolating or predicting new results from them. Shown here is notional sample of experimental 2D data (the dots), a linear least squares regression, and an exact polynomial model. The over-fitted polynomial model fits the sample \emph{exactly\/}, but since the experimental data is presumably subject to random error (indicated by the confidence interval, itself estimated) the linear model would generally be considered a better description of the experimental data.}
 \label{fig-overfit}
 \end{figure\figureStarDetails}
 In modeling terms, superficially successful computer programs tend to \emph{over-fit\/} phenomena \cite{over-fit}. Instead of using code to test the models, we tinker with the code adapting it closer and closer to our prejudices. The code then apparently confirms our science, since we fitted it to our understanding.  

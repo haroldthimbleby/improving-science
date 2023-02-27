@@ -68,7 +68,7 @@ Here are all the available options:
 
 * `make data`
 
-    Analyze the data, and generate all the data files, the Unix scripts, the CSV, and Latex files (including the Latex summary of this makefile), etc. In particular, this runs `node programs/data.js`, downloads the Git repositories used in the pilot survey, and then analyzes them. Note that downloading all the repositories in a reasonable time needs decent internet bandwidth.
+    Analyze the data, and generate all the data files, the Unix scripts, the CSV, and Latex files (including the Latex summary of this makefile), etc. This `make` option runs `node programs/data.js`, downloads the Git repositories used in the pilot survey, and then analyzes them. Note that downloading all the repositories in a reasonable time needs decent internet bandwidth.
 
 * `make expand`
 
@@ -84,11 +84,15 @@ Here are all the available options:
 
 * `make mathematica`
 
-    Curiously, Mathematica notebooks can't be run in a shell script (so make can't help much), but this make option will open all the Mathematica notebooks, though it won't run them automatically for you. Sigh.
+    Run *Mathematica* to generate or update all mathematica-generated data files and variables.
+
+* `make mathematica-open`
+
+    Open each of the *Mathematica* notebooks separately, so you can use and run them interactively.
 
 * `make one-file`
 
-    Make a single PDF file paper-seb.pdf (i.e., paper + appendix) all in one.
+    Make a single PDF file paper-seb.pdf (i.e., paper + supplementary material) all in one.
 
 * `make pdf`
 
@@ -96,19 +100,19 @@ Here are all the available options:
 
 * `make push`
 
-    Push any changed files to Git, along with the PDF files.
+    Push any *important* changed files to Git, along with updated PDF files.
 
 * `make readme`
 
-    Update the `README.md` file. You only need to do this if you've edited the makefile and changed the `make` options available, or edited `README.md-src`. (`README.md` is written in markdown wth Git formats so you know how to do everything on the repository; the `README.md` file is easiest to read on the Git site.).
+    Update the `README.md` file. You only need to do this if you've edited the `makefile` and changed the `make` options available, or edited `README.md-src`. (`README.md` is written in markdown wth Git formats so you know how to do everything on the repository; the `README.md` file is easiest to read on the Git site.).
 
 * `make really-tidyup`
 
-    More thorough than `make tidyup` &mdash; remove *all* files that can be recreated.
+    More thorough than `make tidyup` &mdash; remove *all* files that can be recreated. (This will mean next time you run Latex you will have to ignore errors as the .aux files are re-created.)
 
 * `make tidyup`
 
-    Tidyup before doing a git commit. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the Latex data include files. Do not remove the .aux files, as Latex runs much more smoothly with them.
+    Tidyup before doing a Git commit. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the Latex data include files. Do not remove the .aux files, as Latex runs much more smoothly with them.
 
 * `make zip`
 
