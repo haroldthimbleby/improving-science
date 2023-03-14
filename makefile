@@ -17,7 +17,12 @@
 #     make help-brief converts it to basic ASCII
 #
 
+
+# I originally used LATEX=latex but it has problems on some systems with graphics
+LATEX = pdflatex
+
 APPENDIX = supplemental material
+
 osversion = Darwin Kernel Version 22.3.0: Thu Jan  5 20:53:49 PST 2023; root:xnu-8792.81.2~2/RELEASE_X86_64
 			
 help: # Explain how to use \texttt{make}, and list all available options for using \texttt{make}.
@@ -95,9 +100,10 @@ generated/mathematicaplot.jpg generated/over-fitting-code-section.tex: programs/
 	
 readme@md:
 	@# macos awk doesn't have gensub, so we use sed as well as awk. Sigh
-	@awk "BEGIN { printing = 1} /%replace%/ { printing = 0 } { if( printing ) print; }" README.md-src
-	@make raw.table.data | sed 's/.texttt{\([^}]*\)}/`\1`/g' | sed 's/.emph{\([^}]*\)}/*\1*/g' | awk -F: 'function delatex(s) { gsub("^ *", "    ", s); gsub("---", "\\&mdash;", s); gsub("\\\\LaTeX\\\\", "Latex", s); gsub("{|}", "", s); return s; } { printf "\n* `%s`\n\n%s\n", $$1, delatex($$2) }'
+	@awk "BEGIN { printing = 1} /%replace%/ { printing = 0 } { if( printing ) print; }" README.md-src 
+	@make raw.table.data | sed 's/.texttt{\([^}]*\)}/`\1`/g' | sed 's/.emph{\([^}]*\)}/*\1*/g'  README.md-src| awk -F: 'function delatex(s) { gsub("^ *", "    ", s); gsub("---", "\\&mdash;", s); gsub("\\\\LaTeX\\\\", "Latex", s); gsub("{|}", "", s); return s; } { printf "\n* `%s`\n\n%s\n", $$1, delatex($$2) }'
 	@awk "BEGIN { printing = 0; preprinting = 0; } /%replace%/ { preprinting = 1; } { if( printing ) print; printing = preprinting; }" README.md-src
+	echo done
 	
 readme: # Update the \texttt{README.md} file. You only need to do this if you've edited the \texttt{makefile} and changed the \texttt{make} options available, or edited \texttt{README.md-src}. (\texttt{README.md} is written in markdown wth Git formats so you know how to do everything on the repository; the \texttt{README.md} file is easiest to read on the Git site.).
 	make readme@md > README.md
@@ -107,7 +113,7 @@ tidyup: # Tidyup typically before doing a Git commit or making a zip file. Remov
 	rm -f paper-seb-*.blg data-check.html 
 	# Don't delete generated/* as it's helpful to keep all the generated files around so Latex can be used directly...
 	@# rm generated/* 
-	rm -rf *.log *.out *.dvi
+	rm -rf *.log *.out *.dvi log
 	@echo This has left these generated PDFs you can either keep or delete manually
 	-@ls paper*.pdf
 	@echo Remove all the recoverable stuff in the models directory
@@ -124,24 +130,24 @@ all: # Analyze the data, then typeset the main PDF files (\texttt{paper-seb-main
 	make pdf
 
 pdf: # Assuming you have got the data ready, make the two main PDF files, paper-seb-main.pdf, and paper-seb-supplementary-material.pdf. If you aren't sure you've got the data ready, say \texttt{make all} instead, or \texttt{make data} to just prepare the data before doing \texttt{make pdf}.
-    # LOTS of latex runs to make sure the .aux files are all correctly synced
+    # LOTS of latex runs to make sure the bibtex and .aux files are all correctly synced
     # eg inserting the table of contents changes page numbering, so it needs formatting again, etc
-	latex paper-seb-supplementary-material.tex > log
+	$(LATEX) paper-seb-supplementary-material.tex > log
 	bibtex paper-seb-supplementary-material >> log
 	@echo Do not worry bibtex cannot find database entries for "ref-16" etc as they are in another file
-	latex paper-seb-supplementary-material.tex >> log
-	latex paper-seb-main.tex >> log
+	$(LATEX) paper-seb-supplementary-material.tex >> log
+	$(LATEX) paper-seb-main.tex >> log
 	bibtex paper-seb-main >> log
-	latex paper-seb-main.tex >> log
-	latex paper-seb-main.tex >> log
+	$(LATEX) paper-seb-main.tex >> log
+	$(LATEX) paper-seb-main.tex >> log
 	@echo Unfortunately, paper-seb-main.tex has items in its bibiography that cross-refer to more bibliography items, so we need another run of bibtex etc
 	bibtex paper-seb-main >> log
-	latex paper-seb-main.tex >> log
-	latex paper-seb-main.tex >> log
+	$(LATEX) paper-seb-main.tex >> log
+	$(LATEX) paper-seb-main.tex >> log
 	@echo and then the references in paper-seb-supplementary-material.tex are renumbered to follow on paper-seb-main.tex
-	latex paper-seb-supplementary-material.tex >> log
+	$(LATEX) paper-seb-supplementary-material.tex >> log
 	@echo and the paper-seb-main.tex refers to those numbers... so it needs updating again
-	latex paper-seb-main.tex >> log
+	$(LATEX) paper-seb-main.tex >> log
 	@echo "----------------------------------------------------------------"
 	@echo You have now got these PDFs:
 	@ls -C *paper*pdf
@@ -191,8 +197,8 @@ expand: # Expand all \LaTeX\ files (to recursively flatten \texttt{input} and \t
 	make pdf
 	make one-file
 	node programs/expand.js
-	latex expanded-paper-seb-supplementary-material.tex > log
-	latex expanded-paper-seb-main.tex >> log
+	$(LATEX) expanded-paper-seb-supplementary-material.tex > log
+	$(LATEX) expanded-paper-seb-main.tex >> log
 	cp paper-seb.pdf tmp
 	pdfunite expanded-paper-seb-main.pdf expanded-paper-seb-supplementary-material.pdf paper-seb.pdf >> log
 	if cmp paper-seb.pdf tmp; then echo SAME; else echo DIFFERENT; fi

@@ -665,4 +665,10 @@ Thimbleby, H. (29 April 2020) {\em Written Evidence Submitted by {Harold
 \newblock
   \url{committees.parliament.uk/}\midurl{work/}\midurl{91/}\midurl{default/}\midurl{publications/}\midurl{written-}\midurl{evidence/}\midurl{?SearchTerm=thimbleby}
 
+\bibitem{assessing-quality-conference}
+Carver, J.~C. (2009) ``First international workshop on software engineering for
+  computational science {\&} engineering,'' {\em Computing in Science {\&}
+  Engineering}, \textbf{11}(2):7--11.
+\newblock \doi{10.1109/MCSE.2009.30}
+
 \endofbibliography\end{thebibliography}
