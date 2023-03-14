@@ -1,11 +1,12 @@
 # All data and files for the paper "Improving science that uses code"
-### NB README.md is generated from README.md-src by running `make readme`
 
 ## Harold Thimbleby
 
 ## [harold@thimbleby.net](mailto:harold@thimbleby.net)
 
 %today-date%
+
+#### (README.md is generated from README.md-src by running `make readme`)
 
 ## Basics
 

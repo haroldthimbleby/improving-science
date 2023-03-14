@@ -1,5 +1,4 @@
 # All data and files for the paper "Improving science that uses code"
-### NB README.md is generated from README.md-src by running `make readme`
 
 ## Harold Thimbleby
 
@@ -7,10 +6,7 @@
 
 ### README generated on 14 March 2023
 
-## Harold Thimbleby
-
-## [harold@thimbleby.net](mailto:harold@thimbleby.net)
-
+#### (README.md is generated from README.md-src by running `make readme`)
 
 ## Basics
 
@@ -49,13 +45,6 @@ However, it's better to use `make` than do things piecemeal ...
 Run `make` (with no parameters) to find out everything that you can do. 
 
 Here are all the available options:
-
-## Further information
-
-For help or further information, please email [harold@thimbleby.net](mailto:harold@thimbleby.net)
-
-Web site [harold.thimbleby.net](http://www.harold.thimbleby.net)
-
 
 
 * `make all`

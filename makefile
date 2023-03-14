@@ -108,8 +108,8 @@ readme@md:
 	@awk "BEGIN { printing = 1 } /%today-date%/ { printing = 0 } { if( printing ) print; }" README.md-src 
 	@echo see man strftime for date formats "(%B is full month name)" > /dev/null
 	@date "+### README generated on %d %B %Y"
-	@echo copy through text from %today-date% to before %replace% > /dev/null
-	@awk "BEGIN { printing = 0 } /%today-date%/ { printing = 1 } /%replace%/ { printing = 0 } { if( printing > 1 ) print; printing++ }" README.md-src 
+	@echo copy through text from after %today-date% to before %replace% > /dev/null
+	@awk "BEGIN { printing = 0 } /%today-date%/ { printing = 1 } /%replace%/ { printing = 0 } { if( printing ) { if( printing > 1 ) print; printing++;  }}" README.md-src 
 	@make raw.table.data | sed 's/.texttt{\([^}]*\)}/`\1`/g' | sed 's/.emph{\([^}]*\)}/*\1*/g' | awk -F: 'function delatex(s) { gsub("^ *", "    ", s); gsub("---", "\\&mdash;", s); gsub("\\\\LaTeX\\\\", "Latex", s); gsub("{|}", "", s); return s; } { printf "\n* `%s`\n\n%s\n", $$1, delatex($$2) }'
 	@echo copy through text after %replace% > /dev/null
 	@awk "BEGIN { printing = 0; preprinting = 0; } /%replace%/ { preprinting = 1; } { if( printing ) print; printing = preprinting; }" README.md-src
