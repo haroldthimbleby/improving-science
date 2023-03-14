@@ -1,4 +1,3 @@
-# copy through text before %today-date%
 # All data and files for the paper "Improving science that uses code"
 ### NB README.md is generated from README.md-src by running `make readme`
 
@@ -6,8 +5,7 @@
 
 ## [harold@thimbleby.net](mailto:harold@thimbleby.net)
 
-#see man strftime for date formats (%B is full month name)
-### 14 March 2023
+### README generated on 14 March 2023
 
 ## Harold Thimbleby
 
