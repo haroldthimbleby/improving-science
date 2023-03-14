@@ -97,15 +97,22 @@ generated/basic.jpg generated/excel.jpg generated/import.jpg generated/notebook.
 	
 generated/mathematicaplot.jpg generated/over-fitting-code-section.tex: programs/over-fitting-section.nb
 	cd programs; runMathematicaNotebook.sh over-fitting-section.nb
-	
+
+# unfortunately # is not ignored, so we've used
+# @echo ... > /dev/null
+# to generate really ignored comments here!
+
 readme@md:
 	@# macos awk doesn't have gensub, so we use sed as well as awk. Sigh
-	# copy through text before %replace%
-	@awk "BEGIN { printing = 1} /%replace%/ { printing = 0 } { if( printing ) print; }" README.md-src 
+	@echo copy through text before %today-date% > /dev/null
+	@awk "BEGIN { printing = 1 } /%today-date%/ { printing = 0 } { if( printing ) print; }" README.md-src 
+	@echo see man strftime for date formats "(%B is full month name)" > /dev/null
+	@date "+### README generated on %d %B %Y"
+	@echo copy through text from %today-date% to before %replace% > /dev/null
+	@awk "BEGIN { printing = 0 } /%today-date%/ { printing = 1 } /%replace%/ { printing = 0 } { if( printing > 1 ) print; printing++ }" README.md-src 
 	@make raw.table.data | sed 's/.texttt{\([^}]*\)}/`\1`/g' | sed 's/.emph{\([^}]*\)}/*\1*/g' | awk -F: 'function delatex(s) { gsub("^ *", "    ", s); gsub("---", "\\&mdash;", s); gsub("\\\\LaTeX\\\\", "Latex", s); gsub("{|}", "", s); return s; } { printf "\n* `%s`\n\n%s\n", $$1, delatex($$2) }'
-    # copy through text after %replace%
+	@echo copy through text after %replace% > /dev/null
 	@awk "BEGIN { printing = 0; preprinting = 0; } /%replace%/ { preprinting = 1; } { if( printing ) print; printing = preprinting; }" README.md-src
-	echo done
 	
 readme: # Update the \texttt{README.md} file. You only need to do this if you've edited the \texttt{makefile} and changed the \texttt{make} options available, or edited \texttt{README.md-src}. (\texttt{README.md} is written in markdown wth Git formats so you know how to do everything on the repository; the \texttt{README.md} file is easiest to read on the Git site.).
 	make readme@md > README.md
