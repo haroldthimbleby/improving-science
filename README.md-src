@@ -21,11 +21,11 @@ Everything works using `make`.
 
 First, here's a quick overview of how the system works behind the scenes inside `make`.
 
-To generate all data or typeset the paper, you will need a Unix system with: awk, bibtex, git, latex, make, node, sed, and zip (plus the usual echo, egrep, grep, rm, sh, test, etc). Mathematica is also used, though all the files it generates are already in the Git repository, so you can get away without being able to run Mathematica yourself - it's not open source. (See Git's issues for a minor problem.)
+To generate all data or typeset the paper, you will need a Unix system with: awk, bibtex, git, latex (or pdflatex etc, depending on how you configure make), make, node, sed, and zip (plus the usual echo, egrep, grep, rm, sh, test, etc). Mathematica is also used, though all the files it generates are already in the Git repository, so you can get away without being able to run Mathematica yourself - it's not open source.
 
 The file `programs/data.js` includes both the JSON data and a JavaScript program that checks the data, analyses it, and generates most of the various data files &mdash; the CSV file, lots of LaTeX files used in the paper, and others.
 
-Running `node programs/node data.js` will give you
+Running `node programs/data.js` will give you
 
 >       allData.csv - for accessing data in Excel and many other apps
 >       flagData.nb - for accessing data in Mathematica notebook
