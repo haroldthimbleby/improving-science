@@ -328,7 +328,7 @@ There are many tools to help manage documentation (Javadoc, Doxygen, \ldots). Li
 
 Documentation should be supplemented by details of algorithms and proofs of correctness (or references to appropriate literature). All the documentation needs to be available to enable others to correctly download, install and correctly use a program --- and to enable them, should they wish, to repurpose it reliably for their own work. In addition, documentation requires specifications and, in turn, \emph{their\/} documentation. 
 
-A important role of documentation is to cover configuration: how to get code to work --- without configuration, code is generally useless. The most basic is a README file, which explains how to get going; more useful approaches to configuration include make files, which are programs that do the configuration automatically.
+A important role of documentation is to cover configuration: how to get code to work --- without configuration, code is generally useless. The most basic is a \texttt{README} file, which explains how to get going; more useful approaches to configuration include make files, which are programs that do the configuration automatically.
 
 Without proper record keeping, code becomes almost impossible to maintain if programmers leave the project. Note that computer tools can make record keeping, laboratory books etc, trivial --- if they are used.
 
@@ -413,7 +413,7 @@ All computer systems are in principle equivalent to Turing Machines, and Turing 
 
 These elementary theoretical considerations underly an important practical fact: there is no fundamental difference between code and data, and no distinction that is relevant for scientific publication purposes. 
 
-There is no code/data distinction one can imagine that cannot easily, even accidentally, be circumvented. In other words, a journal's data policies and code policies should be the identical --- and the conventionally stricter data policies should also apply to code. It is baffling that some journals have data policies that are weaker than their data policies; it is certainly indefensible to have no code policies at all.
+There is no code/data distinction one can imagine that cannot easily, even accidentally, be circumvented. In other words, a journal's data policies and code policies should be the identical --- and the conventionally stricter data policies should also apply to code. It is baffling that some journals have code policies that are weaker than their data policies; it is certainly indefensible to have no code policies at all.
 
 {Significant cyber-vulnerabilities result from there being no difference between code and data. For example: an email arrives, which brings data to a user. The user opens an attachment, perhaps a word processor text document, which is more data. The word processor runs macros in the text document --- but now it is code. The macros move data onto the user's disc. The data there then runs as code, and corrupts the user's data across the disc --- which includes both data and code stored in files. And so on. Each step of a computer virus infection crosses over non-existent ``boundaries'' between data and code \cite{viruses}.}
 
@@ -593,7 +593,7 @@ What might seem like dauntingly technical software issues are no more demanding 
 \highlightmysection{A pilot survey of computational science}
 \globalLabel{survey-section}
 
-The main paper was motivated by selected epidemiological papers and their problematic computational models (which are discussed in the paper). Are the issues illustrated by these case studies typical of science more broadly? We undertook, then, some selected studies of papers in different fields, then undertook a randomized, stratified pilot survey covering several leading peer reviewed journals. The point was not to establish the frequency of problems, so much as to sign whether the problematic case study was exceptional or typical. 
+The main paper was motivated by selected epidemiological papers and their problematic computational models (which are discussed in the paper). Although concerning in their own right, especially for informing national public health policies during a pandemic, the wider question is: are the problems illustrated by these case studies typical of science more broadly? We undertook, then, some selected studies of papers in a variety of fields, then undertook a randomized, stratified pilot survey covering several leading peer reviewed journals. The point was not to establish the frequency of problems, so much as to sign whether the problematic case study was exceptional or typical. It is typical.
 
 %There are many ways to do good science. Normal science routinely involves either performing new research and reporting it in the literature, or performing reviews --- such as systematic reviews --- of the existing literature to form a consensus view of an existing body of research. Typically, research offers new theories or results, points out previous errors, or uses statistical or qualitative methods to reduce the variability in previously reported results. In any case, the intention is to provide reliable knowledge and to bolster consensus \cite{ziman}.
 
@@ -601,7 +601,7 @@ The main paper was motivated by selected epidemiological papers and their proble
 
 %It is possible, if not likely (e.g., given the report in \emph{Nature\/}, cited above \cite{nature-review}), that such limitations are more widespread than the specific examples considered so far, which are anyway limited primarily to epidemiology, and to COVID research performed under extreme pandemic pressure. We now therefore undertake a small, manageable stratified sample of peer reviewed literature to explore whether the issues are more widespread.
 
-The pilot study follows the RAP methodology. The data and code for this paper's pilot survey (and all other analysis used in the paper and in this \supplement) are available on GitHub. All raw data is converted into \LaTeX\ so that the analysis can be typeset directly in the paper; this \supplement\ also contains a complete tabular presentation of the data.
+The pilot study itself follows the RAP methodology. The data and code for this paper's pilot survey (and all other analysis used in the paper and in this \supplement) are available on GitHub. All raw data is converted into \LaTeX\ so that the analysis can be typeset directly in the paper; this \supplement\ also contains a complete tabular presentation of the data.
 
 Moreover, this paper itself follows the more general \RAPstar\ methodology. For example, as standard practice, a Unix makefile is used to make it easy to analyze and generate all data, typeset the paper, and more. Table \ref{table:options} shows the options provided.
 
@@ -614,7 +614,7 @@ Moreover, this paper itself follows the more general \RAPstar\ methodology. For 
 \label{table:options}
 \end{table}
 
-The \RAPstar\ approach cannot enforce the truth of such as summary, but it very significantly increases the chances that the summary is correct and up to date. For example, if refactoring leads to an option being deleted, then it will also disappear \emph{with no further work\/} from the table above. Also, since the summary was proof-read at the same time as proof-reading this \supplement, following \RAPstar\ also increases the chances that any errors or functionality omissions or issues in the makefile have been detected and corrected.
+The \RAPstar\ approach cannot enforce the truth of such as summary, but it (and the opportunity to read and review it easily) very significantly increases the chances that the summary is correct and up to date. For example, if refactoring leads to an option being deleted, then it will also disappear \emph{with no further work\/} from the table above. Also, since the summary was proof-read at the same time as proof-reading this \supplement, following \RAPstar\ also increases the chances that any errors or functionality omissions or issues in the makefile have been detected and corrected. data.js
 
 \highlightmysubsection{Selected journal case studies}
 
@@ -716,7 +716,7 @@ July 2020&Sample month\\ \hline
 \small Repository clones downloaded and automatically summarized \clonedate
 \end{center}
 
-\caption{Sizes of repositories, with approximate sizes of code (in kLOC) and data for all available GitHub repositories reviewed in the survey, plus \texttt{covid-sim} \cite{ICmodel} for comparison. Sizes are approximate because in all repositories code and data are conceptually interchangeable (an issue explained in the \supplement), so choices were made in the survey to avoid double-counting. Many repositories rely on downloading additional code and data, which is not counted in the table as the additional required material is not in the repository cited in the paper.  At the time of cloning and checking all repositories in \clonewhen, paper \csname cite-PostoperativeOutcomes.RiskNet\endcsname\ still had nothing in its repository except a single file still saying ``...code coming soon...,'' despite \the\pubdelayinmonths\ months having already elapsed since the submitted paper had claimed the code could be accessed in its repository.}
+\caption{Sizes of repositories, with approximate sizes of code (in kLOC) and data for all available GitHub repositories reviewed in the survey, plus \texttt{covid-sim} \cite{ICmodel} for comparison. Sizes are approximate because in all repositories code and data are conceptually interchangeable (an issue explained in the \supplement), so choices were made in the survey to avoid double-counting. Many repositories rely on downloading additional code and data, which is not counted in the table as the additional required material is not in the repository cited in the paper.  At the time of cloning and checking all repositories in \clonewhen, paper \csname cite-PostoperativeOutcomes.RiskNet\endcsname\ still had nothing in its repository except a single file still saying ``\ldots\ code coming soon~\ldots,'' despite \the\pubdelayinmonths\ months having already elapsed since the  paper had claimed the code could be accessed in its repository.}
 \label{table-repo-summary}\globalTableLabel{supplementaryTableRepoSummary}
 \end{table*}
 
@@ -749,7 +749,7 @@ The \the\dataN\ papers surveyed cover a range of specialities, and it is unlikel
 \label{summary-of-results}
 The sample selection criteria necessarily identified scientific research with Software Engineering contributions. 
 
-No evidence of verification and validation was seen. There was only one example of very basic Software Engineering methods, namely independent coding, and even then the independent code used for testing was not uploaded to the paper's code repository, so the independent testing is not available for reviewers or readers of the paper. (See \supplement\ for more details.)
+No evidence of verification and validation was seen. There was only one example of very basic Software Engineering methods, namely independent coding, and even then the independent code used for testing was not uploaded to the paper's code repository, so the independent testing is not available for reviewers or readers of the paper.
 
 There was no evidence of any critical assessment of code, suggesting that scientists writing papers take it for granted that their code works as they intend. No competent programmer would take it for granted that their code was correct without following rigorous methods, such as formal methods, regression testing, test driven design, etc. (See the \supplement\ for a list of standard methods.)
 
@@ -863,9 +863,9 @@ The data was recorded in JSON (JavaScript Object Notation), which is a simple st
 
 The data was entered by hand (as JSON terms), after reading and reviewing each paper in the survey. In total there are \the\countFields\ data fields available for documenting papers, but not all need be used for each paper; for example, the field \texttt{hasCodeTested} defaults to \texttt{false}, so it need not be set --- it is also an error to set it if another field asserts there is no code to evaluate! (A separate JSON data structure maps the data fields to English descriptions, along with default values if they are optional descriptors.)
 
-A JavaScript program sanity checks the JSON data. The sanity checks found a few errors (e.g., it checks that if there are comments of any sort then there must be some accessible code; it checks the DOI is accessible, etc), which led to a productive double-checking of all the facts of the original papers --- and correcting all the errors. Some papers that had had no code available during the first assessment had uploaded code by the time of the double-checking.\footnote{{Note that double-checking was performed by the same person as the first assessment, though with the benefit of a six month gap to bring a degree of independence}.} A field \texttt{doubleChecked} was added to supplement the original data field \texttt{accessed} to track the process of double-checking the data; the sanity checks then of course checked all \texttt{doubleChecked} fields were completed.
+A JavaScript program sanity checks the JSON data. The sanity checks found a few errors (e.g., it checks that if there are comments of any sort then there must be some accessible code in order to have any comments; it checks the DOI is accessible, etc), which led to a productive double-checking of all the facts of the original papers --- and correcting all the errors. Some papers that had had no code available during the first assessment subsequently uploaded code by the time of the double-checking.\footnote{{Note that double-checking was performed by the same person as the first assessment, though with the benefit of a long gap to bring a degree of independence}.} A field \texttt{doubleChecked} was added to supplement the original data field \texttt{accessed} to track the process of double-checking the data. Further sanity checks then of course checked all \texttt{doubleChecked} fields were completed. And so on. Note that since the checking was done automatically in code, whenever any data was modified and whenever the paper was typeset, the entire body of checks were easily rerun.
 
-Note that since JSON data is JavaScript code, it was convenient to combine the data, the data sanity checking, and the analysis all in a single file. Hence, running the data generates the core human-readable information used in this paper.
+Since JSON data is effectively JavaScript code, it was convenient to combine the data, the data sanity checking, and the analysis all in a single JavaScript file for more convenient maintenance. Hence, running the data generates the core human-readable information used in this paper.
 
 The JavaScript data+program generates files from the JSON; these files were then included in both the main paper and in this \supplement, so when the paper or \supplement\ is typeset all tables and specific data items are typeset automatically, consistently and reliably by \LaTeX\@.
 
@@ -899,7 +899,7 @@ Each of the \plural{\dataVariableCount}{variable} used in the paper were defined
 \textbackslash dataVariableCount = \the\dataVariableCount
 \end{verse}
 
-so the named value is then available for the author to use when the paper is typeset.
+so the named value (here, \texttt{dataVariableCount}) is then available for the author to use any way they wish when the paper is typeset.
 
 Some of the files generated from the JSON data are Unix shell scripts. For example, details of all the papers with GitHub repositories are automatically collected into a shell script so the repositories can be cloned locally and then measured (as it happens, using \texttt{awk} scripts), e.g., to generate table \ref{table-repo-summary} for this \supplement.
 
@@ -945,11 +945,11 @@ The first and last errors above are examples of the very common error of ``out b
 The middle two errors above are examples of the common error of ``out by one,'' or ``fence post errors'' frequently made by mixing up counting fences or the posts (there is usually one more post than fence panel) \cite{fixit}.
 \end{itemize}
 
-All the discussion and examples above were generated automatically, and have been checked correct for other correct values than \the\countUsesVersionControlRepository. This approach, too, considerably helps defend against common Human Factors errors. For example, if we set \texttt{\bslash countUsesVersionControlRepository}=\the\countUsesVersionControlRepository\ to be 2348, say, then all of the subsequent sentences that mention it will say something unexpected and so have to be more carefully proof-read, significantly reducing confirmation bias. The approach turns a possibly-hard-to-spot \emph{single\/} error into \emph{multiple\/} errors spread throughout the paper into different contexts, thus increasing the chances of noticing the error.
+All the discussion and examples above were generated automatically, and have been checked correct for other correct values than \the\countUsesVersionControlRepository. This approach, too, considerably helps defend against common Human Factors errors. For example, if we set \texttt{\bslash countUsesVersionControlRepository}=\the\countUsesVersionControlRepository\ to be 2\hskip .3em 348, say, then all of the subsequent sentences that mention it will say something unexpected and so have to be more carefully proof-read, significantly reducing confirmation bias. The approach turns a possibly-hard-to-spot \emph{single\/} error into \emph{multiple\/} errors spread throughout the paper into different contexts, thus increasing the chances of noticing the error.
 
 It must be emphasized that an automatically-guaranteed number that is supposed to be the same appearing in multiple different contexts is an extremely effective way of defending against common Human Factors errors. As the number is proof read, the different contexts encourage it to be read more carefully, and in different ways.
 
-If any of the numbers used in a paper were safety critical (e.g., lives directly depend on their values) then further checks would have been made to help detect and avoid errors. \LaTeX\ itself makes it very easy to check that numbers fall within reasonable ranges, or to have any other required safety properties. For the present paper, a potential problem is if the paper is mistakenly typeset \emph{before\/} the latest JSON data has been analyzed; in which case, none of the variables, like \texttt{\bslash countUsesVersionControlRepository}, will have been correctly set and their values could be undefined or nonsense (e.g., from a debugging run of \texttt{data.js}). Variables might be checked as follows:
+If any of the numbers used in a paper were safety critical (e.g., lives directly depend on their values) then further checks would have been made to help detect and avoid errors. \LaTeX\ itself makes it very easy to check that numbers fall within reasonable ranges, or to have any other required safety properties. For the present paper, a potential problem is if the paper is mistakenly typeset \emph{before\/} the latest JSON data has been analyzed; in which case, none of the variables, like \texttt{\bslash countUsesVersionControlRepository}, will have been correctly set and their values could be undefined or nonsense (e.g., from a debugging run of \texttt{data.js}). Although the following text only shows the result of checking (and not the calculations), in general all generated variables can be sanity checked in \LaTeX\ or in the generating programs like \texttt{data.js}:
 
 \newcount\min \min=5
 \newcount\max \max=20
@@ -997,9 +997,10 @@ Another program (\texttt{programs/expand.js}) was therefore written to recursive
 Assessment flags are \flagStyle{highlighted in color} to be clearer in the following tables.\\
 
 \noindent
-\vbox{\noindent Legend:\vskip 1ex
+\begin{center}
+\sf
 \input generated/legend.tex
-}
+\end{center}
 %\newpage
 
 {

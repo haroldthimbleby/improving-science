@@ -4,7 +4,7 @@
 
 ## [harold@thimbleby.net](mailto:harold@thimbleby.net)
 
-### README generated on 14 March 2023
+### README generated on 12 May 2023
 
 #### (README.md is generated from README.md-src by running `make readme`)
 

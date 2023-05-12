@@ -23,9 +23,19 @@ var descriptionsOfFields = {
         documentation: "Authors",
         essential: 1
     },
+    codeAssertions: {
+        documentation: "Code in repository uses assertions",
+        essential: 0,
+        flag: "$\\sf C_a$"
+    },
     codeComment: {
         documentation: "Evaluator's notes about code",
         essential: 1
+    },
+    codeConditions: {
+        documentation: "Code in repository uses pre- or post-conditions or similar",
+        essential: 0,
+        flag: "$\\sf C_c$"
     },
     codeURL: {
         documentation: "URL (typically GitHub) for code repository"
@@ -90,8 +100,8 @@ var descriptionsOfFields = {
         flag: "$\\sf S_{\\mbox{\\scriptsize NONE}}$"
     },
     hasNoComment: {
-        documentation: "Code has no non-trivial comments",
-        flag: "$\\sf C_0$"
+        documentation: "Code only has trivial or obvious comments",
+        flag: "$\\sf C_1$"
     },
     hasOpenSourceDevelopment: {
         documentation: "Team or open source development",
@@ -105,16 +115,16 @@ var descriptionsOfFields = {
         documentation: "Use of RAP/RAP* principles"
     },
     hasSubstantialcomment: {
-        documentation: "Code has substantial, useful comments and documentation",
-        flag: "$\\sf C_{+}$"
+        documentation: "Code has substantial, useful comments, and documentation",
+        flag: "$\\sf C_3$"
     },
     hasToolBasedDevelopment: {
         documentation: "Evidence of any tool-based development",
         flag: "$\\sf S_{{\\mbox{\\scriptsize tools}}}$"
     },
     hasTrivialComment: {
-        documentation: "Code only has trivial comments (e.g., copyright)",
-        flag: "$\\sf C_1$"
+        documentation: "Code only has comments unrelated to code intent (e.g., copyright)",
+        flag: "$\\sf C_0$"
     },
     journal: {
         documentation: "Journal",
@@ -158,7 +168,7 @@ var data = [{
         number: 95,
         journal: "Nature Digital Medicine",
         doi: "10.1038/s41746-020-0300-0",
-        dataComment: "On request",
+        dataComment: "On request.",
         hasCodeInPrinciple: 1,
         codeComment: "``Code is available upon request from the corresponding author'' (requested)",
         pages: 3
@@ -171,16 +181,17 @@ var data = [{
         title: "A data-driven framework for selecting and validating digital health metrics: use-case in neurological sensorimotor impairments",
         volume: 3,
         number: "80",
+        codeAssertions: 1,
         journal: "Nature Digital Medicine",
         doi: "10.1038/s41746-020-0286-7",
-        dataComment: "``The datasets used in the current study are available from the corresponding author upon reasonable request and under consideration of the ethical regulations''",
+        dataComment: "``The datasets used in the current study are available from the corresponding author upon reasonable request and under consideration of the ethical regulations.''",
         hasDataRepo: 1,
         hasDirectCode: 1,
         hasCodeRepo: 1,
         codeURL: "github.com/ChristophKanzler/MetricSelectionFramework",
         hasTrivialComment: 1,
         codeCommentedOut: 1,
-        codeComment: "Matlab. Documented overview, but only trivial comments",
+        codeComment: "Matlab. Documented overview, but only trivial comments. Assertions in code only relate to UI.",
         pages: 17
             },
     {
@@ -193,9 +204,9 @@ var data = [{
         number: "78",
         journal: "Nature Digital Medicine",
         doi: "10.1038/s41746-020-0287-6",
-        dataComment: "``In accordance with Twitter policies of data sharing, data used in the generation of the algorithm for this study will not be made publicly available''",
+        dataComment: "``In accordance with Twitter policies of data sharing, data used in the generation of the algorithm for this study will not be made publicly available.''",
         hasBreach: 1,
-        codeComment: "``Due to the sensitive and potentially stigmatizing nature of this tool, code used for algorithm generation or implementation on individual Twitter profiles will not be made publicly available''",
+        codeComment: "``Due to the sensitive and potentially stigmatizing nature of this tool, code used for algorithm generation or implementation on individual Twitter profiles will not be made publicly available.''",
         hasNoCode: 1,
         pages: 12
     },
@@ -204,12 +215,12 @@ var data = [{
         doubleChecked: "17 January 2021",
         authors: "Levine DM, Co Z, Newmark LP, Groisser AR, Holmgren AJ, Haas JA, Bates DW",
         year: 2020,
-        title: "Design and testing of a mobile health application rating tool",
+        title: "Design and testing of a mobile health application rating tool.",
         volume: 3,
         number: "74",
         journal: "Nature Digital Medicine",
         doi: "10.1038/s41746-020-0268-9",
-        dataComment: "``The datasets generated during and/or analyzed during the current study are available from the corresponding author on reasonable request.''``''",
+        dataComment: "``The datasets generated during and/or analyzed during the current study are available from the corresponding author on reasonable request.''",
         hasCodeInPrinciple: 1,
         codeComment: "``This code would be made available upon reasonable request.'' (requested)",
         pages: 7
@@ -227,7 +238,7 @@ var data = [{
         dataComment: "Nothing available",
         hasBreach: 1,
         hasNoCode: 1,
-        codeComment: "Nothing available (despite building two voice-based virtual counselors)",
+        codeComment: "Nothing available (despite building two voice-based virtual counselors).",
         pages: 4
             },
     {
@@ -240,13 +251,13 @@ var data = [{
         number: "61",
         journal: "Nature Digital Medicine",
         doi: "10.1038/s41746-020-0266-y",
-        dataComment: "``The datasets generated and analyzed during the study are not currently publicly available due to HIPAA compliance agreement but are available from the corresponding author on reasonable request''",
+        dataComment: "``The datasets generated and analyzed during the study are not currently publicly available due to HIPAA compliance agreement but are available from the corresponding author on reasonable request.''",
         hasDirectCode: 1,
         hasTrivialComment: 1,
         codeURL: "github.com/marshuang80/PENet",
         codeCommentedOut: 1,
         hasCodeRepo: 1,
-        codeComment: "Poor commenting, no documentation",
+        codeComment: "Poor commenting, no documentation.",
         pages: 9
             },
     {
@@ -259,10 +270,10 @@ var data = [{
         number: "60",
         journal: "Nature Digital Medicine",
         doi: "10.1038/s41746-020-0265-z",
-        dataComment: "``The dataset generated and analyzed for this study will not be made publicly available due to patient privacy and lack of informed consent to allow sharing of patient data outside of the research team''",
+        dataComment: "``The dataset generated and analyzed for this study will not be made publicly available due to patient privacy and lack of informed consent to allow sharing of patient data outside of the research team.''",
         hasBreach: 1,
         hasNoCode: 1,
-        codeComment: "No code available",
+        codeComment: "No code available.",
         pages: 9
             },
     {
@@ -275,13 +286,13 @@ var data = [{
         number: "58",
         journal: "Nature Digital Medicine",
         doi: "10.1038/s41746-020-0248-0",
-        dataComment: "``The datasets generated during and/or analyzed during the current study are not publicly available due to institutional restrictions on data sharing and privacy concerns. However, the data are available from the corresponding author on reasonable request''",
+        dataComment: "``The datasets generated during and/or analyzed during the current study are not publicly available due to institutional restrictions on data sharing and privacy concerns. However, the data are available from the corresponding author on reasonable request.''",
         hasCodeRepo: 1,
         hasBreach: 1,
         hasEmptyRepo: 1,
         hasNoCode: 1,
         codeURL: "github.com/cklee219/PostoperativeOutcomes_RiskNet",
-        codeComment: "Empty GitHub repository: ``Code coming soon\\ldots'' it says",
+        codeComment: "Empty GitHub repository: ``Code coming soon \\ldots'' paper says.",
         pages: 10
             },
     {
@@ -294,13 +305,13 @@ var data = [{
         number: "57",
         journal: "Nature Digital Medicine",
         doi: "10.1038/s41746-020-0258-y",
-        dataComment: "``The i2b2 data that support the findings of this study are available from i2b2 but restrictions apply to the availability of these data, which require signed safe usage and research-only. Data from UCSF are not available at this time as they have not been legally certified as being De-Identified, however, this process is underway and the data may be available by the time of publication by contacting the authors. Requesters identity as researchers will need to be confirmed, safe usage guarantees will need to be signed, and other restrictions may apply''",
+        dataComment: "``The i2b2 data that support the findings of this study are available from i2b2 but restrictions apply to the availability of these data, which require signed safe usage and research-only. Data from UCSF are not available at this time as they have not been legally certified as being De-Identified, however, this process is underway and the data may be available by the time of publication by contacting the authors. Requesters identity as researchers will need to be confirmed, safe usage guarantees will need to be signed, and other restrictions may apply.''",
         hasDirectCode: 1,
         hasTrivialComment: 1,
         codeURL: "github.com/BCHSI/philter-ucsf",
         codeCommentedOut: 1,
         hasCodeRepo: 1,
-        codeComment: "Basic documentation, very little comment",
+        codeComment: "Basic documentation, very little comment.",
         pages: 8
             },
     {
@@ -313,12 +324,12 @@ var data = [{
         number: "54",
         journal: "Nature Digital Medicine",
         doi: "10.1038/s41746-020-0261-3",
-        dataComment: "``Not available due to restrictions in the ethical permit, but may be available on request''",
+        dataComment: "``Not available due to restrictions in the ethical permit, but may be available on request.''",
         hasDirectCode: 1,
         hasTrivialComment: 1,
         codeURL: "github.com/ubiquitous-computing-lab/AI-CDSS-Cardiovascular-Silo",
         hasCodeRepo: 1,
-        codeComment: " Trivial comments, no documentation",
+        codeComment: "Trivial comments, no documentation.",
         pages: 6,
         codeCommentedOut: 1
             },
@@ -332,10 +343,10 @@ var data = [{
         number: "51",
         journal: "Nature Digital Medicine",
         doi: "10.1038/s41746-020-0249-z",
-        dataComment: "``The data that support the findings of this study are available in a deidentified form from Cleveland Clinic, but restrictions apply to the availability of these data, which were used under Cleveland Clinic data policies for the current study, and so are not publicly available''",
+        dataComment: "``The data that support the findings of this study are available in a deidentified form from Cleveland Clinic, but restrictions apply to the availability of these data, which were used under Cleveland Clinic data policies for the current study, and so are not publicly available.''",
         hasBreach: 1,
         hasNoCode: 1,
-        codeComment: "``We used only free and open-source software'' some of which is unspecified",
+        codeComment: "``We used only free and open-source software'' --- some of which is unspecified.",
         pages: 8
             },
     {
@@ -354,7 +365,7 @@ var data = [{
         codeURL: "github.com/QTIM-Lab/SiameseChange",
         hasCodeRepo: 1,
         codeCommentedOut: 0,
-        codeComment: "Not all code on GitHub, minor comments",
+        codeComment: "Not all code on GitHub, minor comments only.",
         pages: 9
             },
     {
@@ -368,13 +379,13 @@ var data = [{
         journal: "Royal Society Open Science",
         volume: 7,
         doi: "10.1098/rsos.200419",
-        dataComment: "Data available on Dryad",
+        dataComment: "Data available on Dryad.",
         hasDataRepo: 1,
         hasDirectCode: 1,
         hasSubstantialcomment: 1,
         codeURL: "datadryad.org/stash/dataset/doi:10.5061/dryad.1g1jwstrw",
         reference: "paper-usesRMarkdown",
-        codeComment: "Code and example runs available in R Markdown",
+        codeComment: "Code and example runs available in R Markdown.",
         pages: 13
             },
     {
@@ -388,11 +399,11 @@ var data = [{
         journal: "Royal Society Open Science",
         volume: 7,
         doi: "10.1098/rsos.192210",
-        dataComment: "Data directly written into program code",
+        dataComment: "Data directly written into program code.",
         hasTrivialComment: 1,
         hasDirectCode: 1,
         hasBreach: 1,
-        codeComment: "Basic Matlab with routine comments",
+        codeComment: "Basic Matlab with routine comments.",
         codeURL: "royalsocietypublishing.org/doi/suppl/10.1098/rsos.192210",
         pages: 9
             },
@@ -408,11 +419,11 @@ var data = [{
         volume: 7,
         doi: "10.1098/rsos.191900",
         hasDataRepo: 1,
-        dataComment: "Data available on Dryad plus publicly available data from the 1000 genomes project. Currently (apparently) for private view",
+        dataComment: "Data available on Dryad plus publicly available data from the 1000 genomes project. Currently (apparently) for private view.",
         hasCodeInPrinciple: 1,
         hasOtherTechniques: 1,
         hasGoodComment: 1,
-        codeComment: "Code available for private view, though some code available with minor comments. Paper describes using two contrasting methods to help confirm correctness, ``As an additional check, I also coded the calculation of D based on a probabilistic approach, using genotype frequencies in each population to calculate the expected frequencies of each possible two-genotype combination (electronic supplementary material, table S1). Essentially identical results were obtained.'' but the contrasting method is not available",
+        codeComment: "Code available for private view, though some code available with minor comments. Paper describes using two contrasting methods to help confirm correctness, ``As an additional check, I also coded the calculation of D based on a probabilistic approach, using genotype frequencies in each population to calculate the expected frequencies of each possible two-genotype combination (electronic supplementary material, table S1). Essentially identical results were obtained.'' --- but the contrasting method is not available.",
         codeURL: "datadryad.org/stash/share/ichHKrWj7hqlznOaR6NQVzITgp40dlqWvWAgAxyafiQ",
         pages: 9,
         reference: "onlyPaperWithChecks"
@@ -429,11 +440,11 @@ var data = [{
         volume: 7,
         doi: "10.1098/rsos.200566",
         hasDataRepo: 1,
-        dataComment: "Data available on Dryad",
+        dataComment: "Data available on Dryad.",
         hasCodeInPrinciple: 1,
         hasGoodComment: 1,
         codeURL: "royalsocietypublishing.org/doi/suppl/10.1098/rsos.200566",
-        codeComment: "Reasonaby commented code on Dryad, but code is not complete and presumably never checked",
+        codeComment: "Reasonaby commented code on Dryad, but code is not complete and presumably never checked.",
         pages: 7
             },
     {
@@ -447,11 +458,11 @@ var data = [{
         journal: "Royal Society Open Science",
         volume: 7,
         doi: "10.1098/rsos.200422",
-        dataComment: "On request",
+        dataComment: "On request.",
         hasCodeInPrinciple: 1,
         hasTrivialComment: 1,
         codeURL: "osf.io/a5xsz/?view_only=87ae173f775b40d79d6cd0fdcf6d4a9c",
-        codeComment: "R lightly commented",
+        codeComment: "R, lightly commented.",
         pages: 20
             },
     {
@@ -466,10 +477,10 @@ var data = [{
         journal: "Royal Society Open Science",
         volume: 7,
         doi: "10.1098/rsos.200462",
-        dataComment: "No data required",
+        dataComment: "No data required.",
         hasCodeInPrinciple: 1,
         hasBreach: 1,
-        codeComment: "Unrunnable incomplete code fragment",
+        codeComment: "Unrunnable incomplete code fragment.",
         pages: 11
             },
     {
@@ -483,10 +494,10 @@ var data = [{
         journal: "Royal Society Open Science",
         volume: 7,
         doi: "10.1098/rsos.191992",
-        dataComment: "Data embedded in PDF",
+        dataComment: "Data embedded in PDF.",
         hasBreach: 1,
         hasNoCode: 1,
-        codeComment: "No code available",
+        codeComment: "No code available.",
         pages: 16
             },
     {
@@ -500,12 +511,12 @@ var data = [{
         journal: "Royal Society Open Science",
         volume: 7,
         doi: "10.1098/rsos.200622",
-        dataComment: "Data available on Dryad",
+        dataComment: "Data available on Dryad.",
         hasDataRepo: 1,
         hasCodeInPrinciple: 1,
         hasGoodComment: 1,
         codeURL: "datadryad.org/stash/dataset/doi:10.5061/dryad.vx0k6djnr",
-        codeComment: "Some comments, some code in Matlab",
+        codeComment: "Some comments, some code in Matlab.",
         pages: 19
             },
     {
@@ -519,13 +530,13 @@ var data = [{
         journal: "Royal Society Open Science",
         volume: 7,
         doi: "10.1098/rsos.200638",
-        dataComment: "Partial data on Dryad ",
+        dataComment: "Partial data on Dryad.",
         hasDataRepo: 1,
         hasDirectCode: 1,
         hasSubstantialcomment: 1,
         hasCodeRepo: 1,
         codeURL: "github.com/SolangeD/lactModel",
-        codeComment: "Documented R, including manual",
+        codeComment: "Documented R, including model's manual.",
         codeCommentedOut: 1,
         pages: 13
             },
@@ -540,10 +551,10 @@ var data = [{
         journal: "Royal Society Open Science",
         volume: 7,
         doi: "10.1098/rsos.200621",
-        dataComment: "No data required",
+        dataComment: "No data required.",
         hasBreach: 1,
         hasNoCode: 1,
-        codeComment: "``We constructed a bioeconomic model for an RSSF [restricted fishing effort small-scale fishery] using game theory'' for which results are discussed, yet no code is available",
+        codeComment: "``We constructed a bioeconomic model for an RSSF [restricted fishing effort small-scale fishery] using game theory'' for which results are discussed, yet no code is available.",
         pages: 11
             },
     {
@@ -557,12 +568,12 @@ var data = [{
         journal: "Royal Society Open Science",
         volume: 7,
         doi: "10.1098/rsos.191928",
-        dataComment: "Data cited, not all available",
+        dataComment: "Data cited, not all available.",
         hasDirectCode: 1,
         hasTrivialComment: 1,
         codeURL: "github.com/UT-NSG/LRM",
         hasCodeRepo: 1,
-        codeComment: "Trivial documentation",
+        codeComment: "Trivial documentation.",
         codeCommentedOut: 1,
         pages: 22
             },
@@ -579,11 +590,11 @@ var data = [{
         volume: 7,
         doi: "10.1098/rsos.200307",
         hasDataRepo: 1,
-        dataComment: "On Figshare",
+        dataComment: "On Figshare.",
         codeURL: "figshare.com/collections/Supplementary_information_for_Webster_J_and_Amos_M_A_Turing_Test_for_Crowds_/4859118/1",
         hasDirectCode: 1,
         hasTrivialComment: 1,
-        codeComment: "On Figshare, large amount of disorganised and undocumented code. Helpful features to make usable for third parties",
+        codeComment: "On Figshare, large amount of disorganised and undocumented code. Helpful features to make usable for third parties.",
         pages: 12
             },
     {
@@ -597,11 +608,11 @@ var data = [{
         journal: "Royal Society Open Science",
         volume: 7,
         doi: "10.1098/rsos.191653",
-        dataComment: "Data on Dryad",
+        dataComment: "Data on Dryad.",
         hasBreach: 1,
         hasDataRepo: 1,
         hasNoCode: 1,
-        codeComment: "No code available",
+        codeComment: "No code available.",
         pages: 12
             },
     {
@@ -615,10 +626,10 @@ var data = [{
         journal: "Royal Society Open Science",
         volume: 7,
         doi: "10.1098/rsos.200320",
-        dataComment: "Data on various web sites",
+        dataComment: "Data on various web sites.",
         hasBreach: 1,
         hasNoCode: 1,
-        codeComment: "No code available",
+        codeComment: "No code available.",
         pages: 15,
             },
     {
@@ -630,12 +641,11 @@ var data = [{
         volume: 2,
         number: "7",
         journal: "Lancet Digital Health",
-        pages: "e358--67",
+        pages: 367 - 358, // "e358--e367",
         doi: "10.1016/S2589-7500(20)30108-4",
         hasNoCode: 1,
-        dataComment: "Data on request",
-        codeComment: " ``The coding used to train the artificial intelligence model are dependent on annotation, infrastructure, and hardware, so cannot be released.'' (!) Algorithm (not source code) available on request.",
-        pages: 9
+        dataComment: "Data on request.",
+        codeComment: " ``The coding used to train the artificial intelligence model are dependent on annotation, infrastructure, and hardware, so cannot be released.'' (!) Algorithm (not source code) available on request."
                },
     {
         accessed: "24 July 2020",
@@ -646,13 +656,12 @@ var data = [{
         volume: 2,
         number: "7",
         journal: "Lancet Digital Health",
-        pages: "e348--57",
+        pages: 9, // "e348--57",
         doi: "10.1016/S2589-7500(20)30107-2",
-        dataComment: "Data on request",
+        dataComment: "Data on request.",
         hasCodeInPrinciple: 1,
-        codeComment: "Python scripts can be requested",
-        pages: 9
-            },
+        codeComment: "Python scripts can be requested."
+    },
     {
         accessed: "24 July 2020",
         authors: "Fung R, Villar J, Dashti A, Ismail LC, Staines-Urias E, Ohuma EO, Salomon LJ, Victora CG, Barros FC, Lambert A, Carvalho M, Jaffer Y A, Noble JA, Gravett MG, Purwar M, Pang R, Bertino E, Munim S, Min AM, McGready R, Norris SA, Bhutta ZA, Kennedy SH, Papageorghiou AT, Ourmazd A",
@@ -662,17 +671,16 @@ var data = [{
         volume: 2,
         number: "7",
         journal: "Lancet Digital Health",
-        pages: "e368--75",
+        pages: 7, // "e368--75",
         doi: "10.1016/S2589-7500(20)30131-X",
-        dataComment: "Unspecified location on large website requiring registration",
+        dataComment: "Unspecified location on large website requiring registration.",
         hasDataRepo: 1,
         hasDirectCode: 1,
         hasCodeRepo: 1,
         hasTrivialComment: 1,
         codeURL: "github.com/ki-analysis/manifold-ga",
-        codeComment: "Has overall documentation but poorly commented Matlab code on GitHub",
-        codeCommentedOut: 0,
-        pages: 7
+        codeComment: "Has overall documentation but poorly commented Matlab code on GitHub.",
+        codeCommentedOut: 0
             },
     {
         accessed: "24 July 2020",
@@ -683,12 +691,11 @@ var data = [{
         volume: 2,
         number: "7",
         journal: "Lancet Digital Health",
-        pages: "e295--302",
+        pages: 7, // "e295--302",
         doi: "10.1016/S2589-7500(20)30063-7",
-        dataComment: "Available to researchers who meet criteria for access to confidential data",
+        dataComment: "Available to researchers who meet criteria for access to confidential data.",
         hasNoCode: 1,
-        codeComment: "Despite the paper being a ``deep learning algorithm'' the code is not available",
-        pages: 7
+        codeComment: "Despite the paper being a ``deep learning algorithm'' the code is not available."
             },
     {
         accessed: "24 July 2020",
@@ -699,17 +706,16 @@ var data = [{
         volume: 2,
         number: "7",
         journal: "Lancet Digital Health",
-        pages: "e314--22",
+        pages: 8, // "e314--22",
         doi: "10.1016/S2589-7500(20)30085-6",
-        dataComment: "Data access conditional on approved study proposal",
+        dataComment: "Data access conditional on approved study proposal.",
         hasDirectCode: 1,
         hasCodeRepo: 1,
         hasNoComment: 1,
         codeURL: "github.com/biomedia-mira/blast-ct",
-        codeComment: "Almost completely uncommented Python, but does have a basic setup script",
-        codeCommentedOut: 1,
-        pages: 8
-            },
+        codeComment: "Almost completely uncommented Python, but does have a basic setup script.",
+        codeCommentedOut: 1
+    },
     {
         accessed: "24 July 2020",
         doubleChecked: "27 January 2021",
@@ -719,12 +725,11 @@ var data = [{
         volume: 2,
         number: "7",
         journal: "Lancet Digital Health",
-        pages: "e303--13",
+        pages: 10, // "e303--13",
         doi: "10.1016/S2589-7500(20)30078-9",
-        dataComment: "Unspecified locations on several large websites",
+        dataComment: "Unspecified locations on several large websites.",
         hasNoCode: 1,
-        codeComment: "Python used and apparently GitHub, but --- an oversight? --- no code is available",
-        pages: 10
+        codeComment: "Python used and apparently on GitHub, but --- an oversight? --- no code is available."
     }];
 
 function definedq(x) {
@@ -735,25 +740,30 @@ var fs = require('fs');
 var buffer;
 
 var countSaveFile = 0;
+var generatedFiles = [];
 
 function saveFile(fileName, buffer, description) {
-    fs.open(fileName, 'w', function (err, fd) {
+    var fullFileName = "generated/" + fileName;
+    fs.open(fullFileName, 'w', function (err, fd) {
         if (err) {
             if (err.code === 'EEXIST') {
-                console.error(fileName + " can't be over-written");
+                console.error(fullFileName + " can't be over-written");
                 return;
             }
-            console.error("Some error trying to write " + fileName);
+            console.error("Some error trying to write " + fullFileName);
             throw err;
         }
         fs.writeFileSync(fd, buffer, function (err) {
             if (err) {
-                return console.log("Saving " + fileName + " got error: " + err);
+                return console.log("Saving " + fullFileName + " got error: " + err);
             }
         })
-        if (countSaveFile++ == 0) console.log("\nSummary of files generated from JSON data in file data.js");
-        console.log("   " + (countSaveFile < 10 ? " " : "") + countSaveFile + ". " + fileName + " - " + description);
     });
+    saveFileTableInfo(fileName, description);
+}
+
+function saveFileTableInfo(fileName, description) {
+    generatedFiles.push([fileName, description]);
 }
 
 // what does the data look like -- used in the appendix?
@@ -777,7 +787,7 @@ for (i in chosen) {
     sep = ",";
 }
 s += "\\newline\n\\hspace*{\\codeIndent}\\}\n}\n";
-saveFile("generated/example-data.tex", s, "LaTeX example of JSON data");
+saveFile("example-data.tex", s, "LaTeX example of JSON data");
 
 //--------------------
 
@@ -951,7 +961,7 @@ for (var i = 0; i < data.length; i++) {
 
 for (var f in descriptionsOfFields)
     if (descriptionsOfFields[f].usage <= 0)
-        warn(-1, "** Warning: field " + f + " never used in data; default value 0/false used");
+        warn(-1, "** Warning: field " + f + " never explicitly used in data; default value 0/false used");
 
     // flags make more sense to the reader if they appear in this related order...
 var flagOrder = ["hasCodePolicy",
@@ -967,10 +977,12 @@ var flagOrder = ["hasCodePolicy",
     "hasToolBasedDevelopment",
     "hasOpenSourceDevelopment",
     "hasOtherTechniques",
-    "hasNoComment",
     "hasTrivialComment",
+    "hasNoComment",
     "hasGoodComment",
-    "hasSubstantialcomment"
+    "hasSubstantialcomment",
+    "codeAssertions",
+    "codeConditions"
                 ];
 
 // check all flags in descriptionsOfFields are in flagOrder,
@@ -1004,6 +1016,13 @@ for (var i = 0; i < data.length; i++) {
     }
 }
 
+var bibliographyNames = [];
+
+function bibdata(d, n) {
+    bibliographyNames[n] = 1;
+    return d[n];
+}
+
 // generate Mathematica code for checking e.g., theorem discovery...
 s = "(* We don't put all the fields into this Mathematica notebook - it's easy enough to fix if you want more :-) *)\n\n";
 s += "latexFlags=<|";
@@ -1030,7 +1049,7 @@ for (var i = 0; i < data.length; i++) {
     s += "|>";
 }
 s += "};\nvars=Keys[latexFlags];\n";
-saveFile("generated/flagData.nb", s, "Flags expressed as Mathematica code");
+saveFile("flagData.nb", s, "Flags expressed as Mathematica code (facilitates ML or other analysis)");
 
 // check that all flags have a flag string, and all flag strings are in this flagOrder list
 for (var i = 0; i < flagOrder.length; i++) {
@@ -1065,7 +1084,7 @@ for (var i = 0; i < data.length; i++) {
     for (var f in descriptionsOfFields)
         s += csvise(data[i][f], f == lastflag);
 }
-saveFile("generated/data.csv", s, "All data from data.js expressed in CSV for convenience");
+saveFile("data.csv", s, "All data from data.js expressed in CSV for convenience");
 
 s = "# run this shell script in directory models\n";
 var spagelengths = "";
@@ -1093,11 +1112,12 @@ s += "( echo \"% date generated by running generated/allGitRepos.sh downloading 
     "echo \\\\\\\\def\\\\\\\\clonemonth {`date \"+%m\"`}\n" +
     ") > ../generated/clone-date.tex\n";
 
-saveFile("generated/allGitRepos.sh", s, "Shell script to download all available " + n + " GitHub repositories \n       generated/clone-date.tex - Running the download script also saves the download dates of GitHub clones")
-    //console.log(spagelengths);
+saveFile("allGitRepos.sh", s, "Shell script generated to download all available " + n + " GitHub repositories");
+saveFileTableInfo("clone-date.tex", "Running the download script also saves the download dates of GitHub clones");
+//console.log(spagelengths);
 spagelengths += "\\newcount \\gitPages \\gitPages=" + gitpagelengths + "\n";
 spagelengths += "\\newcount \\totalPages \\totalPages=" + totalpagelengths + "\n";
-saveFile("generated/page-lengths.tex", spagelengths, "Page lengths, total and total of papers with Git repositories")
+saveFile("page-lengths.tex", spagelengths, "Page lengths and totals for Git data, and total pages of papers")
 
 // generate the LaTeX assessment summary table
 s = "";
@@ -1108,17 +1128,19 @@ for (var i = 0; i < data.length; i++) {
     var documentFlags = " ";
     for (var j = 0; j < flagOrder.length; j++) {
         var flag = flagOrder[j];
-        if (definedq(descriptionsOfFields[flag].flag) && d[flag])
+        if (definedq(descriptionsOfFields[flag].flag) && d[flag]) {
+            var callForSideEffect = bibdata(d, flag);
             if (isTrue(descriptionsOfFields[flag].dataFlag))
                 documentFlags += descriptionsOfFields[flag].flag + flagSpacing;
             else
                 codeFlags += descriptionsOfFields[flag].flag + flagSpacing;
+        }
     }
     documentFlags = "\\flagStyle{" + documentFlags + "}";
     codeFlags = "\\flagStyle{" + codeFlags + "}";
-    s += "\\citenum{" + (d.reference == "reference" && typeof (d.reference) == "number" ? "R" : "") + d.reference + "} & " + d.dataComment + documentFlags + " & " + d.codeComment + codeFlags + "\\\\\n";
+    s += "\\citenum{" + (d.reference == "reference" && typeof (d.reference) == "number" ? "R" : "") + d.reference + "} & " + bibdata(d, "dataComment") + documentFlags + " & " + bibdata(d, "codeComment") + codeFlags + "\\\\\n";
 }
-saveFile("generated/assessments.tex", s, "Main summary table for Supplementary Material");
+saveFile("assessments.tex", s, "Main summary table for Supplementary Material");
 
 function fixAuthors(s) {
     const maxAuthors = 1000; // put et al after nth author (eg if maxAuthors=3, at most 3 explicit authors)
@@ -1157,17 +1179,17 @@ function fixAuthors(s) {
 s = "";
 for (var i = 0; i < data.length; i++) {
     var d = data[i];
-    var basename = d.codeURL.replace(/.*\/([^/]*)$/, "$1").replace(/_/g, ".").trim();
+    var basename = bibdata(d, "codeURL").replace(/.*\/([^/]*)$/, "$1").replace(/_/g, ".").trim();
     s += "\\vbox{";
     if (basename.length > 0) s += "\\maprepo{" + basename + "}";
-    s += "\\bibitem{" + d.reference + "}\n" + fixAuthors(d.authors) + ", ``" + d.title + ",'' \\emph{" + d.journal + "}, \\textbf{" + d.volume + "}";
-    if (definedq(d.number)) s += "(" + d.number + ")";
-    if (definedq(d.pages) && d.pages != 0) s += ":" + d.pages + "pp";
+    s += "\\bibitem{" + bibdata(d, "reference") + "}\n" + fixAuthors(bibdata(d, "authors")) + ", ``" + bibdata(d, "title") + ",'' \\emph{" + bibdata(d, "journal") + "}, \\textbf{" + bibdata(d, "volume") + "}";
+    if (definedq(bibdata(d, "number"))) s += "(" + bibdata(d, "number") + ")";
+    if (definedq(bibdata(d, "pages")) && bibdata(d, "pages") != 0) s += ":" + bibdata(d, "pages") + "pp";
     s += ", ";
-    s += d.year + ". DOI \\texttt{" + d.doi.trim() + "}" + (d.codeURL != undefined && d.codeURL != "" ? (" {Code \\url{" + d.codeURL.trim() + "}}") : "") + "\\\\\\hfill{Accessed " + d.accessed + ".}\\ " + (!definedq(d.doubleChecked) || d.doubleChecked == "" ? "\\textcolor{red}{Not double-checked}" : ("{" +
-        "Double-checked " + d.doubleChecked + "}")) + ".}\\bibskip\n\n";
+    s += bibdata(d, "year") + ". DOI \\texttt{" + bibdata(d, "doi").trim() + "}" + (bibdata(d, "codeURL") != undefined && bibdata(d, "codeURL") != "" ? (" {Code \\url{" + bibdata(d, "codeURL").trim() + "}}") : "") + "\\\\\\hfill{Accessed " + bibdata(d, "accessed") + ".}\\ " + (!definedq(bibdata(d, "doubleChecked")) || bibdata(d, "doubleChecked") == "" ? "\\textcolor{red}{Not double-checked}" : ("{" +
+        "Double-checked " + bibdata(d, "doubleChecked") + "}")) + ".}\\bibskip\n\n";
 }
-saveFile("generated/supplementary-references.tex", s, "Reference list for Supplementary Material");
+saveFile("supplementary-references.tex", s, "Reference list for Supplementary Material");
 
 // generate summary table
 var t = {};
@@ -1175,9 +1197,12 @@ t.hasBreach = 0;
 t.hasCodeInPrinciple = 0;
 t.hasDirectCode = 0;
 t.hasDataRepo = 0;
+t.codeAssertions = 0;
+t.codeConditions = 0;
 t.hasCodeRepo = 0;
 t.hasEmptyRepo = 0;
 t.hasNoCode = 0;
+t.hasNoComment = 0;
 t.hasGoodComment = 0;
 t.hasTrivialComment = 0;
 t.hasSubstantialcomment = 0;
@@ -1235,6 +1260,17 @@ if (months != 0)
 var N = data.length;
 console.log("\nTotal number of papers assessed = " + N + "\n");
 
+// find N for each journal
+var journals = {};
+
+for (var i = 0; i < data.length; i++) {
+    var journal = data[i].journal;
+    if (Object.keys(journals).includes(journal))
+        journals[journal]++;
+    else
+        journals[journal] = 1;
+}
+
 for (var j in t)
     console.log("    " + j + " = " + t[j] + "\n        " + descriptionsOfFields[j].documentation + "\n");
 
@@ -1290,20 +1326,9 @@ s += "Clear breaches of journal code policy (if any) & " + percent(t.hasBreach, 
 
 s += "\\hline\\end{tabular}\\\\\n\\vskip 1ex ${}^{\\star}$Time of " + minWaitSinceAccess + " is wait between code request and date of generating this table.";
 
-saveFile("generated/summary-table.tex", s, "Short summary table");
+saveFile("summary-table.tex", s, "Short summary table");
 
 s = "";
-
-// find N for each journal
-var journals = {};
-
-for (var i = 0; i < data.length; i++) {
-    var journal = data[i].journal;
-    if (Object.keys(journals).includes(journal))
-        journals[journal]++;
-    else
-        journals[journal] = 1;
-}
 
 const ordered = Object.keys(journals).sort().reduce(
     (obj, key) => {
@@ -1345,18 +1370,24 @@ s += "\\global\\newcount \\countFields \\global\\countFields=" + countFields + "
 s += "\\global\\newcount \\countCommentedOut \\global\\countCommentedOut=" + countCommentedOut + "\n";
 s += "\\global\\newcount \\countNotCommentedOut \\global\\countNotCommentedOut=" + countNotCommentedOut + "\n";
 s += "\\global\\newcount \\countMissingCode \\global\\countMissingCode=" + countMissingCode + "\n";
-s += "\\global\\newcount \\countRepos \\global\\countRepos=" + countRepos + "\n";
 
-saveFile("generated/constants.tex", s, "Generated common definitions and constants");
+// what's the average number of pages per author?
+var av = totalpagelengths / numberOfAuthors;
+s += "\\global\\def \\averagePagesPerAuthor{" + av + "}\n";
+
+saveFile("constants.tex", s, "Generated LaTeX definitions and constants");
 
 // generate legend
-s = "\\begin{tabular}{lp{4.5in}}\n";
+s = "\\begin{tabular}{lrp{4.5in}}\n";
+s += "&\\bfseries{Paper}&\\\\";
+s += "\\bfseries{Flag}&\\bfseries{count}&\\bfseries{Meaning}\\\\ \\hline \n";
 for (var i = 0; i < flagOrder.length; i++) {
     var flag = flagOrder[i];
-    s += "\\flagStyle{" + descriptionsOfFields[flag].flag + "}&" + descriptionsOfFields[flag].documentation + "\\\\\n";
+    s += "\\flagStyle{" + descriptionsOfFields[flag].flag + "}&" +
+        t[flag] + "&" + descriptionsOfFields[flag].documentation + "\\\\ \n";
 }
 s += "\\end{tabular}\n";
-saveFile("generated/legend.tex", s, "Legend for the main assessment table");
+saveFile("legend.tex", s, "Legend for the main assessment table");
 
 function plural(n, word) {
     return n + " " + word + (n == 1 ? "" : "s");
@@ -1383,19 +1414,47 @@ if (true) // make an HTML file of DOIs to help manual checking...
             }
         }
         s += "</ol><hr/>";
-        prefix = "<h1>" + plural(countHasNoErrors, "paper") + " with no reported errors</h1><ol>"; // break between not checked and already checked
+        prefix = "<h1>" + plural(countHasNoErrors, "paper") + " with no reported analysis errors (by data.js)</h1><ol>"; // break between not checked and already checked
     }
     s += "</html>\n";
-    saveFile("generated/data-check.html", s, "Convenient list of data sources with DOIs in HTML");
+    saveFile("data-check.html", s, "Convenient list of data sources with DOIs in HTML (enables checking of data just by clicking on HTML links)");
 }
 
 // generate a quick way of opening papers
 s = "";
 for (var i = 0; i < data.length; i++)
     s += "open \"http://www.doi.org/" + data[i].doi + "\"\n";
-saveFile("generated/open-doi.sh", s, "Shell script to open all DOIs; run by using \". generated/open-doi.sh\"");
+saveFile("open-doi.sh", s, "Shell script to conveniently open all DOIs");
 
-// since so much noise is generated summmarize error warnings...
+// saved-files.tex hasn't been remembered by saveFile until it's too late to save, so needs explicit help here! 
+saveFileTableInfo("saved-files.tex", "This table of files generated by data.js");
+
+s = "";
+console.log("Summary of files generated by data.js:");
+generatedFiles.sort((u, v) => {
+    return u[0] > v[0] ? 1 : u[0] < v[0] ? -1 : 0
+});
+
+for (var i = 0; i < generatedFiles.length; i++) {
+    s += generatedFiles[i][0] + " & " + generatedFiles[i][1].replace(/LaTeX/, "\\LaTeX\\ ").replace(/data.js/, "\\texttt{data.js}") + "\\\\\n";
+    console.log("  generated/" + generatedFiles[i][0] + " - " + generatedFiles[i][1]);
+
+}
+console.log("\n");
+saveFile("saved-files.tex", s, "Table of files generated by data.js");
+
+var unuseddata = 0;
+for (var j in descriptionsOfFields)
+    if (!definedq(t[j])) {
+        if (!unuseddata) {
+            console.log("Warning: Some data fields not used in analysed data:");
+            unuseddata = 1;
+        }
+        if (!definedq(bibliographyNames[j])) warnCount++;
+        console.log((definedq(bibliographyNames[j]) ? "      " : "") + "    " + j + " not used " + (definedq(bibliographyNames[j]) ? "except in data summary table and/or bibliography" : "in generated data"));
+    }
+
+    // since so much noise is generated summmarize error warnings...
 console.log("\n" + (!errorCount ? "** No noticed errors to report" : ("** " + plural(errorCount, "error") + " reported")));
 
 console.log("\n" + (!warnCount ? "** No noticed warnings to report" : ("** " + plural(warnCount, "warning") + " reported")));

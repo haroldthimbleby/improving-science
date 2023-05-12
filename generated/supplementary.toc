@@ -1,45 +1,45 @@
-\contents{10 Further issues for Software Engineering Boards (SEBs)}{33}
-\subcontents{a\ {Brief definition}}{33}
-\subcontents{b\ Relationships of SEBs to Ethics Boards}{33}
-\subcontents{c\ {SEBs are necessary but not sufficient}}{34}
-\contents{11 Software engineering best practice}{34}
-\subcontents{a\ Introduction and standard references}{34}
-\subcontents{b\ Essential components of best practice}{34}
-\subcontents{\hbox to \howwide {\hfill (0)} Requirements}{35}
-\subcontents{\hbox to \howwide {\hfill (1)} {Formal methods}}{35}
-\subcontents{\hbox to \howwide {\hfill (2)} Defensive programming}{36}
-\subcontents{\hbox to \howwide {\hfill (3)} {Using dependable programming languages}}{36}
-\subcontents{\hbox to \howwide {\hfill (4)} Open source and version control}{37}
-\subcontents{\hbox to \howwide {\hfill (5)} Rigorous testing}{37}
-\subcontents{\hbox to \howwide {\hfill (6)} {Good documentation and record keeping}}{38}
-\subcontents{\hbox to \howwide {\hfill (7)} Usability}{38}
-\subcontents{\hbox to \howwide {\hfill (8)} Reusing quality solutions}{38}
-\subcontents{\hbox to \howwide {\hfill (9)} Simplicity}{39}
-\subcontents{\hbox to \howwide {\hfill (10)} {Compliance with standards}}{39}
-\subcontents{\hbox to \howwide {\hfill (11)} Effective multidisciplinary teamwork}{39}
-\subcontents{\hbox to \howwide {\hfill (12)} {Continuous Professional Development (CPD)}}{39}
-\subcontents{\hbox to \howwide {\hfill (13)} {Security and other factors}}{40}
-\subcontents{\hbox to \howwide {\hfill (14)} {Software is a human activity}}{40}
-\contents{12 Code, data, and publication}{41}
-\subcontents{a\ When magic numbers become magic code}{42}
-\subcontents{b\ When data is code}{42}
-\subcontents{c\ Exploiting code as data for more reliable science}{42}
-\subcontents{d\ When data is text: Exploiting code for reliable publication}{43}
-\subcontents{e\ Data and polynomials used in the paper}{43}
-\subcontents{f\ {Comparing conventional and RAP approaches}}{44}
-\contents{13 {The Spiegelhalter trustworthiness questions}}{44}
-\subcontents{a\ {How trustworthy are the numbers?}}{44}
-\subcontents{b\ {How trustworthy is the source?}}{46}
-\subcontents{c\ {How trustworthy is the interpretation?}}{47}
-\contents{14 {A pilot survey of computational science}}{47}
-\subcontents{a\ {Selected journal case studies}}{48}
-\subcontents{b\ {Pilot paper sample}}{49}
-\subcontents{c\ {Summary of results}}{50}
-\subcontents{d\ {Current code policies of sampled journals}}{52}
-\subcontents{e\ {Assessment criteria and methods}}{53}
-\subcontents{f\ {Detecting and defending against error}}{55}
-\subcontents{g\ {Defending against system problems}}{56}
-\subcontents{h\ {Problems of restrictive journal policies}}{56}
-\subcontents{i\ {Sample assessment and scoring}}{57}
-\contents{15 Additional references for Supplemental Material}{59}
-\contents{16 References for surveyed papers}{61}
+\contents{8 Further issues for Software Engineering Boards (SEBs)}{37}
+\subcontents{a\ {Brief definition}}{37}
+\subcontents{b\ Relationships of SEBs to Ethics Boards}{37}
+\subcontents{c\ {SEBs are necessary but not sufficient}}{38}
+\contents{9 Software engineering best practice}{38}
+\subcontents{a\ Introduction and standard references}{38}
+\subcontents{b\ Essential components of best practice}{38}
+\subcontents{\hbox to \howwide {\hfill (0)} Requirements}{39}
+\subcontents{\hbox to \howwide {\hfill (1)} {Formal methods}}{39}
+\subcontents{\hbox to \howwide {\hfill (2)} Defensive programming}{40}
+\subcontents{\hbox to \howwide {\hfill (3)} {Using dependable programming languages}}{40}
+\subcontents{\hbox to \howwide {\hfill (4)} Open source and version control}{41}
+\subcontents{\hbox to \howwide {\hfill (5)} Rigorous testing}{41}
+\subcontents{\hbox to \howwide {\hfill (6)} {Good documentation and record keeping}}{42}
+\subcontents{\hbox to \howwide {\hfill (7)} Usability}{42}
+\subcontents{\hbox to \howwide {\hfill (8)} Reusing quality solutions}{42}
+\subcontents{\hbox to \howwide {\hfill (9)} Simplicity}{43}
+\subcontents{\hbox to \howwide {\hfill (10)} {Compliance with standards}}{43}
+\subcontents{\hbox to \howwide {\hfill (11)} Effective multidisciplinary teamwork}{43}
+\subcontents{\hbox to \howwide {\hfill (12)} {Continuous Professional Development (CPD)}}{43}
+\subcontents{\hbox to \howwide {\hfill (13)} {Security and other factors}}{44}
+\subcontents{\hbox to \howwide {\hfill (14)} {Software is a human activity}}{44}
+\contents{10 Code, data, and publication}{45}
+\subcontents{a\ When magic numbers become magic code}{46}
+\subcontents{b\ When data is code}{46}
+\subcontents{c\ Exploiting code as data for more reliable science}{46}
+\subcontents{d\ When data is text: Exploiting code for reliable publication}{47}
+\subcontents{e\ Data and polynomials used in the paper}{47}
+\subcontents{f\ {Comparing conventional and RAP approaches}}{48}
+\contents{11 {The Spiegelhalter trustworthiness questions}}{48}
+\subcontents{a\ {How trustworthy are the numbers?}}{48}
+\subcontents{b\ {How trustworthy is the source?}}{50}
+\subcontents{c\ {How trustworthy is the interpretation?}}{51}
+\contents{12 {A pilot survey of computational science}}{51}
+\subcontents{a\ {Selected journal case studies}}{52}
+\subcontents{b\ {Pilot paper sample}}{53}
+\subcontents{c\ {Summary of results}}{54}
+\subcontents{d\ {Current code policies of sampled journals}}{56}
+\subcontents{e\ {Assessment criteria and methods}}{57}
+\subcontents{f\ {Detecting and defending against error}}{59}
+\subcontents{g\ {Defending against system problems}}{60}
+\subcontents{h\ {Problems of restrictive journal policies}}{60}
+\subcontents{i\ {Sample assessment and scoring}}{61}
+\contents{13 Additional references for Supplemental Material}{63}
+\contents{14 References for surveyed papers}{65}

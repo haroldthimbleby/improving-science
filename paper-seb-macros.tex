@@ -60,12 +60,11 @@
 \fi
 \the\t\%}
 
-% insert commas into large numbers (integers)
-\def\commarise#1{%[#1]
-	\t=#1
+% insert commas into large integer numbers
+\def\digitBlock#1{\t=#1
     \divide \t by 1000
     \ifnum \t > 0
-    	\the\t,%
+    	\the\t \hskip 0.3em\relax%
     	\tu=#1
     	\multiply \t by 1000
     	\advance \tu by -\t
@@ -76,6 +75,28 @@
     	#1%
     \fi
 }
+
+% code to make digits into blocks of 3 (as in 1000 -> 1 000)
+\newcount\xdigitBlockn
+\newcount\xdigitBlocktmp
+\def\xdigitBlock#1{%
+        \xdigitBlockn=#1\relax
+        \ifnum \xdigitBlockn < 0
+                $-$%
+                \xdigitBlockn = -\xdigitBlockn
+        \fi
+        \let \xdigitBlockpptemp \empty
+        \loop \ifnum \xdigitBlockn > 999
+                \xdigitBlocktmp = \xdigitBlockn
+                \divide \xdigitBlockn by 1000
+                \xdigitBlocktmp = \numexpr \xdigitBlocktmp - 1000*\xdigitBlockn \relax
+                \edef \xdigitBlockpptemp{\hskip 0.3em\ifnum \xdigitBlocktmp < 100  0\ifnum \xdigitBlocktmp < 10 0\fi\fi \the\xdigitBlocktmp \xdigitBlockpptemp}%
+        \repeat
+        \the\xdigitBlockn
+        \xdigitBlockpptemp
+}
+
+\def\digitBlock#1{\hbox{\xdigitBlock{#1}}}
 
 % simple macro to use a number register to pluralize (add an s) to words....
 % \plural{\t}{fred} => \the\t\ freds if plural, or => one fred if singular

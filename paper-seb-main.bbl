@@ -119,6 +119,12 @@ Munaf{\`o}, M.~R., Nosek, B.~A., Bishop, D. V.~M., Button, K.~S., Chambers,
   Nature Human Behaviour}, \textbf{1}(1):0021.
 \newblock \doi{10.1038/s41562-016-0021}
 
+\bibitem{joss}
+Smith, A.~M. \emph{et al.} (2018) ``Journal of open source software ({JOSS}):
+  Design and first-year review,'' {\em PeerJ Computer Science},
+  \textbf{4}(e147).
+\newblock \doi{10.7717/peerj-cs.147}
+
 \bibitem{TOP}
 Nosek, B.~A. \emph{et al.} (2015) ``Promoting an open research culture:
   {A}uthor guidelines for journals could help to promote transparency,
@@ -153,6 +159,14 @@ Machina, H.~K. and Wild, D.~J. (2013) ``Electronic laboratory notebooks
 Perkel, J.~M. (6 May 2021) ``Reactive, reproducible, collaborative:
   Computational notebooks evolve,'' {\em Nature}, \textbf{593}:156--157.
 \newblock \doi{10.1038/d41586-021-01174-w}
+
+\bibitem{maneage}
+Akhlaghi, M., Infante-Sainz, R., Roukema, B.~F., Khellat, M., Valls-Gabaud, D.
+  and Baena-Gall{\'e}, R. (May 2021) ``Toward long-term and archivable
+  reproducibility,'' {\em Computing in Science {\&} Engineering},
+  \textbf{23}(3):82--91.
+\newblock \url{https:/}\midurl{/}\midurl{maneage.org},
+  \doi{10.1109/mcse.2021.3072860}
 
 \bibitem{LP}
 Knuth, D.~E. (1984) ``Literate programming,'' {\em The Computer Journal},
@@ -214,6 +228,13 @@ Ainsworth, R. \emph{et al.} (July 2022) {\em {The Turing Way: A Handbook for
   Reproducible Data Science}}, vol.~\textbf{v1.0.3}, Zenodo.
 \newblock \url{the-}\midurl{turing-}\midurl{way.netlify.app/}\midurl{welcome},
   \doi{10.5281/zenodo.3233853}
+
+\bibitem{Courtes}
+Court{\`e}s, L. (2020) ``[re] storage tradeoffs in a collaborative backup
+  service for mobile devices,'' {\em Rescience C}, \textbf{6}(1:{\#}6):10.
+\newblock
+  \url{https:/}\midurl{/}\midurl{gitlab.inria.fr/}\midurl{lcourtes-}\midurl{phd/}\midurl{edcc-}\midurl{2006-}\midurl{redone},
+  \doi{10.5281/zenodo.3886739}
 
 \bibitem{apa-statistics}
 Glen, S. (2022) {\em Reporting Statistics APA Style}, Statistics How To.
@@ -309,6 +330,12 @@ Kelly, D. and Sanders, R. (2008) {\em Assessing the Quality of Scientific
 \bibitem{fixit}
 Thimbleby, H. (2021) {\em Fix IT: How to see and solve the problems of digital
   healthcare}, Oxford University Press.
+
+\bibitem{Hammurabi}
+Roth, M.~T. (2022) {\em Laws of Hammurabi}, Open Educational Resources for the
+  Ancient Near East, University of Central Florida.
+\newblock
+  \url{https:/}\midurl{/}\midurl{stars.library.ucf.edu/}\midurl{cgi/}\midurl{viewcontent.cgi?article=1133&=&context=ancientneareast&=&sei-}\midurl{redir=1&referer=https%253A%252F%252Fscholar.google.com%252Fscholar%253Fhl%253Den%2526as_sdt%253D0%25252C5%2526q%253DIf%252Ba%252Bbuilder%252Bconstructs%252Ba%252Bhouse%252Bhammurabi%2526btnG%253D#search=%22If%20builder%20constructs%20house%20hammurabi%22}
 
 \bibitem{cite-code}
 Katz, D.~S. \emph{et al.} (2021) ``Recognizing the value of software: {A}
@@ -548,22 +575,6 @@ Wood-Charlson, E.~M., Crockett, Z., Erdmann, C., Arkin, A.~P. and Robinson,
   {\em PLoS Computational Biology}, \textbf{18}(9):e1010476.
 \newblock \doi{10.1371/ journal.pcbi.1010476}
 
-\bibitem{Executable-Paper}
-Gabriela, A. and Capone, R. (2011) ``Executable paper {Grand Challenge}
-  workshop,'' {\em Procedia Computer Science}, \textbf{4}:577--578.
-\newblock \doi{10.1016/j.procs.2011.04.060}
-
-\bibitem{RMarkdown}
-Xie, Y., Allaire, J.~J. and Grolemund, G. (2020) {\em R Markdown: The
-  Definitive Guide}, Chapman {\&} Hall/CRC.
-
-\bibitem{lepton}
-Li-Thiao-T{\' e}, S. (2012) ``Literate program execution for reproducible
-  research and executable papers,'' {\em Procedia Computer Science},
-  \textbf{9}:439--448.
-\newblock International Conference on Computational Science, ICCS 2012,
-  \doi{10.1016/j.procs.2012.04.047}
-
 \bibitem{cbc}
 Woodcock, J. C.~P., Larsen, P.~G., Bicarregui, J.~C. and Fitzgerald, J.~S.
   (2009) ``Formal methods: {Practice} and experience,'' {\em ACM Computing
@@ -616,6 +627,22 @@ Stol, K.-J. and Fitzgerald, B. (2018) ``The {ABC} of software engineering
 Lakens, D. (2023) ``Methods-review boards could avert wasted research,'' {\em
   Nature}, \textbf{613}.
 
+\bibitem{Executable-Paper}
+Gabriela, A. and Capone, R. (2011) ``Executable paper {Grand Challenge}
+  workshop,'' {\em Procedia Computer Science}, \textbf{4}:577--578.
+\newblock \doi{10.1016/j.procs.2011.04.060}
+
+\bibitem{RMarkdown}
+Xie, Y., Allaire, J.~J. and Grolemund, G. (2020) {\em R Markdown: The
+  Definitive Guide}, Chapman {\&} Hall/CRC.
+
+\bibitem{lepton}
+Li-Thiao-T{\' e}, S. (2012) ``Literate program execution for reproducible
+  research and executable papers,'' {\em Procedia Computer Science},
+  \textbf{9}:439--448.
+\newblock International Conference on Computational Science, ICCS 2012,
+  \doi{10.1016/j.procs.2012.04.047}
+
 \bibitem{landauer}
 Landauer, T.~K. (1995) {\em The Trouble with Computers: {Usefulness},
   Usability, and Productivity}, MIT Press.
@@ -624,6 +651,13 @@ Landauer, T.~K. (1995) {\em The Trouble with Computers: {Usefulness},
 Thimbleby, H. (1996) ``The trouble with computers: {Usefulness}, usability, and
   productivity (by {Thomas} {K.~Landauer}),'' {\em Computational Linguistics},
   \textbf{22}(2):265--276.
+
+\bibitem{debt}
+Falessi, D. and Kruchten, P. (2015) ``Five reasons for including technical debt
+  in the software engineering curriculum,'' {\em in Proceedings of the 2015
+  European Conference on Software Architecture Workshops}, ECSAW'15, ACM,
+  pp.~28:1--28:4.
+\newblock \doi{10.1145/2797433.2797462}
 
 \bibitem{jpm}
 {Heineman, Jr.}, B.~W. (2013) ``The {JP Morgan} ``{Whale}'' report and the

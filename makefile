@@ -23,7 +23,7 @@ LATEX = pdflatex
 
 APPENDIX = supplemental material
 
-osversion = Darwin Kernel Version 22.3.0: Thu Jan  5 20:53:49 PST 2023; root:xnu-8792.81.2~2/RELEASE_X86_64
+osversion = Darwin Kernel Version 22.4.0: Mon Mar  6 21:00:17 PST 2023; root:xnu-8796.101.5~3/RELEASE_X86_64
 			
 help: # Explain how to use \texttt{make}, and list all available options for using \texttt{make}.
 	@echo Use make with any of these options:
@@ -41,9 +41,9 @@ check-versions: # Check that you have the right software and software versions t
 	@echo Different versions may well work fine - but be cautious
 	@echo
 	@$(call checkVersion,awk,awk version 20200816,)
-	@$(call checkVersion,bibtex,BibTeX 0.99d (TeX Live 2021),)
-	@$(call checkVersion,git,git version 2.37.1 (Apple Git-137.1),)
-	@$(call checkVersion,latex,pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2021),)
+	@$(call checkVersion,bibtex,BibTeX 0.99d (TeX Live 2023),)
+	@$(call checkVersion,git,git version 2.39.2 (Apple Git-143),)
+	@$(call checkVersion,latex,pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023),)
 	@$(call checkVersion,node,v12.13.0, node)
 	@$(call checkVersion,wolframscript,WolframScript 1.5.0 for MacOSX-x86-64)
 	@echo
@@ -51,7 +51,7 @@ check-versions: # Check that you have the right software and software versions t
 	@echo "You are running                           `uname -v`"
 	@if [ "$(osversion)" = "`uname -v`" ]; then echo ... "(These OS versions are the same)"; else echo ... which are different "(you may just have a more recent version)"; fi
 	@echo
-	@echo For interactive notebooks, we ran Mathematica 12.2.0.0
+	@echo For running interactive notebooks, we used Mathematica 12.2.0.0
 	@echo
 	
 check-same: # After you have done a \texttt{make data} or \texttt{make pdf}, you can check whether you have reproduced all data and generated files exactly the same (more precisely, it checks that they are the same as they were the last time \texttt{make check-update} was run).

@@ -51,7 +51,7 @@ END { t="'$i'";
 	t=substr(t, 5); 
 	u=t;
 	gsub(/_/, ".", u);
-	printf "\\reponame{%s}{%s} & \\csname pagelength-%s\\endcsname & \\commarise{%d} & %s & %s \\\\\n", t, u, u, fileCount, kloc(code), byteTableUnits(bytes)
+	printf "\\reponame{%s}{%s} & \\csname pagelength-%s\\endcsname & \\digitBlock{%d} & %s & %s \\\\\n", t, u, u, fileCount, kloc(code), byteTableUnits(bytes)
 	printf "%d\t%d\t%d\t%s\n", fileCount, code, bytes, t >> "sizes.tmp"
 	if( u == "covid-sim" ) {
    		printf "%% data calculated from the Ferguson covid-sim repo\n\\def \\covidsimkLOC {%s}\n\\def \\covidsimfiles {%d}\n\\def \\covidsimdata{%s}\n", kloc(code), fileCount, byteStringUnits(bytes) > "../generated/covidsimSummary.tex"
