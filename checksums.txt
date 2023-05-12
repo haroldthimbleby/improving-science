@@ -23,24 +23,27 @@
 202169273 904 ./generated/example-data.tex
 3011340877 1645 ./generated/make-help.tex
 2260665777 1339 ./generated/constants.tex
+2042119512 42454 ./paper-seb-supplementary-material.log
 1841759233 20086 ./paper-seb-supplementary-material.aux
-1457636674 64 ./checksums-meta.txt
+833773057 64 ./checksums-meta.txt
 2081080013 12271 ./paper-seb-supplementary-material.bib
-797250048 1244 ./newchecksums.txt
+2512431896 1299 ./newchecksums.txt
 1183894955 31079 ./paper-seb-main.bbl
 1826475978 4998 ./paper-seb-macros.tex
 440759185 14218 ./makefile
 768240004 128138 ./January paper-seb-main.tex
+3480498969 5772 ./paper-seb-main.out
 2816485165 1341 ./models/comments
 3185540887 13 ./models/tidyup
 3746509548 4388 ./models/scan
 2215851589 186 ./models/original-git-PostoperativeOutcomes_RiskNet-README.md
 1962414648 615 ./models/run
 2090803505 2733 ./paper-seb-main.toc
-4291882469 146602 ./paper-seb-main.tex
+1492732383 146606 ./paper-seb-main.tex
 838558402 22974 ./revisedCompJ.bst
 2275653278 6517 ./README.md
 4213287376 17332 ./comjnl.cls
+3572605750 6806 ./paper-seb-supplementary-material.out
 2396433078 68545 ./programs/RAP-diagrams.nb
 279084988 26 ./programs/CHECK.TXT
 3634258622 584026 ./programs/analyze.nb
@@ -54,16 +57,16 @@
 163605096 1142 ./programs/obsolete javascript data fitting models/fittingModels.awk
 1482902627 374 ./programs/obsolete javascript data fitting models/run
 901009918 36 ./.gitignore
-1410859609 124071 ./paper-seb-supplementary-material.tex
+3609790555 124084 ./paper-seb-supplementary-material.tex
 1676263524 2802 ./README.md-src
 4107446731 51229 ./paper-seb-main.bib
 1794189749 41 ./.git/ORIG_HEAD
 1544873272 364 ./.git/config
 3819906048 23 ./.git/HEAD
 684386549 240 ./.git/info/exclude
-2002576567 11847 ./.git/logs/HEAD
-1235002853 10762 ./.git/logs/refs/heads/master
-54110300 7312 ./.git/logs/refs/remotes/origin/master
+3288631598 12550 ./.git/logs/HEAD
+394424047 11465 ./.git/logs/refs/heads/master
+3781071689 7466 ./.git/logs/refs/remotes/origin/master
 76865375 73 ./.git/description
 2912878280 896 ./.git/hooks/commit-msg.sample
 2199226393 4898 ./.git/hooks/pre-rebase.sample
@@ -78,32 +81,33 @@
 920823 1374 ./.git/hooks/pre-push.sample
 3864416837 3650 ./.git/hooks/update.sample
 2974268060 2783 ./.git/hooks/push-to-checkout.sample
-379758497 41 ./.git/refs/heads/master
-379758497 41 ./.git/refs/remotes/origin/master
-2990190947 31 ./.git/COMMIT_EDITMSG
+1013888368 41 ./.git/refs/heads/master
+2677866589 41 ./.git/refs/remotes/origin/master
+2530254222 43 ./.git/COMMIT_EDITMSG
 1975275808 123 ./.git/FETCH_HEAD
 2168741356 19291 ./paper-seb-main.aux
+1096841832 36036 ./paper-seb-main.log
 288728931 10824 ./paper-seb-supplementary-material.bbl
 3035051325 122 ./response-to-referees/sedcommands
 3038294181 163 ./response-to-referees/diff-fixes.tex
+173853943 452 ./response-to-referees/response 12 May 2023.aux
+2049898049 10450 ./response-to-referees/response 12 May 2023.log
 469499814 3904 ./response-to-referees/diff.toc
 453302928 29472 ./response-to-referees/response 30 Jan 2022.tex
 2626616036 195412 ./response-to-referees/diff.tex
-3024822022 15455 ./response-to-referees/response 13 april 2023.tex
 2553482545 21634 ./response-to-referees/mysiam.bst
 415297497 114888 ./response-to-referees/paper-seb-supplementary-material (original).tex
 3939084639 1509 ./response-to-referees/OLD deleted lambda notes.tex
+1018063555 15674 ./response-to-referees/response 12 May 2023.tex
 1170889188 26536 ./response-to-referees/OLD compj.bst
-670649603 10462 ./response-to-referees/response 13 april 2023.log
 3758777928 225 ./response-to-referees/run
-173853943 452 ./response-to-referees/response 13 april 2023.aux
 154591643 13345 ./response-to-referees/response 30 Jan 2022.log
 3612785152 14120 ./response-to-referees/diff.aux
 1029462422 781 ./response-to-referees/response 30 Jan 2022.aux
 2060350463 107325 ./response-to-referees/paper-seb-main (original).tex
-4234451536 614181 ./paper-seb-main.pdf
-2112402467 1487277 ./paper-seb.pdf
-2919177303 769354 ./paper-seb-supplementary-material.pdf
-766816518 126055 ./response-to-referees/response 13 april 2023.pdf
+1249779542 614144 ./paper-seb-main.pdf
+3531129481 1563879 ./paper-seb.pdf
+339831181 769373 ./paper-seb-supplementary-material.pdf
 668475035 67074 ./response-to-referees/response 30 Jan 2022.pdf
 4137110720 629503 ./response-to-referees/diff.pdf
+1757041627 126314 ./response-to-referees/response 12 May 2023.pdf
