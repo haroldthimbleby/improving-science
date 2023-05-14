@@ -37,25 +37,3 @@ Looking specifically at the data plotted in figure \ref{fig-overfit} if, for the
 $\hat{y}(0)=0.5$, 
 versus the extreme value predicted by the over-fitting code, 
 $\hat{y}(0)=-41.8$, 
- even lies far outside the plot region shown in the figure.\footnote{The bounds of the confidence interval illustrated in figure \ref{fig-overfit} depend on assumptions about the distribution of the data; in this example, we are \emph{assuming}, perhaps because we know something more about the experiment, or thanks to Occam's Razor that a linear function is more likely than a high order polynomial.} Similar problems happen with interpolation rather than extrapolation, for instance around $x=4$.
-
-While over-fitting data is a well-known problem, the point for this paper is that \emph{code\/} itself can easily be over-fitted. Code can of course be over-fitted in more complex ways than can be illustrated with elementary polynomials, as here. Code over-fitting is much harder to recognize because there may be no simple graph plot, like figure \ref{fig-overfit}, to highlight the problems. Furthermore, almost all code is far more intricate than the two trivial polynomials used to illustrated figure \ref{fig-overfit}. 
-
-Unfortunately, code in published science \emph{is\/} often over-fitted, and over-fitted in a way that is very hard to scrutinize. For example, in epidemiology (which is considered in section \ref{section-pandemic-modeling}) it is routine to use very complicated, large dynamical models parameterized with numerous social, cultural, health, demographic and geographical data. The parameterization is mixed between data files, data written explicitly into the code, and with conditionals and other structuring in the code to cover special cases. Indeed, many of the programs in the survey used comments to inactivate code, presumably indicating an unfinished tinkering approach to code development.\footnote{Of the \the\countUsesVersionControlRepository\ papers in the pilot survey that reported use of code repositories (covering \input generated/kloc.tex
-\totalkLOC\ thousand lines of code --- so this is not a trivial amount of programming effort), \numbertoname{\the\countMissingCode} provided an empty repository with no code at all (effectively commenting out all their code!), and \numbertoname{\the\countCommentedOut} repositories explicitly commented out chunks of workable code. The \numbertoname{\the\countNotCommentedOut} remaining non-trivial repositories with no commented-out code consisted of straightforward, short code files with few comments of any sort.\remembernamevalue{numbernamesexamplefootnote}{\thefootnote}}
-
-Furthermore, scientific support code is rarely documented well enough to know what it should have been doing, which should be answered by a specification. With no clear specification and documentation, the code can be arbitrarily hacked to get any convenient results, since no particular specification for it has been defined that it should adhere to. Thus we risk doing and promoting substandard science because we --- the scientists and the publication process --- are not managing the unlimited adaptability and complexity of code that science has come to rely~on. This is over-fitting of the worst kind --- in conventional over-fitting one can at least hope to see that the fitting is over-parameterized for the data, but in code over-fitting the code and specification are not visible, therefore not adequately scrutinized, and --- worse --- the ``data'' the code over-fits includes the entire conceptual contribution of the paper. 
-
-Reference \cite{may-simple} shows that even trivial code (in the case cited, implementing simple difference equations) with very few parameters can have very complex results, and reference \cite{dyson} is a historically significant example how pointing out the problem of over-fitting has improved science.
-
-%\vfill % the vfill is only needed to put the box at the bottom of a column if that makes it look better
-\vskip 1ex
-\noindent 
-{\newdimen\boxwidth
-\boxwidth = \columnwidth
-\advance\boxwidth by - 1em
-\begin{tabular}{@{}l@{}}
-\framebox[\columnwidth][r]{\hfill\parbox{\boxwidth}{This section (\ref{over-fit}) of this paper, including figure \ref{fig-overfit}, was generated as a computational paper in a \emph{Mathematica\/} notebook, then exported to \LaTeX\ to include here. The \supplement\ provides a more complete explanation, as well as the data and details of the fitted polynomials (also generated automatically). This paper's repository includes the notebook.
-
-%\hskip 1em Generated text and data presented elsewhere in this paper were created by a \texttt{make} file running shell scripts and JavaScript code analyzing repositories, JSON survey data, etc. Results were exported to files of \LaTeX\ markup and definitions, then imported into this paper and expanded where needed.
-}\hfill}\end{tabular}}
