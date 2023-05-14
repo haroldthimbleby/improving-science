@@ -4,7 +4,7 @@
 
 ## [harold@thimbleby.net](mailto:harold@thimbleby.net)
 
-### README generated on 12 May 2023
+### README generated on 14 May 2023
 
 #### (README.md is generated from README.md-src by running `make readme`)
 
@@ -74,6 +74,10 @@ Here are all the available options:
 * `make expand`
 
     Expand all Latex files (to recursively flatten `input` and `bibliography` files, etc) to meet Latex single-file processing restrictions for journals like *PLOS* and *IEEE Transactions on Software Engineering*, then make new PDFs to upload. (Note that `make expand` will do a `make pdf` first to ensure all the data and aux files are around to be expanded.)
+
+* `make git-prep`
+
+    What's on Git that we've lost, or stuff we have got locally but probably don't want on Git, so you can delete it or move it out the way or whatever.
 
 * `make help`
 
