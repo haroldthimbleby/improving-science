@@ -1,4 +1,4 @@
 # ignore ALL .log files
 *.log
 *.out
-*syntex*
+*synctex*

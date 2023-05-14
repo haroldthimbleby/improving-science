@@ -35,6 +35,7 @@ generated/summary-table.tex
 generated/supplementary-references.tex
 generated/supplementary.toc
 git-files
+git2-files
 makefile
 models/comments
 models/original-git-PostoperativeOutcomes_RiskNet-README.md
@@ -45,6 +46,8 @@ paper-seb-macros.tex
 paper-seb-main.aux
 paper-seb-main.bbl
 paper-seb-main.bib
+paper-seb-main.log
+paper-seb-main.out
 paper-seb-main.pdf
 paper-seb-main.synctex.gz
 paper-seb-main.tex
@@ -52,6 +55,8 @@ paper-seb-main.toc
 paper-seb-supplementary-material.aux
 paper-seb-supplementary-material.bbl
 paper-seb-supplementary-material.bib
+paper-seb-supplementary-material.log
+paper-seb-supplementary-material.out
 paper-seb-supplementary-material.pdf
 paper-seb-supplementary-material.synctex.gz
 paper-seb-supplementary-material.tex
