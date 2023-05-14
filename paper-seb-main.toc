@@ -7,24 +7,24 @@
 \contentsline {subsubsection}{\numberline {2.c.2}RAP as research}{9}{subsubsection.2.3.2}%
 \contentsline {section}{\numberline {3}The statistics/code analogy}{10}{section.3}%
 \contentsline {subsection}{\numberline {3.a}The siren call of over-fitting code}{11}{subsection.3.1}%
-\contentsline {section}{\numberline {4}The conventional role of code}{13}{section.4}%
-\contentsline {subsection}{\numberline {4.a}The deceptive simplicity of code}{14}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.b}The low status of coding}{15}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.c}The critical role of code is often ignored}{15}{subsection.4.3}%
+\contentsline {section}{\numberline {4}The conventional role of code}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.a}The deceptive simplicity of code}{13}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.b}The low status of coding}{14}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.c}The critical role of code is often ignored}{14}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.d}Bugs, code and programming}{15}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.e}Long-term problems of unreliable code}{16}{subsection.4.5}%
-\contentsline {section}{\numberline {5}State of the art}{17}{section.5}%
-\contentsline {subsection}{\numberline {5.a}Case study: Pandemic modeling}{17}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.b}Concerns with reproducibility}{18}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.c}Beyond pandemic modeling}{19}{subsection.5.3}%
+\contentsline {subsection}{\numberline {4.e}Long-term problems of unreliable code}{15}{subsection.4.5}%
+\contentsline {section}{\numberline {5}State of the art}{16}{section.5}%
+\contentsline {subsection}{\numberline {5.a}Case study: Pandemic modeling}{16}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.b}Concerns with reproducibility}{17}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.c}Beyond pandemic modeling}{18}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.d}The lop-sided emphasis on data}{20}{subsection.5.4}%
-\contentsline {section}{\numberline {6}Rethinking science that uses code}{21}{section.6}%
+\contentsline {section}{\numberline {6}Rethinking science that uses code}{20}{section.6}%
 \contentsline {subsection}{\numberline {6.a}Software Engineering Boards}{21}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.b}Extending RAP to RAP{\tt +}}{23}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.c}The paper as a scientific laboratory}{24}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.b}Extending RAP to RAP{\tt +}}{22}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.c}The paper as a scientific laboratory}{23}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.d}Action must be interdisciplinary}{24}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.e}Methodological statements}{25}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.f}Training to reduce technical debt}{26}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.e}Methodological statements}{24}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.f}Training to reduce technical debt}{25}{subsection.6.6}%
 \contentsline {subsection}{\numberline {6.g}Benefits beyond science}{26}{subsection.6.7}%
-\contentsline {subsection}{\numberline {6.h}Approaches to further work}{27}{subsection.6.8}%
-\contentsline {section}{\numberline {7}Conclusions}{28}{section.7}%
+\contentsline {subsection}{\numberline {6.h}Approaches to further work}{26}{subsection.6.8}%
+\contentsline {section}{\numberline {7}Conclusions}{27}{section.7}%

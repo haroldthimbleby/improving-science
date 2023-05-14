@@ -214,5 +214,13 @@ expand: # Expand all \LaTeX\ files (to recursively flatten \texttt{input} and \t
 	echo You now have expanded*pdf as well as the expanded source files expanded*tex and paper-seb.pdf which combines them as a single file
 
 git-prep: # Report stuff we don't want on the Git repo (so you can delete it or move it out the way or ...)
-	echo "We probably don't want some stuff added to the Git repo..."
+	@echo "We probably don't want some random stuff added to the Git repo..."
+	@rm -f /tmp/-on-git /tmp/-local
+	@(echo .gitignore; find . -not -path '*/.*' -type f -print ) | sed "s/^\.\///" | sort > /tmp/-local
+	@(ls `sed "s/#.*//" .gitignore`; git ls-tree -r master --name-only) | sort > /tmp/-on-git
+	@echo Local files not on Git - maybe remove or put in .gitignore
+	@comm -1 -3 /tmp/-on-git /tmp/-local
+	@echo "\nFiles" on Git not local - maybe copy from Git
+	@comm -2 -3 /tmp/-on-git /tmp/-local
+	@rm -f /tmp/-on-git /tmp/-local
     
