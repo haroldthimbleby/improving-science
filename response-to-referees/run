@@ -1,8 +1,0 @@
-( echo "\input response-to-referees/diff-fixes.tex"
-  latexdiff "paper-seb-main (original).tex" ../paper-seb-main.tex ) > diff.tex
-  
-sed -f sedcommands diff.tex > t
-cp t diff.tex
-  
-cd ..
-latex response-to-referees/diff.tex

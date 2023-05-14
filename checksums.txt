@@ -25,13 +25,12 @@
 2260665777 1339 ./generated/constants.tex
 2042119512 42454 ./paper-seb-supplementary-material.log
 1841759233 20086 ./paper-seb-supplementary-material.aux
-833773057 64 ./checksums-meta.txt
+564044133 64 ./checksums-meta.txt
 2081080013 12271 ./paper-seb-supplementary-material.bib
-2512431896 1299 ./newchecksums.txt
+115427113 1299 ./newchecksums.txt
 1183894955 31079 ./paper-seb-main.bbl
 1826475978 4998 ./paper-seb-macros.tex
-440759185 14218 ./makefile
-768240004 128138 ./January paper-seb-main.tex
+2683149496 14394 ./makefile
 3480498969 5772 ./paper-seb-main.out
 2816485165 1341 ./models/comments
 3185540887 13 ./models/tidyup
@@ -64,9 +63,9 @@
 1544873272 364 ./.git/config
 3819906048 23 ./.git/HEAD
 684386549 240 ./.git/info/exclude
-3288631598 12550 ./.git/logs/HEAD
-394424047 11465 ./.git/logs/refs/heads/master
-3781071689 7466 ./.git/logs/refs/remotes/origin/master
+3301702990 12740 ./.git/logs/HEAD
+3487415528 11655 ./.git/logs/refs/heads/master
+2976471535 7620 ./.git/logs/refs/remotes/origin/master
 76865375 73 ./.git/description
 2912878280 896 ./.git/hooks/commit-msg.sample
 2199226393 4898 ./.git/hooks/pre-rebase.sample
@@ -81,33 +80,13 @@
 920823 1374 ./.git/hooks/pre-push.sample
 3864416837 3650 ./.git/hooks/update.sample
 2974268060 2783 ./.git/hooks/push-to-checkout.sample
-1013888368 41 ./.git/refs/heads/master
-2677866589 41 ./.git/refs/remotes/origin/master
+3418331752 41 ./.git/refs/heads/master
+3418331752 41 ./.git/refs/remotes/origin/master
 2530254222 43 ./.git/COMMIT_EDITMSG
 1975275808 123 ./.git/FETCH_HEAD
 2168741356 19291 ./paper-seb-main.aux
 1096841832 36036 ./paper-seb-main.log
 288728931 10824 ./paper-seb-supplementary-material.bbl
-3035051325 122 ./response-to-referees/sedcommands
-3038294181 163 ./response-to-referees/diff-fixes.tex
-173853943 452 ./response-to-referees/response 12 May 2023.aux
-2049898049 10450 ./response-to-referees/response 12 May 2023.log
-469499814 3904 ./response-to-referees/diff.toc
-453302928 29472 ./response-to-referees/response 30 Jan 2022.tex
-2626616036 195412 ./response-to-referees/diff.tex
-2553482545 21634 ./response-to-referees/mysiam.bst
-415297497 114888 ./response-to-referees/paper-seb-supplementary-material (original).tex
-3939084639 1509 ./response-to-referees/OLD deleted lambda notes.tex
-1018063555 15674 ./response-to-referees/response 12 May 2023.tex
-1170889188 26536 ./response-to-referees/OLD compj.bst
-3758777928 225 ./response-to-referees/run
-154591643 13345 ./response-to-referees/response 30 Jan 2022.log
-3612785152 14120 ./response-to-referees/diff.aux
-1029462422 781 ./response-to-referees/response 30 Jan 2022.aux
-2060350463 107325 ./response-to-referees/paper-seb-main (original).tex
 1249779542 614144 ./paper-seb-main.pdf
 3531129481 1563879 ./paper-seb.pdf
 339831181 769373 ./paper-seb-supplementary-material.pdf
-668475035 67074 ./response-to-referees/response 30 Jan 2022.pdf
-4137110720 629503 ./response-to-referees/diff.pdf
-1757041627 126314 ./response-to-referees/response 12 May 2023.pdf

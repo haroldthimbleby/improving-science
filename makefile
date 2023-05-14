@@ -17,7 +17,6 @@
 #     make help-brief converts it to basic ASCII
 #
 
-
 # I originally used LATEX=latex but it has problems on some systems with graphics
 LATEX = pdflatex
 
@@ -100,7 +99,7 @@ generated/mathematicaplot.jpg generated/over-fitting-code-section.tex: programs/
 
 # unfortunately # is not ignored, so we've used
 # @echo ... > /dev/null
-# to generate really ignored comments here!
+# to generate *really* ignored comments here!
 
 readme@md:
 	@# macos awk doesn't have gensub, so we use sed as well as awk. Sigh
@@ -213,4 +212,7 @@ expand: # Expand all \LaTeX\ files (to recursively flatten \texttt{input} and \t
 	if cmp paper-seb.pdf tmp; then echo SAME; else echo DIFFERENT; fi
 	rm tmp
 	echo You now have expanded*pdf as well as the expanded source files expanded*tex and paper-seb.pdf which combines them as a single file
+
+git-prep: # Report stuff we don't want on the Git repo (so you can delete it or move it out the way or ...)
+	echo "We probably don't want some stuff added to the Git repo..."
     
