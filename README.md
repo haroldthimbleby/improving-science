@@ -20,7 +20,7 @@ Everything works using `make`.
 
 ## Directory structure
 
-The top level working direction contains README (this file), the makefile, the two LaTeX files () as well as all their usual stuff (.aux, .pdf, .bib files, etc), two bibliographies (for each of the two LaTeX files), and several directories:
+The top level working direction contains README (this file), the makefile, the two LaTeX files (`paper-seb-main.tex` and `paper-seb-supplement.tex`) as well as all their usual stuff (.aux, .pdf, .bib files, and common macros, paper-`seb-macros.tex`), two bibliographies (for each of the two LaTeX files), and several directories:
 
 * `programs` - the key data file, `data.js` and its JavaScript analysis, all of the programs to analyze and generate data.
 
@@ -38,11 +38,11 @@ The file `programs/data.js` includes both the JSON data and a JavaScript program
 
 Running `node programs/data.js` will give you
 
-*       `allData.csv` - for accessing data in Excel and many other apps.
+* `allData.csv` - for accessing data in Excel and many other apps.
 
-*       `flagData.nb` - for accessing data in Mathematica notebook.
+* `flagData.nb` - for accessing data in Mathematica notebook.
 
-*      `data-check.html` - a summary of papers and DOIs with any error messages (eg missing data), for easy review in a browser some shell scripts used to run Git to download clones of the survey papers' code repositories
+* `data-check.html` - a summary of papers and DOIs with any error messages (eg missing data), for easy review in a browser some shell scripts used to run Git to download clones of the survey papers' code repositories
  ... etc, plus some tex files for including data in the Latex files.
 
 These generated files will all be included in the directory `generated`
