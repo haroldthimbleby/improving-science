@@ -20,13 +20,13 @@ Everything works using `make`.
 
 ## Directory structure
 
-The top level working direction contains README (this file), the makefile, the two LaTeX files (`paper-seb-main.tex` and `paper-seb-supplement.tex`) as well as all their usual stuff (.aux, .pdf, .bib files, and common macros, paper-`seb-macros.tex`), two bibliographies (for each of the two LaTeX files), and several directories:
+The top level working direction contains README (this file), the makefile, the two LaTeX files (`paper-seb-main.tex` and `paper-seb-supplement.tex`) as well as all their usual stuff (.aux, .pdf, .bib files, and common macros, `paper-seb-macros.tex`), two bibliographies (for each of the two LaTeX files), and several directories:
 
-* `programs` - the key data file, `data.js` and its JavaScript analysis, all of the programs to analyze and generate data.
+* `programs` - the key data file, `data.js` which also includes its JavaScript analysis, all of the programs to analyze and generate data.
 
 * `generated` - where all the generated results end up.
 
-* `models` - where all of the downloaded Git repositories end up to be analyzed (this directory is cleared up on this repository as it is large and of course can be downloaded again from the various papers' sites).
+* `models` - where all of the downloaded Git repositories end up to be analyzed (this directory is cleared up on this repository as it is large and of course can be downloaded again from the various papers' sites). This directory also includes programs to download and analyze the various Git models, and to tidy up afterwards if you decide not to keep the Git models around. 
 
 ## Overview
 
