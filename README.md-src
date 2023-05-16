@@ -18,6 +18,16 @@ For convenience, a CSV file is included in this Git repository, in the directory
 
 Everything works using `make`.
 
+## Directory structure
+
+The top level working direction contains README (this file), the makefile, the two LaTeX files () as well as all their usual stuff (.aux, .pdf, .bib files, etc), two bibliographies (for each of the two LaTeX files), and several directories:
+
+* `programs` - the key data file, `data.js` and its JavaScript analysis, all of the programs to analyze and generate data.
+
+* `generated` - where all the generated results end up.
+
+* `models` - where all of the downloaded Git repositories end up to be analyzed (this directory is cleared up on this repository as it is large and of course can be downloaded again from the various papers' sites).
+
 ## Overview
 
 First, here's a quick overview of how the system works behind the scenes inside `make`.
@@ -28,13 +38,14 @@ The file `programs/data.js` includes both the JSON data and a JavaScript program
 
 Running `node programs/data.js` will give you
 
->       allData.csv - for accessing data in Excel and many other apps
->       flagData.nb - for accessing data in Mathematica notebook
->       data-check.html - a summary of papers and DOIs with any error messages (eg missing data), for easy review in a browser
->       some shell scripts used to run Git to download clones of the survey papers' code repositories
->    ... etc etc, plus a few tex files for including data in the Latex files
->
->	These will all be included in the directory `generated`
+*       `allData.csv` - for accessing data in Excel and many other apps.
+
+*       `flagData.nb` - for accessing data in Mathematica notebook.
+
+*      `data-check.html` - a summary of papers and DOIs with any error messages (eg missing data), for easy review in a browser some shell scripts used to run Git to download clones of the survey papers' code repositories
+ ... etc, plus some tex files for including data in the Latex files.
+
+These generated files will all be included in the directory `generated`
  
 `data.js` also lists all the files generated, where they are, and their purpose. (Note that there are some other generated files, for instance, those created by `run` run in the `models` directory, which analyzes all the git repos copied from papers in the survey.)
 
