@@ -6,18 +6,19 @@
 % 5 - make check-versions
 % 6 - make data
 % 7 - make expand
-% 8 - make help
-% 9 - make help-brief
-% 10 - make mathematica
-% 11 - make mathematica-open
-% 12 - make one-file
-% 13 - make pdf
-% 14 - make push
-% 15 - make readme
-% 16 - make really-tidyup
-% 17 - make tidyup
-% 18 - make zip
-% 19 - make zip-data
+% 8 - make git-prep
+% 9 - make help
+% 10 - make help-brief
+% 11 - make mathematica
+% 12 - make mathematica-open
+% 13 - make one-file
+% 14 - make pdf
+% 15 - make push
+% 16 - make readme
+% 17 - make really-tidyup
+% 18 - make tidyup
+% 19 - make zip
+% 20 - make zip-data
 
 {\sf\begin{tabular}{rp{4.5in}}
 
@@ -29,11 +30,11 @@
       Analyze the data, and generate all the data files, the Unix scripts, the CSV, and \LaTeX\ files (including the \LaTeX\ summary of this makefile), etc. This \texttt{make} option runs \texttt{node programs/data.js}, downloads the Git repositories used in the pilot survey, and then analyzes them. Note that downloading all the repositories in a reasonable time needs decent internet bandwidth.\\
    \multicolumn{1}{l@{\vdots}}{}&\\
 
-\texttt{make help}&
-      Explain how to use \texttt{make}, and list all available options for using \texttt{make}.\\
+\texttt{make git-prep}&
+      What's on Git that we've lost, or stuff we have got locally but probably don't want on Git, so you can delete it or move it out the way or whatever.\\
    \multicolumn{1}{l@{\vdots}}{}&\\
 
-\texttt{make tidyup}&
-      Tidyup typically before doing a Git commit or making a zip file. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the \LaTeX\ data include files. Do not remove the .aux files, as \LaTeX\ runs much more smoothly with them.\\
+\texttt{make really-tidyup}&
+      More thorough than \texttt{make tidyup} --- remove \emph{all} files that can be recreated. (This will mean next time you run \LaTeX\ you will have to ignore errors as the .aux files are re-created.)\\
 \end{tabular}}
 

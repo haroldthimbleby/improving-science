@@ -231,7 +231,7 @@ This illustrative code would insert the result of running it into the paper, per
 \fi}
 
 Systems like \LaTeX\ (which was used for the current paper) can combine advanced typesetting with computable paper calculations. Here, as a simple example, we calculate that
-$10!$ is equal to \factorial{10} just by writing the \LaTeX\ code \verb|\factorial{10}| \emph{in\/} this paper to calculate arbitrary factorials and group the result into conventional blocks of three digits by inserting small spaces. Note that although \texttt{factorial} is not a standard \LaTeX\ function, it was readily defined by code also \emph{in\/} the present paper, so it can be easily modified by the author for other purposes as required.
+$10!$ is equal to \factorial{10} just by writing the \LaTeX\ code \verb|\factorial{10}| \emph{in\/} this paper, which can calculate arbitrary factorials and group the result into conventional blocks of three digits by inserting small spaces. Note that although \texttt{factorial} is not a standard \LaTeX\ function, it was readily defined by code also \emph{in\/} the present paper, so it can be easily modified by the author for other purposes as required.
 
 More practically for helping author complex scientific papers, a separate program can generate a file of \LaTeX\ definitions for data, tables, and cross-references, etc, as needed for a paper. Here is a small example, where each generated fact (taken from the present paper's analysis) has been highlighted in \textbf{bold}:
 
@@ -246,7 +246,7 @@ The idea is easy to implement. Continuing using \LaTeX\ as the illustrative word
 
 \begin{center}\texttt{\textbackslash newcommand\{\textbackslash numberOfAuthors\}\{\the\countAuthors\}}\end{center}
 
-where the \the\countAuthors\ is the calculated number, save that line of text to a file, which is then import it into the paper where it is typeset in the normal way. Then, when and wherever the authors write the name \texttt{\textbackslash numberOfAuthors} in their paper's text, the typeset paper says \the\countAuthors, or whatever the actual value is at the time. Some easy \LaTeX\ coding can then present the numbers in the publisher's preferred style, such as \numbertoname 0, \numbertoname 1, \ldots\ \numbertoname 9, \numbertoname{10}, \numbertoname{11}, \ldots, \digitBlock{1000},  \digitBlock{1001}, etc, as done (more realistically) in this paper's footnote~\numbernamesexamplefootnote. 
+where the \the\countAuthors\ is the calculated number, save that line of text to a file, which is then import it into the paper where it is typeset in the normal way. Then, when and wherever the authors write the name \texttt{\textbackslash numberOfAuthors} in their paper's text, the typeset paper says \the\countAuthors, or whatever the actual value is at the time. Some easy \LaTeX\ coding can then present the numbers in the publisher's preferred style, such as \numbertoname 0, \numbertoname 1, \ldots\ \numbertoname 9, \numbertoname{10}, \numbertoname{11}, \ldots, \digitBlock{1000},  \digitBlock{1001}, etc, as done more realistically elsewhere in this paper (for instance, see footnote~\numbernamesexamplefootnote). 
 
 The key concept in computable papers is that as the authors of a paper collect or revise data or calculations or otherwise update it, the results in the paper also update automatically, and all the statistics, graphs, and analysis reported in the paper remain correct \emph{with no further work from the authors}. Indeed, if an author corrects a mistake, the correction will apply automatically to all future revisions.
 
@@ -882,7 +882,7 @@ In addition, a standard CSV file is generated from the JSON in case this is more
 \newcount \bibitemn \bibitemn = 0
 \newcount \bibnewcolumn 
 
-\bibnewcolumn = 122 % bibentry number of last entry on (final) left hand column
+\bibnewcolumn = 123 % bibentry number of last entry on (final) left hand column
 % Hint: first set it to a very large number, so the final column is as unbalanced as it gets
 % then, if it's worth fixing the final page, lower the number to some citation on the 
 % lower part of the left hand column; this citation will then become the last in that

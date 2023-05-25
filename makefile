@@ -55,10 +55,12 @@ check-versions: # Check that you have the right software and software versions t
 	
 check-same: # After you have done a \texttt{make data} or \texttt{make pdf}, you can check whether you have reproduced all data and generated files exactly the same (more precisely, it checks that they are the same as they were the last time \texttt{make check-update} was run).
 	@echo Warning this can be a slow process if you have downloaded "(and not deleted!)" all the git repos
+	@echo You may want to run make tidyup "(to get rid of Git models and other junk)"
 	@programs/checksums
 
 check-update: # Update the data and generated file checksums after a successful run.
 	@echo Warning this can be a slow process if you have downloaded "(and not deleted!)" all the git repos
+	@echo You may want to run make tidyup
 	@programs/checksums update
 	
 data: # Analyze the data, and generate all the data files, the Unix scripts, the CSV, and \LaTeX\ files (including the \LaTeX\ summary of this makefile), etc. This \texttt{make} option runs \texttt{node programs/data.js}, downloads the Git repositories used in the pilot survey, and then analyzes them. Note that downloading all the repositories in a reasonable time needs decent internet bandwidth.
@@ -187,7 +189,7 @@ push: # Push any *important* changed files to Git, along with updated PDF files.
 # needs make to expand the definition, whereas in the comment, we're using grep to grab the text
 # so APPENDIX won't get expanded
 
-one-file: # Make a single PDF file paper-seb.pdf (i.e., paper + supplementary material) all in one.
+one-file: # Make a single PDF file \texttt{paper-seb.pdf} (i.e., paper + supplementary material) all in one.
 	@make one.file
 
 # this rule has a . in the target name (one.file), so make help doesn't find it (see the grep command in make help)
@@ -225,4 +227,5 @@ git-prep: # What's on Git that we've lost, or stuff we have got locally but prob
 	@echo `comm -2 -3 /tmp/-on-git /tmp/-on-local | wc -l` "files not local but are on Git - maybe copy from Git"
 	@comm -2 -3 /tmp/-on-git /tmp/-on-local | sed "s/^/ -  /"
 	@rm -f /tmp/-on-git /tmp/-on-local
+	@echo You may want to run make tidyup
     
