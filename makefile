@@ -215,12 +215,14 @@ expand: # Expand all \LaTeX\ files (to recursively flatten \texttt{input} and \t
 
 git-prep: # What's on Git that we've lost, or stuff we have got locally but probably don't want on Git, so you can delete it or move it out the way or whatever.
 	@echo "We probably don't want some random stuff added to the Git repo..."
-	@rm -f /tmp/-on-git /tmp/-local
-	@(echo .gitignore; find . -not -path '*/.*' -type f -print ) | sed "s/^\.\///" | sort > /tmp/-local
+	@rm -f /tmp/-on-git /tmp/-on-local
+	@(echo .gitignore; find . -not -path '*/.*' -type f -print ) | sed "s/^\.\///" | sort > /tmp/-on-local
 	@(ls `sed "s/#.*//" .gitignore`; git ls-tree -r master --name-only) | sort > /tmp/-on-git
-	@echo Local files not on Git - maybe remove or put in .gitignore
-	@comm -1 -3 /tmp/-on-git /tmp/-local
-	@echo "\nFiles" on Git not local - maybe copy from Git
-	@comm -2 -3 /tmp/-on-git /tmp/-local
-	@rm -f /tmp/-on-git /tmp/-local
+	@echo
+	@echo `comm -1 -3 /tmp/-on-git /tmp/-on-local | wc -l` "additional local files not on Git - maybe remove or put in .gitignore"
+	@comm -1 -3 /tmp/-on-git /tmp/-on-local | sed "s/^/ +  /"
+	@echo
+	@echo `comm -2 -3 /tmp/-on-git /tmp/-on-local | wc -l` "files not local but are on Git - maybe copy from Git"
+	@comm -2 -3 /tmp/-on-git /tmp/-on-local | sed "s/^/ -  /"
+	@rm -f /tmp/-on-git /tmp/-on-local
     

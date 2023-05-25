@@ -447,9 +447,7 @@ It is recognized that to make critical claims, models must be run under varying 
 \label{section-vicious-cycles}
 In normal scientific reporting (outside of teaching and assessing science) details of methodology are routinely glossed. A chemist does not say they cleaned their glassware. One might argue, then, that scientists need not discuss their code in detail because they know how to program and their code is correct. This argument is mistaken. Code is rarely considered a valuable part of the science to which it contributes (section \ref{lowCodeStatus}), which creates a vicious cycle of ignoring code, leading to ignoring the critical --- and non-trivial --- role of correct code in science. 
 
-%\color{blue}
 \input generated/over-fitting-code-section.tex
-%\color{black}
 
 \section{The conventional role of code}
 
@@ -603,7 +601,7 @@ Unfortunately, the terms reproducibility, replicability, and repeatability, have
 \the\enum
 \global\advance \enum by 1}
 \begin{enumerate}\raggedright
-\item Is the code valid: does it do what the paper claims?\footnote{Of course, the underlying science may be wrong to, so it is useful to distinguish \emph{internal validity\/} and \emph{external validity}. Internal validity occurs if the code does what the paper claims; external validity occurs if the code represents correct science (which the paper may have interpreted incorrectly.}
+\item Is the code valid: does it do what the paper claims?\footnote{Of course, the underlying science may be wrong to, so it is useful to distinguish \emph{internal validity\/} and \emph{external validity}. Internal validity occurs if the code does what the paper claims; external validity occurs if the code represents correct science which the paper may have interpreted incorrectly.}
 \item Do other scientists, including reviewers and the authors, understand the code?
 \item Does the code implement the methods described in the paper?
 \item Has the code been over-fitted or tweaked to support specific claims in the paper?'
@@ -622,7 +620,7 @@ All such questions also apply to specifications, documentation, assurance cases,
 
 The questions in the list above are certainly hard to answer for all but the briefest code, but corresponding levels of quality assurance are demanded for other methodologies \cite{notebooks,popper-conjectures-refutations,tripod,prisma,nih-policy,nih-nature}, such as data preparation and statistics to support claims in peer-reviewed science. 
 
-Because of the recognized importance of the Ferguson paper, a project started to document its code  \cite{refactoring}.\footnote{The system is now opeve it, so it is surprising to find an undocumented model being used in the first place, since so many years' opportunity to improve the code have been lost. The revised code has now been published, and it too has been heavily criticized \citeeg{bad-code}, supporting the concerns expressed in the present paper.
+Because of the recognized importance of the Ferguson paper, a project started to document its code  \cite{refactoring}.\footnote{It is surprising to find an undocumented model being used in the first place, since so many years' opportunity to improve the code have been lost. The revised code has now been published, and it too has been heavily criticized \citeeg{bad-code}, supporting the concerns expressed in the present paper.
 n-source, available at \url{github.com/mrc-ide/covid-sim} version (19 July 2021).} Documenting code in hindsight, even if done rigorously, may describe what it does, \emph{including\/} its bugs, but it is unlikely to explain what it was originally intended to have done. As the code is documented, bugs will be found, which will then be fixed (refactoring), and so the belatedly-documented code will not be the code that was used in the published models; it will be different. 
 
 It is well-known that documenting code helps impro
@@ -681,7 +679,7 @@ There is a lop-sided emphasis on data in science. In fact, data is useless witho
 \section{Rethinking science that uses code}\label{summary}
 Computer programs are the laboratories of modern scientists, and should be used with a comparable level of care that virologists use in their laboratories --- lab books and all \cite{notebooks} --- and for exactly the same reasons: bugs, whether computer bugs or biological bugs, accidentally cultured in one laboratory can infect research, ideas, and policy worldwide. 
 
-Inadequate scientific code can be problematic. Incorrect results might be used for supporting science, modeling pandemics or informing public health policy, informing medical research, or adopted for use in other critical software, such as medical diagnostics, credit checking, or any other impactful use. Professional critical software development, as used in critical industries such as aviation and the nuclear power, is (put briefly) based on \emph{correct by construction\/} \cite{cbc}, effectively: design it right first time, supported by numerous rigorous techniques, such as Formal Methods, to manage error. Not coincidentally, these are \emph{exactly\/} the right methods to ensure code is both dependable and scrutable, as is required for supporting reproducibility and quality science more generally. Conversely, not following these practices undermines the rigor of science.
+Inadequate scientific code can be problematic. Incorrect results might be used for supporting science, modeling pandemics or informing public health policy, informing medical research, or adopted for use in other critical software, such as medical diagnostics, credit checking, or any other impactful use. Professional critical software development, as used in critical industries such as aviation and the nuclear power, is (put briefly) based on \emph{correct by construction\/} \cite{cbc}, effectively: design it right first time, supported by numerous rigorous techniques, such as Formal Methods, to manage error. Not coincidentally, these are \emph{exactly\/} the right methods to ensure code is both dependable and scrutable, as is required for supporting reproducibility and quality science more generally. Conversely, not following these practices undermines the rigor of science. 
 
 \subsection{Software Engineering Boards}
 Misuse of data, exploiting vulnerable people, and not obtaining informed consent are typical ethical problems. Planned research may be ethically unacceptable in ways the investigators do not anticipate: few people have the objectivity and ethical expertise to make sound ethical judgements, particularly when it comes to assessing their own work. National funders, and others, therefore require Ethics Boards to formally review ethical quality. Medical journals will not publish research that has not undergone independent formal ethical review. 
@@ -735,7 +733,6 @@ Note that systems capable of handling computational papers (including \LaTeX) ca
 The more we view the paper as a proactive scientific laboratory environment, the more we gain from the \RAPstar\ perspective, and the more science gains from improved, conceptually broadened, reliable, and reproducible science. The more we will also want to engage mature Software Engineering (and computational thinking) ideas too, because the quality and creativity of future science relies on them, after all, Software Engineering is about how to tell a computer how to do something reliably, and, as Knuth said, science is what we understand well enough to explain to a computer, and so Software Engineering can now directly help ensure we are not fooling ourselves about what we understand.
 
 \subsection{Action must be interdisciplinary}
-\setcounter{footnote}{1}
 Code is more than a scientific instrument, more than a thermometer or test tube, as code makes, informs and changes decisions; indeed, code can actually \emph{do\/} science. Still, code is only a part of science, so relying on SEBs \emph{alone\/} would continue one of the besetting problems about the role of code in science. 
 
 The conventional view is that scientists do the hard work compared to the ``easy'' coding work (sections \ref{deceptive-simplicity-of-code} \& \ref{central-role-of-code}) so they just need to tell coders what to do. This is the view expressed by Landauer in his classic book \emph{The Trouble with Computers\/} \cite{landauer,thimbleby-landauer}, where he argues that the trouble with computers, an idea he explores at some length, is that we need to spend more effort in working out what computers should do (here, do the science better) and then \emph{just\/} tell programmers to do \emph{that}.  
@@ -760,6 +757,7 @@ Journals and funders should provide support for hosting data and code (and any o
 
 Intellectual Property (IP) is an increasing concern, both for author scientists and their sponsors who want royalties, and for other scientists wishing to freely build on the published science. Particularly concerning access to code, IP is potentially and often is in conflict with scientific openness. Methodological statements should be made concerning any IP associated with code, and to what extent this interferes with open access to code. More routine discussion should include raising known system dependencies, such as operating system, compiler, or special hardware dependencies; it is also appropriate to mention standards conformance, such as to IEEE Floating-Point Arithmetic (IEEE~754).
 
+\label{mentionPLOSandIEEE}
 Journal policies could start to explicitly encourage computationally reproducible science using RAP and \RAPstar\ techniques. That is, the research's methodology itself may be a mixture of data and code. As this paper's \supplement\ shows in section \ref{restrictive-policies}, many journals (e.g., \emph{PLOS ONE\/} and, ironically, \emph{IEEE Transactions on Software Engineering\/}) and repositories have policies that make RAP much harder or just counter-productive at the last step. 
 
 Methodological statements should be required that make clear what access rights are available for RAP or \RAPstar\ material, as it is much more likely to raise IP issues that normal disclosures. In particular, if the authors plan on publishing a series of papers based on the same methodologies, the RAP/\RAPstar\ access might be provided in a later paper or held under escrow by the journal or funding body.
@@ -847,10 +845,6 @@ Software Engineering Boards (SEBs), as proposed in this paper, are an initial, s
 
 This paper's \supplement\ summarizes relevant Software Engineering good practice that Software Engineering Boards would draw on, including discussing how and why Software Engineering helps improve code reliability, dependability, and quality.
 
-\makeatletter
-\immediate\write\@auxout{\string\def\string\continueSectionNumbers{\arabic{section}}}
-\makeatother
-
 \section*{Supporting information}
 \newcount\csrefcount \csrefcount=0
 \def\csref{\global\advance\csrefcount by 1}
@@ -878,19 +872,18 @@ In addition, a standard CSV file is generated from the JSON in case this is more
 
 \funding{This work was jointly supported by See Change (M\&RA-P), Scotland (an anonymous funder), by the Engineering and Physical Sciences Research Council [grant EP/M022722/1], by the Royal Academy of Engineering through the Engineering~X Pandemic Preparedness Programme [grant EXPP2021\textbackslash 1\textbackslash 186], and by Assuring Autonomy International Programme, Assuring Safe AI in Ambulance Service Triage. The funders had no involvement in the research or in this paper.}
 
-%\nolinenumbers
-
 {\raggedright
 
 \bibliographystyle{revisedCompJ}
 \def\urlprefix{}
+
 \initialiseBibliography{References}{1}{}
 
 \newcount \bibitemn \bibitemn = 0
 \newcount \bibnewcolumn 
-w
+
 \bibnewcolumn = 122 % bibentry number of last entry on (final) left hand column
-% Hint: set it to a very large number, so the final column is as unbalanced as it gets
+% Hint: first set it to a very large number, so the final column is as unbalanced as it gets
 % then, if it's worth fixing the final page, lower the number to some citation on the 
 % lower part of the left hand column; this citation will then become the last in that
 % column. Hopefully the righthand column will be of equal length!
@@ -954,11 +947,14 @@ w
 % with consecutive numbering.
 }
 
-%\label{LastPage}
-%save Latex register    {linenumber}
-%\makeatletter
-%\immediate\write\@auxout{\string\def\string\MainPaperLastLine{\arabic{linenumber}}}
-%\makeatother
+\makeatletter
+\immediate\write\@auxout{\string\def\string\continueSectionNumbers{\arabic{section}}}
+\immediate\write\@auxout{\string\def\string\continueTableNumbers{\arabic{table}}}
+\immediate\write\@auxout{\string\def\string\continueFigureNumbers{\arabic{figure}}}
+\immediate\write\@auxout{\string\def\string\continueFootnoteNumbers{\arabic{footnote}}}
+\immediate\write\@auxout{\string\def\string\continuePageNumbers{\arabic{page}}}
+\makeatother
+
 \end{document}
 
 \def \allInOne {define this so we don't include header in supplemental material}

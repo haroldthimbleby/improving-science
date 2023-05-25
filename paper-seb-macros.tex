@@ -108,8 +108,7 @@
 
 % initialiseBibliography <title> <starting number> <introductory text>
 \newcount \bibciten \bibciten=0
-\def\initialiseBibliography#1#2#3{%
-	\stepcounter{section}
+\def\initialiseBibliography#1#2#3{% title, starting citation number, an initial paragraph
 	\global\def\refname{\arabic{section} #1}
     \global\def\unnumberedrefname{#1}
     \global\bibciten=#2
