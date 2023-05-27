@@ -1,0 +1,876 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     34409,        868]
+NotebookOptionsPosition[     28700,        754]
+NotebookOutlinePosition[     29129,        771]
+CellTagsIndexPosition[     29086,        768]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Check ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"L", 
+     StyleBox[
+      AdjustmentBox["A",
+       BoxBaselineShift->-0.4,
+       BoxMargins->{{-0.5, -0.3}, {0, 0}}],
+      FontSize->Smaller], "T", 
+     AdjustmentBox["E",
+      BoxBaselineShift->0.5,
+      BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}],
+    SingleLetterItalics->False], TraditionalForm]],ExpressionUUID->
+  "e0707165-5309-47d1-870f-7858f895f2be"],
+ " citations and cross references"
+}], "Title",
+ CellChangeTimes->{{3.894173661430749*^9, 3.894173672571959*^9}, {
+  3.894179868769927*^9, 
+  3.894179870940452*^9}},ExpressionUUID->"e0118026-d47d-415c-8344-\
+2393f62eeaa9"],
+
+Cell["\<\
+Cross-references are split between three files, so easiest to check them by \
+program code, as done here.\
+\>", "Text",
+ CellChangeTimes->{{3.894173676486135*^9, 3.894173703995028*^9}, {
+  3.894179744084499*^9, 
+  3.894179757502212*^9}},ExpressionUUID->"4b6a0d3a-37e3-4c9c-ae5f-\
+23d94fcdb2a9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.894173706347497*^9, 3.8941737151470213`*^9}},
+ CellLabel->
+  "In[1430]:=",ExpressionUUID->"fdbc5128-ce60-4d56-afcd-0462daebf4e2"],
+
+Cell[BoxData["\<\"/Users/harold/Organised/Active papers/Ignorance/Sent May 12 \
+to Computer Journal/Computational Science Computer Journal/programs\"\>"], \
+"Output",
+ CellChangeTimes->{3.8941737156682253`*^9, 3.894174654528064*^9, 
+  3.894174745518334*^9, 3.894175503293496*^9, 3.8941765092706413`*^9, 
+  3.89417754381619*^9, 3.894179276310166*^9, 3.894179557107937*^9, 
+  3.8941795923704567`*^9, 3.894179728456584*^9, 3.8941817071117153`*^9, 
+  3.8941821807386837`*^9, 3.894182581546411*^9, 3.894182650755712*^9, 
+  3.894183512275806*^9},
+ CellLabel->
+  "Out[1430]=",ExpressionUUID->"9f504227-4419-4293-aa3e-d4fc74934510"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"supplement", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\<../paper-seb-supplementary-material.tex\>\"", ",", "\"\<Text\>\""}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"main", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<../paper-seb-main.tex\>\"", ",", "\"\<Text\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"overfitSection", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\<../generated/over-fitting-code-section.tex\>\"", ",", 
+     "\"\<Text\>\""}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"assessments", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<../generated/assessments.tex\>\"", ",", "\"\<Text\>\""}], 
+    "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8941737215896053`*^9, 3.894173767069972*^9}, {
+   3.894175941854332*^9, 3.894175944388853*^9}, {3.8941760963908863`*^9, 
+   3.8941761090332003`*^9}, {3.894179321733062*^9, 3.894179331504641*^9}, 
+   3.8941793647097263`*^9, {3.8941812936660852`*^9, 3.8941813109508038`*^9}, {
+   3.894181422025898*^9, 3.8941814441140127`*^9}},
+ CellLabel->
+  "In[1431]:=",ExpressionUUID->"2f57dcaa-28e3-48bf-9d1e-c20a482b5af9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Check citations", "Title",
+ CellChangeTimes->{{3.894179879127179*^9, 3.894179891696772*^9}, {
+  3.8941799301054583`*^9, 
+  3.894179938282116*^9}},ExpressionUUID->"5c0d37bd-da4e-47e3-acae-\
+a8692741a4cf"],
+
+Cell[TextData[{
+ "Explicit citations in the ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"L", 
+     StyleBox[
+      AdjustmentBox["A",
+       BoxBaselineShift->-0.4,
+       BoxMargins->{{-0.5, -0.3}, {0, 0}}],
+      FontSize->Smaller], "T", 
+     AdjustmentBox["E",
+      BoxBaselineShift->0.5,
+      BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}],
+    SingleLetterItalics->False], TraditionalForm]],ExpressionUUID->
+  "1d63dbf5-f755-4755-96b6-b80204f77caa"],
+ " files must be defined either by bib files or by data.js. Since data.js \
+generates a file supplementary-references.tex we search for \
+\\bibitem{citation} in ../generated/supplementary-references.tex\n\nNote that \
+citations can appear singly as \\cite{label} or with multiple labels, \
+\\cite{label1,label2,...}"
+}], "Text",
+ CellChangeTimes->{{3.894180001625846*^9, 3.894180050209756*^9}, {
+  3.894180092584206*^9, 3.894180123578467*^9}, {3.894183537258295*^9, 
+  3.8941835770982447`*^9}},ExpressionUUID->"3366faf9-0e39-4cf2-a7ba-\
+7ddc309247d2"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"getCitations", "[", "string_", "]"}], ":=", 
+   RowBox[{"Union", "@", 
+    RowBox[{"Flatten", "@", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"StringSplit", "[", 
+         RowBox[{"#", ",", "\"\<,\>\""}], "]"}], "&"}], ",", 
+       RowBox[{"StringCases", "[", 
+        RowBox[{"string", ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"\"\<\\\\citeeg{\>\"", "|", "\"\<\\\\cite{\>\""}], ")"}], 
+           "~~", 
+           RowBox[{"label", ":", 
+            RowBox[{
+             RowBox[{"Except", "[", "\"\<}\>\"", "]"}], ".."}]}], "~~", 
+           "\"\<}\>\""}], "\[Rule]", "label"}]}], "]"}]}], "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"allCitations", "=", 
+   RowBox[{"getCitations", "[", 
+    RowBox[{
+    "main", "<>", "supplement", "<>", "overfitSection", "<>", "assessments"}],
+     "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"supplementCitations", "=", 
+   RowBox[{"getCitations", "[", 
+    RowBox[{"supplement", "<>", "assessments"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mainCitations", "=", 
+   RowBox[{"getCitations", "[", 
+    RowBox[{"main", "<>", "overfitSection"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8941799569887333`*^9, 3.894179991623164*^9}, {
+   3.894181011589656*^9, 3.894181027729638*^9}, 3.894181070518441*^9, {
+   3.894181147661961*^9, 3.8941811837292852`*^9}, {3.894181320489579*^9, 
+   3.894181398278026*^9}, {3.8941814504484262`*^9, 3.894181464085848*^9}, {
+   3.894182389478187*^9, 3.894182418428342*^9}, {3.894182452889151*^9, 
+   3.894182455164356*^9}, {3.894184764950547*^9, 3.8941848579194593`*^9}, {
+   3.8941849041312532`*^9, 3.894184917787228*^9}},
+ CellLabel->
+  "In[1454]:=",ExpressionUUID->"cfcfd713-44f4-4895-8793-27effd8e9d6b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"bibfiles", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<../paper-seb-main.bbl\>\"", ",", 
+     "\"\<../generated/supplementary-references.bbl\>\"", ",", 
+     "\"\<../paper-seb-supplementary-material.bbl\>\""}], "}"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.894180133424312*^9, 3.894180213627529*^9}, {
+  3.8941812854360647`*^9, 3.89418128652271*^9}, {3.894183935179851*^9, 
+  3.894183935902645*^9}, {3.894185265122965*^9, 3.894185267648196*^9}},
+ CellLabel->
+  "In[1463]:=",ExpressionUUID->"41108222-6531-4049-a84b-6d5d470c5dbf"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"getBibitemDefinitions", "[", "text_", "]"}], ":=", 
+   RowBox[{"StringCases", "[", 
+    RowBox[{"text", ",", 
+     RowBox[{
+      RowBox[{"\"\<\\\\bibitem{\>\"", "~~", 
+       RowBox[{"label", ":", 
+        RowBox[{
+         RowBox[{"Except", "[", "\"\<}\>\"", "]"}], ".."}]}], "~~", 
+       "\"\<}\>\""}], "\[Rule]", "label"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.894180248598557*^9, 3.8941802602310677`*^9}, {
+  3.894182334475038*^9, 3.8941823549750338`*^9}, {3.894182386077958*^9, 
+  3.894182394436268*^9}},
+ CellLabel->
+  "In[1437]:=",ExpressionUUID->"82335c78-8410-4756-8ff6-0af71bc70024"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"bibitems", "=", 
+   RowBox[{"Flatten", "@", 
+    RowBox[{"getBibitemDefinitions", "[", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Import", "[", 
+         RowBox[{"#", ",", "\"\<Text\>\""}], "]"}], "&"}], ",", "bibfiles"}], 
+      "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mainbibitems", "=", 
+   RowBox[{"getBibitemDefinitions", "[", 
+    RowBox[{"Import", "[", 
+     RowBox[{
+      RowBox[{"bibfiles", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], ",", "\"\<Text\>\""}], "]"}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.8941802988223267`*^9, 3.894180334185255*^9}, {
+   3.894180548227672*^9, 3.894180552794526*^9}, {3.8941817420138187`*^9, 
+   3.894181743269136*^9}, 3.89418178277516*^9, {3.894181832677147*^9, 
+   3.894181889227725*^9}, {3.894185285197052*^9, 3.894185321150859*^9}},
+ CellLabel->
+  "In[1464]:=",ExpressionUUID->"ee6aad18-c286-4c6a-88a4-c6aefc44fc59"],
+
+Cell[CellGroupData[{
+
+Cell["Any duplicate bibitems?", "Subtitle",
+ CellChangeTimes->{{3.8941803877483997`*^9, 
+  3.894180396166798*^9}},ExpressionUUID->"657d3ad9-e6f4-49a0-96c2-\
+3a2b6d321469"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DeleteCases", "[", 
+  RowBox[{
+   RowBox[{"Tally", "[", "bibitems", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"_", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8941803667477617`*^9, 3.8941803730197487`*^9}},
+ CellLabel->
+  "In[1467]:=",ExpressionUUID->"9c9c2e2c-309a-4c70-b310-0e735ac8691e"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.8941803676740522`*^9, 3.894180400546681*^9, 
+  3.894180557284775*^9, 3.8941814760930758`*^9, 3.894181707309786*^9, 
+  3.894182181041287*^9, 3.894182427558695*^9, 3.894182581769014*^9, 
+  3.894182651019614*^9, 3.894183512487815*^9, 3.894185452616396*^9},
+ CellLabel->
+  "Out[1467]=",ExpressionUUID->"ed8de5c4-d42e-4ae3-9a32-ee3bbd2a1181"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Does the main bibliography define all the citations in the main paper?\
+\>", "Subtitle",
+ CellChangeTimes->{{3.89418534628647*^9, 
+  3.8941853674610233`*^9}},ExpressionUUID->"aafca794-ca14-4259-9995-\
+b17c186b783e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Union", "[", "mainCitations", "]"}], "\[Equal]", 
+  RowBox[{"Union", "[", "mainbibitems", "]"}]}]], "Input",
+ CellChangeTimes->{{3.894185381421883*^9, 3.894185396364997*^9}},
+ CellLabel->
+  "In[1468]:=",ExpressionUUID->"1aed203a-ef38-42a0-b203-05fdb00401f8"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.894185397154605*^9, 3.89418545541625*^9},
+ CellLabel->
+  "Out[1468]=",ExpressionUUID->"83906d97-5351-47ca-985e-34438571ed7c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Complement", "[", 
+  RowBox[{"mainCitations", ",", "mainbibitems"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8941854890584383`*^9, 3.894185500529972*^9}},
+ CellLabel->
+  "In[1469]:=",ExpressionUUID->"edda115b-c8bb-4e0d-830f-5c984a404287"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.8941855011798143`*^9},
+ CellLabel->
+  "Out[1469]=",ExpressionUUID->"f095089c-d47f-40ad-ba79-e7e96c0b09b5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Complement", "[", 
+  RowBox[{"mainbibitems", ",", "mainCitations"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8941855064234753`*^9, 3.894185509439703*^9}},
+ CellLabel->
+  "In[1470]:=",ExpressionUUID->"ac22497a-9a15-4295-8850-6a0501f2defe"],
+
+Cell[BoxData[
+ RowBox[{"{", "\<\"assessing-quality-conference\"\>", "}"}]], "Output",
+ CellChangeTimes->{3.894185510024394*^9},
+ CellLabel->
+  "Out[1470]=",ExpressionUUID->"6ea3fc70-46d0-4342-b0c7-9cb9b625e667"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Does the supplement define anything cited in the main paper?", \
+"Subtitle",
+ CellChangeTimes->{{3.894184715720447*^9, 3.894184735108917*^9}, {
+  3.894184896928357*^9, 3.894184897402994*^9}, {3.894184963504815*^9, 
+  3.894184969554109*^9}, {3.8941850964907627`*^9, 
+  3.8941851038495417`*^9}},ExpressionUUID->"6dcb70d9-7f36-4fc8-8b26-\
+59c793a40a3f"],
+
+Cell["\<\
+If it does, this would create a numbering anomaly, since the main paper (and \
+its bibliography numbering) is supposed to be self-contained.\
+\>", "Text",
+ CellChangeTimes->{{3.8941851545407467`*^9, 
+  3.894185189736437*^9}},ExpressionUUID->"56934082-802d-448a-82d9-\
+f4061f74fc13"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mainCitations", "]"}]], "Input",
+ CellChangeTimes->{{3.894184865965993*^9, 3.8941848717210207`*^9}, {
+   3.894184922701038*^9, 3.894184923126683*^9}, 
+   3.894185219397306*^9},ExpressionUUID->"fb8256a6-ffb4-4395-aa8a-\
+4497d7baae85"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"acm-artifacts\"\>", ",", "\<\"assurance-case\"\>", 
+   ",", "\<\"avianFluModel\"\>", ",", "\<\"basic-reproducibilty\"\>", 
+   ",", "\<\"cbc\"\>", ",", "\<\"excel-fiasco\"\>", ",", "\<\"fixit\"\>", 
+   ",", "\<\"flu-model\"\>", ",", "\<\"hamming\"\>", ",", "\<\"haskell\"\>", 
+   ",", "\<\"hoare\"\>", ",", "\<\"ICmodel\"\>", ",", "\<\"knight\"\>", 
+   ",", "\<\"LP\"\>", ",", "\<\"misra\"\>", ",", "\<\"nature-review\"\>", 
+   ",", "\<\"NVP\"\>", ",", "\<\"open-source\"\>", 
+   ",", "\<\"popper-conjectures-refutations\"\>", ",", "\<\"prisma\"\>", 
+   ",", "\<\"relit\"\>", ",", "\<\"reproducibility\"\>", 
+   ",", "\<\"RMarkdown\"\>", ",", "\<\"sommerville\"\>", ",", "\<\"spark\"\>",
+    ",", "\<\"Spiegelhalter\"\>", ",", "\<\"turing-way\"\>", 
+   ",", "\<\"tweet\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.8941849237163258`*^9},
+ CellLabel->
+  "Out[1458]=",ExpressionUUID->"bf3067ee-a9e0-40ca-9792-6ddcbdf96042"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Any missing bibitems?", "Subtitle",
+ CellChangeTimes->{{3.894180410584367*^9, 
+  3.894180418850833*^9}},ExpressionUUID->"71acd66d-c7a8-49e3-838c-\
+bf2c42d063d5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Complement", "[", 
+  RowBox[{"allCitations", ",", "bibitems"}], "]"}]], "Input",
+ CellChangeTimes->{{3.894180341735874*^9, 3.894180343531292*^9}, {
+   3.8941804212597437`*^9, 3.894180457132757*^9}, 3.894180738338653*^9, {
+   3.894180874339136*^9, 3.894180878596681*^9}, 3.894182494351577*^9, 
+   3.8941848179678583`*^9},ExpressionUUID->"e5b358b8-ee26-49d2-b45a-\
+e1bc302b9a16"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{
+  3.8941803440007753`*^9, {3.89418043322241*^9, 3.894180457554859*^9}, 
+   3.8941805627430153`*^9, 3.894180647764673*^9, 3.894180739073889*^9, 
+   3.8941808790701447`*^9, 3.894181109445505*^9, 3.894181479528878*^9, 
+   3.894181582439139*^9, 3.894181707413309*^9, 3.894181752577292*^9, 
+   3.894181861265107*^9, 3.894181925104167*^9, 3.894182181141465*^9, 
+   3.894182431063459*^9, 3.894182466899478*^9, 3.894182498393312*^9, 
+   3.894182581858528*^9, 3.894182651115696*^9, 3.894183512558148*^9},
+ CellLabel->
+  "Out[1440]=",ExpressionUUID->"e9cbd2a9-c8d0-48d3-a766-08764b06a5c9"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Check ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"L", 
+     StyleBox[
+      AdjustmentBox["A",
+       BoxBaselineShift->-0.4,
+       BoxMargins->{{-0.5, -0.3}, {0, 0}}],
+      FontSize->Smaller], "T", 
+     AdjustmentBox["E",
+      BoxBaselineShift->0.5,
+      BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}],
+    SingleLetterItalics->False], TraditionalForm]],ExpressionUUID->
+  "3bab04e7-6cdc-420b-8b32-c8e3070c1fff"],
+ " cross-references"
+}], "Title",
+ CellChangeTimes->{{3.894179879127179*^9, 
+  3.894179891696772*^9}},ExpressionUUID->"789e51a8-59ca-4179-9638-\
+41b62e9ac250"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"getLabelDefinitions", "[", "text_", "]"}], ":=", 
+   RowBox[{"StringCases", "[", 
+    RowBox[{"text", ",", 
+     RowBox[{
+      RowBox[{"\"\<\\\\label{\>\"", "~~", 
+       RowBox[{"label", ":", 
+        RowBox[{
+         RowBox[{"Except", "[", "\"\<}\>\"", "]"}], ".."}]}], "~~", 
+       "\"\<}\>\""}], "\[Rule]", "label"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"labelset", "=", 
+   RowBox[{"getLabelDefinitions", "[", "supplement", "]"}]}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.894173771268029*^9, 3.8941738307213583`*^9}, {
+   3.89417386173895*^9, 3.894173934221322*^9}, {3.894174749193861*^9, 
+   3.894174750361355*^9}, 3.894174782785527*^9, {3.89417504483969*^9, 
+   3.894175074752295*^9}, 3.89417594743153*^9, {3.894176158218072*^9, 
+   3.8941762087146893`*^9}, 3.8941763699136972`*^9, {3.8941796968303328`*^9, 
+   3.8941797038911448`*^9}},
+ CellLabel->
+  "In[1441]:=",ExpressionUUID->"09381d2d-1872-4fbe-8813-8cc6cdcfe7c5"],
+
+Cell[CellGroupData[{
+
+Cell["Check all labels defined in the supplement begin supplement-", \
+"Subtitle",
+ CellChangeTimes->{{3.89417488918922*^9, 3.894174903882992*^9}, {
+   3.894175484255542*^9, 3.894175492743826*^9}, {3.894176377473431*^9, 
+   3.894176387041531*^9}, {3.894179381029049*^9, 3.894179393164255*^9}, 
+   3.8941796821764812`*^9, {3.8941797725022373`*^9, 
+   3.894179772969677*^9}},ExpressionUUID->"3db0ab25-4b7b-4508-b33a-\
+c0687d790b6b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Cases", "[", 
+  RowBox[{"labelset", ",", 
+   RowBox[{"_", "?", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", 
+       RowBox[{"StringContainsQ", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"StartOfString", "~~", "\"\<supplement-\>\""}]}], "]"}]}], 
+      "&"}], ")"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.894174917785862*^9, 3.894175003268177*^9}, {
+  3.8941750873796597`*^9, 3.894175098320706*^9}, {3.894175132347465*^9, 
+  3.894175165565311*^9}, {3.894175234771562*^9, 3.894175450804843*^9}},
+ CellLabel->
+  "In[1443]:=",ExpressionUUID->"391845ea-b3ec-4ca6-8f92-1373f751db2c"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{{3.8941753104969063`*^9, 3.894175452716145*^9}, 
+   3.894175503513027*^9, 3.894176388946089*^9, 3.89417650937862*^9, 
+   3.894177543961738*^9, 3.894179276449484*^9, 3.894179557255018*^9, 
+   3.8941795925123873`*^9, 3.894179728622539*^9, 3.894181707500564*^9, 
+   3.894182181225131*^9, 3.894182581947637*^9, 3.894182651215516*^9, 
+   3.894183512648734*^9},
+ CellLabel->
+  "Out[1443]=",ExpressionUUID->"82f6d181-40c3-44e2-a8af-fa157f29f0dd"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Merge label definitions from all files", "Subtitle",
+ CellChangeTimes->{{3.894176322576024*^9, 3.894176363773193*^9}, {
+  3.8941793081555653`*^9, 
+  3.8941793085513*^9}},ExpressionUUID->"0d3656c9-978d-4790-9878-8e12b4db1b51"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"labelset", "=", 
+  RowBox[{"getLabelDefinitions", "[", 
+   RowBox[{"main", "<>", "supplement", "<>", "overfitSection"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.894176337629961*^9, 3.894176343065343*^9}, {
+   3.8941793984715776`*^9, 3.8941794305999327`*^9}, 3.894179707422571*^9},
+ CellLabel->
+  "In[1444]:=",ExpressionUUID->"99dcfce4-b271-4fca-a0a7-6d44f0edc583"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"table-overview\"\>", ",", "\<\"table-summary\"\>", 
+   ",", "\<\"TOPtable\"\>", ",", "\<\"related-work\"\>", 
+   ",", "\<\"computable-papers\"\>", ",", "\<\"RAP-section\"\>", 
+   ",", "\<\"fig-pipeline\"\>", ",", "\<\"figure-RAP-summary\"\>", 
+   ",", "\<\"statistics-computation-analogy\"\>", 
+   ",", "\<\"section-vicious-cycles\"\>", 
+   ",", "\<\"deceptive-simplicity-of-code\"\>", ",", "\<\"lowCodeStatus\"\>", 
+   ",", "\<\"central-role-of-code\"\>", ",", "\<\"PRISMA-statement\"\>", 
+   ",", "\<\"knowledge\"\>", ",", "\<\"section-pandemic-modeling\"\>", 
+   ",", "\<\"discuss-covid-sim\"\>", ",", "\<\"reproducibility-concerns\"\>", 
+   ",", "\<\"section-science-beyond-pandemic-modeling\"\>", 
+   ",", "\<\"section-discussion\"\>", ",", "\<\"critique-fair\"\>", 
+   ",", "\<\"summary\"\>", ",", "\<\"RAPstar-section\"\>", 
+   ",", "\<\"paper-as-lab\"\>", ",", "\<\"mentionPLOSandIEEE\"\>", 
+   ",", "\<\"technical-debt\"\>", ",", "\<\"benefits-beyond-science\"\>", 
+   ",", "\<\"supplement-best-practice\"\>", 
+   ",", "\<\"supplement-material-makefiles\"\>", 
+   ",", "\<\"supplement-on-code-data-publication\"\>", 
+   ",", "\<\"supplement-RAP-diagrams\"\>", 
+   ",", "\<\"supplement-fig:basic\"\>", ",", "\<\"supplement-fig:excel\"\>", 
+   ",", "\<\"supplement-fig:rap\"\>", ",", "\<\"supplement-fig:notebook\"\>", 
+   ",", "\<\"supplement-Spiegelhalter-section\"\>", 
+   ",", "\<\"supplement-survey-section\"\>", 
+   ",", "\<\"supplement-table:options\"\>", 
+   ",", "\<\"supplement-vascular-surgery-note\"\>", 
+   ",", "\<\"supplement-table-overview\"\>", 
+   ",", "\<\"supplement-table-summary\"\>", 
+   ",", "\<\"supplement-table-repo-summary\"\>", 
+   ",", "\<\"supplement-summary-of-results\"\>", 
+   ",", "\<\"supplement-journal-policies-section\"\>", 
+   ",", "\<\"supplement-data-methods-subsection\"\>", 
+   ",", "\<\"supplement-detecting-against-error\"\>", 
+   ",", "\<\"supplement-restrictive-policies\"\>", ",", "\<\"over-fit\"\>", 
+   ",", "\<\"fig-overfit\"\>", ",", "\<\"name-example-footnote\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.894176344247941*^9, 3.894176393809792*^9, 3.89417650943524*^9, 
+   3.894177544020329*^9, 3.894179276507511*^9, {3.894179405319994*^9, 
+   3.894179432464383*^9}, 3.894179557312982*^9, 3.8941795925707397`*^9, 
+   3.894179728680315*^9, 3.89418170758632*^9, 3.8941821813128223`*^9, 
+   3.894182582015624*^9, 3.894182651290874*^9, 3.894183512712159*^9},
+ CellLabel->
+  "Out[1444]=",ExpressionUUID->"a00802f4-796a-434e-9849-3681e330afaa"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Any duplicate definitions?", "Subtitle",
+ CellChangeTimes->{{3.89417478875725*^9, 3.894174795316372*^9}, {
+  3.894176351380765*^9, 
+  3.8941763538738823`*^9}},ExpressionUUID->"6ee5470b-23ec-49c8-8736-\
+375c5782f1f7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DeleteCases", "[", 
+  RowBox[{
+   RowBox[{"Tally", "[", "labelset", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"_", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.894174800028813*^9, 3.89417485886306*^9}},
+ CellLabel->
+  "In[1445]:=",ExpressionUUID->"0b697031-c820-488f-bee5-f92809a7f70d"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{{3.894174836000415*^9, 3.894174859951275*^9}, 
+   3.894175503567296*^9, 3.894176355610113*^9, 3.894176509514058*^9, 
+   3.8941775440994997`*^9, 3.894179276585291*^9, 3.8941794132780037`*^9, 
+   3.8941795573930187`*^9, 3.8941795926513653`*^9, 3.894179728760953*^9, 
+   3.894181707653924*^9, 3.894182181382053*^9, 3.8941825821043997`*^9, 
+   3.894182651385243*^9, 3.894183512800708*^9},
+ CellLabel->
+  "Out[1445]=",ExpressionUUID->"88627a63-33c7-4c8d-bdee-67918b37c72c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Merge all the reference uses", "Subtitle",
+ CellChangeTimes->{{3.894175810709592*^9, 3.894175824615082*^9}, {
+  3.8941759156170883`*^9, 3.894175926530593*^9}, {3.894176413256918*^9, 
+  3.894176424226033*^9}, {3.894179791962141*^9, 
+  3.8941797931987343`*^9}},ExpressionUUID->"5a00789b-e367-4efc-975a-\
+9d293186f952"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"refset", "=", 
+  RowBox[{"Union", "@", 
+   RowBox[{"StringCases", "[", 
+    RowBox[{
+     RowBox[{"main", "<>", "supplement", "<>", "overfitSection"}], ",", 
+     RowBox[{
+      RowBox[{"\"\<\\\\ref{\>\"", "~~", 
+       RowBox[{"label", ":", 
+        RowBox[{
+         RowBox[{"Except", "[", "\"\<}\>\"", "]"}], ".."}]}], "~~", 
+       "\"\<}\>\""}], "\[Rule]", "label"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.894173924189251*^9, 3.894173925599963*^9}, {
+  3.894174754680402*^9, 3.8941747558109417`*^9}, {3.8941759837809973`*^9, 
+  3.894175988789095*^9}, {3.894179417571888*^9, 3.894179418302805*^9}},
+ CellLabel->
+  "In[1446]:=",ExpressionUUID->"7bbfa0cb-aab7-464e-8b5e-540e15eb837e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"benefits-beyond-science\"\>", 
+   ",", "\<\"central-role-of-code\"\>", ",", "\<\"computable-papers\"\>", 
+   ",", "\<\"critique-fair\"\>", ",", "\<\"deceptive-simplicity-of-code\"\>", 
+   ",", "\<\"fig-overfit\"\>", ",", "\<\"fig-pipeline\"\>", 
+   ",", "\<\"figure-RAP-summary\"\>", ",", "\<\"knowledge\"\>", 
+   ",", "\<\"lowCodeStatus\"\>", ",", "\<\"mentionPLOSandIEEE\"\>", 
+   ",", "\<\"name-example-footnote\"\>", ",", "\<\"over-fit\"\>", 
+   ",", "\<\"paper-as-lab\"\>", ",", "\<\"PRISMA-statement\"\>", 
+   ",", "\<\"related-work\"\>", ",", "\<\"reproducibility-concerns\"\>", 
+   ",", "\<\"section-discussion\"\>", 
+   ",", "\<\"section-pandemic-modeling\"\>", 
+   ",", "\<\"section-science-beyond-pandemic-modeling\"\>", 
+   ",", "\<\"section-vicious-cycles\"\>", 
+   ",", "\<\"statistics-computation-analogy\"\>", ",", "\<\"summary\"\>", 
+   ",", "\<\"supplement-best-practice\"\>", 
+   ",", "\<\"supplement-data-methods-subsection\"\>", 
+   ",", "\<\"supplement-detecting-against-error\"\>", 
+   ",", "\<\"supplement-fig:basic\"\>", ",", "\<\"supplement-fig:excel\"\>", 
+   ",", "\<\"supplement-fig:notebook\"\>", ",", "\<\"supplement-fig:rap\"\>", 
+   ",", "\<\"supplement-journal-policies-section\"\>", 
+   ",", "\<\"supplement-on-code-data-publication\"\>", 
+   ",", "\<\"supplement-RAP-diagrams\"\>", 
+   ",", "\<\"supplement-restrictive-policies\"\>", 
+   ",", "\<\"supplement-Spiegelhalter-section\"\>", 
+   ",", "\<\"supplement-survey-section\"\>", 
+   ",", "\<\"supplement-table:options\"\>", 
+   ",", "\<\"supplement-table-overview\"\>", 
+   ",", "\<\"supplement-table-repo-summary\"\>", 
+   ",", "\<\"supplement-table-summary\"\>", 
+   ",", "\<\"supplement-vascular-surgery-note\"\>", 
+   ",", "\<\"table-overview\"\>", ",", "\<\"table-summary\"\>", 
+   ",", "\<\"technical-debt\"\>", ",", "\<\"TOPtable\"\>"}], "}"}]], "Output",\
+
+ CellChangeTimes->{
+  3.8941739399126587`*^9, 3.894174654735195*^9, {3.89417474572656*^9, 
+   3.894174756424141*^9}, 3.894175503645411*^9, 3.894175994978396*^9, 
+   3.8941761183856907`*^9, 3.8941764270147448`*^9, 3.89417650956633*^9, 
+   3.894177544155376*^9, 3.894179276641595*^9, 3.894179445914042*^9, 
+   3.894179557451233*^9, 3.894179592711681*^9, 3.894179728824527*^9, 
+   3.894181707739984*^9, 3.894182181469141*^9, 3.8941825821698914`*^9, 
+   3.894182651460209*^9, 3.89418351286432*^9},
+ CellLabel->
+  "Out[1446]=",ExpressionUUID->"0c89b4d8-3b00-483b-9c1e-a6a261914d58"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["What references aren\[CloseCurlyQuote]t defined?", "Subtitle",
+ CellChangeTimes->{{3.894176435997746*^9, 3.894176445528614*^9}, 
+   3.8941765037407017`*^9, {3.894179656578924*^9, 3.894179657820508*^9}, {
+   3.89417980385962*^9, 
+   3.894179804440558*^9}},ExpressionUUID->"5eaa5900-32f9-434c-86c9-\
+b441bba151e6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Complement", "[", 
+  RowBox[{"refset", ",", "labelset"}], "]"}]], "Input",
+ CellChangeTimes->{{3.894176515002297*^9, 3.8941765358266478`*^9}, {
+  3.8941765705722513`*^9, 3.8941765779665947`*^9}},
+ CellLabel->
+  "In[1447]:=",ExpressionUUID->"f0ef3747-08eb-4bbf-b4fa-6cb846a5427d"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.894176536537516*^9, 3.894176578649191*^9, 
+  3.89417754423627*^9, 3.894179276725193*^9, 3.894179449556943*^9, 
+  3.894179557532982*^9, 3.894179592796145*^9, 3.894179728910095*^9, 
+  3.894181707807961*^9, 3.8941821815366297`*^9, 3.894182582256813*^9, 
+  3.894182651557479*^9, 3.894183512951954*^9},
+ CellLabel->
+  "Out[1447]=",ExpressionUUID->"75df8cb5-2328-4609-a931-ec29fdebecc1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["What labels aren\[CloseCurlyQuote]t used?", "Subtitle",
+ CellChangeTimes->{{3.894176763433916*^9, 3.894176773046899*^9}, {
+  3.894179667434299*^9, 3.894179673787261*^9}, {3.894179809122979*^9, 
+  3.894179809715673*^9}},ExpressionUUID->"1f75048a-2776-4bec-b604-\
+cdb2ba3a2297"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Complement", "[", 
+  RowBox[{"labelset", ",", "refset"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8941767787018337`*^9, 3.89417678602532*^9}},
+ CellLabel->
+  "In[1448]:=",ExpressionUUID->"13de0964-9e08-4e78-8e4b-f6644136e2a1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"discuss-covid-sim\"\>", ",", "\<\"RAP-section\"\>", 
+   ",", "\<\"RAPstar-section\"\>", 
+   ",", "\<\"supplement-material-makefiles\"\>", 
+   ",", "\<\"supplement-summary-of-results\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.894176786468238*^9, 3.894177544299552*^9, 
+  3.8941792767876377`*^9, 3.8941794588885317`*^9, 3.894179557595729*^9, 
+  3.894179592858946*^9, 3.8941797289706573`*^9, 3.894181707896702*^9, 
+  3.894182181623217*^9, 3.894182582327095*^9, 3.894182651631496*^9, 
+  3.8941835130174227`*^9},
+ CellLabel->
+  "Out[1448]=",ExpressionUUID->"5101792a-2184-465d-b59a-938ece22eeb0"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1288, 883},
+WindowMargins->{{20, Automatic}, {Automatic, 44}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.2 for Mac OS X x86 (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"e51e0ff0-a895-4fa4-bb18-4195cd7e21ca"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 664, 21, 124, "Title",ExpressionUUID->"e0118026-d47d-415c-8344-2393f62eeaa9"],
+Cell[1247, 45, 304, 7, 44, "Text",ExpressionUUID->"4b6a0d3a-37e3-4c9c-ae5f-23d94fcdb2a9"],
+Cell[CellGroupData[{
+Cell[1576, 56, 256, 5, 37, "Input",ExpressionUUID->"fdbc5128-ce60-4d56-afcd-0462daebf4e2"],
+Cell[1835, 63, 624, 10, 69, "Output",ExpressionUUID->"9f504227-4419-4293-aa3e-d4fc74934510"]
+}, Open  ]],
+Cell[2474, 76, 1207, 29, 116, "Input",ExpressionUUID->"2f57dcaa-28e3-48bf-9d1e-c20a482b5af9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3718, 110, 209, 4, 123, "Title",ExpressionUUID->"5c0d37bd-da4e-47e3-acae-a8692741a4cf"],
+Cell[3930, 116, 1013, 25, 131, "Text",ExpressionUUID->"3366faf9-0e39-4cf2-a7ba-7ddc309247d2"],
+Cell[4946, 143, 1873, 46, 195, "Input",ExpressionUUID->"cfcfd713-44f4-4895-8793-27effd8e9d6b"],
+Cell[6822, 191, 570, 13, 64, "Input",ExpressionUUID->"41108222-6531-4049-a84b-6d5d470c5dbf"],
+Cell[7395, 206, 655, 16, 37, "Input",ExpressionUUID->"82335c78-8410-4756-8ff6-0af71bc70024"],
+Cell[8053, 224, 974, 24, 64, "Input",ExpressionUUID->"ee6aad18-c286-4c6a-88a4-c6aefc44fc59"],
+Cell[CellGroupData[{
+Cell[9052, 252, 171, 3, 67, "Subtitle",ExpressionUUID->"657d3ad9-e6f4-49a0-96c2-3a2b6d321469"],
+Cell[CellGroupData[{
+Cell[9248, 259, 330, 8, 37, "Input",ExpressionUUID->"9c9c2e2c-309a-4c70-b310-0e735ac8691e"],
+Cell[9581, 269, 404, 7, 42, "Output",ExpressionUUID->"ed8de5c4-d42e-4ae3-9a32-ee3bbd2a1181"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10034, 282, 225, 5, 67, "Subtitle",ExpressionUUID->"aafca794-ca14-4259-9995-b17c186b783e"],
+Cell[CellGroupData[{
+Cell[10284, 291, 293, 6, 37, "Input",ExpressionUUID->"1aed203a-ef38-42a0-b203-05fdb00401f8"],
+Cell[10580, 299, 179, 3, 42, "Output",ExpressionUUID->"83906d97-5351-47ca-985e-34438571ed7c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10796, 307, 261, 5, 37, "Input",ExpressionUUID->"edda115b-c8bb-4e0d-830f-5c984a404287"],
+Cell[11060, 314, 173, 4, 42, "Output",ExpressionUUID->"f095089c-d47f-40ad-ba79-e7e96c0b09b5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11270, 323, 261, 5, 37, "Input",ExpressionUUID->"ac22497a-9a15-4295-8850-6a0501f2defe"],
+Cell[11534, 330, 211, 4, 42, "Output",ExpressionUUID->"6ea3fc70-46d0-4342-b0c7-9cb9b625e667"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11794, 340, 356, 6, 67, "Subtitle",ExpressionUUID->"6dcb70d9-7f36-4fc8-8b26-59c793a40a3f"],
+Cell[12153, 348, 292, 6, 44, "Text",ExpressionUUID->"56934082-802d-448a-82d9-f4061f74fc13"],
+Cell[CellGroupData[{
+Cell[12470, 358, 257, 5, 37, "Input",ExpressionUUID->"fb8256a6-ffb4-4395-aa8a-4497d7baae85"],
+Cell[12730, 365, 965, 16, 95, "Output",ExpressionUUID->"bf3067ee-a9e0-40ca-9792-6ddcbdf96042"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13744, 387, 167, 3, 67, "Subtitle",ExpressionUUID->"71acd66d-c7a8-49e3-838c-bf2c42d063d5"],
+Cell[CellGroupData[{
+Cell[13936, 394, 401, 7, 37, "Input",ExpressionUUID->"e5b358b8-ee26-49d2-b45a-e1bc302b9a16"],
+Cell[14340, 403, 645, 11, 42, "Output",ExpressionUUID->"e9cbd2a9-c8d0-48d3-a766-08764b06a5c9"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15046, 421, 601, 20, 124, "Title",ExpressionUUID->"789e51a8-59ca-4179-9638-41b62e9ac250"],
+Cell[15650, 443, 1010, 24, 64, "Input",ExpressionUUID->"09381d2d-1872-4fbe-8813-8cc6cdcfe7c5"],
+Cell[CellGroupData[{
+Cell[16685, 471, 430, 7, 67, "Subtitle",ExpressionUUID->"3db0ab25-4b7b-4508-b33a-c0687d790b6b"],
+Cell[CellGroupData[{
+Cell[17140, 482, 620, 15, 37, "Input",ExpressionUUID->"391845ea-b3ec-4ca6-8f92-1373f751db2c"],
+Cell[17763, 499, 504, 9, 42, "Output",ExpressionUUID->"82f6d181-40c3-44e2-a8af-fa157f29f0dd"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18316, 514, 231, 3, 67, "Subtitle",ExpressionUUID->"0d3656c9-978d-4790-9878-8e12b4db1b51"],
+Cell[CellGroupData[{
+Cell[18572, 521, 393, 8, 37, "Input",ExpressionUUID->"99dcfce4-b271-4fca-a0a7-6d44f0edc583"],
+Cell[18968, 531, 2550, 44, 303, "Output",ExpressionUUID->"a00802f4-796a-434e-9849-3681e330afaa"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21567, 581, 222, 4, 67, "Subtitle",ExpressionUUID->"6ee5470b-23ec-49c8-8736-375c5782f1f7"],
+Cell[CellGroupData[{
+Cell[21814, 589, 325, 8, 37, "Input",ExpressionUUID->"0b697031-c820-488f-bee5-f92809a7f70d"],
+Cell[22142, 599, 533, 9, 42, "Output",ExpressionUUID->"88627a63-33c7-4c8d-bdee-67918b37c72c"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22724, 614, 322, 5, 66, "Subtitle",ExpressionUUID->"5a00789b-e367-4efc-975a-9d293186f952"],
+Cell[CellGroupData[{
+Cell[23071, 623, 717, 16, 37, "Input",ExpressionUUID->"7bbfa0cb-aab7-464e-8b5e-540e15eb837e"],
+Cell[23791, 641, 2476, 44, 277, "Output",ExpressionUUID->"0c89b4d8-3b00-483b-9c1e-a6a261914d58"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26316, 691, 318, 5, 66, "Subtitle",ExpressionUUID->"5eaa5900-32f9-434c-86c9-b441bba151e6"],
+Cell[CellGroupData[{
+Cell[26659, 700, 303, 6, 37, "Input",ExpressionUUID->"f0ef3747-08eb-4bbf-b4fa-6cb846a5427d"],
+Cell[26965, 708, 448, 8, 42, "Output",ExpressionUUID->"75df8cb5-2328-4609-a931-ec29fdebecc1"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27462, 722, 282, 4, 66, "Subtitle",ExpressionUUID->"1f75048a-2776-4bec-b604-cdb2ba3a2297"],
+Cell[CellGroupData[{
+Cell[27769, 730, 249, 5, 37, "Input",ExpressionUUID->"13de0964-9e08-4e78-8e4b-f6644136e2a1"],
+Cell[28021, 737, 639, 12, 42, "Output",ExpressionUUID->"5101792a-2184-465d-b59a-938ece22eeb0"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
