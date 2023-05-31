@@ -1,33 +1,29 @@
-\iftrue
-    \PassOptionsToPackage{hyphens}{url}
-    \documentclass[10pt,a4paper]{article}
-    \usepackage[text={6.5in,10in},centering]{geometry}    
-    \usepackage{url}
-    \usepackage{doi}
-    \usepackage{longtable}
-    \usepackage{color}
-    \usepackage{amsmath,amssymb}
-    \usepackage{fancyhdr}
-    
-    \usepackage{graphicx}
-	\PassOptionsToPackage{dvipdfmx}{graphicx}
-	
-	\usepackage{amssymb}
-	\usepackage{epstopdf}
-    \def\httpURL#1{\href{http://#1}{\textcolor{blue}{#1}}}
-    \def\LONGhttpURL#1#2{\href{http://#1}{\textcolor{blue}{#2}}}    
-    \input paper-seb-macros.tex
-\fi
+\documentclass[10pt,a4paper]{article}
+\usepackage[text={6.5in,10in},centering]{geometry}    
+\usepackage{url}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{doi}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{amsmath,amssymb}
+\usepackage{fancyhdr}    
+\usepackage{graphicx}
+\PassOptionsToPackage{dvipdfmx}{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+
+\def\httpURL#1{\href{http://#1}{\textcolor{blue}{#1}}}
+\def\LONGhttpURL#1#2{\href{http://#1}{\textcolor{blue}{#2}}}    
+\input paper-seb-macros.tex
 
 \makeatletter
       \renewcommand{\thefootnote}{\arabic{footnote}}
+      % count the number of bibcite{name}{value} in paper-seb-main.aux
       \let\oldbibcite=\bibcite
-      % example: \bibcite{bad-code}{{31}{2020}{{Richards and Boudnik}}{{Richards and Boudnik}}}
       \newcount\mainNumberOfReferences \mainNumberOfReferences=0
       \def\bibcite#1#2{\global\advance\mainNumberOfReferences by 1\oldbibcite{#1}{#2}}
       \input paper-seb-main.aux 
-      %\resetlinenumber[\MainPaperLastLine]
-	  \let\bibcite=\oldbibcite
+      \let\bibcite=\oldbibcite
 \makeatother
 
 \input generated/page-lengths.tex
@@ -46,52 +42,18 @@
 \maketitle
 \pagestyle{fancy}
 
-\makeatletter
-
-\def\rememberpage{\immediate\write\@auxout{\bslash gdef\bslash SupplementalLastPage{\thepage}}}
-
-% putting \typeout in the right footer will get repeated warnings (which I hope will be noticed!)
-% to complement the red text in the footer itself on every page
-\@ifundefined{SupplementalLastPage}{\rfoot{\supplement\ \thepage\ \textcolor{red}{\bf(Rerun to get number of pages)}\typeout{* Rerun to get correct number of pages in the running footer}}}{\rfoot{\supplement\ \thepage/\SupplementalLastPage}}
-
-\makeatother
-
-\lfoot{\today}
-\cfoot{}
-\lhead{}
-\rhead{}
+\rfoot{}
+\lfoot{}
+\cfoot{\thepage}
+\lhead{\mytitle: \supplement}
+\rhead{Harold Thimbleby}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
 \thispagestyle{empty}
 
-% this will be used to save cross references that can be used in the main paper too
-\newwrite\infofileForMain
-\immediate\openout\infofileForMain=generated/info-for-main.tex
-
 \input generated/info-for-supplement.tex
 \newwrite\infofileForSupplement
 \immediate\openout\infofileForSupplement=generated/info-for-supplement.tex
-
-\def\dotalph#1{\ifnum\csname c@#1\endcsname>0 .\alph{#1}\fi}
-
-%\makeatletter
-%\def\globalLabel#1{% we also need journal code-policies to be used in the main paper...
-%\typeout{Global globalLabel: #1}%
-%\immediate\write\infofileForMain{\bslash newlabel{#1}{{\arabic{section}}{\thepage}{DUMMYA}{DUMMYB}{DUMMYC}}}
-%% as well as in the current document....
-%\immediate\write\@auxout{\bslash newlabel{#1}{{\bslash arabic{section}\dotalph{subsection}}{\thepage}{AAA}{BBB}{CCC}}}
-%}
-%\def\globalTableLabel#1{% we also need journal code-policies to be used in the main paper...
-%\typeout{Global globalTableLabel: #1}%
-%\immediate\write\infofileForMain{\bslash newlabel{#1}{{\arabic{table}}{\thepage}{DUMMYA}{DUMMYB}{DUMMYC}}}
-%% as well as in the current document....
-%\immediate\write\@auxout{\bslash newlabel{#1}{{\bslash arabic{table}\dotalph{subsection}}{\thepage}{AAA}{BBB}{CCC}}}
-%}
-%\def\globalLabelValue#1#2{% we also need journal code-policies to be used in the main paper...
-%\typeout{Global globalLabelValue: #1 := #2}%
-%\immediate\write\infofileForMain{\bslash newlabel{#1}{{#2}{\thepage}{AAA}{BBB}{CCC}}}
-%}
-%\makeatother
 
 % start supplementary material's various counters to continue on from the paper's page numbering
 \setcounter{section}{\continueSectionNumbers}
@@ -167,7 +129,8 @@ SEBs should have a two-way collaboration with Ethics Boards.
 \begin{itemize}
 \item SEBs have to deal with ethical concerns, and how they may be implemented in code. One of the papers \cite{ethics-paper} in the survey (discussed later in this \supplement) is a case in point, as is the growing cross-fertilization between AI and ethics \citeeg{ai-ethics}.
 
-\item Ethics Boards also have to deal with software, and it is clear that they often fail to do this effectively. The case of the retraction of a peer reviewed articles for \emph{The Lancet\/} \cite{science-lancet1,science-lancet2,lancet-learning} and the \emph{Journal of Vascular Surgery\/} \cite{jvs1,jvs2,jvs3}, discussed in the main paper, are cases in point.
+\item Ethics Boards also have to deal with software, and it is clear that they often fail to do this effectively. The case of the retraction of a peer reviewed articles for \emph{The Lancet\/} \cite{science-lancet1,science-lancet2,lancet-learning} and the \emph{Journal of Vascular Surgery\/} \cite{jvs1,jvs2,jvs3}, discussed in section 
+\ref{supplement-vascular-surgery-note}, are cases in point.
 \end{itemize}
 
 \item
@@ -238,7 +201,7 @@ Other high integrity languages include  OCaml, F*, and Haskell; reference \cite{
 \subsection{Open source and version control}
 It is appreciated that the models may change and be adapted as new data and insights become available. Changing models makes it even harder to ensure that they are correct, and thus emphasizes the relevance of the core message this paper: we have to find ways to make computer models more reliable, inspectable, and verifiable. Version control keeps a record of what code was used when, and enables reconstruction of earlier versions of code that has been used. Version control is supported by many tools (such as Git, Subversion, etc). 
 
-If version control is not used, one has no idea what the current program actually is. {Version control is essential for \emph{reproducibility\/}: \cite{basic-reproducibilty,reproducibility} it enables efforts to duplicate work to start with the exact version that was used in any published paper, provided that the published paper discloses the version and a URL for the relevant repository. Note that version control should also be used for data and web site data used by code, otherwise the results reported are not replicable.}
+If version control is not used, one has no idea what the current program actually is. {Version control is essential for \emph{reproducibility\/} \cite{basic-reproducibilty,reproducibility} (see also section \ref{reproducibility-concerns}): it enables efforts to duplicate work to start with the exact version that was used in any published paper, provided that the published paper discloses the version and a URL for the relevant repository. Note that version control should also be used for data and web site data used by code, otherwise the results reported are not replicable.}
 
 {If results cannot be reproduced, has anything reliable been contributed? When a modeling paper presents results from a model, it is important to reproduce those results without using the same code. Better still, research should be reproduced without sharing libraries or APIs (for example, results from a model using R might be reproduced using \emph{Mathematica\/} --- this is a case of $N$ (where, in this case, $N=2$) version Programming \cite{NVP}). Reproducing the same results relying on the same codebase tells you little. The more independent reproductions of results the greater the evidence for belief in the implications.}
 
@@ -349,7 +312,7 @@ It sounds harsh to call programmers incompetent, but challenged with the complex
 
 {Everyone is subject to Human Factors (including the author of the present paper, e.g., as discussed in \cite{enigma}): for instance, the standard cognitive bias of confirmation bias encourages us to look for bugs when code fails to do what is expected and then debug it to produce better results, but if code generates expected results not to bother to debug it further. This of course tends to make code increasingly conform to prior expectations, whether or not those expectations are scientifically justified. Typically, there was no prior specification of the code, so the code should be right, especially after all the debugging to make it ``correct''! Thus coding routinely suffers from HARKing (Hypothesizing After the Results are Known \cite{harking}), a methodological trap widely recognized in statistics.}
 
-Computers themselves are also a part of the problem. Na\"\i vely modifying a program (as may occur during debugging) typically makes it more complex, more \emph{ad hoc}, and less scrutable. Programs can be written so that it is not possible to determine what they do or how they do it (whether by deliberate obfuscation, as in malware, or accidentally), except by running them, if indeed it is possible to exactly reproduce the necessary context to do so \cite{framework}. The point is, introducing bugs should be avoided so far as possible in the first place, and programs should routinely have assertions and other methods to detect those bugs that are introduced (see this paper's \supplement\ for more discussion of standard programming methodologies).
+Computers themselves are also a part of the problem. Na\"\i vely modifying a program (as may occur during debugging) typically makes it more complex, more \emph{ad hoc}, and less scrutable. Programs can be written so that it is not possible to determine what they do or how they do it (whether by deliberate obfuscation, as in malware, or accidentally), except by running them, if indeed it is possible to exactly reproduce the necessary context to do so \cite{viruses}. The point is, introducing bugs should be avoided so far as possible in the first place, and programs should routinely have assertions and other methods to detect those bugs that are introduced (see this paper's \supplement\ for more discussion of standard programming methodologies).
 
 \section{Code, data, and publication}
 \label{supplement-on-code-data-publication}
@@ -360,7 +323,7 @@ These elementary theoretical considerations underly an important practical fact:
 
 There is no code/data distinction one can imagine that cannot easily, even accidentally, be circumvented. In other words, a journal's data policies and code policies should be the identical --- and the conventionally stricter data policies should also apply to code. It is baffling that some journals have code policies that are weaker than their data policies; it is certainly indefensible to have no code policies at all.
 
-{Significant cyber-vulnerabilities result from there being no difference between code and data. For example: an email arrives, which brings data to a user. The user opens an attachment, perhaps a word processor text document, which is more data. The word processor runs macros in the text document --- but now it is code. The macros move data onto the user's disc. The data there then runs as code, and corrupts the user's data across the disc --- which includes both data and code stored in files. And so on. Each step of a computer virus infection crosses over non-existent ``boundaries'' between data and code \cite{viruses}.}
+Significant cyber-vulnerabilities result from there being no difference between code and data. For example: an email arrives, which brings a paper to work on or other data to a user. The user opens the attachment, perhaps a word processor text document, which is more data. The word processor runs macros in the text document --- but now it is code. The macros move data onto the user's disk. The data there then runs as code, and corrupts the user's data across the disk --- which includes both data and code stored in files. And so on, spreading around the world when this user emails their work to a colleague. Each step of a computer virus infection crosses over non-existent ``boundaries'' between data and code \cite{viruses}.
 
 This section's discussion may sound like arcane and irrelevant pedantry, but these issues are at the very foundations of Computer Science.\footnote{{Many of the foundational issues were explored thoroughly by Christopher Strachey and others in the 1960s; Strachey's classic lectures are reprinted in an accessible 2000 publication \cite{strachey}. Being originally a very old paper this classic introduction is much easier to read than many more recent discussions of the foundations of Computer Science.}} If we ignore or misunderstand these basic things --- or overlook them in policies and procedures --- bugs and irreproducibility are the inevitable (and confusing) consequence.
 
@@ -969,8 +932,6 @@ Another program (\texttt{programs/expand.js}) was therefore written to recursive
 
 \initialiseBibliography{Additional references for \supplement}{\temporaryPlusOne}{References numbered 1--\the\temporary\ appear in the reference list in the main paper; the following references are exclusively cited in this \supplement. \vskip 2ex}
 
-\immediate\write\infofileForMain{\bslash def\bslash MaxMainPaperCitationNumber{\the\temporary}}
-
 {\newcount \bibitemn \bibitemn = 0
 \let\oldbibitem=\bibitem
 \def\bibitem#1{\ifnum \bibitemn = 0 \else \egroup\vskip 1.2ex plus 1ex \fi
@@ -985,13 +946,15 @@ Another program (\texttt{programs/expand.js}) was therefore written to recursive
 \begin{thebibliography}{999}
 \raggedright
 
+\catcode`\%=11
+\immediate\write\infofileForSupplement{% map Git repo names to their citation numbers}
+\immediate\write\infofileForSupplement{% generated by paper-seb-supplementary-material.tex}
+\catcode`\%=14
 \def\maprepo#1{\immediate\write\infofileForSupplement{\bslash expandafter\bslash def \bslash csname cite-#1\bslash endcsname{[\the\bibciten]}}}
 
 \input generated/supplementary-references.bbl
 
 \end{thebibliography}
 
-\immediate\closeout\infofileForMain
 \immediate\closeout\infofileForSupplement
-\rememberpage
 \end{document}  

@@ -4,45 +4,45 @@ The top-level auxiliary file: paper-seb-main.aux
 The style file: revisedCompJ.bst
 Database file #1: paper-seb-main.bib
 Warning--to sort, need author or key in science-statistics-recommendations
-You've used 126 entries,
+You've used 129 entries,
             2318 wiz_defined-function locations,
-            1348 strings with 40535 characters,
-and the built_in function-call counts, 102241 in all, are:
-= -- 10199
-> -- 3012
+            1363 strings with 41352 characters,
+and the built_in function-call counts, 109784 in all, are:
+= -- 10969
+> -- 3036
 < -- 0
-+ -- 3863
-- -- 1214
-* -- 7226
-:= -- 13949
-add.period$ -- 210
-call.type$ -- 126
-change.case$ -- 1357
++ -- 4234
+- -- 1220
+* -- 7642
+:= -- 14803
+add.period$ -- 214
+call.type$ -- 129
+change.case$ -- 1368
 chr.to.int$ -- 0
-cite$ -- 127
-duplicate$ -- 11793
-empty$ -- 6009
-format.name$ -- 1228
-if$ -- 18935
+cite$ -- 130
+duplicate$ -- 13272
+empty$ -- 6437
+format.name$ -- 1234
+if$ -- 20156
 int.to.chr$ -- 0
-int.to.str$ -- 126
-missing$ -- 145
-newline$ -- 484
-num.names$ -- 249
-pop$ -- 1551
+int.to.str$ -- 129
+missing$ -- 148
+newline$ -- 495
+num.names$ -- 255
+pop$ -- 1578
 preamble$ -- 1
-purify$ -- 1258
+purify$ -- 1267
 quote$ -- 0
-skip$ -- 3904
+skip$ -- 4275
 stack$ -- 0
-substring$ -- 7347
-swap$ -- 5608
+substring$ -- 8088
+swap$ -- 6335
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 442
+type$ -- 452
 warning$ -- 1
-while$ -- 441
-width$ -- 129
-write$ -- 1307
+while$ -- 449
+width$ -- 132
+write$ -- 1335
 (There was 1 warning)

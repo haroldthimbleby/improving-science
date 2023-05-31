@@ -63,45 +63,45 @@ Warning--I didn't find a database entry for "ref-31"
 Warning--I didn't find a database entry for "ref-32"
 Warning--I didn't find a database entry for "prisma"
 Warning--I didn't find a database entry for "excel-fiasco"
-You've used 46 entries,
+You've used 45 entries,
             2318 wiz_defined-function locations,
-            922 strings with 13096 characters,
-and the built_in function-call counts, 22307 in all, are:
-= -- 2066
-> -- 667
+            919 strings with 12977 characters,
+and the built_in function-call counts, 21850 in all, are:
+= -- 2020
+> -- 649
 < -- 0
-+ -- 630
-- -- 214
-* -- 1521
-:= -- 3236
-add.period$ -- 73
-call.type$ -- 46
-change.case$ -- 236
++ -- 622
+- -- 208
+* -- 1486
+:= -- 3168
+add.period$ -- 71
+call.type$ -- 45
+change.case$ -- 230
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 2110
-empty$ -- 1650
-format.name$ -- 215
-if$ -- 4501
+cite$ -- 45
+duplicate$ -- 2092
+empty$ -- 1616
+format.name$ -- 209
+if$ -- 4397
 int.to.chr$ -- 0
-int.to.str$ -- 46
-missing$ -- 63
-newline$ -- 176
-num.names$ -- 92
-pop$ -- 307
+int.to.str$ -- 45
+missing$ -- 62
+newline$ -- 172
+num.names$ -- 90
+pop$ -- 302
 preamble$ -- 1
-purify$ -- 205
+purify$ -- 200
 quote$ -- 0
-skip$ -- 890
+skip$ -- 872
 stack$ -- 0
-substring$ -- 1549
-swap$ -- 946
+substring$ -- 1511
+swap$ -- 937
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 146
+type$ -- 142
 warning$ -- 0
-while$ -- 154
-width$ -- 48
-write$ -- 473
+while$ -- 149
+width$ -- 47
+write$ -- 462
 (There were 60 warnings)

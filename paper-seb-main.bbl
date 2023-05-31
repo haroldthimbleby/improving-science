@@ -377,6 +377,10 @@ Jackson, D. (2021) {\em The Essence of Software}, Princeton University Press.
 Popper, K.~R. (2002) {\em Conjectures and Refutations: {The} Growth of
   Scientific Knowledge}, Routledge, 2nd~ed.
 
+\bibitem{preventable-book}
+Sridhar, D. (2022) {\em Preventable: {How} a Pandemic Changed the World {\&}
+  How to Stop the Next One}, Viking.
+
 \bibitem{science-review}
 Heesterbeek, H. \emph{et al.} (2015) ``Modeling infectious disease dynamics in
   the complex landscape of global health,'' {\em Science},
@@ -412,6 +416,12 @@ Leake, J. (29 March 2020) ``{Neil Ferguson} interview: {No} 10's infection guru
 Hinsen, K. (2013) ``Software development for reproducible research,'' {\em
   Computing in Science {\&} Engineering}, \textbf{15}(4):60--63.
 \newblock \doi{10.1109/MCSE.2013.91}
+
+\bibitem{ferguson-resign}
+Smith, B. (6 May 2020) ``{SAGE} adviser {Neil Ferguson }quits over coronavirus
+  lockdown breach,'' {\em Civil Service World}.
+\newblock
+  \url{www.civilserviceworld.com/}\midurl{professions/}\midurl{article/}\midurl{sage-}\midurl{adviser-}\midurl{neil-}\midurl{ferguson-}\midurl{quits-}\midurl{over-}\midurl{coronavirus-}\midurl{lockdown-}\midurl{breach#:~:text=SAGE%20adviser%20Neil%20Ferguson%20quits%20over%20coronavirus%20lockdown%20breach,-}\midurl{Epidemiologist%20says%20he&text=Professor%20Neil%20Ferguson%2C%20one%20of,resigned%20after%20breaching%20lockdown%20rules.}
 
 \bibitem{forsyth}
 Ahrens, J.~H. and Dieter, U. (1973) ``Extensions of {Forsythe's} method for
@@ -450,6 +460,14 @@ Scheuber, A. and {van Elsland}, S.~L. (1 June 2020) {\em Codecheck confirms
   reproducibility of {COVID-19} model results}.
 \newblock
   \url{www.imperial.ac.uk/}\midurl{news/}\midurl{197875/}\midurl{codecheck-}\midurl{confirms-}\midurl{reproducibility-}\midurl{covid-}\midurl{19-}\midurl{model-}\midurl{results}
+
+\bibitem{codecheck-certificate}
+Eglen, S.~J. (2020) {\em {CODECHECK} certificate 2020-010 for paper: {Report}
+  9: impact of non-pharmaceutical interventions ({NPIs}) to reduce {COVID-19}
+  mortality and healthcare demand}.
+\newblock
+  \url{github.com/}\midurl{codecheckers/}\midurl{covid-}\midurl{report9},
+  \doi{10.5281/zenodo.3865491}
 
 \bibitem{NVP}
 {Hatton}, L. and {Roberts}, A. (1994) ``How accurate is scientific software?''

@@ -18,14 +18,12 @@
 \makeatletter
     \def\do@url@hyp{\do/}
     \usepackage{moreverb}
-   % \def\@seccntformat#1{\csname the#1\endcsname\quad}
 \makeatother
 
-\DeclareUrlCommand\doi{\def\UrlLeft{{\textrm{DOI }} }}
-\DeclareUrlCommand\url{\def\UrlLeft{{\textrm{URL }} }}
+\DeclareUrlCommand\doi{\def\UrlLeft{{\textrm{DOI}\ } }}
+\DeclareUrlCommand\url{\def\UrlLeft{{\textrm{URL}\ } }}
 \DeclareUrlCommand\midurl{\def\UrlLeft{}\allowbreak }
 	
-%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \renewcommand{\thefootnote}{\arabic{footnote}}
 
 \def\mytitle{Improving science that uses code}
