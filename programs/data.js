@@ -1202,7 +1202,7 @@ for (var i = 0; i < data.length; i++) {
     s += bibdata(d, "year") + ". DOI \\texttt{" + bibdata(d, "doi").trim() + "}" + (bibdata(d, "codeURL") != undefined && bibdata(d, "codeURL") != "" ? (" {Code \\url{" + bibdata(d, "codeURL").trim() + "}}") : "") + "\\\\\\hfill{Accessed " + bibdata(d, "accessed") + ".}\\ " + (!definedq(bibdata(d, "doubleChecked")) || bibdata(d, "doubleChecked") == "" ? "\\textcolor{red}{Not double-checked}" : ("{" +
         "Double-checked " + bibdata(d, "doubleChecked") + "}")) + ".}\\bibskip\n\n";
 }
-saveFile("supplementary-references.bbl", s, "Reference list for Supplementary Material (bbl file)");
+saveFile("survey-references.bbl", s, "Reference list for Supplementary Material (bbl file)");
 
 // generate summary table
 var t = {};

@@ -1,29 +1,29 @@
 This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: paper-seb-main.aux
+The top-level auxiliary file: paper.aux
 The style file: revisedCompJ.bst
-Database file #1: paper-seb-main.bib
+Database file #1: paper.bib
 Warning--to sort, need author or key in science-statistics-recommendations
 You've used 129 entries,
             2318 wiz_defined-function locations,
-            1363 strings with 41352 characters,
-and the built_in function-call counts, 109784 in all, are:
-= -- 10969
+            1363 strings with 41324 characters,
+and the built_in function-call counts, 109765 in all, are:
+= -- 10967
 > -- 3036
 < -- 0
-+ -- 4234
++ -- 4233
 - -- 1220
-* -- 7642
-:= -- 14803
+* -- 7641
+:= -- 14801
 add.period$ -- 214
 call.type$ -- 129
 change.case$ -- 1368
 chr.to.int$ -- 0
 cite$ -- 130
-duplicate$ -- 13272
-empty$ -- 6437
+duplicate$ -- 13268
+empty$ -- 6436
 format.name$ -- 1234
-if$ -- 20156
+if$ -- 20153
 int.to.chr$ -- 0
 int.to.str$ -- 129
 missing$ -- 148
@@ -33,10 +33,10 @@ pop$ -- 1578
 preamble$ -- 1
 purify$ -- 1267
 quote$ -- 0
-skip$ -- 4275
+skip$ -- 4274
 stack$ -- 0
-substring$ -- 8088
-swap$ -- 6335
+substring$ -- 8086
+swap$ -- 6333
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0

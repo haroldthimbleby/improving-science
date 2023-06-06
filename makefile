@@ -120,7 +120,7 @@ readme: # Update the \texttt{README.md} file. You only need to do this if you've
 
 tidyup: # Tidyup typically before doing a Git commit or making a zip file. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the \LaTeX\ data include files. Do not remove the .aux files, as \LaTeX\ runs much more smoothly with them.
 	@echo Remove all basic files that can easily be regenerated, except the main PDFs and the generated files that are included in Latex files
-	rm -f paper-seb-*.blg data-check.html 
+	rm -f *.blg generated/data-check.html 
 	# Don't delete generated/* as it's helpful to keep all the generated files around so Latex can be used directly...
 	@# rm generated/* 
 	rm -rf *.log *.out *.dvi log
@@ -132,36 +132,36 @@ tidyup: # Tidyup typically before doing a Git commit or making a zip file. Remov
 really-tidyup: # More thorough than \texttt{make tidyup} --- remove \emph{all} files that can be recreated. (This will mean next time you run \LaTeX\ you will have to ignore errors as the .aux files are re-created.)
 	@echo Remove all files that can be recreated, including PDFs and files made by processing the JSON data 
 	make tidyup 
-	rm -f paper-seb-*.pdf
+	rm -f *.pdf
 	rm -f expanded*
 		
-all: # Analyze the data, then typeset the main PDF files (\texttt{paper-seb-main.pdf} and \texttt{paper-seb-supplementary-material.pdf}).
+all: # Analyze the data, then typeset the main PDF files (\texttt{paper.pdf}, \texttt{appendix.pdf} and \texttt{all.pdf}).
 	make data
 	make pdf
 
-pdf: # Assuming you have got the data ready, make the two main PDF files, paper-seb-main.pdf, and paper-seb-supplementary-material.pdf. If you aren't sure you've got the data ready, say \texttt{make all} instead, or \texttt{make data} to just prepare the data before doing \texttt{make pdf}.
+pdf: # Assuming you have got the data ready, make the two main PDF files, paper.pdf, and appendix.pdf. If you aren't sure you've got the data ready, say \texttt{make all} instead, or \texttt{make data} to just prepare the data before doing \texttt{make pdf}.
     # LOTS of latex runs to make sure the bibtex and .aux files are all correctly synced
     # eg inserting the table of contents changes page numbering, so it needs formatting again, etc
-	$(LATEX) paper-seb-supplementary-material.tex > log
-	bibtex paper-seb-supplementary-material >> log
+	$(LATEX) appendix.tex > log
+	bibtex appendix >> log
 	@echo Do not worry bibtex cannot find database entries for "ref-16" etc as they are in another file
-	$(LATEX) paper-seb-supplementary-material.tex >> log
-	$(LATEX) paper-seb-main.tex >> log
-	bibtex paper-seb-main >> log
-	$(LATEX) paper-seb-main.tex >> log
-	$(LATEX) paper-seb-main.tex >> log
-	@echo Unfortunately, paper-seb-main.tex has items in its bibiography that cross-refer to more bibliography items, so we need another run of bibtex etc
-	bibtex paper-seb-main >> log
-	$(LATEX) paper-seb-main.tex >> log
-	$(LATEX) paper-seb-main.tex >> log
-	@echo and then the references in paper-seb-supplementary-material.tex are renumbered to follow on paper-seb-main.tex
-	$(LATEX) paper-seb-supplementary-material.tex >> log
-	@echo and the paper-seb-main.tex refers to those numbers... so it needs updating again
-	$(LATEX) paper-seb-main.tex >> log
+	$(LATEX) appendix.tex >> log
+	$(LATEX) paper.tex >> log
+	bibtex paper >> log
+	$(LATEX) paper.tex >> log
+	$(LATEX) paper.tex >> log
+	@echo Unfortunately, paper.tex has items in its bibiography that cross-refer to more bibliography items, so we need another run of bibtex etc
+	bibtex paper >> log
+	$(LATEX) paper.tex >> log
+	$(LATEX) paper.tex >> log
+	@echo and then the references in appendix.tex are renumbered to follow on paper.tex
+	$(LATEX) appendix.tex >> log
+	@echo and the paper.tex refers to those numbers... so it needs updating again
+	$(LATEX) paper.tex >> log
 	@echo "----------------------------------------------------------------"
 	@echo You have now got these PDFs:
-	@ls -C *paper*pdf
-	@echo "-- That should say (at least):" paper-seb-main.pdf paper-seb-supplementary-material.pdf
+	@ls -C *pdf
+	@echo "-- That should say (at least):" paper.pdf appendix.pdf
 	@echo
 	@echo Plus some .aux/.out/.blg/etc files you can delete by running make tidyup if you wish
 	@echo "----------------------------------------------------------------"
@@ -180,22 +180,22 @@ archive: # Clean up all files (by doing \texttt{make really-tidyup}) that can ea
 push: # Push any *important* changed files to Git, along with updated PDF files.
 	rm -rf models/git-* # remove models pulled from papers repositories (they are big)
 	rm -f *.out *.log *.dvi
-	# rm -f paper-seb-main.pdf paper-seb-supplementary-material.pdf
+	# rm -f paper.pdf appendix.pdf
 	git push -u origin master
 	
-# This, next, creates (and preserves) a single PDF, paper-seb.pdf, separately maintained at http://www.harold.thimbleby.net as reliable-models.pdf (which it links to)
+# This, next, creates (and preserves) a single PDF, all.pdf, separately maintained at http://www.harold.thimbleby.net as reliable-models.pdf (which it links to)
 
 # PS I'd rather say $APPENDIX than supplementary material (if that's what $APPENDIX is), but it 
 # needs make to expand the definition, whereas in the comment, we're using grep to grab the text
 # so APPENDIX won't get expanded
 
-one-file: # Make a single PDF file \texttt{paper-seb.pdf} (i.e., paper + supplementary material) all in one.
+one-file: # Make a single PDF file \texttt{all.pdf} (i.e., paper + supplementary material) all in one.
 	@make one.file
 
 # this rule has a . in the target name (one.file), so make help doesn't find it (see the grep command in make help)
-one.file: paper-seb-main.pdf paper-seb-supplementary-material.pdf # concatenate files
-	@echo make single PDF file paper-seb.pdf
-	pdfunite paper-seb-main.pdf paper-seb-supplementary-material.pdf paper-seb.pdf
+one.file: paper.pdf appendix.pdf # concatenate files
+	@echo make single PDF file all.pdf
+	pdfunite paper.pdf appendix.pdf all.pdf
 
 zip-data: # Just make a zip archive of the data only. This is required for, e.g., uploading to a Dryad repository --- which is quirky as it won't include all the code needed to handle the data!
 	make data
@@ -207,15 +207,17 @@ expand: # Expand all \LaTeX\ files (to recursively flatten \texttt{input} and \t
 	make pdf
 	make one-file
 	node programs/expand.js
-	$(LATEX) expanded-paper-seb-supplementary-material.tex > log
-	$(LATEX) expanded-paper-seb-main.tex >> log
-	cp paper-seb.pdf tmp
-	pdfunite expanded-paper-seb-main.pdf expanded-paper-seb-supplementary-material.pdf paper-seb.pdf >> log
-	if cmp paper-seb.pdf tmp; then echo SAME; else echo DIFFERENT; fi
-	rm tmp
-	echo You now have expanded*pdf as well as the expanded source files expanded*tex and paper-seb.pdf which combines them as a single file
+	$(LATEX) expanded-appendix.tex > log
+	$(LATEX) expanded-paper.tex >> log
+	pdfunite expanded-paper.pdf expanded-appendix.pdf expanded-all.pdf >> log
+	if diff-pdf all.pdf expanded-all.pdf; then echo SAME -- SUCCESS; else echo DIFFERENT; fi
+	@echo You now have PDF files
+	@ls expanded*pdf 
+	@echo as well as the expanded source files 
+	@ls expanded*tex
+	@echo NB the PDFs still depend on comjnl.cls
 
-git-prep: # What's on Git that we've lost, or stuff we have got locally but probably don't want on Git, so you can delete it or move it out the way or whatever.
+git-prep: # Is there anything on Git that we've lost, or stuff we have got locally but probably don't want on Git, so you can delete it or move it out the way or whatever.
 	@echo "We probably don't want some random stuff added to the Git repo..."
 	@rm -f /tmp/-on-git /tmp/-on-local
 	@(echo .gitignore; find . -not -path '*/.*' -type f -print ) | sed "s/^\.\///" | sort > /tmp/-on-local

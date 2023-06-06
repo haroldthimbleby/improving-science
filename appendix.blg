@@ -1,8 +1,8 @@
 This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: paper-seb-supplementary-material.aux
+The top-level auxiliary file: appendix.aux
 The style file: revisedCompJ.bst
-Database file #1: paper-seb-supplementary-material.bib
+Database file #1: appendix.bib
 Warning--I didn't find a database entry for "hamming"
 Warning--I didn't find a database entry for "fixit"
 Warning--I didn't find a database entry for "ethics-paper"
@@ -65,7 +65,7 @@ Warning--I didn't find a database entry for "prisma"
 Warning--I didn't find a database entry for "excel-fiasco"
 You've used 45 entries,
             2318 wiz_defined-function locations,
-            919 strings with 12977 characters,
+            919 strings with 12905 characters,
 and the built_in function-call counts, 21850 in all, are:
 = -- 2020
 > -- 649

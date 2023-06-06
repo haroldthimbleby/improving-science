@@ -1,0 +1,102 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3158,         94]
+NotebookOptionsPosition[      2681,         77]
+NotebookOutlinePosition[      3077,         93]
+CellTagsIndexPosition[      3034,         90]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"EdgeForm", "[", "Black", "]"}], ",", 
+    RowBox[{"FaceForm", "[", "Blue", "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Disk", "[", "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"FaceForm", "[", "Yellow", "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Disk", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", "1", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"b", "=", 
+         RowBox[{"1.25", "Pi"}]}], ",", 
+        RowBox[{"a", "=", 
+         RowBox[{"1.6", "Pi"}]}]}], "}"}]}], "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"FaceForm", "[", 
+     RowBox[{"Darker", "@", "Yellow"}], "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Disk", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", "1", ",", 
+      RowBox[{"{", 
+       RowBox[{"a", ",", 
+        RowBox[{
+         RowBox[{"3", "Pi"}], "-", "b"}]}], "}"}]}], "]"}], ","}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]",
+   "]"}]], "Input",
+ CellChangeTimes->{{3.895050251299281*^9, 3.895050254167632*^9}, {
+  3.895050297992772*^9, 3.89505030231645*^9}, {3.895069868770488*^9, 
+  3.895070040667115*^9}, {3.89507007182927*^9, 3.895070185663575*^9}},
+ CellLabel->
+  "In[2017]:=",ExpressionUUID->"9f451424-22b8-47e1-a7c4-6fc223402101"],
+
+Cell[BoxData[
+ GraphicsBox[
+  {EdgeForm[GrayLevel[0]], FaceForm[RGBColor[0, 0, 1]], DiskBox[{0, 0}], 
+   {FaceForm[RGBColor[1, 1, 0]], 
+    DiskBox[{0, 0}, 1, {3.9269908169872414`, 5.026548245743669}]}, 
+   {FaceForm[RGBColor[
+     NCache[
+      Rational[2, 3], 0.6666666666666666], 
+     NCache[
+      Rational[2, 3], 0.6666666666666666], 0]], 
+    DiskBox[{0, 0}, 1, {5.026548245743669, 5.497787143782138}]}}]], "Output",
+ CellChangeTimes->{
+  3.8950698917905197`*^9, {3.8950699749572077`*^9, 3.8950700411371107`*^9}, {
+   3.895070078190282*^9, 3.8950701863204536`*^9}},
+ CellLabel->
+  "Out[2017]=",ExpressionUUID->"a1f6f091-6c10-4a0f-a448-08605d852b96"]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{68, Automatic}, {0, Automatic}},
+FrontEndVersion->"12.2 for Mac OS X x86 (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"b79f9e4a-2f32-4fd2-ba13-eaf94b5f3b3e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1426, 35, 220, "Input",ExpressionUUID->"9f451424-22b8-47e1-a7c4-6fc223402101"],
+Cell[2009, 59, 656, 15, 376, "Output",ExpressionUUID->"a1f6f091-6c10-4a0f-a448-08605d852b96"]
+}, Open  ]]
+}
+]
+*)
+

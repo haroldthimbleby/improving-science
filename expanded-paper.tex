@@ -1,3 +1,397 @@
+% 
+% This file has been expanded from LaTeX file (paper.tex)
+%   to make this straight forward LaTeX file (expanded-paper.tex)
+%     that depends on nothing (it inputs no files apart from the document class files).
+%       Each required file's text was input in situ - search for % expand
+% 
+% (Otherwise the file paper.tex would use BibTeX, a macro file, tables of contents, its own and the other files's .aux files, and includes various files in generated/*, etc.)
+% 
+
+\makeatletter
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{a=b}
+\citation{write-for-life}
+\citation{abelson}
+\citation{nature-chatgpt}
+\newlabel{FirstPage}{{}{1}{}{Doc-Start}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\citation{sommerville,knight}
+\citation{computational-thinking-wing,computational-thinking}
+\citation{ICmodel,avianFluModel,originalICmodel}
+\citation{ICmodel,avianFluModel,originalICmodel}
+\citation{reproducibility-crisis,rescience}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{2}{section.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Overview of peer-reviewed paper sample, broken down further in Table \ref {table-summary}. Survey methodology and data is provided in the Supplemental Material. (The survey does not include the motivating papers \cite  {ICmodel,avianFluModel,originalICmodel}, none of which provide code or code summaries; see section \ref {section-pandemic-modeling}.)}}{3}{table.1}\protected@file@percent }
+\newlabel{table-overview}{{1}{3}{Overview of peer-reviewed paper sample, broken down further in Table \ref {table-summary}. Survey methodology and data is provided in the \supplement . (The survey does not include the motivating papers \cite {ICmodel,avianFluModel,originalICmodel}, none of which provide code or code summaries; see section \ref {section-pandemic-modeling}.)}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Breakdown of pilot survey of peer-reviewed science papers relying on code. }}{3}{table.2}\protected@file@percent }
+\newlabel{table-summary}{{2}{3}{Breakdown of pilot survey of peer-reviewed science papers relying on code}{table.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces The TOP committee's recommended levels for journal article code transparency. Level 0 is provided for a comparison that does not meet any TOP requirements. Concerns about the interpretation of ``reproduced independently,'' as required at level 4, are raised in section \ref {reproducibility-concerns}.}}{3}{table.3}\protected@file@percent }
+\newlabel{TOPtable}{{3}{3}{The TOP committee's recommended levels for journal article code transparency. Level 0 is provided for a comparison that does not meet any TOP requirements. Concerns about the interpretation of ``reproduced independently,'' as required at level 4, are raised in section \ref {reproducibility-concerns}}{table.3}{}}
+\citation{temperature}
+\citation{form}
+\citation{acm-algorithms}
+\citation{hoare-correctness}
+\citation{jupyter-study}
+\citation{trisovic}
+\citation{jupyter-study}
+\citation{trisovic}
+\citation{trisovic}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.a}Code quality concerns}{4}{subsection.2.1}\protected@file@percent }
+\newlabel{related-work}{{2.a}{4}{Code quality concerns}{subsection.2.1}{}}
+\citation{machine-learning-reproducibility,no-raw-data,data-access,reproducible-manifesto,reproducibility-crisis}
+\citation{joss}
+\citation{rescience}
+\citation{TOP}
+\citation{TOP-wiki}
+\citation{jupyter-study}
+\citation{MMR-fraud}
+\citation{misconduct-issues}
+\citation{machine-learning-reproducibility}
+\citation{elns}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.b}Computable papers}{5}{subsection.2.2}\protected@file@percent }
+\newlabel{computable-papers}{{2.b}{5}{Computable papers}{subsection.2.2}{}}
+\citation{ICmodel}
+\citation{perkel-review}
+\citation{maneage}
+\citation{maneage}
+\citation{LP,LP-book}
+\citation{relit}
+\citation{notebook-patent}
+\citation{jupyter-history}
+\citation{knitr}
+\citation{spec-led-design}
+\citation{RAPstandard}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.c}RAP: Reproducible Analytical Pipelines}{7}{subsection.2.3}\protected@file@percent }
+\newlabel{RAP-section}{{2.c}{7}{RAP: Reproducible Analytical Pipelines}{subsection.2.3}{}}
+\citation{rap,goldacre,turing-way}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces A simplified schematic of the publication pipeline. For clarity, the pipeline has been linearized; in general, there will be repetitive cyclic iteration and refinement. The RAP and RAP{\tt  +}\ approaches encode the normally manual steps in the pipeline workflow so that they can be run automatically, and hence reproduce the results that underpin the final paper. The encoded RAP{\tt  +}\ algorithms can be shared with other scientists, scrutinized, simplified and optimized, and themselves turned into publishable objects --- they are scientific instruments, just like thermometers or DNA sequencers. Additional schematics are provided in section \ref {supplement-RAP-diagrams} in the Supplemental Material.}}{8}{table.4}\protected@file@percent }
+\newlabel{fig-pipeline}{{4}{8}{A simplified schematic of the publication pipeline. For clarity, the pipeline has been linearized; in general, there will be repetitive cyclic iteration and refinement. The RAP and \RAPstar \ approaches encode the normally manual steps in the pipeline workflow so that they can be run automatically, and hence reproduce the results that underpin the final paper. The encoded \RAPstar \ algorithms can be shared with other scientists, scrutinized, simplified and optimized, and themselves turned into publishable objects --- they are scientific instruments, just like thermometers or DNA sequencers. Additional schematics are provided in section \ref {supplement-RAP-diagrams} in the \supplement }{table.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces A minimum standard of RAP, based on the UK Statistics Authority summary \cite  {RAPstandard}.}}{8}{table.5}\protected@file@percent }
+\newlabel{figure-RAP-summary}{{5}{8}{A minimum standard of RAP, based on the UK Statistics Authority summary \cite {RAPstandard}}{table.5}{}}
+\citation{MMR-fraud}
+\citation{a=b}
+\citation{Courtes}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.c.1}Potential code}{9}{subsubsection.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.c.2}RAP as research}{9}{subsubsection.2.3.2}\protected@file@percent }
+\citation{Courtes}
+\citation{Courtes}
+\citation{apa-statistics,Mariusz-reporting,science-statistics-recommendations}
+\citation{example-stats}
+\citation{science-statistics-recommendations}
+\citation{Spiegelhalter}
+\citation{paul-hci,pnas-stats}
+\citation{paul-hci,pnas-stats}
+\citation{Ben,se-bias}
+\@writefile{toc}{\contentsline {section}{\numberline {3}The statistics/code analogy}{10}{section.3}\protected@file@percent }
+\newlabel{statistics-computation-analogy}{{3}{10}{The statistics/code analogy}{section.3}{}}
+\citation{sas9.2}
+\citation{whitty}
+\newlabel{section-vicious-cycles}{{3}{11}{The statistics/code analogy}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.a}The siren call of over-fitting code}{11}{subsection.3.1}\protected@file@percent }
+\newlabel{over-fit}{{3.a}{11}{The siren call of over-fitting code}{subsection.3.1}{}}
+\citation{over-fit}
+\citation{over-fit}
+\citation{may-simple}
+\citation{dyson}
+\newlabel{name-example-footnote}{{5}{12}{}{Hfootnote.5}{}}
+\citation{assurance-case}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Much computational science is concerned with finding plausible multi-dimensional models that fit models to data with the aim of extrapolating or predicting new results from them. Shown here is notional sample of experimental 2D data (the dots), a linear least squares regression, and an exact polynomial model. The over-fitted polynomial model fits the sample \emph  {exactly\/}, but since the experimental data is presumably subject to random error (indicated by the confidence interval, itself estimated) the linear model would generally be considered a better description of the experimental data.}}{13}{figure.1}\protected@file@percent }
+\newlabel{fig-overfit}{{1}{13}{Much computational science is concerned with finding plausible multi-dimensional models that fit models to data with the aim of extrapolating or predicting new results from them. Shown here is notional sample of experimental 2D data (the dots), a linear least squares regression, and an exact polynomial model. The over-fitted polynomial model fits the sample \emph {exactly\/}, but since the experimental data is presumably subject to random error (indicated by the confidence interval, itself estimated) the linear model would generally be considered a better description of the experimental data}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}The conventional role of code}{13}{section.4}\protected@file@percent }
+\citation{assessing-quality}
+\citation{fixit}
+\citation{Hammurabi}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.a}The deceptive simplicity of code}{14}{subsection.4.1}\protected@file@percent }
+\newlabel{deceptive-simplicity-of-code}{{4.a}{14}{The deceptive simplicity of code}{subsection.4.1}{}}
+\citation{cite-code,TOP}
+\citation{prisma}
+\citation{engima}
+\citation{critiques,diagnosis-reviews}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.b}The low status of coding}{15}{subsection.4.2}\protected@file@percent }
+\newlabel{lowCodeStatus}{{4.b}{15}{The low status of coding}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.c}The critical role of code is often ignored}{15}{subsection.4.3}\protected@file@percent }
+\newlabel{central-role-of-code}{{4.c}{15}{The critical role of code is often ignored}{subsection.4.3}{}}
+\newlabel{PRISMA-statement}{{4.c}{15}{The critical role of code is often ignored}{subsection.4.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.d}Bugs, code and programming}{15}{subsection.4.4}\protected@file@percent }
+\newlabel{knowledge}{{4.d}{15}{Bugs, code and programming}{subsection.4.4}{}}
+\citation{knuth}
+\citation{essence-of-software,fixit}
+\citation{popper-conjectures-refutations}
+\citation{preventable-book}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.e}Long-term problems of unreliable code}{16}{subsection.4.5}\protected@file@percent }
+\citation{preventable-book}
+\citation{science-review}
+\citation{diagnosis-reviews}
+\citation{tripod}
+\citation{diagnosis-reviews}
+\citation{diagnosis-reviews}
+\citation{nature-summary,ICmodel}
+\citation{avianFluModel,originalICmodel}
+\citation{ICmodel,avianFluModel,originalICmodel}
+\citation{tweet}
+\citation{ferguson-interview}
+\citation{basic-reproducibilty}
+\citation{ferguson-resign}
+\@writefile{toc}{\contentsline {section}{\numberline {5}State of the art}{17}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.a}Case study: Pandemic modeling}{17}{subsection.5.1}\protected@file@percent }
+\newlabel{section-pandemic-modeling}{{5.a}{17}{Case study: Pandemic modeling}{subsection.5.1}{}}
+\citation{tweet}
+\citation{forsyth,Normal-Distributions}
+\citation{misra}
+\citation{spark}
+\citation{haskell}
+\citation{thumbs-up}
+\citation{nature-summary,ICmodel}
+\citation{codecheck,thumbs-up}
+\citation{codecheck}
+\citation{ICmodel}
+\citation{codecheck-certificate}
+\citation{codecheck}
+\citation{codecheck-certificate}
+\newlabel{discuss-covid-sim}{{5.a}{18}{Case study: Pandemic modeling}{subsection.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.b}Concerns with reproducibility}{18}{subsection.5.2}\protected@file@percent }
+\newlabel{reproducibility-concerns}{{5.b}{18}{Concerns with reproducibility}{subsection.5.2}{}}
+\citation{codecheck,thumbs-up}
+\citation{codecheck-certificate}
+\citation{NVP}
+\citation{nvp-ferguson}
+\citation{essence-of-software}
+\citation{notebooks,popper-conjectures-refutations,tripod,prisma,nih-policy,nih-nature}
+\citation{refactoring}
+\citation{bad-code}
+\citation{bad-code}
+\citation{pseudo}
+\citation{chinese}
+\citation{relit}
+\citation{flu-model}
+\citation{nature-review}
+\citation{nature-review}
+\citation{psychological-modeling}
+\citation{psychological-modeling}
+\citation{actr}
+\citation{psychological-modeling}
+\citation{Ben,nature-review,se-bias}
+\citation{ourReview}
+\citation{hamming}
+\citation{NVP}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.c}Beyond pandemic modeling}{20}{subsection.5.3}\protected@file@percent }
+\newlabel{section-science-beyond-pandemic-modeling}{{5.c}{20}{Beyond pandemic modeling}{subsection.5.3}{}}
+\citation{unfinished}
+\citation{unfinished,lancet-unfinished}
+\citation{hoare}
+\citation{machine-learning-reproducibility}
+\citation{relit}
+\citation{preclinical-reproducibility}
+\citation{fair,fair-principles}
+\citation{nih-policy}
+\citation{nih-nature}
+\newlabel{section-discussion}{{5.c}{21}{Beyond pandemic modeling}{subsection.5.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.d}The lop-sided emphasis on data}{21}{subsection.5.4}\protected@file@percent }
+\newlabel{critique-fair}{{5.d}{21}{The lop-sided emphasis on data}{subsection.5.4}{}}
+\citation{notebooks}
+\citation{cbc}
+\citation{ethics-code}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Rethinking science that uses code}{22}{section.6}\protected@file@percent }
+\newlabel{summary}{{6}{22}{Rethinking science that uses code}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.a}Software Engineering Boards}{22}{subsection.6.1}\protected@file@percent }
+\citation{acm-artifacts}
+\citation{redmill,iec61508}
+\citation{hoare-unreasonable}
+\citation{basic-reproducibilty,open-source}
+\citation{ABCs-SE}
+\citation{mrb}
+\citation{mrb}
+\citation{relit,Executable-Paper}
+\citation{computational-thinking-wing,computational-thinking}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.b}Extending RAP to RAP{\tt  +}}{23}{subsection.6.2}\protected@file@percent }
+\newlabel{RAPstar-section}{{6.b}{23}{Extending RAP to \RAPstar }{subsection.6.2}{}}
+\citation{RMarkdown}
+\citation{lepton}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.c}The paper as a scientific laboratory}{24}{subsection.6.3}\protected@file@percent }
+\newlabel{paper-as-lab}{{6.c}{24}{The paper as a scientific laboratory}{subsection.6.3}{}}
+\citation{landauer,thimbleby-landauer}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.d}Action must be interdisciplinary}{25}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.e}Methodological statements}{25}{subsection.6.5}\protected@file@percent }
+\citation{no-raw-data}
+\citation{data-access}
+\citation{assurance-case}
+\citation{debt}
+\newlabel{mentionPLOSandIEEE}{{6.e}{26}{Methodological statements}{subsection.6.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.f}Training to reduce technical debt}{26}{subsection.6.6}\protected@file@percent }
+\newlabel{technical-debt}{{6.f}{26}{Training to reduce technical debt}{subsection.6.6}{}}
+\citation{fixit}
+\citation{jpm}
+\citation{jpm}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.g}Benefits beyond science}{27}{subsection.6.7}\protected@file@percent }
+\newlabel{benefits-beyond-science}{{6.g}{27}{Benefits beyond science}{subsection.6.7}{}}
+\citation{jpm-report}
+\citation{jpm}
+\citation{hoare-unreasonable}
+\citation{excel-fiasco}
+\citation{science-delays}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.h}Approaches to further work}{28}{subsection.6.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusions}{28}{section.7}\protected@file@percent }
+\citation{tweet,ferguson-interview}
+\citation{whitty}
+\citation{fixit}
+\citation{reproducibility,relit,popper-conjectures-refutations}
+\citation{parliamentary-evidence,my-parliamentary-evidence}
+\bibstyle{revisedCompJ}
+\bibdata{paper.bib}
+\bibcite{a=b}{1}
+\bibcite{write-for-life}{2}
+\bibcite{abelson}{3}
+\bibcite{nature-chatgpt}{4}
+\bibcite{sommerville}{5}
+\bibcite{knight}{6}
+\bibcite{computational-thinking-wing}{7}
+\bibcite{computational-thinking}{8}
+\bibcite{ICmodel}{9}
+\bibcite{avianFluModel}{10}
+\bibcite{originalICmodel}{11}
+\bibcite{reproducibility-crisis}{12}
+\bibcite{rescience}{13}
+\bibcite{temperature}{14}
+\bibcite{form}{15}
+\bibcite{acm-algorithms}{16}
+\bibcite{hoare-correctness}{17}
+\bibcite{jupyter-study}{18}
+\bibcite{trisovic}{19}
+\bibcite{machine-learning-reproducibility}{20}
+\bibcite{no-raw-data}{21}
+\bibcite{data-access}{22}
+\bibcite{reproducible-manifesto}{23}
+\bibcite{joss}{24}
+\bibcite{TOP}{25}
+\bibcite{TOP-wiki}{26}
+\bibcite{MMR-fraud}{27}
+\bibcite{misconduct-issues}{28}
+\bibcite{elns}{29}
+\bibcite{perkel-review}{30}
+\bibcite{maneage}{31}
+\bibcite{LP}{32}
+\bibcite{LP-book}{33}
+\bibcite{relit}{34}
+\bibcite{notebook-patent}{35}
+\bibcite{jupyter-history}{36}
+\bibcite{knitr}{37}
+\bibcite{spec-led-design}{38}
+\bibcite{RAPstandard}{39}
+\bibcite{rap}{40}
+\bibcite{goldacre}{41}
+\bibcite{turing-way}{42}
+\bibcite{Courtes}{43}
+\bibcite{apa-statistics}{44}
+\bibcite{Mariusz-reporting}{45}
+\bibcite{science-statistics-recommendations}{46}
+\bibcite{example-stats}{47}
+\bibcite{Spiegelhalter}{48}
+\bibcite{paul-hci}{49}
+\bibcite{pnas-stats}{50}
+\bibcite{Ben}{51}
+\bibcite{se-bias}{52}
+\bibcite{sas9.2}{53}
+\bibcite{whitty}{54}
+\bibcite{over-fit}{55}
+\bibcite{may-simple}{56}
+\bibcite{dyson}{57}
+\bibcite{assurance-case}{58}
+\bibcite{assessing-quality}{59}
+\citation{assessing-quality-conference}
+\bibcite{fixit}{60}
+\bibcite{Hammurabi}{61}
+\bibcite{cite-code}{62}
+\bibcite{prisma}{63}
+\bibcite{engima}{64}
+\bibcite{critiques}{65}
+\bibcite{diagnosis-reviews}{66}
+\bibcite{knuth}{67}
+\bibcite{essence-of-software}{68}
+\bibcite{popper-conjectures-refutations}{69}
+\bibcite{preventable-book}{70}
+\bibcite{science-review}{71}
+\bibcite{tripod}{72}
+\bibcite{nature-summary}{73}
+\bibcite{tweet}{74}
+\bibcite{ferguson-interview}{75}
+\bibcite{basic-reproducibilty}{76}
+\bibcite{ferguson-resign}{77}
+\bibcite{forsyth}{78}
+\bibcite{Normal-Distributions}{79}
+\bibcite{misra}{80}
+\bibcite{spark}{81}
+\bibcite{haskell}{82}
+\bibcite{thumbs-up}{83}
+\bibcite{codecheck}{84}
+\bibcite{codecheck-certificate}{85}
+\bibcite{NVP}{86}
+\bibcite{nvp-ferguson}{87}
+\bibcite{notebooks}{88}
+\bibcite{nih-policy}{89}
+\bibcite{nih-nature}{90}
+\bibcite{refactoring}{91}
+\bibcite{bad-code}{92}
+\bibcite{pseudo}{93}
+\bibcite{chinese}{94}
+\bibcite{flu-model}{95}
+\bibcite{nature-review}{96}
+\bibcite{psychological-modeling}{97}
+\bibcite{actr}{98}
+\bibcite{ourReview}{99}
+\bibcite{hamming}{100}
+\bibcite{unfinished}{101}
+\bibcite{lancet-unfinished}{102}
+\bibcite{hoare}{103}
+\bibcite{preclinical-reproducibility}{104}
+\bibcite{fair}{105}
+\bibcite{fair-principles}{106}
+\bibcite{cbc}{107}
+\bibcite{ethics-code}{108}
+\bibcite{acm-artifacts}{109}
+\bibcite{redmill}{110}
+\bibcite{iec61508}{111}
+\bibcite{hoare-unreasonable}{112}
+\bibcite{open-source}{113}
+\bibcite{ABCs-SE}{114}
+\bibcite{mrb}{115}
+\bibcite{Executable-Paper}{116}
+\bibcite{RMarkdown}{117}
+\bibcite{lepton}{118}
+\bibcite{landauer}{119}
+\bibcite{thimbleby-landauer}{120}
+\bibcite{debt}{121}
+\bibcite{jpm}{122}
+\bibcite{jpm-report}{123}
+\bibcite{excel-fiasco}{124}
+\bibcite{science-delays}{125}
+\bibcite{reproducibility}{126}
+\bibcite{parliamentary-evidence}{127}
+\bibcite{my-parliamentary-evidence}{128}
+\citation{parliamentary-evidence}
+\bibcite{assessing-quality-conference}{129}
+\def\continueSectionNumbers{7}
+\def\continueTableNumbers{5}
+\def\continueFigureNumbers{1}
+\def\continueFootnoteNumbers{13}
+\def\continuePageNumbers{35}
+\newlabel{LastPage}{{}{35}}
+\gdef \@abspage@last{35}
+
+\makeatother
 \documentclass{comjnl}
 \usepackage{ragged2e}
 \usepackage{amsmath}
@@ -9,11 +403,490 @@
   \setlength\textheight{220mm}
 %----
 
-\input paper-seb-macros.tex
-\input generated/page-lengths.tex
+% expand macros.tex
+% due to finding out that PDF doesn't work everywhere, here's where we define the image type we're using for imaged created by the Mathematica notebooks
+\def\imageFileSuffix{jpg}
+
+
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{longtable}
+\usepackage{cite}
+
+\renewcommand\thesubsection{\thesection.\alph{subsection}}
+\renewcommand\thesubsubsection{\thesection.\alph{subsection}.\arabic{subsubsection}}
+
+\def\httpURL#1{\href{http://#1}{\textcolor{blue}{#1}}}
+\def\LONGhttpURL#1#2{\href{http://#1}{\textcolor{blue}{#2}}}
 
 \makeatletter
-      \input paper-seb-supplementary-material.aux 
+    \def\do@url@hyp{\do/}
+    \usepackage{moreverb}
+\makeatother
+
+\DeclareUrlCommand\doi{\def\UrlLeft{{\textrm{DOI}\ } }}
+\DeclareUrlCommand\url{\def\UrlLeft{{\textrm{URL}\ } }}
+\DeclareUrlCommand\midurl{\def\UrlLeft{}\allowbreak }
+	
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+\def\mytitle{Improving science that uses code}
+\def\supplement{Supplemental Material}
+
+\def\citeeg#1{[e.g., \citenum{#1}]}
+
+% calculate rounded percentages
+\newcount \t
+\newcount \tu
+\def\pc#1#2{\t = #1%
+\multiply \t by 100000%
+\divide \t by #2% ?? 0 times percentage
+\tu = \t
+\divide \t by 1000% percentage, but no idea of remainder
+\multiply \t by 1000% 1000 times percentage, with 00 as bottom digits
+\advance \tu by -\t% bottom two digits
+\divide \t by 1000\relax%
+% round to nearest integer
+% if ending in > .5 round up
+% if ending in exactly .5 round towards nearest even number
+\ifnum \tu > 500 % round up
+	\advance \t by 1 
+\else
+	\ifnum \tu = 500 
+		\ifodd \t % it's odd, so round up to even number 
+			\advance \t by 1
+		\else % leave rounded to even number 	
+		\fi
+	\fi
+\fi
+\the\t\%}
+
+% code to make digits into blocks of 3 (as in 1000 -> 1 000)
+\def\xBlockSep{\textcolor{red}{\hskip 0.3em :}\hskip 0.3em} % International Standards are to use a small space. UK typically uses a comma
+% NOTE currently, the few decimal numbers (eg 0.000 5) use hskip explicitly, since defining \xBlockSep as a comma would definitely be wrong for decimals
+\newcount\xdigitBlockn
+\newcount\xdigitBlocktmp
+\def\xdigitBlock#1{%
+        \xdigitBlockn=#1\relax
+        \ifnum \xdigitBlockn < 0
+                $-$%
+                \xdigitBlockn = -\xdigitBlockn
+        \fi
+        \let \xdigitBlockpptemp \empty
+        \loop \ifnum \xdigitBlockn > 999
+                \xdigitBlocktmp = \xdigitBlockn
+                \divide \xdigitBlockn by 1000
+                \xdigitBlocktmp = \numexpr \xdigitBlocktmp - 1000*\xdigitBlockn \relax
+                \edef \xdigitBlockpptemp{\xBlockSep\ifnum \xdigitBlocktmp < 100  0\ifnum \xdigitBlocktmp < 10 0\fi\fi \the\xdigitBlocktmp \xdigitBlockpptemp}%
+        \repeat
+        \the\xdigitBlockn
+        \xdigitBlockpptemp
+}
+
+\def\digitBlock#1{\hbox{\xdigitBlock{#1}}}
+
+% simple macro to use a number register to pluralize (add an s) to words....
+% \plural{\t}{fred} => \the\t\ freds if plural, or => one fred if singular
+\def\plural#1#2{\ifnum #1=1 
+	one #2%
+\else
+	\the#1\ #2s%
+\fi}
+
+% initialiseBibliography <title> <starting number> <introductory text>
+\newcount \bibciten \bibciten=0
+\def\initialiseBibliography#1#2#3{% title, starting citation number, an initial paragraph
+	\global\def\refname{\arabic{section} #1}
+    \global\def\unnumberedrefname{#1}
+    \global\bibciten=#2
+    \global\def\startBibliography{#3}
+}
+
+\def\bibskip{\vskip 1ex} % the gap between bib items generated by data.js
+
+% read in any constants defined from the JSON or Git data
+% expand generated/constants.tex
+% Generated by programs/data.js
+\def\journalBreakdown{\emph{Lancet Digital Health\/} ($N=6$), \emph{Nature Digital Medicine\/} ($N=12$) and \emph{Royal Society Open Science\/} ($N=14$)}
+\def\tabularJournalBreakdown{&\hbox to 3em {\hfill 6}\hskip 1em \emph{Lancet Digital Health}\\&\hbox to 3em {\hfill 12}\hskip 1em \emph{Nature Digital Medicine}\\&\hbox to 3em {\hfill 14}\hskip 1em \emph{Royal Society Open Science}\\}
+\global\newcount \dataN \global\dataN=32
+\global\newcount \countAuthors \global\countAuthors=264
+\global\newcount \countHasBreach \global\countHasBreach=11
+\global\newcount \countHasPolicy \global\countHasPolicy=26
+\global\newcount \countUsesVersionControlRepository \global\countUsesVersionControlRepository=10
+\global\newcount \counthasDataRepository \global\counthasDataRepository=9
+\global\newcount \countNoCodeInRepo \global\countNoCodeInRepo=1
+\global\newcount \numberOfJournals \global\numberOfJournals=3
+\global\newcount \countCodetested \global\countCodetested=0
+\global\newcount \hasDevelopedRigorously \global\hasDevelopedRigorously=0
+\global\newcount \countFields \global\countFields=36
+\global\newcount \countCommentedOut \global\countCommentedOut=7
+\global\newcount \countNotCommentedOut \global\countNotCommentedOut=2
+\global\newcount \countMissingCode \global\countMissingCode=1
+\global\def \averagePagesPerAuthor{1.2916666666666667}
+% end expanding generated/constants.tex
+% expand generated/metadata.tex
+% shell script (make-metadata.sh) generated LaTeX variable values counting errors detected by data.js
+\newcount \JSONerrorCount
+\JSONerrorCount = 30
+\newcount \dataVariableCount
+\dataVariableCount = 63
+% end expanding generated/metadata.tex
+% expand generated/covidsimSummary.tex
+% data calculated from the Ferguson covid-sim repo
+\def \covidsimkLOC {25}
+\def \covidsimfiles {229}
+\def \covidsimdata{734 Mb}
+% end expanding generated/covidsimSummary.tex
+% expand generated/clone-date.tex
+% date generated by running generated/allGitRepos.sh downloading Git repos
+\def\clonedate {\ignorespaces 25 May 2023}
+\def\cloneyear {2023}
+\def\clonemonth {05}
+% end expanding generated/clone-date.tex
+
+\newcount \pubdelayinmonths
+\pubdelayinmonths=\cloneyear
+\advance \pubdelayinmonths by -2019 % submitted in 2019
+\multiply \pubdelayinmonths by 12
+\advance \pubdelayinmonths by -6 % submitted in June
+\advance \pubdelayinmonths by \clonemonth
+
+\def\monthname#1{\ifcase#1 \or 
+January\or 
+February\or 
+March\or 
+April\or 
+May\or 
+June\or 
+July\or 
+August\or 
+September\or 
+October\or 
+November\or 
+December\fi}
+
+\def\numbertoname#1{\ifcase #1 zero\or one\or two\or three\or four\or five\or six\or seven\or eight\or nine\else #1\fi}
+\def\Numbertoname#1{\ifcase #1 Zero\or One\or Two\or Three\or Four\or Five\or Six\or Seven\or Eight\or Nine\else #1\fi}
+
+\def\clonewhen{\monthname{\clonemonth} \cloneyear}
+
+\def\RAPstar{RAP{\tt +}}
+\def\RAPstars{RAPs{\tt +}}
+\def\RAPstarp#1{RAP{\tt +}#1}
+\def\italicRAPstar{RAP{\tt +}}
+% end expanding macros.tex
+% expand generated/page-lengths.tex
+% Generated by programs/data.js
+\expandafter\def\csname pagelength-MetricSelectionFramework\endcsname{17}
+\expandafter\def\csname pagelength-PENet\endcsname{9}
+\expandafter\def\csname pagelength-PostoperativeOutcomes.RiskNet\endcsname{10}
+\expandafter\def\csname pagelength-philter-ucsf\endcsname{8}
+\expandafter\def\csname pagelength-AI-CDSS-Cardiovascular-Silo\endcsname{6}
+\expandafter\def\csname pagelength-SiameseChange\endcsname{9}
+\expandafter\def\csname pagelength-lactModel\endcsname{13}
+\expandafter\def\csname pagelength-LRM\endcsname{22}
+\expandafter\def\csname pagelength-manifold-ga\endcsname{7}
+\expandafter\def\csname pagelength-blast-ct\endcsname{8}
+\newcount \gitPages \gitPages=109
+\newcount \totalPages \totalPages=341
+% end expanding generated/page-lengths.tex
+
+\makeatletter
+      % expand appendix.aux 
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{vancouver}
+\citation{hamming}
+\citation{fixit}
+\citation{cosmos}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Further issues for Software Engineering Boards (SEBs)}{38}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.a}Relationships of SEBs to Ethics Boards}{38}{subsection.8.1}\protected@file@percent }
+\citation{ethics-paper}
+\citation{ai-ethics}
+\citation{science-lancet1,science-lancet2,lancet-learning}
+\citation{jvs1,jvs2,jvs3}
+\citation{sommerville,knight}
+\citation{cosmos}
+\citation{swebok}
+\citation{turing-way}
+\citation{wpf}
+\citation{humphrey}
+\citation{managers}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.b}SEBs are necessary but not sufficient}{39}{subsection.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Software engineering best practice}{39}{section.9}\protected@file@percent }
+\newlabel{supplement-best-practice}{{9}{39}{Software engineering best practice}{section.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.a}Requirements}{39}{subsection.9.1}\protected@file@percent }
+\citation{differential-equations}
+\citation{cbc}
+\citation{spark}
+\citation{misra}
+\citation{hoare}
+\citation{hoare}
+\citation{numerals}
+\citation{heedless}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.b}Formal methods}{40}{subsection.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.c}Defensive programming}{40}{subsection.9.3}\protected@file@percent }
+\citation{onlyPaperWithChecks}
+\citation{tweet,plos}
+\citation{heedless}
+\citation{spark}
+\citation{haskell}
+\citation{basic-reproducibilty,reproducibility}
+\citation{NVP}
+\citation{avianFluModel}
+\citation{ICmodel}
+\citation{flu-model}
+\citation{excel1,excel2}
+\citation{npm}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.d}Using inappropriate programming languages undermines reliability}{41}{subsection.9.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.e}Open source and version control}{41}{subsection.9.5}\protected@file@percent }
+\citation{open-source}
+\citation{sommerville,knight,NVP}
+\citation{assurance-case}
+\citation{LP}
+\citation{relit}
+\citation{hci1,hci2}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.f}Rigorous testing}{42}{subsection.9.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.g}Good documentation and record keeping}{42}{subsection.9.7}\protected@file@percent }
+\citation{flexibility}
+\citation{iso}
+\citation{178C}
+\citation{fixit}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.h}Usability}{43}{subsection.9.8}\protected@file@percent }
+\newlabel{supplement-material-makefiles}{{9.h}{43}{Usability}{subsection.9.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.i}Reusing quality solutions}{43}{subsection.9.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.j}Simplicity}{43}{subsection.9.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.k}Compliance with standards}{43}{subsection.9.11}\protected@file@percent }
+\citation{peerReview,knight}
+\citation{ssi-report,ssi-url}
+\citation{acm-artifacts}
+\citation{security-engineering,cyber-cacm}
+\citation{example-numerical-error}
+\citation{hamming}
+\citation{Schneier}
+\citation{electronic-evidence}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.l}Effective multidisciplinary teamwork}{44}{subsection.9.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.m}Continuous Professional Development (CPD)}{44}{subsection.9.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.n}Security and other factors}{44}{subsection.9.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.o}Software is a human activity}{44}{subsection.9.15}\protected@file@percent }
+\citation{fixit}
+\citation{popper-conjectures-refutations}
+\citation{simon-artificial}
+\citation{dunning-kruger,dunning-kruger-numeracy}
+\citation{dunning-kruger}
+\citation{fixit}
+\citation{enigma}
+\citation{harking}
+\citation{viruses}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Code, data, and publication}{45}{section.10}\protected@file@percent }
+\newlabel{supplement-on-code-data-publication}{{10}{45}{Code, data, and publication}{section.10}{}}
+\citation{viruses}
+\citation{strachey}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.a}When magic numbers become magic code}{46}{subsection.10.1}\protected@file@percent }
+\citation{henderson}
+\citation{paper-usesRMarkdown}
+\citation{RMarkdown}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.b}When data is code}{47}{subsection.10.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.c}Exploiting code as data for more reliable science}{47}{subsection.10.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.d}When data is text: Exploiting code for reliable publication}{47}{subsection.10.4}\protected@file@percent }
+\citation{Spiegelhalter}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.e}Data and polynomials used in the paper}{48}{subsection.10.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.f}Comparing conventional and RAP approaches}{48}{subsection.10.6}\protected@file@percent }
+\newlabel{supplement-RAP-diagrams}{{10.f}{48}{Comparing conventional and RAP approaches}{subsection.10.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}The Spiegelhalter trustworthiness questions}{48}{section.11}\protected@file@percent }
+\newlabel{supplement-Spiegelhalter-section}{{11}{48}{The Spiegelhalter trustworthiness questions}{section.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The common basic --- error-prone and obsolete --- approach to scientific authoring is to use code to help generate analyses and diagrams, then manually copy and paste the selected results into the publication. Note that the publication, including the results, can be edited arbitrarily, and typically the results published will have been edited and modified (if only for typographical purposes) from those actually generated by the code.}}{49}{figure.2}\protected@file@percent }
+\newlabel{supplement-fig:basic}{{2}{49}{The common basic --- error-prone and obsolete --- approach to scientific authoring is to use code to help generate analyses and diagrams, then manually copy and paste the selected results into the publication. Note that the publication, including the results, can be edited arbitrarily, and typically the results published will have been edited and modified (if only for typographical purposes) from those actually generated by the code}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces When the code is in a spreadsheet, such as Microsoft Excel, the code is generally hidden from sight. The data copied \& pasted into a publication may or may not be calculated from data in other cells (such as column totals). Records are rarely taken of these manual processes, and, anyway, typically it is impossible to be certain exactly what has been copied unless very great care is taken. In consequence, if a spreadsheet is modified, it is haphazard what results are updated and corrected in the publication. }}{49}{figure.3}\protected@file@percent }
+\newlabel{supplement-fig:excel}{{3}{49}{When the code is in a spreadsheet, such as Microsoft Excel, the code is generally hidden from sight. The data copied \& pasted into a publication may or may not be calculated from data in other cells (such as column totals). Records are rarely taken of these manual processes, and, anyway, typically it is impossible to be certain exactly what has been copied unless very great care is taken. In consequence, if a spreadsheet is modified, it is haphazard what results are updated and corrected in the publication}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Improving over the normal approach (figure \ref {supplement-fig:basic}), data and diagrams are placed in the publication using a programmed, systematic approach. In the present paper, this was done by generating text files of \LaTeX  \ definitions (represented by boxes in the central column of the schematic), hence providing \LaTeX  \ names for all of the code-generated values. Since the copying of results into a publication is automated and easy, any improvements to the results (such as correcting errors) are made by improving the code --- which therefore contributes to improving all future-generated results too. Not shown, but in well-engineered code, documentation will also be generated, such as by using tools such as JavaDoc or Doxygen.}}{50}{figure.4}\protected@file@percent }
+\newlabel{supplement-fig:rap}{{4}{50}{Improving over the normal approach (figure \ref {supplement-fig:basic}), data and diagrams are placed in the publication using a programmed, systematic approach. In the present paper, this was done by generating text files of \LaTeX \ definitions (represented by boxes in the central column of the schematic), hence providing \LaTeX \ names for all of the code-generated values. Since the copying of results into a publication is automated and easy, any improvements to the results (such as correcting errors) are made by improving the code --- which therefore contributes to improving all future-generated results too. Not shown, but in well-engineered code, documentation will also be generated, such as by using tools such as JavaDoc or Doxygen}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.a}How trustworthy are the numbers?}{50}{subsection.11.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces In a notebook system, such as \emph  {Mathematica\/} or Jupyter, a single document --- the notebook --- integrates the publication, the code, any notes, as well as all the results. The code generates results and images that are automatically (and reliably) inserted in place into the notebook, usually right after the code that generates them. Some parts of the notebook are marked or selected to be printed as the publication, thus allowing most if not all code to be hidden from the final publication. In well-engineered code, the notebook will directly contain full documentation. Note that in most systems, notebooks can import and generate arbitrary data (images, sounds, sensor data, etc).}}{51}{figure.5}\protected@file@percent }
+\newlabel{supplement-fig:notebook}{{5}{51}{In a notebook system, such as \emph {Mathematica\/} or Jupyter, a single document --- the notebook --- integrates the publication, the code, any notes, as well as all the results. The code generates results and images that are automatically (and reliably) inserted in place into the notebook, usually right after the code that generates them. Some parts of the notebook are marked or selected to be printed as the publication, thus allowing most if not all code to be hidden from the final publication. In well-engineered code, the notebook will directly contain full documentation. Note that in most systems, notebooks can import and generate arbitrary data (images, sounds, sensor data, etc)}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.b}How trustworthy is the source?}{51}{subsection.11.2}\protected@file@percent }
+\citation{lancet-retracted}
+\citation{science-lancet1,science-lancet2}
+\citation{lancet-learning}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.c}How trustworthy is the interpretation?}{52}{subsection.11.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {12}A pilot survey of computational science}{52}{section.12}\protected@file@percent }
+\newlabel{supplement-survey-section}{{12}{52}{A pilot survey of computational science}{section.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.a}Selected journal case studies}{52}{subsection.12.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {12.a.1}\emph  {The Lancet\/}}{52}{subsubsection.12.1.1}\protected@file@percent }
+\citation{jvs1}
+\citation{jvs2,jvs3}
+\citation{jvs1}
+\citation{numerals}
+\citation{fda}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Conforming to the RAP{\tt  +}\ methodology, the abbreviated summary above was generated automatically, by using \texttt  {make data}. A full list of \texttt  {make} options is generated by \texttt  {make} or \texttt  {make help} when run on the Unix command line. }}{53}{table.6}\protected@file@percent }
+\newlabel{supplement-table:options}{{6}{53}{Conforming to the \RAPstar \ methodology, the abbreviated summary above was generated automatically, by using \texttt {make data}. A full list of \texttt {make} options is generated by \texttt {make} or \texttt {make help} when run on the Unix command line}{table.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {12.a.2}\emph  {Journal of Vascular Surgery}}{53}{subsubsection.12.1.2}\protected@file@percent }
+\newlabel{supplement-vascular-surgery-note}{{12.a.2}{53}{\emph {Journal of Vascular Surgery}}{subsubsection.12.1.2}{}}
+\citation{ICmodel}
+\citation{ICmodel}
+\citation{ICmodel}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Overview of the peer-reviewed paper sample. (Convenient copy of main paper's table \ref {table-overview}.)}}{54}{table.7}\protected@file@percent }
+\newlabel{supplement-table-overview}{{7}{54}{Overview of the peer-reviewed paper sample. (Convenient copy of main paper's table \ref {table-overview}.)}{table.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Summary of survey results. (Convenient copy of main paper's table \ref {table-summary}.)}}{54}{table.8}\protected@file@percent }
+\newlabel{supplement-table-summary}{{8}{54}{Summary of survey results. (Convenient copy of main paper's table \ref {table-summary}.)}{table.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.b}Pilot paper sample}{54}{subsection.12.2}\protected@file@percent }
+\citation{nature-review}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Sizes of repositories, with approximate sizes of code (in kLOC) and data for all available GitHub repositories reviewed in the survey, plus \texttt  {covid-sim} \cite  {ICmodel} for comparison. Sizes are approximate because in all repositories code and data are conceptually interchangeable (an issue explained in the Supplemental Material), so choices were made in the survey to avoid double-counting. Many repositories rely on downloading additional code and data, which is not counted in the table as the additional required material is not in the repository cited in the paper. At the time of cloning and checking all repositories in May 2023, paper [182]\ still had nothing in its repository except a single file still saying ``\ldots  \ code coming soon\nobreakspace  {}\ldots  ,'' despite 47\ months having already elapsed since the paper had claimed the code could be accessed in its repository.}}{55}{table.9}\protected@file@percent }
+\newlabel{supplement-table-repo-summary}{{9}{55}{Sizes of repositories, with approximate sizes of code (in kLOC) and data for all available GitHub repositories reviewed in the survey, plus \texttt {covid-sim} \cite {ICmodel} for comparison. Sizes are approximate because in all repositories code and data are conceptually interchangeable (an issue explained in the \supplement ), so choices were made in the survey to avoid double-counting. Many repositories rely on downloading additional code and data, which is not counted in the table as the additional required material is not in the repository cited in the paper. At the time of cloning and checking all repositories in \clonewhen , paper \csname cite-PostoperativeOutcomes.RiskNet\endcsname \ still had nothing in its repository except a single file still saying ``\ldots \ code coming soon~\ldots ,'' despite \the \pubdelayinmonths \ months having already elapsed since the paper had claimed the code could be accessed in its repository}{table.9}{}}
+\citation{open-source}
+\citation{stability}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.c}Summary of results}{56}{subsection.12.3}\protected@file@percent }
+\newlabel{supplement-summary-of-results}{{12.c}{56}{Summary of results}{subsection.12.3}{}}
+\citation{RS-policy}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {12.c.1}Current code policies of sampled journals}{57}{subsubsection.12.3.1}\protected@file@percent }
+\newlabel{supplement-journal-policies-section}{{12.c.1}{57}{Current code policies of sampled journals}{subsubsection.12.3.1}{}}
+\citation{ref-1}
+\citation{ref-2}
+\citation{ref-3}
+\citation{ref-4}
+\citation{ref-5}
+\citation{ref-6}
+\citation{ref-7}
+\citation{ref-8}
+\citation{ref-9}
+\citation{ref-10}
+\citation{ref-11}
+\citation{ref-12}
+\citation{paper-usesRMarkdown}
+\citation{ref-14}
+\citation{onlyPaperWithChecks}
+\citation{ref-16}
+\citation{ref-17}
+\citation{ethics-paper}
+\citation{ref-19}
+\citation{ref-20}
+\citation{ref-21}
+\citation{ref-22}
+\citation{ref-23}
+\citation{example-numerical-error}
+\citation{ref-25}
+\citation{ref-26}
+\citation{ref-27}
+\citation{ref-28}
+\citation{ref-29}
+\citation{ref-30}
+\citation{ref-31}
+\citation{ref-32}
+\gdef \LT@i {\LT@entry 
+    {2}{26.55563pt}\LT@entry 
+    {1}{214.35622pt}\LT@entry 
+    {1}{208.35622pt}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {12.c.2}Sample assessment and scoring}{58}{subsubsection.12.3.2}\protected@file@percent }
+\citation{prisma}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.d}Assessment criteria and methods}{60}{subsection.12.4}\protected@file@percent }
+\newlabel{supplement-data-methods-subsection}{{12.d}{60}{Assessment criteria and methods}{subsection.12.4}{}}
+\citation{fixit}
+\citation{fixit}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {12.d.1}Detecting and defending against error}{62}{subsubsection.12.4.1}\protected@file@percent }
+\newlabel{supplement-detecting-against-error}{{12.d.1}{62}{Detecting and defending against error}{subsubsection.12.4.1}{}}
+\citation{excel-fiasco}
+\citation{latex-calculus}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {12.d.2}Defending against system problems}{63}{subsubsection.12.4.2}\protected@file@percent }
+\bibstyle{revisedCompJ}
+\bibdata{appendix.bib}
+\bibcite{vancouver}{{{130}{}{{}}{{}}}}
+\bibcite{cosmos}{{{131}{}{{}}{{}}}}
+\bibcite{ai-ethics}{{{132}{}{{}}{{}}}}
+\bibcite{science-lancet1}{{{133}{}{{}}{{}}}}
+\bibcite{science-lancet2}{{{134}{}{{}}{{}}}}
+\bibcite{lancet-learning}{{{135}{}{{}}{{}}}}
+\bibcite{jvs1}{{{136}{}{{}}{{}}}}
+\bibcite{jvs2}{{{137}{}{{}}{{}}}}
+\bibcite{jvs3}{{{138}{}{{}}{{}}}}
+\bibcite{swebok}{{{139}{}{{}}{{}}}}
+\bibcite{wpf}{{{140}{}{{}}{{}}}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {12.d.3}Problems of restrictive journal policies}{64}{subsubsection.12.4.3}\protected@file@percent }
+\newlabel{supplement-restrictive-policies}{{12.d.3}{64}{Problems of restrictive journal policies}{subsubsection.12.4.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {13}Additional references for Supplemental Material}{64}{section.13}\protected@file@percent }
+\bibcite{humphrey}{{{141}{}{{}}{{}}}}
+\bibcite{managers}{{{142}{}{{}}{{}}}}
+\bibcite{differential-equations}{{{143}{}{{}}{{}}}}
+\bibcite{numerals}{{{144}{}{{}}{{}}}}
+\bibcite{heedless}{{{145}{}{{}}{{}}}}
+\bibcite{plos}{{{146}{}{{}}{{}}}}
+\bibcite{excel1}{{{147}{}{{}}{{}}}}
+\bibcite{excel2}{{{148}{}{{}}{{}}}}
+\bibcite{npm}{{{149}{}{{}}{{}}}}
+\bibcite{hci1}{{{150}{}{{}}{{}}}}
+\bibcite{hci2}{{{151}{}{{}}{{}}}}
+\bibcite{flexibility}{{{152}{}{{}}{{}}}}
+\bibcite{iso}{{{153}{}{{}}{{}}}}
+\bibcite{178C}{{{154}{}{{}}{{}}}}
+\bibcite{peerReview}{{{155}{}{{}}{{}}}}
+\bibcite{ssi-report}{{{156}{}{{}}{{}}}}
+\bibcite{ssi-url}{{{157}{}{{}}{{}}}}
+\bibcite{security-engineering}{{{158}{}{{}}{{}}}}
+\bibcite{cyber-cacm}{{{159}{}{{}}{{}}}}
+\bibcite{Schneier}{{{160}{}{{}}{{}}}}
+\bibcite{electronic-evidence}{{{161}{}{{}}{{}}}}
+\bibcite{simon-artificial}{{{162}{}{{}}{{}}}}
+\bibcite{dunning-kruger}{{{163}{}{{}}{{}}}}
+\bibcite{dunning-kruger-numeracy}{{{164}{}{{}}{{}}}}
+\bibcite{enigma}{{{165}{}{{}}{{}}}}
+\bibcite{harking}{{{166}{}{{}}{{}}}}
+\bibcite{viruses}{{{167}{}{{}}{{}}}}
+\bibcite{strachey}{{{168}{}{{}}{{}}}}
+\bibcite{henderson}{{{169}{}{{}}{{}}}}
+\bibcite{lancet-retracted}{{{170}{}{{}}{{}}}}
+\bibcite{fda}{{{171}{}{{}}{{}}}}
+\bibcite{stability}{{{172}{}{{}}{{}}}}
+\bibcite{RS-policy}{{{173}{}{{}}{{}}}}
+\bibcite{latex-calculus}{{{174}{}{{}}{{}}}}
+\bibcite{ref-1}{{{175}{}{{}}{{}}}}
+\bibcite{ref-2}{{{176}{}{{}}{{}}}}
+\bibcite{ref-3}{{{177}{}{{}}{{}}}}
+\bibcite{ref-4}{{{178}{}{{}}{{}}}}
+\bibcite{ref-5}{{{179}{}{{}}{{}}}}
+\bibcite{ref-6}{{{180}{}{{}}{{}}}}
+\@writefile{toc}{\contentsline {section}{\numberline {14}References for surveyed papers}{66}{section.14}\protected@file@percent }
+\bibcite{ref-7}{{{181}{}{{}}{{}}}}
+\bibcite{ref-8}{{{182}{}{{}}{{}}}}
+\bibcite{ref-9}{{{183}{}{{}}{{}}}}
+\bibcite{ref-10}{{{184}{}{{}}{{}}}}
+\bibcite{ref-11}{{{185}{}{{}}{{}}}}
+\bibcite{ref-12}{{{186}{}{{}}{{}}}}
+\bibcite{paper-usesRMarkdown}{{{187}{}{{}}{{}}}}
+\bibcite{ref-14}{{{188}{}{{}}{{}}}}
+\bibcite{onlyPaperWithChecks}{{{189}{}{{}}{{}}}}
+\bibcite{ref-16}{{{190}{}{{}}{{}}}}
+\bibcite{ref-17}{{{191}{}{{}}{{}}}}
+\bibcite{ethics-paper}{{{192}{}{{}}{{}}}}
+\bibcite{ref-19}{{{193}{}{{}}{{}}}}
+\bibcite{ref-20}{{{194}{}{{}}{{}}}}
+\bibcite{ref-21}{{{195}{}{{}}{{}}}}
+\bibcite{ref-22}{{{196}{}{{}}{{}}}}
+\bibcite{ref-23}{{{197}{}{{}}{{}}}}
+\bibcite{example-numerical-error}{{{198}{}{{}}{{}}}}
+\bibcite{ref-25}{{{199}{}{{}}{{}}}}
+\bibcite{ref-26}{{{200}{}{{}}{{}}}}
+\bibcite{ref-27}{{{201}{}{{}}{{}}}}
+\bibcite{ref-28}{{{202}{}{{}}{{}}}}
+\bibcite{ref-29}{{{203}{}{{}}{{}}}}
+\bibcite{ref-30}{{{204}{}{{}}{{}}}}
+\bibcite{ref-31}{{{205}{}{{}}{{}}}}
+\bibcite{ref-32}{{{206}{}{{}}{{}}}}
+\gdef \@abspage@last{34}
+% end expanding appendix.aux 
 \makeatother
 
 \title{\mytitle} 
@@ -27,7 +900,8 @@
 \keywords{Computational Science; Software Engineering; Reproducibility; Scientific scrutiny; Reproducible Analytic Pipeline (RAP \& \RAPstar\hskip -1pt)}
 
 \received{30 April 2022}
-%\revised{--}
+\revised{8 June 2022, 3 January 2023, 31 January 2023 \& 12~May~2023} 
+\volumenumber{00} \issuenumber{0} \volumeyear{2023}
 
 %\orcid{0000-0003-2222-4243}
 
@@ -36,9 +910,13 @@
 \begin{abstract}
 \justifying
 \noindent
-Scientists rarely rigorously ensure the structure and quality of the code they rely on, and they rarely make it accessible for scrutiny. Even if available, scientists rarely provide adequate documentation to understand or use their code reliably. When code used in science avoids adequate scrutiny, published science will be unreliable and unverifiable because results --- data, graphs, images, inferences, and so forth --- informed or generated by the code will themselves be unreliable and unverifiable.
+As code is now an inextricable part of science it should be supported by competent Software Engineering, analogously to statistical claims being properly supported by competent statistics. 
 
-\hskip 1em This paper proposes and justifies  ways to improve research and science relying on code:
+If and when code avoids adequate scrutiny, science becomes unreliable and unverifiable because results --- text, data, graphs, images, \emph{etc\/} --- depend on untrustworthy code.
+
+Currently, scientists rarely assure the quality of the code they rely on, and rarely make it accessible for scrutiny. Even when available, scientists rarely provide adequate documentation to understand or use it reliably. 
+
+\hskip 1em This paper proposes and justifies  ways to improve science using code:
 
 \raggedright
 \newdimen \mywidth \mywidth=\textwidth
@@ -61,7 +939,7 @@ The Reproducible Analytic Pipeline (RAP) methodology can be generalized to cover
 \vskip 1ex 
 \justifying
 \noindent
-The key point is that as code is now an inextricable part of science it should be supported by competent Software Engineering input, analogously to statistics being properly supported by critical and competent statistics input. The paper's \supplement\ provides a summary of Software Engineering best practice relevant to scientific research, including further suggestions for \RAPstar\ workflows. 
+The paper's \supplement\ provides a summary of Software Engineering best practice relevant to scientific research, including further suggestions for \RAPstar\ workflows. 
 
 \def\seprule{\vskip 2ex\hrule\vskip 2ex}
 \seprule
@@ -97,7 +975,43 @@ Unreliable, often unstated and unexplored, code and computational dependencies (
 
 \begin{table}
 \vskip 1.2ex % align top of columns!
-\tableofcontents
+% expand table of contents paper.toc
+\makeatletter
+  \section*{\contentsname
+    \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
+\makeatother\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Background}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.a}Code quality concerns}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.b}Computable papers}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.c}RAP: Reproducible Analytical Pipelines}{7}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.c.1}Potential code}{9}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.c.2}RAP as research}{9}{subsubsection.2.3.2}%
+\contentsline {section}{\numberline {3}The statistics/code analogy}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.a}The siren call of over-fitting code}{11}{subsection.3.1}%
+\contentsline {section}{\numberline {4}The conventional role of code}{13}{section.4}%
+\contentsline {subsection}{\numberline {4.a}The deceptive simplicity of code}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.b}The low status of coding}{15}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.c}The critical role of code is often ignored}{15}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.d}Bugs, code and programming}{15}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.e}Long-term problems of unreliable code}{16}{subsection.4.5}%
+\contentsline {section}{\numberline {5}State of the art}{17}{section.5}%
+\contentsline {subsection}{\numberline {5.a}Case study: Pandemic modeling}{17}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.b}Concerns with reproducibility}{18}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.c}Beyond pandemic modeling}{20}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.d}The lop-sided emphasis on data}{21}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Rethinking science that uses code}{22}{section.6}%
+\contentsline {subsection}{\numberline {6.a}Software Engineering Boards}{22}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.b}Extending RAP to RAP{\tt +}}{23}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.c}The paper as a scientific laboratory}{24}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.d}Action must be interdisciplinary}{25}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.e}Methodological statements}{25}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.f}Training to reduce technical debt}{26}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.g}Benefits beyond science}{27}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.h}Approaches to further work}{28}{subsection.6.8}%
+\contentsline {section}{\numberline {7}Conclusions}{28}{section.7}%
+
+% end expanding table of contents paper.toc
+
 \vskip 3mm \hrule
 \end{table}
 
@@ -120,7 +1034,36 @@ July 2020&Sample month\\ \hline
 
 \begin{table*}
 \begin{center}\sf\normalsize
-\input generated/summary-table.tex
+% expand generated/summary-table.tex
+% Generated by programs/data.js
+\begin{tabular}{|rrrc|}\hline
+Number of papers sampled relying on code&32&100\%&\\\hline\hline
+\multicolumn{4}{|l|}{\textbf{Access to code}}\\
+Some or all code available&12&38\%&\\
+Some or all code in principle available on request&8&25\%&\\
+Requested code actually made available (within 2 years 11 months${}^{\star}$)&0&0\%& \\\hline
+ \multicolumn{4}{|l|}{{\textbf{Evidence of any software engineering practice}}}\\
+Evidence program designed rigorously&{0}&{0\%}&\\
+Evidence source code properly tested&{0}&{0\%}&\\
+Evidence of any tool-based development&{0}&{0\%}&\\
+Team or open source based development&{0}&{0\%}&\\
+Other methods, e.g., independent coding methods&{1}&{3\%}&\\\hline
+\multicolumn{4}{|l|}{\textbf{Documentation and comments}}\\
+Substantial code documentation and comments&2&6\%&\\
+Comments explain some code intent&3&9\%&\\
+Procedural comments (e.g., author, date, copyright)&10&31\%&\\
+No usable comments&17&53\%&\\\hline
+\multicolumn{4}{|l|}{\textbf{Repository use}}\\
+Used code repository (e.g., GitHub)&9&28\%&\\
+Used data repository (e.g., Dryad or GitHub)&9&28\%&\\
+Empty repository&1&3\%&\\\hline
+\multicolumn{4}{|l|}{{\textbf{Evidence of documented processes}}}\\
+Evidence of RAP/\RAPstar\ or any other principles in use to support scrutiny&{0}&{0\%}&\\\hline
+\multicolumn{4}{|l|}{\textbf{Adherence to journal code policy (if any)}}\\
+Papers published in journals with code policies&26&81\%&\\
+Clear breaches of journal code policy (if any) & 11&42\%&(\emph{N}~=~26)\\
+\hline\end{tabular}\\
+\vskip 1ex ${}^{\star}$Time of 2 years 11 months is wait between code request and date of generating this table.% end expanding generated/summary-table.tex
 \end{center}\vskip -2ex
 \caption{Breakdown of pilot survey of peer-reviewed science papers relying on code. }
 \label{table-summary}
@@ -183,11 +1126,11 @@ These concerns about code are part of the reproducibility crisis for science gen
 
 To start to address code quality issues the Transparency and Openness Promotion Committee met in 2014, and has since been promoting Transparency and Openness Promotion, TOP, starting with journal publication policies \cite{TOP}. TOP covers citation standards, replication standards, and code standards amongst others. TOP recommends levels of compliance to their recommendations, where level 0 does not meet the standard, and levels 1 to 3 are increasingly stringent. The TOP levels for code are shown in table \ref{TOPtable}. The TOP standards continue to develop, and are now maintained on a wiki at \url{osf.io/9f6gx/wiki/Guidelines} \cite{TOP-wiki}. TOP can be compared with the Findable, Accessible, Interoperable and Reusable (FAIR) initiative, which places greater emphasis on data rather than code; FAIR itself is critiqued in section \ref{critique-fair}.
 
-As the present paper argues, developing quality code is widely under-appreciated, which leads to a vicious cycle of lack of acknowledgement, invisibility, and being unable to recruit adequately competent coders (see section \ref{section-vicious-cycles}). The term \emph{research software engineer\/} was coined in 2012 to help address this problem, and to stimulate thinking about researchers' career paths. The Society of Research Software Engineering (\url{https://society-rse.org}) has been established to further promote research software engineer interests.  
+As the present paper argues, developing quality code is widely under-appreciated, which leads to a vicious cycle of lack of acknowledgement, invisibility, and being unable to recruit adequately competent coders (see section \ref{section-vicious-cycles}). The term \emph{research software engineer\/} was coined in 2012 to help address this problem, and to stimulate thinking about researchers' career paths. The Society of Research Software Engineering (\url{society-rse.org}) has been established to further promote research software engineer interests.  
 
 There is no shortage of computational tools available to help address the problems. However, it should be noted that such tools are not a panacea, as the study \cite{jupyter-study} cited above makes clear. This suggests that human support for improving coding and reproduction quality, perhaps in the form of Working Groups or Boards, as this paper suggests, will be critical.
 
-In addition to unintentional problems with code quality and reproducibility, actual scientific misconduct occurs when the outcome is intentional. While pure plagiarism, which is a form of misconduct, generally does not affect the quality of reported science, when data or code is fraudulently manipulated to have deceptive properties, the results are likely to be destructive. The Wakefield MMR fraud claiming to link vaccines and autism published in \emph{The Lancet\/} took 12 years before it was retracted; this misconduct has been extraordinarily destructive \cite{MMR-fraud}. 
+In addition to unintentional problems with code quality and reproducibility, actual scientific misconduct occurs when the outcome is intentional. While pure plagiarism, which is a form of misconduct, generally does not affect the quality of reported science, when data or code is fraudulently manipulated to have deceptive properties, the results are likely to be destructive. The notorious Wakefield MMR fraud claiming to link vaccines and autism published in \emph{The Lancet\/} took 12 years before it was retracted; this misconduct has been extraordinarily destructive \cite{MMR-fraud}. 
 
 A recent meta-analysis of surveys of scientific misconduct estimates that nearly 2\% of scientists have at least once fabricated, falsified, or modified results, and over a third have undertaken other questionable research practices \cite{misconduct-issues}. The meta-analysis qualifies the figures carefully, but these are alarming rates regardless of the qualifications; indeed, the authors suggest that as misconduct is a sensitive issue, the rates are likely to be under-estimates.\footnote{The present paper's author's own survey of scientists publishing in the \emph{Journal of Machine Learning\/} had comparable results \cite{machine-learning-reproducibility}.} 
 
@@ -236,7 +1179,7 @@ However, there is no structure to using general-purpose systems like HTML, \LaTe
 A taut review of such systems is Perkel \cite{perkel-review}, whereas \cite{maneage} discusses in-depth the design trade-offs of one powerful approach, Maneage; the paper \cite{maneage} includes  a substantial and useful literature review (in its appendix). Here, four representative tools (WEB, \emph{Mathematica}, Jupyter, and knitr) serve to sample the variety of approaches that are available:
 
 \begin{itemize}\raggedright
-
+\itemsep=1.5ex
 \item
 WEB is the earliest tool reviewed here. WEB was developed by Donald Knuth in 1984 \cite{LP,LP-book} as a batch (non-interactive) tool to support his then radical new concept of \emph{literate programming}. The idea was to facilitate programmers write literate documentation for their code. WEB combines a sequential documentation file with code that can be presented in any order, thus overcoming the problem that the best explanation of a program is not necessarily written in the same order as the code it explains. The original WEB allowed Pascal programs to be documented in \TeX, but many variants of WEB have since been developed that are more flexible in the systems they support. 
 
@@ -347,7 +1290,7 @@ RAP embodies Donald Knuth's comment, also quoted after this paper's abstract,
 \begin{quote}\raggedright
 {\sf\setbox0=\hbox{``}
 \hskip -\wd0\box0
-Science is what we understand well enough to explain to a computer'' }
+Science is what we understand well enough to explain to a computer.'' }
 \\ \hfill from the foreword to $A=B$ \cite{a=b}
 \end{quote}
 
@@ -357,6 +1300,7 @@ The corollary is that if we are doing arbitrary cut and paste that has not been 
 Code is usually thought of as text written in a programming language, such as Python or C, but this ignores special cases of what can be called \emph{potential code\/}: processes that could be presented in code, but have not been and therefore are invisible. Such potential code cannot be reasoned about as rigorously as they would be had they been expressed explicitly in code. The loss of scrutiny, loss of the ability to reason rigorously, the loss of the  ability to review potential code are problems that RAP tries to address. Potential code includes:
 
 \begin{enumerate}\raggedright
+\itemsep=1.5ex
 \item Critical algorithmic steps may never be codified. Writing a paper may involve creating an image and copying it into a word processed document. Indeed, every time the image is modified, the process must be repeated. In an important sense, the author is executing a computational process, effectively using code that has never been written down. There is a process here, but it is informal and may be run differently each time. However, it could have been coded and reproduced precisely every time it was needed. Moreover, if the process had been coded explicitly, it could be reasoned about, critiqued and improved.
 
 \item Compiling and running programs (for instance to generate results) is also a computational process that may not be recorded in code. The author, more explicitly than creating and using images, runs programs to get results --- but the process of running the programs may not be recorded. Typically, if the author notices that the processes are repetitious, they may develop a shell script to codify the repetitive process. 
@@ -428,7 +1372,51 @@ It is recognized that to make critical claims, models must be run under varying 
 \label{section-vicious-cycles}
 In normal scientific reporting (outside of teaching and assessing science) details of methodology are routinely glossed. A chemist does not say they cleaned their glassware. One might argue, then, that scientists need not discuss their code in detail because they know how to program and their code is correct. This argument is mistaken. Code is rarely considered a valuable part of the science to which it contributes (section \ref{lowCodeStatus}), which creates a vicious cycle of ignoring code, leading to ignoring the critical --- and non-trivial --- role of correct code in science. 
 
-\input generated/over-fitting-code-section.tex
+% expand generated/over-fitting-code-section.tex
+\subsection{The siren call of over-fitting code}\label{over-fit}
+Poor code can generate plausible and possibly misleading results from \emph{any\/} data or theory, including fraudulent science. A temptation is that developing code to get ``good results'' becomes more important than the code's overall faithfulness to the real scientific phenomena, theoretical or empirical. 
+% wolframscript (if being used) unnecessarily prints the next 2 lines (generated by CellPrint), but they are needed!
+\def\imageWidthCalculation{\multiply \imageWidth by 21 \divide \imageWidth by 28}
+\def\figureStarDetails{*}
+
+% wolframscript (if being used) unnecessarily prints the next 2 lines (generated by CellPrint), but they are needed because the text also ends up in notebook cells!
+\def\imageWidthCalculation{\multiply \imageWidth by 21 \divide \imageWidth by 28}
+\def\figureStarDetails{*}
+
+\begin{figure\figureStarDetails}[t]
+{ \newdimen \imageWidth 
+  \imageWidth=\textwidth
+  \imageWidthCalculation
+  \begin{center}\includegraphics[width=\imageWidth]{
+generated/mathematicaplot.jpg
+}\end{center}}
+\caption{Much computational science is concerned with finding plausible multi-dimensional models that fit models to data with the aim of extrapolating or predicting new results from them. Shown here is notional sample of experimental 2D data (the dots), a linear least squares regression, and an exact polynomial model. The over-fitted polynomial model fits the sample \emph{exactly\/}, but since the experimental data is presumably subject to random error (indicated by the confidence interval, itself estimated) the linear model would generally be considered a better description of the experimental data.}
+\label{fig-overfit}
+\end{figure\figureStarDetails}
+
+In conventional modeling terms, successful computer programs are often \emph{over-fitted\/} to phenomena \cite{over-fit}. That is, instead of using code to rigorously challenge, test, and develop our models, we tinker with code adapting it to generate results closer and closer to our prejudices. The code then apparently confirms our science, since we fitted it to our preconceptions but not to the science.  
+
+In general, an \emph{over-fitted model\/} fits a set of data closely, but contains more parameters than can be justified by the science. An over-fitted model fails to reliably predict results beyond the scope of the data it has been fitted to. Over-fitting is a well-known problem, but the point is that when code is used, over-fitting is done unconsciously by programmers adjusting the code --- its parameters, its structure, its embedded data, the calculations it performs --- that specifies the model. ``A model over-fits if it is  more complex than another model that fits equally well'' \cite{over-fit}, is a criterion that describes almost every program! Programmers without the discipline and experience to manage the unlimited adaptability of code debug, alter, and extend their code to make it do what they think it should do. This becomes a vicious circle as the idea of what the science is becomes driven by the code. Rather than debugging code by improving its fit to the actual science, it gets debugged and extended to fit the expectations.  
+
+The problems of over-fitting data may be visualized using a Real$\rightarrow$Real function of one variable (figure \ref{fig-overfit}). The code that generates an over-fitted curve seems to work very well: in the example shown, the over-fitted curve fits the sampled data exactly; indeed, the code used here will fit any new data exactly as well. But the code has a negligible ability to predict new data or to describe theories of the data, which is the point of modeling. The fact that over-fitted code seems to work well is deceptive.
+
+Looking specifically at the data plotted in figure \ref{fig-overfit} if, for the sake of argument, we assume the error in the data is normally distributed then the values the over-fitted code generates outside the range of the sample are improbable. For example, the basic linear model predicts
+$\hat{y}(0)=0.5$, 
+versus the extreme value predicted by the over-fitting code, 
+$\hat{y}(0)=-41.8$, 
+ even lies far outside the plot region shown in the figure.\footnote{The bounds of the confidence interval illustrated in figure \ref{fig-overfit} depend on assumptions about the distribution of the data; in this example, we are \emph{assuming}, perhaps because we know something more about the experiment, or thanks to Occam's Razor that a linear function is more likely than a high order polynomial.} Similar problems happen with interpolation rather than extrapolation, for instance around $x=4$.
+
+While over-fitting data is a well-known problem, the point for this paper is that \emph{code\/} itself can easily be over-fitted. Code can of course be over-fitted in more complex ways than can be illustrated with elementary polynomials, as here. Code over-fitting is much harder to recognize because there may be no simple graph plot, like figure \ref{fig-overfit}, to highlight the problems. Furthermore, almost all code is far more intricate than the two trivial polynomials used to illustrated figure \ref{fig-overfit}. 
+
+Unfortunately, code in published science \emph{is\/} often over-fitted, and over-fitted in a way that is very hard to scrutinize. For example, in epidemiology (which is considered in section \ref{section-pandemic-modeling}) it is routine to use very complicated, large dynamical models parameterized with numerous social, cultural, health, demographic and geographical data. The parameterization is mixed between data files, data written explicitly into the code, and with conditionals and other structuring in the code to cover special cases. Indeed, many of the programs in the survey used comments to inactivate code, presumably indicating an unfinished tinkering approach to code development.\footnote{Of the \the\countUsesVersionControlRepository\ papers in the pilot survey that reported use of code repositories (covering % expand generated/kloc.tex
+\def\totalkLOC{182}%
+% end expanding generated/kloc.tex
+\totalkLOC\ thousand lines of code --- so this is not a trivial amount of programming effort), \numbertoname{\the\countMissingCode} provided an empty repository with no code at all (effectively commenting out all their code!), and \numbertoname{\the\countCommentedOut} repositories explicitly commented out chunks of workable code. The \numbertoname{\the\countNotCommentedOut} remaining non-trivial repositories with no commented-out code consisted of straightforward, short code files with few comments of any sort.\label{name-example-footnote}}
+
+Furthermore, scientific support code is rarely documented well enough to know what it should have been doing, which should be answered by a specification. With no clear specification and documentation, the code can be arbitrarily hacked to get any convenient results, since no particular specification for it has been defined that it should adhere to. Thus we risk doing and promoting substandard science because we --- the scientists and the publication process --- are not managing the unlimited adaptability and complexity of code that science has come to rely~on. This is over-fitting of the worst kind --- in conventional over-fitting one can at least hope to see that the fitting is over-parameterized for the data, but in code over-fitting the code and specification are not visible, therefore not adequately scrutinized, and --- worse --- the ``data'' the code over-fits includes the entire conceptual contribution of the paper. 
+
+Reference \cite{may-simple} shows that even trivial code (in the case cited, implementing simple difference equations) with very few parameters can have very complex results, and reference \cite{dyson} is a historically significant paper pointing out how the problems of over-fitting has improved science.
+% end expanding generated/over-fitting-code-section.tex
 
 \section{The conventional role of code}
 
@@ -444,7 +1432,7 @@ Without substantial documentation it is impossible to scrutinize code properly. 
 
 Without explicit links to the relevant models (typically mathematics), it is impossible to reason whether any code is correct, and in turn it is impossible to scientifically scrutinize results obtained from using the code. Not providing code and documentation, providing partial code, or providing code without the associated reasoning is analogous to claiming ``statistical results are significant'' without any discussion of the relevant methods and statistical details that justify making such a claim. If such an unjustified pseudo-statistical claim was made in a scientific paper, a reviewer would be justified in asking whether a competent experiment had even been performed. It would be generous to ask the author to provide the missing details so the paper could be better reviewed on resubmission. 
 
-Some authors assert that the purpose of code is to provide insight into models, rather than precise (generally numerical) analyses summarizing data or properties of the data \cite{assessing-quality}. In reality, if code is inadequate, any so-called ``insights'' will be potentially flawed, and flawed in unknown ways. Indeed, none of the papers sampled (\supplement\ section~\ref{supplement-survey-section}) claimed their papers were using code for insight; all papers claimed, explicitly or implicitly, that their code outputs were integral to their peer-reviewed results.
+Some authors assert that the purpose of code is to provide insight into models, rather than precise (generally numerical) analyses summarizing data or properties of the data \cite{assessing-quality}. In reality, if code is inadequate, any so-called ``insights'' will be potentially flawed, and flawed in unknown ways. Indeed, none of the papers sampled (see \supplement\ section~\ref{supplement-survey-section}) claimed their papers were using code for insight; all papers claimed, explicitly or implicitly, that their code outputs were integral to their peer-reviewed results.
 
 Clearly, like statistics, coding can be done poorly and reported poorly, or it can be done well and reported well --- and any mix between the extremes. The question is whether it matters, \emph{when\/} it matters, and, if so, when it does, \emph{what\/} can be done to \emph{appropriately\/} help improve the quality of code (and discussions about the code) in scientific work?
 
@@ -553,9 +1541,9 @@ For me the code is not a mess, but it's all in my head, completely undocumented.
 
 The admission above is tantamount to saying that the published scientific findings are and need not be reproducible.\footnote{A constructive discussion of Software Engineering approaches to reproducibility can be found in \cite{basic-reproducibilty}.} 
 
-The comment was made by a respected, influential world-leading scientist, with many peer-reviewed publications involving computational modeling, with a respectable $h$-index\footnote{$h$-index: the largest value of $h$ such that at least $h$ papers by the author have each been cited at least $h$ times. The figure cited for Ferguson was obtained from Google Scholar on 20 January 2022. (Typical $h$ values vary by discipline.)} of 93, and ``one of the top scientists advising the government on its response to the coronavirus crisis'' working in the UK's Scientific Advisory Group for Emergencies (SAGE) group \cite{ferguson-resign}. 
+The comment was made by a respected, influential world-leading scientist, with many peer-reviewed publications involving computational modeling, with a respectable $h$-index\footnote{$h$-index: the largest value of $h$ such that at least $h$ papers by the author have each been cited at least $h$ times. The figure cited for Ferguson was obtained from Google Scholar on 20 January 2022. (Typical $h$ values vary by discipline.)} of 93, and at the time ``one of the top scientists advising the government on its response to the coronavirus crisis'' working in the UK's Scientific Advisory Group for Emergencies (SAGE) group \cite{ferguson-resign}. 
 
-Ferguson's code must be representative of best practice at a time when the stakes were high and reliability was known to be essential; and if not representative of best practice, at least representative of accepted practice both in Ferguson's team, the field of epidemiology more widely, as well as with members of the high-powered interdisciplinary SAGE group. It is therefore instructive to explore the larger story around this science that uses code. 
+Ferguson's code must be representative of best practice when the stakes were high and reliability was known to be essential; and if not representative of best practice, at least representative of accepted practice both in Ferguson's team, the field of epidemiology more widely, as well as with members of the high-powered interdisciplinary SAGE group. It is therefore instructive to explore the larger story around this science that uses code. 
 
 Lack of reproducibility is problematic, especially as the model code would have required many non-trivial modifications to update it for COVID-19 with its different assumptions; moreover, the code would have had to have been updated very rapidly in response to the urgent COVID-19 crisis. 
 
@@ -835,6 +1823,8 @@ The main challenges to mature computationally-realistic science are:
 
 \enum=1
 \begin{enumerate}\raggedright
+\itemsep=1.5ex
+
 \item 
 To manage software development to reduce the unnoticed and unknown impacts of bugs and poor programming practices that research and publications rely on. Computer code should be explicit, accessible (well-structured, etc), and adequately documented. Papers should be explicit on their software methodologies, limitations and weaknesses, just as Whitty expressed about the standards of science generally \cite{whitty}. Professional software methodologies should not be ignored.
 
@@ -953,7 +1943,736 @@ The raw data is encoded in JSON\@. JavaScript code checks against \the\JSONerror
 \def\@biblabel#1{[#1]}
 \makeatother
 
-\bibliography{paper-seb-main.bib}
+% expand bibliography paper.bbl
+\begin{thebibliography}{100}
+
+\bibitem{a=b}
+Petkovsek, M., Wilf, H. and Zeilberger, D. (1996) {\em {$A=B$}}, A~K~Peters.
+  Ltd.
+\newblock \url{www2.math.upenn.edu/}\midurl{~wilf/}\midurl{AeqB.html}
+
+\bibitem{write-for-life}
+Quindlen, A. (2022) {\em Write for your life}, Random House.
+
+\bibitem{abelson}
+Abelson, R.~P. (1995) {\em Statistics as Principled Argument}, Lawrence Erlbaum
+  Associates.
+
+\bibitem{nature-chatgpt}
+Editorial (2023) ``Tools such as {ChatGPT} threaten transparent science; here
+  are our ground rules for their use,'' {\em Nature}, \textbf{613}:612.
+\newblock \doi{10.1038/d41586-023-00191-1}
+
+\bibitem{sommerville}
+Sommerville, I. (2015) {\em Software Engineering}, Pearson, 10th~ed.
+
+\bibitem{knight}
+Knight, J. (2012) {\em Fundamentals of Dependable Computing for Software
+  Engineers}, CRC Press.
+
+\bibitem{computational-thinking-wing}
+Wing, J.~M. (2008) ``Computational thinking and thinking about computing,''
+  {\em Philosophical Transactions of the {Royal Society A}: {M}athematical,
+  Physical and Engineering Sciences}, \textbf{366}(1881):3717--3725.
+\newblock \doi{10.1098/rsta.2008.0118}
+
+\bibitem{computational-thinking}
+McOwen, P.~W. and Curzon, P. (2020) {\em The Power of Computational Thinking},
+  World Scientific Publishing.
+
+\bibitem{ICmodel}
+Ferguson, N.~M. \emph{et al.} (16 March 2020) {\em Impact of non-pharmaceutical
+  interventions ({NPI}s) to reduce {COVID}-19 mortality and healthcare demand}.
+\newblock
+  \url{www.imperial.ac.uk/}\midurl{media/}\midurl{imperial-}\midurl{college/}\midurl{medicine/}\midurl{sph/}\midurl{ide/}\midurl{gida-}\midurl{fellowships/}\midurl{Imperial-}\midurl{College-}\midurl{COVID19-}\midurl{NPI-}\midurl{modelling-}\midurl{16-}\midurl{03-}\midurl{2020.pdf}
+
+\bibitem{avianFluModel}
+Ferguson, N.~M., Cummings, D. A.~T., Fraser, C., Cajka, J.~C., Cooley, P.~C.
+  and Burke, D.~S. (2005) ``Strategies for containing an emerging influenza
+  pandemic in {Southeast Asia},'' {\em Nature}, \textbf{437}:209--214.
+\newblock \doi{10.1038/nature04017}
+
+\bibitem{originalICmodel}
+Ferguson, N.~M., Cummings, D. A.~T., Fraser, C., Cajka, J.~C., Cooley, P.~C.
+  and Burke, D.~S. (2006) ``Strategies for mitigating an influenza pandemic,''
+  {\em Nature}, \textbf{442}:448--452.
+\newblock \doi{10.1038/nature04795}
+
+\bibitem{reproducibility-crisis}
+Baker, M. (2016) ``1,500 scientists lift the lid on reproducibility,'' {\em
+  Nature}, \textbf{533}(7604):452--454.
+\newblock \doi{10.1038/533452a}
+
+\bibitem{rescience}
+Rougier, N.~P. \emph{et al.} (2017) ``Sustainable computational science: the
+  {ReScience} initiative,'' {\em PeerJ Computer Science}, \textbf{3}(e142).
+\newblock \doi{10.7717/peerj-cs.142}
+
+\bibitem{temperature}
+Chang, H. (2007) {\em Inventing Temperature: Measurement and Scientific
+  Progress}, Oxford Studies in the Philosophy of Science.
+
+\bibitem{form}
+von Hippel, M. (2022) ``Crucial computer program for particle physics at risk
+  of obsolescence,'' {\em Quanta Magazine}.
+\newblock
+  \url{www.quantamagazine.org/}\midurl{crucial-}\midurl{computer-}\midurl{program-}\midurl{for-}\midurl{particle-}\midurl{physics-}\midurl{at-}\midurl{risk-}\midurl{of-}\midurl{obsolescence-}\midurl{20221201}
+
+\bibitem{acm-algorithms}
+Bemer, R.~W. (1958) ``Techniques department: Policy statement,'' {\em
+  Communications of the ACM}, \textbf{1}(1):5--7.
+
+\bibitem{hoare-correctness}
+Hoare, C. A.~R. (2007) ``The ideal of program correctness: {Third} {Computer}
+  {Journal} lecture,'' {\em The Computer Journal}, \textbf{50}(3):254--260.
+\newblock \doi{10.1093/comjnl/bxl078}
+
+\bibitem{jupyter-study}
+Pimentel, J.~F., Murta, L., Braganholo, V. and Freire, J. (2019) ``A
+  large-scale study about quality and reproducibility of {Jupyter} notebooks,''
+  {\em in 2019 IEEE/ACM 16th International Conference on Mining Software
+  Repositories {(MSR)}}, pp.~507--517.
+\newblock \doi{10.1109/MSR.2019.00077}
+
+\bibitem{trisovic}
+Trisovic, A., Lau, M.~K., Pasquier, T. and Crosas, M. (2022) ``A large-scale
+  study on research code quality and execution nature research,'' {\em
+  Scientific Data}, \textbf{9}(60).
+\newblock \doi{10.1038/s41597-022-01143-6}
+
+\bibitem{machine-learning-reproducibility}
+Thimbleby, H. (9 May, 2004) ``Give your computer's {IQ} a boost ---
+  {{\emph{{Journal of Machine Learning Research}}}},'' {\em Times Higher
+  Education Supplement}.
+\newblock
+  \url{www.timeshighereducation.co.uk/}\midurl{story.asp?sectioncode=26&storycode=176549}
+
+\bibitem{no-raw-data}
+Miyakawa, T. (2022) ``No raw data, no science: {Another} possible source of the
+  reproducibility crisis,'' {\em Molecular Brain}, \textbf{13}(24):1--6.
+\newblock \doi{10.1186/s13041-020-0552-2}
+
+\bibitem{data-access}
+Gabelica, M., Boj{\v c}i{\' c}, R. and Puljak, L. (2020) ``Many researchers
+  were not compliant with their published data sharing statement: mixed-methods
+  study,'' {\em Journal of Clinical Epidemiology}.
+\newblock \doi{0.1016/j.jclinepi.2022.05.019}
+
+\bibitem{reproducible-manifesto}
+Munaf{\`o}, M.~R., Nosek, B.~A., Bishop, D. V.~M., Button, K.~S., Chambers,
+  C.~D., Percie~du Sert, N., Simonsohn, U., Wagenmakers, E.-J., Ware, J.~J. and
+  Ioannidis, J. P.~A. (2017) ``A manifesto for reproducible science,'' {\em
+  Nature Human Behaviour}, \textbf{1}(1):0021.
+\newblock \doi{10.1038/s41562-016-0021}
+
+\bibitem{joss}
+Smith, A.~M. \emph{et al.} (2018) ``Journal of open source software ({JOSS}):
+  Design and first-year review,'' {\em PeerJ Computer Science},
+  \textbf{4}(e147).
+\newblock \doi{10.7717/peerj-cs.147}
+
+\bibitem{TOP}
+Nosek, B.~A. \emph{et al.} (2015) ``Promoting an open research culture:
+  {A}uthor guidelines for journals could help to promote transparency,
+  openness, and reproducibility,'' {\em Science},
+  \textbf{348}(6242):1422--1425.
+\newblock \doi{10.1126/science.aab2374}
+
+\bibitem{TOP-wiki}
+Alter, G. \emph{et al.} (2022) {\em Guidelines for {Transparency} and
+  {Openness} {Promotion} {(TOP)} in journal policies and practices ``{The}
+  {TOP} {Guidelines}''}.
+\newblock \url{osf.io/}\midurl{9f6gx/}\midurl{wiki/}\midurl{Guidelines}
+
+\bibitem{MMR-fraud}
+Godlee, F., Smith, J. and Marcovitch, H. (2011) ``Wakefield's article linking
+  {MMR} vaccine and autism was fraudulent,'' {\em BMJ}, \textbf{342}(c7452).
+\newblock \doi{10.1136/bmj.c7452}
+
+\bibitem{misconduct-issues}
+Fanelli, D. (2009) ``How many scientists fabricate and falsify research? {A}
+  systematic review and meta-analysis of survey data,'' {\em {PLOS ONE}},
+  \textbf{4}(5):e5738.
+\newblock \doi{10.1371/journal.pone.0005738}
+
+\bibitem{elns}
+Machina, H.~K. and Wild, D.~J. (2013) ``Electronic laboratory notebooks
+  progress and challenges in implementation,'' {\em Journal of Laboratory
+  Automation}, \textbf{18}(4):264--268.
+\newblock \doi{0.1177/2211068213484471}
+
+\bibitem{perkel-review}
+Perkel, J.~M. (6 May 2021) ``Reactive, reproducible, collaborative:
+  Computational notebooks evolve,'' {\em Nature}, \textbf{593}:156--157.
+\newblock \doi{10.1038/d41586-021-01174-w}
+
+\bibitem{maneage}
+Akhlaghi, M., Infante-Sainz, R., Roukema, B.~F., Khellat, M., Valls-Gabaud, D.
+  and Baena-Gall{\'e}, R. (May 2021) ``Toward long-term and archivable
+  reproducibility,'' {\em Computing in Science {\&} Engineering},
+  \textbf{23}(3):82--91.
+\newblock \url{https:/}\midurl{/}\midurl{maneage.org},
+  \doi{10.1109/mcse.2021.3072860}
+
+\bibitem{LP}
+Knuth, D.~E. (1984) ``Literate programming,'' {\em The Computer Journal},
+  \textbf{27}(2):97--111.
+\newblock \doi{10.1093/comjnl/27.2.97}
+
+\bibitem{LP-book}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt\  (1992) {\em Literate
+  programming}, vol.~\textbf{27} of {CSLI} Lecture Notes, Center for the Study
+  of Language and Information Publication, Stanford, {CA}.
+
+\bibitem{relit}
+Thimbleby, H. and Williams, D. (2018) ``A tool for publishing reproducible
+  algorithms {\&} {A} reproducible, elegant algorithm for sequential
+  experiments,'' {\em Science of Computer Programming}, \textbf{156}:45--67.
+\newblock \url{GitHub.com/}\midurl{haroldthimbleby/}\midurl{relit},
+  \doi{10.1016/j.scico.2017.12.010}
+
+\bibitem{notebook-patent}
+Gray, T.~W. and Wolfram, S. (26 March 2013) {\em Method and system for
+  presenting input expressions and evaluations of the input expressions on a
+  workspace of a computational system}, US patent no{\@.} 8,407,580~B2.
+
+\bibitem{jupyter-history}
+Granger, B.~E. and P{\'e}rez, F. (2021) ``Jupyter: {Thinking} and storytelling
+  with code and data,'' {\em Computing in Science {\&} Engineering},
+  \textbf{23}(2):7--14.
+\newblock \doi{10.1109/MCSE.2021.3059263}
+
+\bibitem{knitr}
+Xie, Y. (2015) {\em Dynamic Documents with {R} and knitr}, CRC, second~ed.
+
+\bibitem{spec-led-design}
+Thimbleby, H. (1999) ``Specification-led design for interface simulation,
+  collecting use-data, interactive help, writing manuals, analysis, comparing
+  alternative designs, etc,'' {\em Personal Technologies},
+  \textbf{4}(2):241--254.
+\newblock \url{harold.thimbleby.net/}\midurl{ansim}, \doi{10.1007/BF01885563}
+
+\bibitem{RAPstandard}
+{Office for National Statistics} (2022) {\em Using reproducible analytical
+  pipelines ({RAP}) to improve statistics}.
+\newblock
+  \url{https:/}\midurl{/}\midurl{code.statisticsauthority.gov.uk/}\midurl{case-}\midurl{studies/}\midurl{using-}\midurl{reproducible-}\midurl{analytical-}\midurl{pipelines-}\midurl{rap-}\midurl{to-}\midurl{improve-}\midurl{statistics/}\midurl{}
+
+\bibitem{rap}
+Upson, M. (2017) {\em Reproducible analytical pipelines}.
+\newblock
+  \url{dataingovernment.blog.gov.uk/}\midurl{2017/}\midurl{03/}\midurl{27/}\midurl{reproducible-}\midurl{analytical-}\midurl{pipeline}
+
+\bibitem{goldacre}
+Goldacre, B. (2022) {\em Better, broader, safer: {Using} health data for
+  research and analysis}, Department of Health and Social Care.
+\newblock
+  \url{www.gov.uk/}\midurl{government/}\midurl{publications/}\midurl{better-}\midurl{broader-}\midurl{safer-}\midurl{using-}\midurl{health-}\midurl{data-}\midurl{for-}\midurl{research-}\midurl{and-}\midurl{analysis}
+
+\bibitem{turing-way}
+Ainsworth, R. \emph{et al.} (July 2022) {\em {The Turing Way: A Handbook for
+  Reproducible Data Science}}, vol.~\textbf{v1.0.3}, Zenodo.
+\newblock \url{the-}\midurl{turing-}\midurl{way.netlify.app/}\midurl{welcome},
+  \doi{10.5281/zenodo.3233853}
+
+\bibitem{Courtes}
+Court{\`e}s, L. (2020) ``[re] storage tradeoffs in a collaborative backup
+  service for mobile devices,'' {\em Rescience C}, \textbf{6}(1:{\#}6):10.
+\newblock
+  \url{https:/}\midurl{/}\midurl{gitlab.inria.fr/}\midurl{lcourtes-}\midurl{phd/}\midurl{edcc-}\midurl{2006-}\midurl{redone},
+  \doi{10.5281/zenodo.3886739}
+
+\bibitem{apa-statistics}
+Glen, S. (2022) {\em Reporting Statistics APA Style}, Statistics How To.
+\newblock
+  \url{www.statisticshowto.com/}\midurl{probability-}\midurl{and-}\midurl{statistics/}\midurl{reporting-}\midurl{statistics-}\midurl{apa-}\midurl{style}
+
+\bibitem{Mariusz-reporting}
+Cicho{\'n}, M. (2020) ``Reporting statistical methods and outcome of
+  statistical analyses in research articles,'' {\em Pharmacological Reports},
+  \textbf{72}(3):481--485.
+\newblock \doi{10.1007/s43440-020-00110-5}
+
+\bibitem{science-statistics-recommendations}
+ (2022) {\em Science journals: editorial policies}.
+\newblock
+  \url{https:/}\midurl{/}\midurl{www.science.org/}\midurl{content/}\midurl{page/}\midurl{science-}\midurl{journals-}\midurl{editorial-}\midurl{policies}
+
+\bibitem{example-stats}
+Richards, D. \emph{et al.} (2020) ``A pragmatic randomized waitlist-controlled
+  effectiveness and cost-effectiveness trial of digital interventions for
+  depression and anxiety,'' {\em Nature Digital Medicine}, \textbf{3}(85).
+\newblock \doi{10.1038/s41746-020-0293-8}
+
+\bibitem{Spiegelhalter}
+Spiegelhalter, D. (2019) {\em The Art of Statistics: Learning from Data},
+  Pelican Books.
+
+\bibitem{paul-hci}
+Cairns, P. (2007) ``{HCI}{\ldots} not as it should be: inferential statistics
+  in {HCI} research,'' {\em in BCS-HCI '07: Proceedings of the 21st {British}
+  {HCI} {Group} Annual {Conference on People and Computers}: {HCI}{\ldots} but
+  not as we know it}, vol.~\textbf{1}, pp.~195--201.
+
+\bibitem{pnas-stats}
+Johnson, V.~E. (2013) ``Revised standards for statistical evidence,'' {\em
+  Proceedings National Academy of Sciences}, \textbf{110}(48):19313--19317.
+\newblock \doi{10.1073/pnas.1313476110}
+
+\bibitem{Ben}
+Shneiderman, B. (2016) ``Opinion: {The} dangers of faulty, biased, or malicious
+  algorithms requires independent oversight,'' {\em Proceedings National
+  Academy of Sciences}, \textbf{113}(48):13538--13540.
+\newblock \doi{10.1073/pnas.1618211113}
+
+\bibitem{se-bias}
+Friedman, B. and Nissenbaum, H. (1996) ``Bias in computer systems,'' {\em ACM
+  Transactions on Information Systems}, \textbf{14}(3):330--347.
+\newblock \doi{10.1145/230538.230561}
+
+\bibitem{sas9.2}
+Laurain, E., Ayav, C., Erpelding, M.-L., Kessler, M., Brian{\c{c}}on, S.,
+  Brunaud, L. and Frimat, L. (2022) ``Targets for parathyroid hormone in
+  secondary hyperparathyroidism: is a ``one-size-fits-all'' approach
+  appropriate? {A} prospective incident cohort study,'' {\em BMC nephrology},
+  \textbf{15}:132.
+\newblock \doi{10.1186/1471-2369-15-132}
+
+\bibitem{whitty}
+Whitty, C. J.~M. (2015) ``What makes an academic paper useful for health
+  policy?'' {\em BMC Medicine}, \textbf{13}:301.
+\newblock \doi{10.1186/s12916-015-0544-8}
+
+\bibitem{over-fit}
+Hawkins, D.~M. (2004) ``The problem of overfitting,'' {\em Journal of Chemical
+  Information and Modeling}, \textbf{44}:1--12.
+\newblock \doi{10.1021/ci0342472}
+
+\bibitem{may-simple}
+May, R.~M. (1976) ``Simple mathematical models with very complicated
+  dynamics,'' {\em Nature}, \textbf{261}:459--467.
+\newblock \doi{10.1038/261459a0}
+
+\bibitem{dyson}
+Dyson, F. (2004) ``A meeting with {Enrico Fermi},'' {\em Nature},
+  \textbf{427}:297.
+\newblock \doi{10.1038/427297a}
+
+\bibitem{assurance-case}
+Habli, I., Alexander, R., Hawkins, R., Sujan, M., McDermid, J., Picardi, C. and
+  Lawton, T. (2020) ``Enhancing {COVID-19} decision making by creating an
+  assurance case for epidemiological models,'' {\em BMJ Health {\&} Care
+  Informatics}, \textbf{27}(e100165):1--5.
+\newblock \doi{10.1136/bmjhci-2020-100165}
+
+\bibitem{assessing-quality}
+Kelly, D. and Sanders, R. (2008) {\em Assessing the Quality of Scientific
+  Software}, First International Workshop on Software Engineering For
+  Computational Science and Engineering {(see
+  \cite{assessing-quality-conference}}), Leipzig.
+\newblock
+  \url{citeseerx.ist.psu.edu/}\midurl{viewdoc/}\midurl{summary?doi=10.1.1.526.5076}
+
+\bibitem{fixit}
+Thimbleby, H. (2021) {\em Fix IT: How to see and solve the problems of digital
+  healthcare}, Oxford University Press.
+
+\bibitem{Hammurabi}
+Roth, M.~T. (2022) {\em Laws of Hammurabi}, Open Educational Resources for the
+  Ancient Near East, University of Central Florida.
+\newblock
+  \url{https:/}\midurl{/}\midurl{stars.library.ucf.edu/}\midurl{cgi/}\midurl{viewcontent.cgi?article=1133&=&context=ancientneareast&=&sei-}\midurl{redir=1&referer=https%253A%252F%252Fscholar.google.com%252Fscholar%253Fhl%253Den%2526as_sdt%253D0%25252C5%2526q%253DIf%252Ba%252Bbuilder%252Bconstructs%252Ba%252Bhouse%252Bhammurabi%2526btnG%253D#search=%22If%20builder%20constructs%20house%20hammurabi%22}
+
+\bibitem{cite-code}
+Katz, D.~S. \emph{et al.} (2021) ``Recognizing the value of software: {A}
+  software citation guide [version 2; peer review: 2 approved] {Previously}
+  titled: ``{The} importance of software citation''{\hskip 0pt},'' {\em
+  F1000Research}, \textbf{9}(1257).
+\newblock \doi{10.12688/f1000research.26932.2}
+
+\bibitem{prisma}
+Page, M.~J. \emph{et al.} (2021) ``The {PRISMA} 2020 statement: {An} updated
+  guideline for reporting systematic reviews,'' {\em Systematic Reviews},
+  \textbf{10}(89):1--11.
+\newblock \doi{10.1186/s13643-021-01626-4}
+
+\bibitem{engima}
+Thimbleby, H. (2016) ``Human factors and missed solutions to {Enigma} design
+  weaknesses,'' {\em Cryptologia}, \textbf{40}(2):177--202.
+\newblock \doi{10.1080/01611194.2015.1028680}
+
+\bibitem{critiques}
+Sayburn, A. (2020) ``Covid-19: {Experts} question analysis suggesting half {UK}
+  population has been infected,'' {\em BMJ}, \textbf{368}:m1216.
+\newblock \doi{10.1136/bmj.m1216}
+
+\bibitem{diagnosis-reviews}
+Wynants, L. \emph{et al.} (2020) ``Prediction models for diagnosis and
+  prognosis of covid-19 infection: {Systematic} review and critical
+  appraisal,'' {\em BMJ}, \textbf{369}(m1328).
+\newblock \doi{10.1136/bmj.m1328}
+
+\bibitem{knuth}
+Knuth, D.~E. (1998) {\em The Art of Computer Programming (Seminumerical
+  Algorithms)}, vol.~\textbf{2}, Addison-Wesley, 3rd~ed.
+
+\bibitem{essence-of-software}
+Jackson, D. (2021) {\em The Essence of Software}, Princeton University Press.
+
+\bibitem{popper-conjectures-refutations}
+Popper, K.~R. (2002) {\em Conjectures and Refutations: {The} Growth of
+  Scientific Knowledge}, Routledge, 2nd~ed.
+
+\bibitem{preventable-book}
+Sridhar, D. (2022) {\em Preventable: {How} a Pandemic Changed the World {\&}
+  How to Stop the Next One}, Viking.
+
+\bibitem{science-review}
+Heesterbeek, H. \emph{et al.} (2015) ``Modeling infectious disease dynamics in
+  the complex landscape of global health,'' {\em Science},
+  \textbf{347}(6227):265--270.
+\newblock \doi{10.1126/science.aaa4339}
+
+\bibitem{tripod}
+Moons, K.~G., Altman, D.~G., Reitsma, J.~B., Ioannidis, J.~P., Macaskill, P.,
+  Steyerberg, E.~W., Vickers, A.~J., Ransohoff, D.~F. and Collins, G.~S. (2015)
+  ``Transparent reporting of a multivariable prediction model for individual
+  prognosis or diagnosis ({TRIPOD}): {Explanation} and elaboration,'' {\em
+  Annals of Internal Medicine}, \textbf{162}(1):W1--73.
+\newblock \doi{10.7326/M14-0698}
+
+\bibitem{nature-summary}
+Adam, D. (2020) ``Modelling the pandemic: {The} simulations driving the world's
+  response to {COVID}-19,'' {\em Nature}, \textbf{580}:316--318.
+\newblock \doi{10.1038/d41586-020-01003-6}
+
+\bibitem{tweet}
+Ferguson, N. (22 March 2020) {\em Tweet}.
+\newblock
+  \url{twitter.com/}\midurl{neil_ferguson/}\midurl{status/}\midurl{1241835454707699713}
+
+\bibitem{ferguson-interview}
+Leake, J. (29 March 2020) ``{Neil Ferguson} interview: {No} 10's infection guru
+  recruits game developers to build coronavirus pandemic model,'' {\em The
+  Sunday Times}.
+\newblock
+  \url{www.thetimes.co.uk/}\midurl{article/}\midurl{neil-}\midurl{ferguson-}\midurl{interview-}\midurl{no-}\midurl{10s-}\midurl{infection-}\midurl{guru-}\midurl{recruits-}\midurl{game-}\midurl{developers-}\midurl{to-}\midurl{build-}\midurl{coronavirus-}\midurl{pandemic-}\midurl{model-}\midurl{zl5rdtjq5}
+
+\bibitem{basic-reproducibilty}
+Hinsen, K. (2013) ``Software development for reproducible research,'' {\em
+  Computing in Science {\&} Engineering}, \textbf{15}(4):60--63.
+\newblock \doi{10.1109/MCSE.2013.91}
+
+\bibitem{ferguson-resign}
+Smith, B. (6 May 2020) ``{SAGE} adviser {Neil Ferguson }quits over coronavirus
+  lockdown breach,'' {\em Civil Service World}.
+\newblock
+  \url{www.civilserviceworld.com/}\midurl{professions/}\midurl{article/}\midurl{sage-}\midurl{adviser-}\midurl{neil-}\midurl{ferguson-}\midurl{quits-}\midurl{over-}\midurl{coronavirus-}\midurl{lockdown-}\midurl{breach#:~:text=SAGE%20adviser%20Neil%20Ferguson%20quits%20over%20coronavirus%20lockdown%20breach,-}\midurl{Epidemiologist%20says%20he&text=Professor%20Neil%20Ferguson%2C%20one%20of,resigned%20after%20breaching%20lockdown%20rules}
+
+\bibitem{forsyth}
+Ahrens, J.~H. and Dieter, U. (1973) ``Extensions of {Forsythe's} method for
+  random sampling from the normal distribution,'' {\em Mathematics of
+  Computation}, \textbf{27}:927--937.
+\newblock \doi{10.1090/S0025-5718-1973-0329190-8}
+
+\bibitem{Normal-Distributions}
+Ahrens, J.~H. and Dieter, U. (1972) ``Computer methods for sampling from the
+  exponential and normal distributions,'' {\em Communications of the ACM},
+  \textbf{15}(10):873--882.
+\newblock \doi{10.1145/355604.361593}
+
+\bibitem{misra}
+{The MISRA Consortium Limited} (2020) {\em {MISRA} Compliance: 2020 --
+  Achieving compliance with {MISRA} Coding Guidelines}, MISRA Consortium.
+\newblock \url{www.misra.org.uk}
+
+\bibitem{spark}
+Barnes, J. (2003) {\em High Integrity Software: The {SPARK} Approach to Safety
+  and Security}, Addison Wesley.
+
+\bibitem{haskell}
+O'Sullivan, B., Stewart, D. and Goerzen, J. (2008) {\em Real World Haskell},
+  O'Reilly Media.
+\newblock \url{book.realworldhaskell.org}
+
+\bibitem{thumbs-up}
+Chawla, D.~S. (8 June 2020) ``Critiqued coronavirus simulation gets thumbs up
+  from code-checking efforts,'' {\em Nature}, \textbf{582}:323--324.
+\newblock
+  \url{www.nature.com/}\midurl{articles/}\midurl{d41586-}\midurl{020-}\midurl{01685-}\midurl{y}
+
+\bibitem{codecheck}
+Scheuber, A. and {van Elsland}, S.~L. (1 June 2020) {\em Codecheck confirms
+  reproducibility of {COVID-19} model results}.
+\newblock
+  \url{www.imperial.ac.uk/}\midurl{news/}\midurl{197875/}\midurl{codecheck-}\midurl{confirms-}\midurl{reproducibility-}\midurl{covid-}\midurl{19-}\midurl{model-}\midurl{results}
+
+\bibitem{codecheck-certificate}
+Eglen, S.~J. (2020) {\em {CODECHECK} certificate 2020-010 for paper: {Report}
+  9: impact of non-pharmaceutical interventions ({NPIs}) to reduce {COVID-19}
+  mortality and healthcare demand}.
+\newblock
+  \url{github.com/}\midurl{codecheckers/}\midurl{covid-}\midurl{report9},
+  \doi{10.5281/zenodo.3865491}
+
+\bibitem{NVP}
+{Hatton}, L. and {Roberts}, A. (1994) ``How accurate is scientific software?''
+  {\em IEEE Transactions on Software Engineering}, \textbf{20}(10):785--797.
+\newblock \doi{10.1109/32.328993}
+
+\bibitem{nvp-ferguson}
+Halloran, M.~E. \emph{et al.} (2008) ``Modeling targeted layered containment of
+  an influenza pandemic in the {United States},'' {\em Proceedings of the
+  National Academy of Sciences}, \textbf{105}(12):4639--4644.
+\newblock
+  \url{www.pnas.org/}\midurl{content/}\midurl{105/}\midurl{12/}\midurl{4639},
+  \doi{10.1073/pnas.0706849105}
+
+\bibitem{notebooks}
+Schnell, S. (2015) ``Ten simple rules for a computational biologist's
+  laboratory notebook,'' {\em PLoS Computational Biology},
+  \textbf{11}(9):e1004385.
+\newblock \doi{10.1371/journal.pcbi.1004385}
+
+\bibitem{nih-policy}
+{National Institutes of Health} (2020; effective date January 25, 2023) {\em
+  Final {NIH} Policy for Data Management and Sharing},
+  vol.~\textbf{NOT-OD-21-013}, Office of The Director, National Institutes of
+  Health.
+\newblock
+  \url{grants.nih.gov/}\midurl{grants/}\midurl{guide/}\midurl{notice-}\midurl{files/}\midurl{NOT-}\midurl{OD-}\midurl{21-}\midurl{013.html}
+
+\bibitem{nih-nature}
+Kozlov, M. (16 February 2022) ``{NIH} issues a seismic mandate: {Share} data
+  publicly,'' {\em Nature}.
+\newblock
+  \url{www.nature.com/}\midurl{articles/}\midurl{d41586-}\midurl{022-}\midurl{00402-}\midurl{1}
+
+\bibitem{refactoring}
+Ferguson, N. (22 March 2020) {\em Tweet}.
+\newblock
+  \url{twitter.com/}\midurl{neil_ferguson/}\midurl{status/}\midurl{1241835456947519492}
+
+\bibitem{bad-code}
+Richards, D. and Boudnik, K. (16 May 2020) ``{Neil} {Ferguson's} {Imperial}
+  model could be the most devastating software mistake of all time,'' {\em The
+  Telegraph}.
+\newblock
+  \url{www.telegraph.co.uk/}\midurl{technology/}\midurl{2020/}\midurl{05/}\midurl{16/}\midurl{neil-}\midurl{fergusons-}\midurl{imperial-}\midurl{model-}\midurl{could-}\midurl{devastating-}\midurl{software-}\midurl{mistake}
+
+\bibitem{pseudo}
+Zlojutro, A., Rey, D. and Gardner, L. (2019) ``A decision-support framework to
+  optimize border control for global outbreak mitigation,'' {\em Nature
+  Scientific Reports}, \textbf{9}(2216).
+\newblock \doi{10.1038/s41598-019-38665-w}
+
+\bibitem{chinese}
+Thimbleby, H. (2003) ``The {Directed Chinese Postman} problem,'' {\em Software
+  --- Practice {\&} Experience}, \textbf{33}(11):1081--1096.
+\newblock \url{harold.thimbleby.net/}\midurl{cpp/}\midurl{index.html},
+  \doi{10.1002/spe.540}
+
+\bibitem{flu-model}
+Sander, B., Nizam, A., {Garrison Jr}, L.~P., Postma, M.~J., Halloran, M.~E. and
+  {Longini Jr}, I.~M. (2009) ``Economic evaluation of influenza pandemic
+  mitigation strategies in the {US} using a stochastic microsimulation
+  transmission model,'' {\em Value Health}, \textbf{12}(2):226--233.
+\newblock \doi{10.1111/j.1524-4733.2008.00437.x}
+
+\bibitem{nature-review}
+Perkel, J.~M. (2022) ``How to fix your scientific coding errors,'' {\em
+  Nature}, \textbf{602}:172--173.
+\newblock \doi{10.1038/d41586-022-00217-0}
+
+\bibitem{psychological-modeling}
+Guest, O. and Martin, A.~E. (2021) ``How computational modeling can force
+  theory building in psychological science,'' {\em Perspectives on
+  Psychological Science}, \textbf{16}(4):789--802.
+\newblock \doi{10.1177/1745691620970585}
+
+\bibitem{actr}
+{ACT-R Research Group} (2022) {\em {ACT-R}}.
+\newblock \url{act-}\midurl{r.psy.cmu.edu/}\midurl{software}
+
+\bibitem{ourReview}
+Ladkin, P.~B., Littlewood, B., Thimbleby, H. and Thomas, M. (2020) ``The {Law
+  Commission} presumption concerning the dependability of computer evidence,''
+  {\em Digital Evidence and Electronic Signature Law Review},
+  \textbf{17}:1--14.
+\newblock \doi{10.14296/deeslr.v17i0.5143}
+
+\bibitem{hamming}
+Hamming, R.~W. (1987) {\em Numerical Methods for Scientists and Engineers},
+  Dover Publications Inc.
+
+\bibitem{unfinished}
+Kissler, S.~M., Tedijanto, C., Goldstein, E., Grad, Y.~H. and Lipsitch, M.
+  (2020) ``Projecting the transmission dynamics of {SARS-CoV-2} through the
+  postpandemic period,'' {\em Science}, \textbf{368}(6493):860--868.
+\newblock \doi{10.1126/science.abb5793}
+
+\bibitem{lancet-unfinished}
+Verity \emph{et al.} (2020) ``Estimates of the severity of coronavirus disease
+  2019: {A} model-based analysis,'' {\em Lancet}, \textbf{20}(6):669--677.
+\newblock \doi{10.1016/S1473-3099(20)30243-7}
+
+\bibitem{hoare}
+Hoare, C. A.~R. (1969) ``An axiomatic basis for computer programming,'' {\em
+  Communications of the ACM}, \textbf{12}(10):576--580.
+\newblock \doi{10.1145/363235.363259}
+
+\bibitem{preclinical-reproducibility}
+Freedman, L.~P., Cockburn, I.~M. and Simcoe, T.~S. (2015) ``The economics of
+  reproducibility in preclinical research,'' {\em PLOS Biology},
+  \textbf{13}(6):e1002165.
+\newblock \doi{10.1371/journal.pbio.1002165}
+
+\bibitem{fair}
+Wilkinson, M.~D. \emph{et al.} (2016) ``The {FAIR} guiding principles for
+  scientific data management and stewardship,'' {\em Scientific Data},
+  \textbf{3}(160018):1--9.
+\newblock \doi{10.1038/sdata.2016.18}
+
+\bibitem{fair-principles}
+Wood-Charlson, E.~M., Crockett, Z., Erdmann, C., Arkin, A.~P. and Robinson,
+  C.~B. (2022) ``Ten simple rules for getting and giving credit for data,''
+  {\em PLoS Computational Biology}, \textbf{18}(9):e1010476.
+\newblock \doi{10.1371/ journal.pcbi.1010476}
+
+\bibitem{cbc}
+Woodcock, J. C.~P., Larsen, P.~G., Bicarregui, J.~C. and Fitzgerald, J.~S.
+  (2009) ``Formal methods: {Practice} and experience,'' {\em ACM Computing
+  Surveys}, \textbf{41}(4):1--36.
+\newblock \doi{10.1145/1592434.1592436}
+
+\bibitem{ethics-code}
+ACM (2020) {\em Code of Ethics and Professional Conduct}, ACM.
+\newblock Accessed 23 April 2020,
+  \url{www.acm.org/}\midurl{code-}\midurl{of-}\midurl{ethics}
+
+\bibitem{acm-artifacts}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt\  (2020) {\em Artifact
+  Review and Badging --- Current}, vol.~\textbf{Version 1.1}, ACM.
+\newblock
+  \url{www.acm.org/}\midurl{publications/}\midurl{policies/}\midurl{artifact-}\midurl{review-}\midurl{and-}\midurl{badging-}\midurl{current}
+
+\bibitem{redmill}
+Redmill, F. (2000) ``Understanding the use, misuse and abuse of safety
+  integrity levels,'' {\em in Lessons in System Safety, Eighth Safety-critical
+  Systems Symposium}.
+\newblock Revised,
+  \url{homepages.cs.ncl.ac.uk/}\midurl{felix.redmill/}\midurl{publications/}\midurl{1%20SILs.pdf}
+
+\bibitem{iec61508}
+{IEC Technical Committee TC 65} (2010) {\em {IEC 61508:2010 CMV} commented
+  version, functional safety of electrical/electronic/programmable electronic
+  safety-related systems}.
+\newblock \url{webstore.iec.ch/}\midurl{publication/}\midurl{22273}
+
+\bibitem{hoare-unreasonable}
+Hoare, C. A.~R. (1996) ``How did software get so reliable without proof?'' {\em
+  in Lecture Notes in Computer Science}, vol.~\textbf{1051}, Springer,
+  pp.~1--17.
+\newblock \doi{10.1007/3-540-60973-3_77}
+
+\bibitem{open-source}
+Fomel, S. (2015) ``Reproducible research as a community effort: {Lessons} from
+  the {Madagascar Project},'' {\em Computing in Science {\&} Engineering},
+  \textbf{17}(1):20--26.
+\newblock \doi{10.1109/MCSE.2014.94}
+
+\bibitem{ABCs-SE}
+Stol, K.-J. and Fitzgerald, B. (2018) ``The {ABC} of software engineering
+  research,'' {\em ACM Transactions on Software Engineering and Methodology},
+  \textbf{27}(3):1--51.
+\newblock \doi{10.1145/3241743}
+
+\bibitem{mrb}
+Lakens, D. (2023) ``Methods-review boards could avert wasted research,'' {\em
+  Nature}, \textbf{613}.
+
+\bibitem{Executable-Paper}
+Gabriela, A. and Capone, R. (2011) ``Executable paper {Grand Challenge}
+  workshop,'' {\em Procedia Computer Science}, \textbf{4}:577--578.
+\newblock \doi{10.1016/j.procs.2011.04.060}
+
+\bibitem{RMarkdown}
+Xie, Y., Allaire, J.~J. and Grolemund, G. (2020) {\em R Markdown: The
+  Definitive Guide}, Chapman {\&} Hall/CRC.
+
+\bibitem{lepton}
+Li-Thiao-T{\' e}, S. (2012) ``Literate program execution for reproducible
+  research and executable papers,'' {\em Procedia Computer Science},
+  \textbf{9}:439--448.
+\newblock International Conference on Computational Science, ICCS 2012,
+  \doi{10.1016/j.procs.2012.04.047}
+
+\bibitem{landauer}
+Landauer, T.~K. (1995) {\em The Trouble with Computers: {Usefulness},
+  Usability, and Productivity}, MIT Press.
+
+\bibitem{thimbleby-landauer}
+Thimbleby, H. (1996) ``The trouble with computers: {Usefulness}, usability, and
+  productivity (by {Thomas} {K.~Landauer}),'' {\em Computational Linguistics},
+  \textbf{22}(2):265--276.
+
+\bibitem{debt}
+Falessi, D. and Kruchten, P. (2015) ``Five reasons for including technical debt
+  in the software engineering curriculum,'' {\em in Proceedings of the 2015
+  European Conference on Software Architecture Workshops}, ECSAW'15, ACM,
+  pp.~28:1--28:4.
+\newblock \doi{10.1145/2797433.2797462}
+
+\bibitem{jpm}
+{Heineman, Jr.}, B.~W. (2013) ``The {JP Morgan} ``{Whale}'' report and the
+  ghosts of the financial crisis,'' {\em Harvard Business Review}.
+\newblock
+  \url{https:/}\midurl{/}\midurl{hbr.org/}\midurl{2013/}\midurl{01/}\midurl{the-}\midurl{jp-}\midurl{morgan-}\midurl{whale-}\midurl{report-}\midurl{and}
+
+\bibitem{jpm-report}
+Cavanagh, M., ed. (2013) {\em Report of JPMorgan Chase {\&} Co{\@}. Management
+  Task Force Regarding 2012 CIO Losses}, JPMorgan Chase {\&} Co{\@}.
+
+\bibitem{excel-fiasco}
+Thimbleby, H. (2020) ``The problem isn't {Excel}, it's unprofessional software
+  engineering,'' {\em BMJ}, \textbf{371}(m4181).
+\newblock \doi{10.1136/bmj.m4181}
+
+\bibitem{science-delays}
+Wadman, M. (2021) ``Could too much time between doses drive the coronavirus to
+  outwit vaccines?'' {\em Science}.
+\newblock \doi{10.1126/science.abg5655}
+
+\bibitem{reproducibility}
+Benureau, F. C.~Y. and Rougier, N.~P. (2018) ``Re-run, repeat, reproduce,
+  reuse, replicate: {Transforming} code into scientific contributions,'' {\em
+  Frontiers in Neuroinformatics}, \textbf{11}(69).
+\newblock \doi{10.3389/fninf.2017.00069}
+
+\bibitem{parliamentary-evidence}
+{House of Commons Science and Technology Committee} (16 December 2020) {\em The
+  {UK} response to covid-19: {Use} of scientific advice}.
+\newblock
+  \url{committees.parliament.uk/}\midurl{publications/}\midurl{4165/}\midurl{documents/}\midurl{41300/}\midurl{default}
+
+\bibitem{my-parliamentary-evidence}
+Thimbleby, H. (29 April 2020) {\em Written Evidence Submitted by {Harold
+  Thimbleby} to The {UK} response to covid-19: {Use} of scientific advice},
+  (C190005), {House of Commons Science and Technology Committee} {(see
+  \cite{parliamentary-evidence})}.
+\newblock
+  \url{committees.parliament.uk/}\midurl{work/}\midurl{91/}\midurl{default/}\midurl{publications/}\midurl{written-}\midurl{evidence/}\midurl{?SearchTerm=thimbleby}
+
+\bibitem{assessing-quality-conference}
+Carver, J.~C. (2009) ``First international workshop on software engineering for
+  computational science {\&} engineering,'' {\em Computing in Science {\&}
+  Engineering}, \textbf{11}(2):7--11.
+\newblock \doi{10.1109/MCSE.2009.30}
+
+\endofbibliography\end{thebibliography}
+
+% end expanding bibliography paper.bbl
+
 
 % Note that the supplementary material calculates how many references there are,
 % because it reads in this .tex file's .aux file so that it can cite the references 
@@ -974,8 +2693,4 @@ The raw data is encoded in JSON\@. JavaScript code checks against \the\JSONerror
 \immediate\write\@auxout{\string\def\string\continuePageNumbers{\arabic{page}}}
 \makeatother
 
-\end{document}
-
-\def \allInOne {define this so we don't include header in supplemental material}
-\input paper-seb-supplementary-material.tex
 \end{document}

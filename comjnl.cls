@@ -31,6 +31,7 @@
 %
 \RequirePackage{rotating}
 
+
 \def\shortauthors#1{\gdef\@shortauthors{\scshape#1}}
 \def\title{\@dblarg\CJ@title}
 \def\CJ@title[#1]#2{%
@@ -425,7 +426,7 @@
     \def\@svsechd{#4{\hskip #1\relax #5}}%
   \fi
   \@xsect{#3}}
-\def\journalname{The Computer Journal (accepted \& in press)}
+\def\journalname{The Computer Journal}
 \def\copyrightname{Oxford University Press}
 \def\andname{and}
 \def\ppname{pp}

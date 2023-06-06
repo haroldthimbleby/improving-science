@@ -32,7 +32,7 @@ The top level working direction contains README (this file), the makefile, the t
 
 First, here's a quick overview of how the system works behind the scenes inside `make`.
 
-To generate all data or typeset the paper, you will need a Unix system with: awk, bibtex, git, latex (or pdflatex etc, depending on how you configure make), make, node, sed, and zip (plus the usual echo, egrep, grep, rm, sh, test, etc). Mathematica is also used, though all the files it generates are already in the Git repository, so you can get away without being able to run Mathematica yourself - it's not open source.
+To generate all data or typeset the paper, you will need a Unix system with: make, awk, bibtex, git, latex (or pdflatex etc, depending on how you configure make), node, sed, and zip (plus the usual echo, egrep, grep, rm, sh, test, etc). Mathematica is used, though all the files it generates are already in the Git repository (and will be copied to generated/*), so you can get away without being able to run Mathematica yourself - it's not open source. If you use make expand, you will also need diff-pdf.
 
 The file `programs/data.js` includes both the JSON data and a JavaScript program that checks the data, analyses it, and generates most of the various data files &mdash; the CSV file, lots of LaTeX files used in the paper, and others.
 

@@ -1,7 +1,6 @@
 % due to finding out that PDF doesn't work everywhere, here's where we define the image type we're using for imaged created by the Mathematica notebooks
 \def\imageFileSuffix{jpg}
 
-% These macros allow the paper and the supplementary material to share a single sequence of bibliography citations
 
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
@@ -27,12 +26,11 @@
 \renewcommand{\thefootnote}{\arabic{footnote}}
 
 \def\mytitle{Improving science that uses code}
+\def\supplement{Supplemental Material}
 
 \def\citeeg#1{[e.g., \citenum{#1}]}
 
-\def\inputifexists#1#2{\IfFileExists{#1}{\input{#1}}{\typeout{No file #1. #2}}}
-
-% calculate percentages
+% calculate rounded percentages
 \newcount \t
 \newcount \tu
 \def\pc#1#2{\t = #1%
@@ -58,23 +56,9 @@
 \fi
 \the\t\%}
 
-% insert commas into large integer numbers
-\def\digitBlock#1{\t=#1
-    \divide \t by 1000
-    \ifnum \t > 0
-    	\the\t \hskip 0.3em\relax%
-    	\tu=#1
-    	\multiply \t by 1000
-    	\advance \tu by -\t
-		\ifnum \tu < 100 0\fi
-		\ifnum \tu < 10 0\fi
-		\the\tu
-    \else
-    	#1%
-    \fi
-}
-
 % code to make digits into blocks of 3 (as in 1000 -> 1 000)
+\def\xBlockSep{\textcolor{red}{\hskip 0.3em :}\hskip 0.3em} % International Standards are to use a small space. UK typically uses a comma
+% NOTE currently, the few decimal numbers (eg 0.000 5) use hskip explicitly, since defining \xBlockSep as a comma would definitely be wrong for decimals
 \newcount\xdigitBlockn
 \newcount\xdigitBlocktmp
 \def\xdigitBlock#1{%
@@ -88,7 +72,7 @@
                 \xdigitBlocktmp = \xdigitBlockn
                 \divide \xdigitBlockn by 1000
                 \xdigitBlocktmp = \numexpr \xdigitBlocktmp - 1000*\xdigitBlockn \relax
-                \edef \xdigitBlockpptemp{\hskip 0.3em\ifnum \xdigitBlocktmp < 100  0\ifnum \xdigitBlocktmp < 10 0\fi\fi \the\xdigitBlocktmp \xdigitBlockpptemp}%
+                \edef \xdigitBlockpptemp{\xBlockSep\ifnum \xdigitBlocktmp < 100  0\ifnum \xdigitBlocktmp < 10 0\fi\fi \the\xdigitBlocktmp \xdigitBlockpptemp}%
         \repeat
         \the\xdigitBlockn
         \xdigitBlockpptemp
@@ -119,11 +103,8 @@
 \input generated/constants.tex
 \input generated/metadata.tex
 \input generated/covidsimSummary.tex
-
-% calculation used in table-repo-summary in main.tex, and also referred to in supplement.tex as an example calculation
-% paper submitted June 2019, published April 2020
-
 \input generated/clone-date.tex
+
 \newcount \pubdelayinmonths
 \pubdelayinmonths=\cloneyear
 \advance \pubdelayinmonths by -2019 % submitted in 2019
@@ -150,13 +131,7 @@ December\fi}
 
 \def\clonewhen{\monthname{\clonemonth} \cloneyear}
 
-\newenvironment{change}
-	{\color{black}}
-	{\color{black}}
-
 \def\RAPstar{RAP{\tt +}}
 \def\RAPstars{RAPs{\tt +}}
 \def\RAPstarp#1{RAP{\tt +}#1}
 \def\italicRAPstar{RAP{\tt +}}
-
-\def\supplement{Supplemental Material}
