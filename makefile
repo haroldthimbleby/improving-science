@@ -120,9 +120,8 @@ readme: # Update the \texttt{README.md} file. You only need to do this if you've
 
 tidyup: # Tidyup typically before doing a Git commit or making a zip file. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the \LaTeX\ data include files. Do not remove the .aux files, as \LaTeX\ runs much more smoothly with them.
 	@echo Remove all basic files that can easily be regenerated, except the main PDFs and the generated files that are included in Latex files
-	rm -f *.blg generated/data-check.html 
+	rm -f *.blg 
 	# Don't delete generated/* as it's helpful to keep all the generated files around so Latex can be used directly...
-	@# rm generated/* 
 	rm -rf *.log *.out *.dvi log
 	@echo This has left these generated PDFs you can either keep or delete manually
 	-@ls paper*.pdf
@@ -133,7 +132,8 @@ really-tidyup: # More thorough than \texttt{make tidyup} --- remove \emph{all} f
 	@echo Remove all files that can be recreated, including PDFs and files made by processing the JSON data 
 	make tidyup 
 	rm -f *.pdf
-	rm -f expanded*
+	rm -f generated/* 
+	rm -f expanded-*
 		
 all: # Download and analyze the data, then typeset the main files (\texttt{paper.pdf}, \texttt{appendix.pdf} and \texttt{all.pdf}) that import all the data, as well as make the self-contained expanded \texttt{.tex} (and \texttt{.PDF}) files that do not depend on the separate data files in \texttt{data/*}.
 	make data
