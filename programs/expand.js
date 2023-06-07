@@ -63,7 +63,7 @@ for (var i = 0; i < TeXFiles.length; i++) {
     console.log("Recursively expand all \\input, \\tableofcontents, and \\bibliography macro calls in " + TeXFiles[i]);
     rootfile = TeXFiles[i].replace(/.tex/, "");
     auxfile = rootfile+".aux";
-    console.log("        \\input " + auxfile + " => automatically pre-inserted between \\makeatletter and \\makeatother");
+    console.log("        \\input " + auxfile + " => automatically pre-inserted between \\makeatletter and \\makeatother\n               NB "+auxfile+" is inserted after the expanded file's own .aux file is automatically loaded (if it exists).\n               ... in other words, the expanded file's own .aux file is correctly overridden by the original "+auxfile+" file.");
     
     bufferExpand = (makenote("file", [TeXFiles[i]])).replace(/^/gm, "% ")+"\n\n";
 	bufferExpand = bufferExpand + "\\makeatletter\n"+getFile(auxfile) + "\n\\makeatother\n";
