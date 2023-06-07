@@ -23,18 +23,14 @@
 {\sf\begin{tabular}{rp{4.5in}}
 
 \texttt{make all}&
-      Analyze the data, then typeset the main PDF files (\texttt{paper-seb-main.pdf} and \texttt{paper-seb-supplementary-material.pdf}).\\
+      Download and analyze the data, then typeset the main files (\texttt{paper.pdf}, \texttt{appendix.pdf} and \texttt{all.pdf}) that import all the data, as well as make the self-contained expanded \texttt{.tex} (and \texttt{.PDF}) files that do not depend on the separate data files in \texttt{data/*}.\\
    \multicolumn{1}{l@{\vdots}}{}&\\
 
 \texttt{make data}&
       Analyze the data, and generate all the data files, the Unix scripts, the CSV, and \LaTeX\ files (including the \LaTeX\ summary of this makefile), etc. This \texttt{make} option runs \texttt{node programs/data.js}, downloads the Git repositories used in the pilot survey, and then analyzes them. Note that downloading all the repositories in a reasonable time needs decent internet bandwidth.\\
    \multicolumn{1}{l@{\vdots}}{}&\\
 
-\texttt{make git-prep}&
-      What's on Git that we've lost, or stuff we have got locally but probably don't want on Git, so you can delete it or move it out the way or whatever.\\
-   \multicolumn{1}{l@{\vdots}}{}&\\
-
-\texttt{make really-tidyup}&
-      More thorough than \texttt{make tidyup} --- remove \emph{all} files that can be recreated. (This will mean next time you run \LaTeX\ you will have to ignore errors as the .aux files are re-created.)\\
+\texttt{make help}&
+      Explain how to use \texttt{make}, and list all available options for using it.\\
 \end{tabular}}
 

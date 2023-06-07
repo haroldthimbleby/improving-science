@@ -24,7 +24,7 @@ APPENDIX = supplemental material
 
 osversion = Darwin Kernel Version 22.4.0: Mon Mar  6 21:00:17 PST 2023; root:xnu-8796.101.5~3/RELEASE_X86_64
 			
-help: # Explain how to use \texttt{make}, and list all available options for using \texttt{make}.
+help: # Explain how to use \texttt{make}, and list all available options for using it.
 	@echo Use make with any of these options:
 	@echo
 	@make help-brief
@@ -82,7 +82,7 @@ raw.table.data: # PS not included in help list, as target contains a . character
 	
 latex.tabular.data: # The n==1, n==6 etc is to select interesting entries for the supplementary.tex file. Note that meanings of n are defined in this output (and in generated/make-help.tex if you ran \texttt{make} data).
 	@(echo % Edit makefile to change the selected make command choices, as follows:; make raw.table.data | awk -F: 'BEGIN { n=0 } { n++; printf "%% %s - %s\n", n, $$1 }' )
-	@(echo "\n{\\\\sf\\\\begin{tabular}{rp{4.5in}}"; make raw.table.data | awk -F: 'BEGIN { n=0; needdots=0 } { n++; if( n == 1 || n == 6 || n ==8 || n == 17 ) { if( needdots ) printf "   \\multicolumn{1}{l@{\\vdots}}{}&\\\\\n"; needdots = 0; printf "\n\\texttt{%s}&\n   %s\\\\\n", $$1, $$2; } else { needdots = 1; } }'; echo "\\\\end{tabular}}\n")
+	@(echo "\n{\\\\sf\\\\begin{tabular}{rp{4.5in}}"; make raw.table.data | awk -F: 'BEGIN { n=0; needdots=0 } { n++; if( n == 1 || n == 6 || n == 9 ) { if( needdots ) printf "   \\multicolumn{1}{l@{\\vdots}}{}&\\\\\n"; needdots = 0; printf "\n\\texttt{%s}&\n   %s\\\\\n", $$1, $$2; } else { needdots = 1; } }'; echo "\\\\end{tabular}}\n")
 	
 help-brief: # Just this basic list of \texttt{make} options, with no further details.
 	@make raw.table.data | awk -F: 'function wrap(s) { leng = 0; t = ""; for( i = 1; i <= length(s); i++ ) { if( ++leng > 65 && substr(s, i, 1) == " " ) { leng = 0; t = t "\n                            "; } else t = t substr(s, i, 1); } return t "\n"; } function delatex(s) { gsub("---", "-", s); gsub("\\\\LaTeX\\\\", "Latex", s); gsub("\\\\texttt", "", s); gsub("\\\\emph", "", s); gsub("{|}", "", s); return s; }; { printf "%25s%s\n", $$1, wrap(delatex($$2)) }' 
@@ -135,9 +135,10 @@ really-tidyup: # More thorough than \texttt{make tidyup} --- remove \emph{all} f
 	rm -f *.pdf
 	rm -f expanded*
 		
-all: # Analyze the data, then typeset the main PDF files (\texttt{paper.pdf}, \texttt{appendix.pdf} and \texttt{all.pdf}).
+all: # Download and analyze the data, then typeset the main files (\texttt{paper.pdf}, \texttt{appendix.pdf} and \texttt{all.pdf}) that import all the data, as well as make the self-contained expanded \texttt{.tex} (and \texttt{.PDF}) files that do not depend on the separate data files in \texttt{data/*}.
 	make data
 	make pdf
+	make expand
 
 pdf: # Assuming you have got the data ready, make the two main PDF files, paper.pdf, and appendix.pdf. If you aren't sure you've got the data ready, say \texttt{make all} instead, or \texttt{make data} to just prepare the data before doing \texttt{make pdf}.
     # LOTS of latex runs to make sure the bibtex and .aux files are all correctly synced
@@ -195,6 +196,7 @@ one-file: # Make a single PDF file \texttt{all.pdf} (i.e., paper + supplementary
 # this rule has a . in the target name (one.file), so make help doesn't find it (see the grep command in make help)
 one.file: paper.pdf appendix.pdf # concatenate files
 	@echo make single PDF file all.pdf
+	@echo NB use make expand instead to make expanded-all.pdf etc
 	pdfunite paper.pdf appendix.pdf all.pdf
 
 zip-data: # Just make a zip archive of the data only. This is required for, e.g., uploading to a Dryad repository --- which is quirky as it won't include all the code needed to handle the data!

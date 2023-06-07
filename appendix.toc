@@ -32,13 +32,13 @@
 \contentsline {subsection}{\numberline {12.a}Selected journal case studies}{52}{subsection.12.1}%
 \contentsline {subsubsection}{\numberline {12.a.1}\emph {The Lancet\/}}{52}{subsubsection.12.1.1}%
 \contentsline {subsubsection}{\numberline {12.a.2}\emph {Journal of Vascular Surgery}}{53}{subsubsection.12.1.2}%
-\contentsline {subsection}{\numberline {12.b}Pilot paper sample}{54}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.b}Pilot paper sample}{53}{subsection.12.2}%
 \contentsline {subsection}{\numberline {12.c}Summary of results}{56}{subsection.12.3}%
 \contentsline {subsubsection}{\numberline {12.c.1}Current code policies of sampled journals}{57}{subsubsection.12.3.1}%
 \contentsline {subsubsection}{\numberline {12.c.2}Sample assessment and scoring}{58}{subsubsection.12.3.2}%
 \contentsline {subsection}{\numberline {12.d}Assessment criteria and methods}{60}{subsection.12.4}%
 \contentsline {subsubsection}{\numberline {12.d.1}Detecting and defending against error}{62}{subsubsection.12.4.1}%
 \contentsline {subsubsection}{\numberline {12.d.2}Defending against system problems}{63}{subsubsection.12.4.2}%
-\contentsline {subsubsection}{\numberline {12.d.3}Problems of restrictive journal policies}{64}{subsubsection.12.4.3}%
+\contentsline {subsubsection}{\numberline {12.d.3}Problems of restrictive journal policies}{63}{subsubsection.12.4.3}%
 \contentsline {section}{\numberline {13}Additional references for Supplemental Material}{64}{section.13}%
 \contentsline {section}{\numberline {14}References for surveyed papers}{66}{section.14}%

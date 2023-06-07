@@ -1,48 +1,52 @@
-# All data and files for the paper "Improving science that uses code"
+# All data, code, and other files for the paper "Improving science that uses code"
 
 ## Harold Thimbleby
 
 ## [harold@thimbleby.net](mailto:harold@thimbleby.net)
 
-### README generated on 27 May 2023
+### README generated on 07 June 2023
 
 #### (README.md is generated from README.md-src by running `make readme`)
 
 ## Basics
 
-A PDF of the typeset paper and appendix is available at [`http://www.harold.thimbleby.net/paper-seb.pdf`](http://www.harold.thimbleby.net/paper-seb.pdf). It's also available in this repository.
+A PDF of the typeset paper and appendix is available at [`http://www.harold.thimbleby.net/paper-seb.pdf`](http://www.harold.thimbleby.net/paper-seb.pdf). It's also available in this repository as `all.pdf` (or `expanded-all.pdf` if you ran `make expand`, as discussed below).
 
-All data is defined and stored in human-readable JSON format in the file `programs/data.js` - though there is more in the directory `models`, which has downloaded many Git repos and analyzed them.
+All data is defined and stored in human-readable JSON format in the file `programs/data.js` &mdash; though there is more in the directory `models`, which has downloaded many Git repos and analyzed them.
 
 For convenience, a CSV file is included in this Git repository, in the directory `generated`. This may be more convenient to read than the JSON file.
 
 Everything works using `make`.
 
+## If this all seems too complicated...
+
+Run `make expand`, which will generate basic LaTeX files that depend on nothing other than their `documentclass` files. (`make expand` works by recursively importing all files, so that the expanded files need nothing else to be typeset.)
+
 ## Directory structure
 
-The top level working direction contains README (this file), the makefile, the two LaTeX files (`paper-seb-main.tex` and `paper-seb-supplement.tex`) as well as all their usual stuff (.aux, .pdf, .bib files, and common macros, `paper-seb-macros.tex`), two bibliographies (for each of the two LaTeX files), and several directories:
+The top level working direction contains `README` (this file), the makefile, the two LaTeX files (`paper.tex` and `appendix.tex`) as well as all their usual stuff (`.aux`, `.pdf`, `.bib` files, and common macros, `macros.tex`, etc), two bibliographies (for each of the two LaTeX files), and several directories:
 
-* `programs` - the key data file, `data.js` which also includes its JavaScript analysis, all of the programs to analyze and generate data.
+* `programs` &mdash; the key data file, `data.js` which also includes its JavaScript analysis, all of the programs to analyze and generate data.
 
-* `generated` - where all the generated results end up.
+* `generated` &mdash; where all the generated results end up.
 
-* `models` - where all of the downloaded Git repositories end up to be analyzed (this directory is cleared up on this repository as it is large and of course can be downloaded again from the various papers' sites). This directory also includes programs to download and analyze the various Git models, and to tidy up afterwards if you decide not to keep the Git models around. 
+* `models` &mdash; where all of the downloaded Git repositories end up to be analyzed (this directory is cleared up on this repository as it is large and of course can be downloaded again from the various papers' sites). This directory also includes programs to download and analyze the various Git models, and to tidy up afterwards if you decide not to keep the Git models around. 
 
 ## Overview
 
-First, here's a quick overview of how the system works behind the scenes inside `make`.
+First, here's a quick overview of how the system works behind the scenes inside `make`:
 
-To generate all data or typeset the paper, you will need a Unix system with: awk, bibtex, git, latex (or pdflatex etc, depending on how you configure make), make, node, sed, and zip (plus the usual echo, egrep, grep, rm, sh, test, etc). Mathematica is also used, though all the files it generates are already in the Git repository, so you can get away without being able to run Mathematica yourself - it's not open source.
+To generate all data or typeset the paper, you will need a Unix system with: make, awk, bibtex, git, latex (or pdflatex etc, depending on how you configure make), node, sed, and zip (plus the usual echo, egrep, grep, rm, sh, test, etc). Mathematica is used, though all the files it generates are already in the Git repository (and will be copied to `generated/*`), so you can get away without being able to run Mathematica yourself &mdash; it's not open source. If you use make expand, you will also need diff-pdf.
 
 The file `programs/data.js` includes both the JSON data and a JavaScript program that checks the data, analyses it, and generates most of the various data files &mdash; the CSV file, lots of LaTeX files used in the paper, and others.
 
 Running `node programs/data.js` will give you
 
-* `allData.csv` - for accessing data in Excel and many other apps.
+* `allData.csv` &mdash; for accessing data in Excel and many other apps.
 
-* `flagData.nb` - for accessing data in Mathematica notebook.
+* `flagData.nb` &mdash; for accessing data in Mathematica notebook.
 
-* `data-check.html` - a summary of papers and DOIs with any error messages (eg missing data), for easy review in a browser some shell scripts used to run Git to download clones of the survey papers' code repositories
+* `data-check.html` &mdash; a summary of papers and DOIs with any error messages (eg missing data), for easy review in a browser some shell scripts used to run Git to download clones of the survey papers' code repositories
  ... etc, plus some tex files for including data in the Latex files.
 
 These generated files will all be included in the directory `generated`
@@ -60,7 +64,7 @@ Here are all the available options:
 
 * `make all`
 
-    Analyze the data, then typeset the main PDF files (`paper-seb-main.pdf` and `paper-seb-supplementary-material.pdf`).
+    Download and analyze the data, then typeset the main files (`paper.pdf`, `appendix.pdf` and `all.pdf`) that import all the data, as well as make the self-contained expanded `.tex` (and `.PDF`) files that do not depend on the separate data files in `data/*`.
 
 * `make archive`
 
@@ -88,11 +92,11 @@ Here are all the available options:
 
 * `make git-prep`
 
-    What's on Git that we've lost, or stuff we have got locally but probably don't want on Git, so you can delete it or move it out the way or whatever.
+    Is there anything on Git that we've lost, or stuff we have got locally but probably don't want on Git, so you can delete it or move it out the way or whatever.
 
 * `make help`
 
-    Explain how to use `make`, and list all available options for using `make`.
+    Explain how to use `make`, and list all available options for using it.
 
 * `make help-brief`
 
@@ -108,11 +112,11 @@ Here are all the available options:
 
 * `make one-file`
 
-    Make a single PDF file `paper-seb.pdf` (i.e., paper + supplementary material) all in one.
+    Make a single PDF file `all.pdf` (i.e., paper + supplementary material) all in one.
 
 * `make pdf`
 
-    Assuming you have got the data ready, make the two main PDF files, paper-seb-main.pdf, and paper-seb-supplementary-material.pdf. If you aren't sure you've got the data ready, say `make all` instead, or `make data` to just prepare the data before doing `make pdf`.
+    Assuming you have got the data ready, make the two main PDF files, paper.pdf, and appendix.pdf. If you aren't sure you've got the data ready, say `make all` instead, or `make data` to just prepare the data before doing `make pdf`.
 
 * `make push`
 
@@ -140,13 +144,13 @@ Here are all the available options:
 
 ## The structure and use of the LaTeX files
 
-The two main LaTeX files are `paper-seb-main.tex` and `paper-seb-supplementary-material.tex`
+The two main LaTeX files are `paper.tex` and `appendix.tex`
 
-The supplementary material continues pagination, section, table, citation, and figure numbering across from the main file. In addition, the main and supplementary files cross-reference each other in the normal LaTeX ways - using \label{} and \ref{}. To make this work easily, each file explicitly reads in the other's `.aux` file (which is used by LaTeX for handling cross-references). Apart from that, nothing special has to be done for the files to communicate.
+The supplementary material continues pagination, section, table, citation, and figure numbering across from the main file. In addition, the main and supplementary files cross-reference each other in the normal LaTeX ways &mdash; using \label{} and \ref{}. To make this work easily, each file explicitly reads in the other's `.aux` file (which is used by LaTeX for handling cross-references). Apart from that, nothing special has to be done for the files to communicate.
 
-The bibliographies are a bit more complicated. `paper-seb-main.tex` has a bibliography file, `paper-seb-main.bib`, in the usual way; however the supplement has its own bibliography. In fact, it has two. One works in the standard BibTeX way; the other is generated by `data.js` and is the bibliography for the surveyed papers only. The survey bibliography is generated directly by `data.js` as a `.bbl` file (rather than a BibTeX file).
+The bibliographies are a bit more complicated. `paper.tex` has a bibliography file, `paper.bib`, in the usual way; however the supplement has its own bibliography. In fact, it has two. One works in the standard BibTeX way; the other is generated by `data.js` and is the bibliography for the surveyed papers only. The survey bibliography is generated directly by `data.js` as a `.bbl` file, rather than as a BibTeX file.
 
-Because the supplement reads the main file's `.aux` it automatically gets the bibliography used by the main file (and it does cite some stuff from it, so uses consistent numbering). A simple counter is then used to ensure the remaining new citations in the supplement carry on with the same numbering sequence.
+Because the supplement reads the main file's `.aux` it automatically gets the bibliography details (names and numbers) used by the main file (and it does cite some stuff from it, so uses consistent numbering). A simple counter is then used to ensure the remaining new citations in the supplement carry on with the same numbering sequence.
 
 The Mathematica notebook `programs/check-xrefs.nb` checks all the citations and cross-references, not least because BibTeX and LaTeX's errors and warnings are not up to having multiple files for cross-references and citations.
         

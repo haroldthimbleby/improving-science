@@ -403,7 +403,7 @@ var data = [{
         hasTrivialComment: 1,
         hasDirectCode: 1,
         hasBreach: 1,
-        codeComment: "Basic Matlab with routine comments.",
+        codeComment: "Basic Matlab with routine comments. Supplemental files Rsos192210supp1.docx and Rsos192210supp2.docx have links but were not accessible at time of double checking.",
         codeURL: "royalsocietypublishing.org/doi/suppl/10.1098/rsos.192210",
         pages: 9
             },
@@ -1155,37 +1155,48 @@ for (var i = 0; i < data.length; i++) {
 }
 saveFile("assessments.tex", s, "Main summary table for Supplementary Material");
 
+
+// We roughly follow Computer Journal's requirements for journal article citations: 
+// Galton, A. (1992) Logic as a formal method. Comp. J., 35, 431-440.
+// (authors, year, title of paper, title of journal, volume number, page numbers)
+// We include all authors (up to maxAuthors)
+
 function fixAuthors(s) {
     const maxAuthors = 1000; // put et al after nth author (eg if maxAuthors=3, at most 3 explicit authors)
     var a = s.split(",");
     var fa = "";
     var prefix = "";
+    var initials = "";
     for (var i = 0; i < a.length; i++) {
         a[i] = a[i].trim();
         // a[i] is in the format: Kaminsky ZA
-        // we change it to {\sc Z. A. Kaminsky}
+        // we change it to Kaminsky, Z. A.
         fa += prefix;
+        initials = "";
         var lastSpace = a[i].length - 1;
         while (lastSpace >= 0 && a[i].charAt(lastSpace) != " ") lastSpace--;
         for (var k = lastSpace + 1; k < a[i].length; k++) {
-            fa += a[i].charAt(k);
+            initials += a[i].charAt(k);
             if (a[i].charAt(k + 1) == "-") {
-                fa += a[i].charAt(++k);
+                initials += a[i].charAt(++k);
                 continue;
             }
-            fa += ". ";
+            initials += ". ";
         }
+        initials = initials.trim();
         for (var k = 0; k < lastSpace; k++)
             fa += a[i].charAt(k);
-        prefix = ", ";
+        fa = fa + ", " + initials;
         if (i + 1 >= maxAuthors && i + 1 < a.length) {
             fa += ", \\emph{et al}";
             break;
         }
+        prefix = ", ";
         if (i == a.length - 2)
-            prefix = ", and ";
+            prefix = ", and "; // Oxford comma before and
     }
-    return "{\\sc " + fa + "}";
+    // fa = "\\sc "+fa;
+    return "{" + fa + "}";
 }
 
 // generate bibliography for assessments
@@ -1195,11 +1206,12 @@ for (var i = 0; i < data.length; i++) {
     var basename = bibdata(d, "codeURL").replace(/.*\/([^/]*)$/, "$1").replace(/_/g, ".").trim();
     s += "\\vbox{";
     if (basename.length > 0) s += "\\maprepo{" + basename + "}";
-    s += "\\bibitem{" + bibdata(d, "reference") + "}\n" + fixAuthors(bibdata(d, "authors")) + ", ``" + bibdata(d, "title") + ",'' \\emph{" + bibdata(d, "journal") + "}, \\textbf{" + bibdata(d, "volume") + "}";
+    s += "\\bibitem{" + bibdata(d, "reference") + "}\n" + fixAuthors(bibdata(d, "authors"));
+    s += " (" + bibdata(d, "year") + ") ";
+    s += "``" + bibdata(d, "title") + ",'' \\emph{" + bibdata(d, "journal") + "}, \\textbf{" + bibdata(d, "volume") + "}";
     if (definedq(bibdata(d, "number"))) s += "(" + bibdata(d, "number") + ")";
     if (definedq(bibdata(d, "pages")) && bibdata(d, "pages") != 0) s += ":" + bibdata(d, "pages") + "pp";
-    s += ", ";
-    s += bibdata(d, "year") + ". DOI \\texttt{" + bibdata(d, "doi").trim() + "}" + (bibdata(d, "codeURL") != undefined && bibdata(d, "codeURL") != "" ? (" {Code \\url{" + bibdata(d, "codeURL").trim() + "}}") : "") + "\\\\\\hfill{Accessed " + bibdata(d, "accessed") + ".}\\ " + (!definedq(bibdata(d, "doubleChecked")) || bibdata(d, "doubleChecked") == "" ? "\\textcolor{red}{Not double-checked}" : ("{" +
+    s += ".\n\n\\leftskip=\\labelwidth\nDOI \\texttt{" + bibdata(d, "doi").trim() + "}" + (bibdata(d, "codeURL") != undefined && bibdata(d, "codeURL") != "" ? ("\n\n{\\url{" + bibdata(d, "codeURL").trim() + "}}") : "") + "\\\\\\hfill{Accessed " + bibdata(d, "accessed") + ".}\\ " + (!definedq(bibdata(d, "doubleChecked")) || bibdata(d, "doubleChecked") == "" ? "\\textcolor{red}{Not double-checked}" : ("{" +
         "Double-checked " + bibdata(d, "doubleChecked") + "}")) + ".}\\bibskip\n\n";
 }
 saveFile("survey-references.bbl", s, "Reference list for Supplementary Material (bbl file)");

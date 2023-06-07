@@ -235,11 +235,7 @@ FUNCTION {OLDformat.names}
       {namesleft #1 >
                     { ", " * t * }
                     { %Oxford , and (unless commented out)
-                      %numnames #2 >
-                      %  { "," * }
-                      %  'skip$
-                      %if$
-                      " and " * t *
+                      ", and " * t *
                     }
                   if$
       } 
@@ -276,7 +272,7 @@ FUNCTION {format.names} % needs a total rewrite using 'and' function
           { 
             namesleft #1 >
               { ", " * t * }
-              { " and " * t * }
+              { ", and " * t * }
           	  if$
           }
           't
