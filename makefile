@@ -231,5 +231,6 @@ git-prep: # Is there anything on Git that we've lost, or stuff we have got local
 	@echo `comm -2 -3 /tmp/-on-git /tmp/-on-local | wc -l` "files not local but are on Git - maybe copy from Git"
 	@comm -2 -3 /tmp/-on-git /tmp/-on-local | sed "s/^/ -  /"
 	@rm -f /tmp/-on-git /tmp/-on-local
+	@echo
 	@echo You may want to run make tidyup
     
