@@ -138,8 +138,8 @@
 \citation{knuth}
 \citation{essence-of-software,fixit}
 \citation{popper-conjectures-refutations}
-\citation{preventable-book}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.e}Long-term problems of unreliable code}{16}{subsection.4.5}\protected@file@percent }
+\citation{preventable-book}
 \citation{preventable-book}
 \citation{science-review}
 \citation{diagnosis-reviews}
@@ -192,11 +192,11 @@
 \citation{actr}
 \citation{psychological-modeling}
 \citation{Ben,nature-review,se-bias}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.c}Beyond pandemic modeling}{20}{subsection.5.3}\protected@file@percent }
+\newlabel{section-science-beyond-pandemic-modeling}{{5.c}{20}{Beyond pandemic modeling}{subsection.5.3}{}}
 \citation{ourReview}
 \citation{hamming}
 \citation{NVP}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.c}Beyond pandemic modeling}{20}{subsection.5.3}\protected@file@percent }
-\newlabel{section-science-beyond-pandemic-modeling}{{5.c}{20}{Beyond pandemic modeling}{subsection.5.3}{}}
 \citation{unfinished}
 \citation{unfinished,lancet-unfinished}
 \citation{hoare}
@@ -968,15 +968,6 @@ The paper's \supplement\ provides a summary of Software Engineering best practic
 \end{abstract}
 \maketitle
 
-%\section*{Author summary}
-%
-%%\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{HT}}]
-%Harold Thimbleby PhD, FRCP (Edinburgh), Hon.\ FRSA, Hon.\ FRCP is See Change Fellow in Digital Health at Swansea University, Wales. His research focuses on human error and computer system design, particularly for healthcare. 
-%%In addition to over 340 peer-reviewed and 188 invited publications, Harold has written several books, including \emph{Press On\/} (MIT Press, 2007), which was winner of the American Association of Publishers best book in computer science award.
-%Harold won the British Computer Society Wilkes Medal. He is emeritus Gresham Professor of Geometry (a chair founded in 1597), and has been a Royal Society-Leverhulme Trust Senior Research Fellow and a Royal Society-Wolfson Research Merit Award holder. His latest book is  \emph{Fix IT: How to see and solve the problems of digital healthcare\/} \cite{fixit}.  See his web site, \texttt{www.harold.thimbleby.net}, for more details.
-
-%\noindent\emph{This paper evidences widespread problems arising from scientific papers relying on inadequately defined computer and inaccessible code, which undermines peer-review and replication, and undermines scientific quality generally. The risks vary, depending on how critical a paper's claims may be: ranging from superficial for opinion papers, to serious for papers in domains such as medicine, public health, or policy. This paper contrasts the situation with the mature approach to using statistics, and goes on to make proposals to help address the problem. The proposals are feasible, and presented in the hope of motivating their (or better solutions) being implemented, tested, and refined.}
-
 \section{Introduction}
 Unreliable, often unstated and unexplored, code and computational dependencies (including using AI or ML) in science are widespread. Furthermore, code is rarely published or made accessible in a usable form; it is generally too onerous or impossible to verify or scrutinize. Ironically, computers should be able to make reproducibility easier, yet too often code and results claimed do not contribute to reliable science, and do not support verification, replication, or reproduction on which future science can be firmly based. 
 
@@ -1394,9 +1385,10 @@ Poor code can generate plausible and possibly misleading results from \emph{any\
 { \newdimen \imageWidth 
   \imageWidth=\textwidth
   \imageWidthCalculation
-  \begin{center}\includegraphics[width=\imageWidth]{
-generated/mathematicaplot.jpg
-}\end{center}}
+  \begin{center}%
+% removed generated/ from graphics pathname
+\includegraphics[width=\imageWidth]{expanded-plot.\imageFileSuffix}
+\end{center}}
 \caption{Much computational science is concerned with finding plausible multi-dimensional models that fit models to data with the aim of extrapolating or predicting new results from them. Shown here is notional sample of experimental 2D data (the dots), a linear least squares regression, and an exact polynomial model. The over-fitted polynomial model fits the sample \emph{exactly\/}, but since the experimental data is presumably subject to random error (indicated by the confidence interval, itself estimated) the linear model would generally be considered a better description of the experimental data.}
 \label{fig-overfit}
 \end{figure\figureStarDetails}
@@ -1463,13 +1455,9 @@ Since programming appears to be so easy, developing code has a correspondingly l
 
 Almost all scientific papers \emph{routinely\/} describe their experimental method, their data handling, and provide an overview of their analytic (usually statistical) methods. If they are theoretical papers, they will describe their mathematical models and data that is used to run or test their models. However, outside of pure computer science, scientific papers are almost entirely silent on the code they rely on and how it was developed --- in particular, how the code might have been protected from bugs, analogously to how appropriate experimental methods were used avoid or control for experimental error. 
 
-%An example is the documentation at the code repository \xcite{BayesWaveCode}, which requires three high-profile \emph{{Physics Review D}} papers \xcite{BayesWave1,BayesWave2,BayesWave3} be cited to acknowledge any use, but only one of them, \xcite{BayesWave3}, mentions the code, and even then it fails to acknowledge the contributions of its 10 programmers (despite 6 being co-authors). The paper does cite the repository URL, but unlike the papers it cites conventionally, it omits all the code's authors. Acknowledgement does not seem to matter, even to the people who did the work.
-
 Since published papers rarely mention their code, new papers contributing to the literature do not write about their code either, so the low status of code persists. 
 
-In reaction to this vicious cycle, there is a growing movement to use and cite code correctly \cite{cite-code,TOP}, because code \emph{is\/} important, particularly for the reproduction, testing, and extension of any scientific work. (Code also needs to be correct, not just cited correctly.)
-
-%Few journals editorial policies recognize that data and code are theoretically and in practice indistinguishable (see \supplement). Given that data and code are equivalent and interchangeable, it follows that publishing policies on data handling should also apply at least as strictly to code.
+In reaction to this vicious cycle, there is a growing movement to use and cite code correctly \cite{cite-code,TOP}, because code \emph{is\/} important, particularly for the reproduction, testing, and extension of any scientific work. (Code also needs to be correct, not just cited correctly.) Few journals editorial policies recognize that data and code are in practice indistinguishable (see \supplement). Given that data and code are equally important in science, effectively equivalent and interchangeable, it follows that publishing policies on data handling should also apply at least as strictly to code.
 
 \subsection{The critical role of code is often ignored}\label{central-role-of-code}\label{PRISMA-statement}
 Because statistics, like code, is so readily susceptible to uncontrolled bias and error, there are many protocols and journal policies that enforce best practice, for example journals often require adherence to PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) \cite{prisma} for any paper performing a systematic review of the literature. PRISMA is a leading and influential research protocol, and it serves to make the point that the critical role of code is often strategically ignored. 
@@ -1512,9 +1500,7 @@ Since the code in question was substantial and non-trivial, it is very unlikely 
 
 Trying to constructively refute aspects of this research in the Popperian sense \cite{popper-conjectures-refutations} would have been impossible. For example, had the relevant papers published critical code invariants then scientists building on the research could have explored whether those invariants remained valid and, if so, under what assumptions. In fact, invariants are the theories of code, and deserve as high a prominence in published  science as the domain theories the code itself is supporting investigating. 
 
-%Since the symmetries in the scientific domains should be reflected in corresponding symmetries in well-designed code, this raises new possibilities of Formal Methods approaches (e.g., using automatic theorem provers) supporting advances in general science.
-
-\section{State of the art}% \\ in computational science}
+\section{State of the art}
 
 \subsection{Case study: Pandemic modeling}
 \label{section-pandemic-modeling}
@@ -1722,9 +1708,7 @@ Software engineers have many tools for automatic code development (such as Unix'
 By definition, \RAPstar\ objectifies how science is done to a standard sufficient to enable a computer to run it. \RAPstar\ therefore enables all of the methodologies of Software Engineering to be brought to bear \emph{on the science itself}. \RAPstar\ means the normally tacit, manual, and undocumented processes of science (especially the coding) become explicit. Code can then be scrutinized, optimized, and ensured correct by standard Software Engineering practice; thus \RAPstar\ does not automate science just for easier reproduction, it makes the automation explicit so the doing of science itself can be reasoned about --- not just by scientists but supported by sophisticated tools, such as theorem proving and AI\@. Science will be improved by \RAPstar.
 
 \subsection{The paper as a scientific laboratory}\label{paper-as-lab}
-The conventional view of science is that experiments are done \emph{then\/} written up. 
-%RAP and \RAPstar\ support and enhance this process with computational tools; in particular, the archival results of research are not just the reports and publications, but include the executable processes --- the pipelines in RAP terms --- of the research. 
-However, it is more productive to think of the paper itself as an active laboratory, not just as a record of finished work. The view of the paper as a scientific laboratory is explicit in computational papers (section \ref{computable-papers}): ideas are written down, and their validity is tested by the sense they make or fail to make; the ideas are then revised --- writing is an active experiment to find and develop ideas that are worth saying. Viewing the paper as a laboratory encourages authors to copy and adopt laboratory best practice (such as keeping records, as RAP and \RAPstar\ suggest) into the processes of writing the paper itself; viewing the paper as a laboratory also encourages authors to see writing as a scientifically --- not just expressive --- act, and not just as the final summary of a period of scientific creativity. In short, seen as a laboratory, the paper is no longer a reactive write-up of finished work, but it is an active part of doing good science. Writing a paper explores the space of scientific possibility as constructively as working in the field or on a lab bench. The computable paper is now the scientific laboratory.
+The conventional view of science is that experiments are done \emph{then\/} written up. However, it is more productive to think of the paper itself as an active laboratory, not just as a record of finished work. The view of the paper as a scientific laboratory is explicit in computational papers (section \ref{computable-papers}): ideas are written down, and their validity is tested by the sense they make or fail to make; the ideas are then revised --- writing is an active experiment to find and develop ideas that are worth saying. Viewing the paper as a laboratory encourages authors to copy and adopt laboratory best practice (such as keeping records, as RAP and \RAPstar\ suggest) into the processes of writing the paper itself; viewing the paper as a laboratory also encourages authors to see writing as a scientifically --- not just expressive --- act, and not just as the final summary of a period of scientific creativity. In short, seen as a laboratory, the paper is no longer a reactive write-up of finished work, but it is an active part of doing good science. Writing a paper explores the space of scientific possibility as constructively as working in the field or on a lab bench. The computable paper is now the scientific laboratory.
 
 With a computational paper, authors can literally experiment \emph{in\/} the paper, exploring the effectiveness of ideas and explanations. Furthermore, they can experiment with hypotheses: for example, authors can make a clear claim that at that point in the lifecycle of the paper is but a wish rather than an established theory or fact --- the wish enables them to sketch a direction they plan to go in and to explore possible supporting arguments and evidence for it. So they then do the experiments or calculations, including consulting the literature and other scientists, to establish a justification and other details. The evidence they generate or the criticism they receive may not be quite what they expected, so they then revise the claim to be correct, or change it to be a more realistic claim, or they could delete it if it just turns out to be a mess, or they could develop some altogether much better approach to the work as a result of the exploration. 
 

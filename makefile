@@ -127,6 +127,9 @@ tidyup: # Tidyup typically before doing a Git commit or making a zip file. Remov
 	-@ls paper*.pdf
 	@echo Remove all the recoverable stuff in the models directory
 	cd models; tidyup
+	@echo Finally, remove all expanded- files
+	ls expanded-*
+	rm -f expanded-*
  
 really-tidyup: # More thorough than \texttt{make tidyup} --- remove \emph{all} files that can be recreated. (This will mean next time you run \LaTeX\ you will have to ignore errors as the .aux files are re-created.)
 	@echo Remove all files that can be recreated, including PDFs and files made by processing the JSON data 
@@ -209,14 +212,20 @@ expand: # Expand all \LaTeX\ files (to recursively flatten \texttt{input} and \t
 	make pdf
 	make one-file
 	node programs/expand.js
+	sh expanded-copyfiles.sh
 	$(LATEX) expanded-appendix.tex > log
 	$(LATEX) expanded-paper.tex >> log
+	@echo The expanded table of contents still defines new labels, so process the new .aux files so there are no errors
+	$(LATEX) expanded-appendix.tex > log
+	$(LATEX) expanded-paper.tex >> log
+	@echo We kept the logs if you are interested, but thanks to the way expanded files work, every label may seem to be multiply defined
 	pdfunite expanded-paper.pdf expanded-appendix.pdf expanded-all.pdf >> log
-	if diff-pdf all.pdf expanded-all.pdf; then echo SAME -- SUCCESS; else echo DIFFERENT; fi
+	if diff-pdf all.pdf expanded-all.pdf; then echo SAME -- SUCCESS; else echo DIFFERENT -- FIX SOMETHING AND TRY AGAIN; fi
 	@echo You now have PDF files
-	@ls expanded*pdf 
+	@echo; ls expanded*pdf; echo 
 	@echo as well as the expanded source files 
-	@ls expanded*tex
+	@echo; ls expanded*tex; echo
+	rm -f expanded-*.out expanded-*.aux expanded-*.log expanded-*.toc expanded-*.dvi
 	@echo NB the PDFs still depend on comjnl.cls
 
 git-prep: # Is there anything on Git that we've lost, or stuff we have got locally but probably don't want on Git, so you can delete it or move it out the way or whatever.

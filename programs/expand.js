@@ -1,7 +1,24 @@
 // Harold Thimbleby, 2020-2023
 // Javascript code to recursively expand TeX \input commands in files TeXFiles[] (see below for value)
 // run as node generated/expand.js
+
+
 'use strict';
+
+
+var flattenGraphics = true;
+// graphics files are put in the directory generated/ but some publishers can't cope, 
+// so if flattenGraphics is true, the lines like
+//
+//    \includegraphics[width=\imageWidth]{generated/mathematicaplot.\imageFileSuffix}
+//
+// are converted to
+//
+//    \includegraphics[width=\imageWidth]{mathematicaplot.\imageFileSuffix}
+//
+// we also list all the relevant image files, as they will need copying out of the directory generated/
+
+
 
 var TeXFiles = ["paper.tex", "appendix.tex"];
 
@@ -52,7 +69,13 @@ function getFile(file) {
     }
 }
 
-var re = RegExp("\\\\input (.*)\n", "g"), rebib=RegExp("\\\\bibliography{(.*).bib}"), recontents=RegExp("\\\\tableofcontents");
+var cpFiles = "# assuming \\imageFileSuffix is defined as jpg\n",
+    cpFileCount = 0;
+
+var re = RegExp("\\\\input *(.*)\n", "g"), 
+    rebib = RegExp("\\\\bibliography *{(.*).bib}"), 
+    recontents = RegExp("\\\\tableofcontents *"),
+    regraphics = RegExp("\\\\includegraphics *\\[([^\\}]*generated/[^\\}]*)\\}");
 
 var contentsStuff = "\\makeatletter\n  \\section*{\\contentsname\n    \\@mkboth{\\MakeUppercase\\contentsname}{\\MakeUppercase\\contentsname}}\n\\makeatother";
 
@@ -91,10 +114,34 @@ for (var i = 0; i < TeXFiles.length; i++) {
             return "% expand table of contents " + rootfile + ".toc\n" + bufferInsert + "\n% end expanding table of contents " + rootfile + ".toc\n";
         });
     }
-    while (replaced);
+    while( replaced );
+    if( flattenGraphics )
+    {	do {   
+        	replaced = false;
+			cpFileCount++;
+    		// remove generated/ from \includegraphics[width=\imageWidth]{generated/mathematicaplot.\imageFileSuffix}
+        	bufferExpand = bufferExpand.replace(regraphics, function (match, graphicsDetails) {
+            	replaced = true;
+                console.log("      * \\includegraphics["+graphicsDetails+"} requires graphics file to be copied from generated/");
+                var gfile = graphicsDetails.replace(/.*\]\{/,"").replace(/\\imageFileSuffix/, "jpg");
+                cpFiles += "cp "+gfile+" expanded-"+(gfile.replace(/generated\//, ""))+"\n";
+                return "% removed generated/ from graphics pathname\n\\includegraphics["+(graphicsDetails.replace(/generated./, "expanded-")+"}");
+            });
+        }
+        while( replaced );
+    }
     saveFile("expanded-" + TeXFiles[i], bufferExpand);
     console.log("  ->  Saved as: " + "expanded-" + TeXFiles[i] + "\n");  
 }
 
 if( insertTableOfContents )
 	console.log("\nThe table of contents prefix (in the definition of \\tableofcontents, inserted before *.toc) used was:\n"+contentsStuff.replace(/^/mg, ">    ")+"\n");
+	
+if( flattenGraphics )
+{
+	console.log("\nCopy the "+cpFileCount+" graphics files to the current directory, as follows:\n");
+	console.log(cpFiles);
+	saveFile("expanded-copyfiles.sh", cpFiles);
+    console.log("  ->  Saved as: " + "expanded-copyfiles.sh\n"); 
+    console.log("Note: flattenGraphics in programs/expand.js is set to "+flattenGraphics+"\nSet flattenGraphics to false to disable this graphics file renaming feature.\n"); 
+}
