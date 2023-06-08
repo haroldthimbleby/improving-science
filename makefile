@@ -58,10 +58,15 @@ check-same: # After you have done a \texttt{make data} or \texttt{make pdf}, you
 	@echo You may want to run make tidyup "(to get rid of Git models and other junk)"
 	@programs/checksums
 
-check-update: # Update the data and generated file checksums after a successful run.
+check-update: # Update the data and generated file checksums after a successful run. Check files are the same by running make check-same
 	@echo Warning this can be a slow process if you have downloaded "(and not deleted!)" all the git repos
 	@echo You may want to run make tidyup
 	@programs/checksums update
+	
+check: # Perform all checks (otherwise done by indid make check-...)
+	make check-versions
+	make check-same
+	make check-git
 	
 data: # Analyze the data, and generate all the data files, the Unix scripts, the CSV, and \LaTeX\ files (including the \LaTeX\ summary of this makefile), etc. This \texttt{make} option runs \texttt{node programs/data.js}, downloads the Git repositories used in the pilot survey, and then analyzes them. Note that downloading all the repositories in a reasonable time needs decent internet bandwidth.
 	@echo Generate all files and analyses from the JSON data in programs/data.js
@@ -82,7 +87,7 @@ raw.table.data: # PS not included in help list, as target contains a . character
 	
 latex.tabular.data: # The n==1, n==6 etc is to select interesting entries for the supplementary.tex file. Note that meanings of n are defined in this output (and in generated/make-help.tex if you ran \texttt{make} data).
 	@(echo % Edit makefile to change the selected make command choices, as follows:; make raw.table.data | awk -F: 'BEGIN { n=0 } { n++; printf "%% %s - %s\n", n, $$1 }' )
-	@(echo "\n{\\\\sf\\\\begin{tabular}{rp{4.5in}}"; make raw.table.data | awk -F: 'BEGIN { n=0; needdots=0 } { n++; if( n == 1 || n == 6 || n == 9 ) { if( needdots ) printf "   \\multicolumn{1}{l@{\\vdots}}{}&\\\\\n"; needdots = 0; printf "\n\\texttt{%s}&\n   %s\\\\\n", $$1, $$2; } else { needdots = 1; } }'; echo "\\\\end{tabular}}\n")
+	@(echo "\n{\\\\sf\\\\begin{tabular}{rp{4.5in}}"; make raw.table.data | awk -F: 'BEGIN { n=0; needdots=0 } { n++; if( n == 1 || n == 7 || n == 10 ) { if( needdots ) printf "   \\multicolumn{1}{l@{\\vdots}}{}&\\\\\n"; needdots = 0; printf "\n\\texttt{%s}&\n   %s\\\\\n", $$1, $$2; } else { needdots = 1; } }'; echo "\\\\end{tabular}}\n")
 	
 help-brief: # Just this basic list of \texttt{make} options, with no further details.
 	@make raw.table.data | awk -F: 'function wrap(s) { leng = 0; t = ""; for( i = 1; i <= length(s); i++ ) { if( ++leng > 65 && substr(s, i, 1) == " " ) { leng = 0; t = t "\n                            "; } else t = t substr(s, i, 1); } return t "\n"; } function delatex(s) { gsub("---", "-", s); gsub("\\\\LaTeX\\\\", "Latex", s); gsub("\\\\texttt", "", s); gsub("\\\\emph", "", s); gsub("{|}", "", s); return s; }; { printf "%25s%s\n", $$1, wrap(delatex($$2)) }' 
@@ -143,7 +148,7 @@ all: # Download and analyze the data, then typeset the main files (\texttt{paper
 	make expand
 
 pdf: # Assuming you have got the data ready, make the two main PDF files, paper.pdf, and appendix.pdf. If you aren't sure you've got the data ready, say \texttt{make all} instead, or \texttt{make data} to just prepare the data before doing \texttt{make pdf}.
-    # LOTS of latex runs to make sure the bibtex and .aux files are all correctly synced
+    # LOTS of latex runs to make sure the bibtex .bbl and .aux files are all correctly synced
     # eg inserting the table of contents changes page numbering, so it needs formatting again, etc
 	$(LATEX) appendix.tex > log
 	bibtex appendix >> log
@@ -153,7 +158,7 @@ pdf: # Assuming you have got the data ready, make the two main PDF files, paper.
 	bibtex paper >> log
 	$(LATEX) paper.tex >> log
 	$(LATEX) paper.tex >> log
-	@echo Unfortunately, paper.tex has items in its bibiography that cross-refer to more bibliography items, so we need another run of bibtex etc
+	@echo Unfortunately, paper.tex has items in its bibliography that cross-refer to more bibliography items, so we need another run of bibtex etc
 	bibtex paper >> log
 	$(LATEX) paper.tex >> log
 	$(LATEX) paper.tex >> log
@@ -224,10 +229,10 @@ expand: # Expand all \LaTeX\ files (to recursively flatten \texttt{input} and \t
 	@echo; ls expanded*pdf; echo 
 	@echo as well as the expanded source files 
 	@echo; ls expanded*tex; echo
-	rm -f expanded-*.out expanded-*.aux expanded-*.log expanded-*.toc expanded-*.dvi
+	rm -f expanded-*.out expanded-*.log expanded-*.toc expanded-*.dvi *.blg
 	@echo NB the PDFs still depend on comjnl.cls
 
-git-prep: # Is there anything on Git that we've lost, or stuff we have got locally but probably don't want on Git, so you can delete it or move it out the way or whatever.
+check-git: # Is there anything on Git that we've lost, or stuff we have got locally but probably don't want on Git, so you can delete it or move it out the way or whatever.
 	@echo "We probably don't want some random stuff added to the Git repo..."
 	@rm -f /tmp/-on-git /tmp/-on-local
 	@(echo .gitignore; find . -not -path '*/.*' -type f -print ) | sed "s/^\.\///" | sort > /tmp/-on-local

@@ -29,13 +29,13 @@
 \contentsline {subsection}{\numberline {11.b}How trustworthy is the source?}{51}{subsection.11.2}%
 \contentsline {subsection}{\numberline {11.c}How trustworthy is the interpretation?}{52}{subsection.11.3}%
 \contentsline {section}{\numberline {12}A pilot survey of computational science}{52}{section.12}%
-\contentsline {subsection}{\numberline {12.a}Selected journal case studies}{52}{subsection.12.1}%
-\contentsline {subsubsection}{\numberline {12.a.1}\emph {The Lancet\/}}{52}{subsubsection.12.1.1}%
+\contentsline {subsection}{\numberline {12.a}Selected journal case studies}{53}{subsection.12.1}%
+\contentsline {subsubsection}{\numberline {12.a.1}\emph {The Lancet\/}}{53}{subsubsection.12.1.1}%
 \contentsline {subsubsection}{\numberline {12.a.2}\emph {Journal of Vascular Surgery}}{53}{subsubsection.12.1.2}%
 \contentsline {subsection}{\numberline {12.b}Pilot paper sample}{53}{subsection.12.2}%
 \contentsline {subsection}{\numberline {12.c}Summary of results}{56}{subsection.12.3}%
 \contentsline {subsubsection}{\numberline {12.c.1}Current code policies of sampled journals}{57}{subsubsection.12.3.1}%
-\contentsline {subsubsection}{\numberline {12.c.2}Sample assessment and scoring}{58}{subsubsection.12.3.2}%
+\contentsline {subsubsection}{\numberline {12.c.2}Sample assessment and scoring}{57}{subsubsection.12.3.2}%
 \contentsline {subsection}{\numberline {12.d}Assessment criteria and methods}{60}{subsection.12.4}%
 \contentsline {subsubsection}{\numberline {12.d.1}Detecting and defending against error}{62}{subsubsection.12.4.1}%
 \contentsline {subsubsection}{\numberline {12.d.2}Defending against system problems}{63}{subsubsection.12.4.2}%

@@ -1,24 +1,25 @@
 % Edit makefile to change the selected make command choices, as follows:
 % 1 - make all
 % 2 - make archive
-% 3 - make check-same
-% 4 - make check-update
-% 5 - make check-versions
-% 6 - make data
-% 7 - make expand
-% 8 - make git-prep
-% 9 - make help
-% 10 - make help-brief
-% 11 - make mathematica
-% 12 - make mathematica-open
-% 13 - make one-file
-% 14 - make pdf
-% 15 - make push
-% 16 - make readme
-% 17 - make really-tidyup
-% 18 - make tidyup
-% 19 - make zip
-% 20 - make zip-data
+% 3 - make check
+% 4 - make check-git
+% 5 - make check-same
+% 6 - make check-update
+% 7 - make check-versions
+% 8 - make data
+% 9 - make expand
+% 10 - make help
+% 11 - make help-brief
+% 12 - make mathematica
+% 13 - make mathematica-open
+% 14 - make one-file
+% 15 - make pdf
+% 16 - make push
+% 17 - make readme
+% 18 - make really-tidyup
+% 19 - make tidyup
+% 20 - make zip
+% 21 - make zip-data
 
 {\sf\begin{tabular}{rp{4.5in}}
 
@@ -26,8 +27,8 @@
       Download and analyze the data, then typeset the main files (\texttt{paper.pdf}, \texttt{appendix.pdf} and \texttt{all.pdf}) that import all the data, as well as make the self-contained expanded \texttt{.tex} (and \texttt{.PDF}) files that do not depend on the separate data files in \texttt{data/*}.\\
    \multicolumn{1}{l@{\vdots}}{}&\\
 
-\texttt{make data}&
-      Analyze the data, and generate all the data files, the Unix scripts, the CSV, and \LaTeX\ files (including the \LaTeX\ summary of this makefile), etc. This \texttt{make} option runs \texttt{node programs/data.js}, downloads the Git repositories used in the pilot survey, and then analyzes them. Note that downloading all the repositories in a reasonable time needs decent internet bandwidth.\\
+\texttt{make check-versions}&
+      Check that you have the right software and software versions to run everything.\\
    \multicolumn{1}{l@{\vdots}}{}&\\
 
 \texttt{make help}&
