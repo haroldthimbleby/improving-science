@@ -72,10 +72,10 @@ function getFile(file) {
 var cpFiles = "# assuming \\imageFileSuffix is defined as jpg\n",
     cpFileCount = 0;
 
-var re = RegExp("\\\\input *(.*)\n", "g"), 
-    rebib = RegExp("\\\\bibliography *{(.*).bib}"), 
-    recontents = RegExp("\\\\tableofcontents *"),
-    regraphics = RegExp("\\\\includegraphics *\\[([^\\}]*generated/[^\\}]*)\\}");
+var REinput = RegExp("\\\\input *(.*)\n", "g"), 
+    REbib = RegExp("\\\\bibliography *{(.*).bib}"), 
+    REcontents = RegExp("\\\\tableofcontents *"),
+    REgraphics = RegExp("\\\\includegraphics *\\[([^\\}]*generated/[^\\}]*)\\}");
 
 var contentsStuff = "\\makeatletter\n  \\section*{\\contentsname\n    \\@mkboth{\\MakeUppercase\\contentsname}{\\MakeUppercase\\contentsname}}\n\\makeatother";
 
@@ -94,19 +94,19 @@ for (var i = 0; i < TeXFiles.length; i++) {
     var replaced;
     do {
         replaced = false;
-        bufferExpand = bufferExpand.replace(re, function (match, filename) {
+        bufferExpand = bufferExpand.replace(REinput, function (match, filename) {
             replaced = true;
             console.log("        \\input " + filename);
             bufferInsert = getFile(filename);
             return "% expand " + filename + "\n" + bufferInsert + "% end expanding " + filename + "\n";
         });
-        bufferExpand = bufferExpand.replace(rebib, function (match, filename) {
+        bufferExpand = bufferExpand.replace(REbib, function (match, filename) {
         	replaced = true;
             console.log("      * \\bibliography{"+filename+".bib} => replaced with " + filename+".bbl");
             bufferInsert = getFile(filename+".bbl");
             return "% expand bibliography " + filename + ".bbl\n" + bufferInsert + "\n% end expanding bibliography " + filename + ".bbl\n";
         });
-        bufferExpand = bufferExpand.replace(recontents, function (match, filename) {
+        bufferExpand = bufferExpand.replace(REcontents, function (match, filename) {
         	replaced = true;
 			insertTableOfContents = true;
             console.log("      * \\tableofcontents => replaced with "+ rootfile+".toc, after standard expansion of \\tableofcontents macro");
@@ -120,7 +120,7 @@ for (var i = 0; i < TeXFiles.length; i++) {
         	replaced = false;
 			cpFileCount++;
     		// remove generated/ from \includegraphics[width=\imageWidth]{generated/mathematicaplot.\imageFileSuffix}
-        	bufferExpand = bufferExpand.replace(regraphics, function (match, graphicsDetails) {
+        	bufferExpand = bufferExpand.replace(REgraphics, function (match, graphicsDetails) {
             	replaced = true;
                 console.log("      * \\includegraphics["+graphicsDetails+"} requires graphics file to be copied from generated/");
                 var gfile = graphicsDetails.replace(/.*\]\{/,"").replace(/\\imageFileSuffix/, "jpg");
@@ -143,5 +143,6 @@ if( flattenGraphics )
 	console.log(cpFiles);
 	saveFile("expanded-copyfiles.sh", cpFiles);
     console.log("  ->  Saved as: " + "expanded-copyfiles.sh\n"); 
-    console.log("Note: flattenGraphics in programs/expand.js is set to "+flattenGraphics+"\nSet flattenGraphics to false to disable this graphics file renaming feature.\n"); 
+    console.log("Note 1: flattenGraphics in programs/expand.js is set to "+flattenGraphics+".\n        Set flattenGraphics to false to disable this graphics file renaming feature.\n"); 
+    console.log("Note 2: graphics files are copied to expanded-* so all expanded-* files can be easily deleted, if need be.\n");
 }
