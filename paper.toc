@@ -27,4 +27,4 @@
 \contentsline {subsection}{\numberline {6.f}Training to reduce technical debt}{26}{subsection.6.6}%
 \contentsline {subsection}{\numberline {6.g}Benefits beyond science}{27}{subsection.6.7}%
 \contentsline {subsection}{\numberline {6.h}Approaches to further work}{28}{subsection.6.8}%
-\contentsline {section}{\numberline {7}Conclusions}{28}{section.7}%
+\contentsline {section}{\numberline {7}Conclusions}{29}{section.7}%

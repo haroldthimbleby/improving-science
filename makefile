@@ -20,6 +20,11 @@
 # I originally used LATEX=latex but it has problems on some systems with graphics
 LATEX = pdflatex
 
+# this must be consistent with programs/expand.js definitions...
+EXPANDED = EX
+# Important: EXPANDED *must* be defined so that patterns say like rm $(EXPANDED)* are not ambiguous
+
+
 APPENDIX = supplemental material
 
 osversion = Darwin Kernel Version 22.4.0: Mon Mar  6 21:00:17 PST 2023; root:xnu-8796.101.5~3/RELEASE_X86_64
@@ -131,16 +136,16 @@ tidyup: # Tidyup typically before doing a Git commit or making a zip file. Remov
 	-@ls paper*.pdf
 	@echo Remove all the recoverable stuff in the models directory
 	cd models; tidyup
-	@echo Finally, remove all expanded- files
-	ls expanded-*
-	rm -f expanded-*
+	@echo Finally, remove all $(EXPANDED) files
+	ls $(EXPANDED)*
+	rm -f $(EXPANDED)*
  
 really-tidyup: # More thorough than \texttt{make tidyup} --- remove \emph{all} files that can be recreated. (This will mean next time you run \LaTeX\ you will have to ignore errors as the .aux files are re-created.)
 	@echo Remove all files that can be recreated, including PDFs and files made by processing the JSON data 
 	make tidyup 
 	rm -f *.pdf
 	rm -f generated/* 
-	rm -f expanded-*
+	rm -f $(EXPANDED)*
 		
 all: # Download and analyze the data, then typeset the main files (\texttt{paper.pdf}, \texttt{appendix.pdf} and \texttt{all.pdf}) that import all the data, as well as make the self-contained expanded \texttt{.tex} (and \texttt{.PDF}) files that do not depend on the separate data files in \texttt{data/*}.
 	make data
@@ -203,7 +208,7 @@ one-file: # Make a single PDF file \texttt{all.pdf} (i.e., paper + supplementary
 # this rule has a . in the target name (one.file), so make help doesn't find it (see the grep command in make help)
 one.file: paper.pdf appendix.pdf # concatenate files
 	@echo make single PDF file all.pdf
-	@echo NB use make expand instead to make expanded-all.pdf etc
+	@echo NB use make expand instead to make $(EXPANDED)all.pdf etc
 	pdfunite paper.pdf appendix.pdf all.pdf
 
 zip-data: # Just make a zip archive of the data only. This is required for, e.g., uploading to a Dryad repository --- which is quirky as it won't include all the code needed to handle the data!
@@ -216,20 +221,20 @@ expand: # Expand all \LaTeX\ files (to recursively flatten \texttt{input} and \t
 	make pdf
 	make one-file
 	node programs/expand.js
-	sh expanded-copyfiles.sh
-	$(LATEX) expanded-appendix.tex > log
-	$(LATEX) expanded-paper.tex >> log
+	sh $(EXPANDED)copyfiles.sh
+	$(LATEX) $(EXPANDED)appendix.tex > log
+	$(LATEX) $(EXPANDED)paper.tex >> log
 	@echo The expanded table of contents still defines new labels, so process the new .aux files so there are no errors
-	$(LATEX) expanded-appendix.tex > log
-	$(LATEX) expanded-paper.tex >> log
+	$(LATEX) $(EXPANDED)appendix.tex > log
+	$(LATEX) $(EXPANDED)paper.tex >> log
 	@echo We kept the logs if you are interested, but thanks to the way expanded files work, every label may seem to be multiply defined
-	pdfunite expanded-paper.pdf expanded-appendix.pdf expanded-all.pdf >> log
-	if diff-pdf all.pdf expanded-all.pdf; then echo SAME -- SUCCESS; else echo DIFFERENT -- FIX SOMETHING AND TRY AGAIN; fi
+	pdfunite $(EXPANDED)paper.pdf $(EXPANDED)appendix.pdf $(EXPANDED)all.pdf >> log
+	if diff-pdf all.pdf $(EXPANDED)all.pdf; then echo SAME -- SUCCESS; else echo DIFFERENT -- FIX SOMETHING AND TRY AGAIN; fi
 	@echo You now have PDF files
-	@echo; ls expanded*pdf; echo 
+	@echo; ls $(EXPANDED)*pdf; echo 
 	@echo as well as the expanded source files 
-	@echo; ls expanded*tex; echo
-	rm -f expanded-*.out expanded-*.log expanded-*.toc expanded-*.dvi *.blg
+	@echo; ls $(EXPANDED)*tex; echo
+	rm -f $(EXPANDED)*.out $(EXPANDED)*.log $(EXPANDED)*.toc $(EXPANDED)*.dvi *.blg
 	@echo NB the PDFs still depend on comjnl.cls
 
 check-git: # Is there anything on Git that we've lost, or stuff we have got locally but probably don't want on Git, so you can delete it or move it out the way or whatever.

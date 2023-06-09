@@ -1,0 +1,2106 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./EXappendix.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22>
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/doi/doi.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2023/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/local/texlive/2023/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty (/usr/local/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/local/texlive/2023/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+)))) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/color.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-def/pdftex.def)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/grfext/grfext.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/moreverb/moreverb.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/tools/verbatim.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./EXappendix.aux
+
+LaTeX Warning: Label `supplement-best-practice' multiply defined.
+
+
+LaTeX Warning: Label `supplement-material-makefiles' multiply defined.
+
+
+LaTeX Warning: Label `supplement-on-code-data-publication' multiply defined.
+
+
+LaTeX Warning: Label `supplement-RAP-diagrams' multiply defined.
+
+
+LaTeX Warning: Label `supplement-Spiegelhalter-section' multiply defined.
+
+
+LaTeX Warning: Label `supplement-fig:basic' multiply defined.
+
+
+LaTeX Warning: Label `supplement-fig:excel' multiply defined.
+
+
+LaTeX Warning: Label `supplement-fig:rap' multiply defined.
+
+
+LaTeX Warning: Label `supplement-fig:notebook' multiply defined.
+
+
+LaTeX Warning: Label `supplement-table:options' multiply defined.
+
+
+LaTeX Warning: Label `supplement-survey-section' multiply defined.
+
+
+LaTeX Warning: Label `supplement-vascular-surgery-note' multiply defined.
+
+
+LaTeX Warning: Label `supplement-table-overview' multiply defined.
+
+
+LaTeX Warning: Label `supplement-table-summary' multiply defined.
+
+
+LaTeX Warning: Label `supplement-table-repo-summary' multiply defined.
+
+
+LaTeX Warning: Label `supplement-summary-of-results' multiply defined.
+
+
+LaTeX Warning: Label `supplement-journal-policies-section' multiply defined.
+
+
+LaTeX Warning: Label `supplement-data-methods-subsection' multiply defined.
+
+
+LaTeX Warning: Label `supplement-detecting-against-error' multiply defined.
+
+
+LaTeX Warning: Label `supplement-restrictive-policies' multiply defined.
+
+
+LaTeX Warning: Label `vancouver' multiply defined.
+
+
+LaTeX Warning: Label `cosmos' multiply defined.
+
+
+LaTeX Warning: Label `ai-ethics' multiply defined.
+
+
+LaTeX Warning: Label `science-lancet1' multiply defined.
+
+
+LaTeX Warning: Label `science-lancet2' multiply defined.
+
+
+LaTeX Warning: Label `lancet-learning' multiply defined.
+
+
+LaTeX Warning: Label `jvs1' multiply defined.
+
+
+LaTeX Warning: Label `jvs2' multiply defined.
+
+
+LaTeX Warning: Label `jvs3' multiply defined.
+
+
+LaTeX Warning: Label `swebok' multiply defined.
+
+
+LaTeX Warning: Label `wpf' multiply defined.
+
+
+LaTeX Warning: Label `humphrey' multiply defined.
+
+
+LaTeX Warning: Label `managers' multiply defined.
+
+
+LaTeX Warning: Label `differential-equations' multiply defined.
+
+
+LaTeX Warning: Label `numerals' multiply defined.
+
+
+LaTeX Warning: Label `heedless' multiply defined.
+
+
+LaTeX Warning: Label `plos' multiply defined.
+
+
+LaTeX Warning: Label `excel1' multiply defined.
+
+
+LaTeX Warning: Label `excel2' multiply defined.
+
+
+LaTeX Warning: Label `npm' multiply defined.
+
+
+LaTeX Warning: Label `hci1' multiply defined.
+
+
+LaTeX Warning: Label `hci2' multiply defined.
+
+
+LaTeX Warning: Label `flexibility' multiply defined.
+
+
+LaTeX Warning: Label `iso' multiply defined.
+
+
+LaTeX Warning: Label `178C' multiply defined.
+
+
+LaTeX Warning: Label `peerReview' multiply defined.
+
+
+LaTeX Warning: Label `ssi-report' multiply defined.
+
+
+LaTeX Warning: Label `ssi-url' multiply defined.
+
+
+LaTeX Warning: Label `security-engineering' multiply defined.
+
+
+LaTeX Warning: Label `cyber-cacm' multiply defined.
+
+
+LaTeX Warning: Label `Schneier' multiply defined.
+
+
+LaTeX Warning: Label `electronic-evidence' multiply defined.
+
+
+LaTeX Warning: Label `simon-artificial' multiply defined.
+
+
+LaTeX Warning: Label `dunning-kruger' multiply defined.
+
+
+LaTeX Warning: Label `dunning-kruger-numeracy' multiply defined.
+
+
+LaTeX Warning: Label `enigma' multiply defined.
+
+
+LaTeX Warning: Label `harking' multiply defined.
+
+
+LaTeX Warning: Label `viruses' multiply defined.
+
+
+LaTeX Warning: Label `strachey' multiply defined.
+
+
+LaTeX Warning: Label `henderson' multiply defined.
+
+
+LaTeX Warning: Label `lancet-retracted' multiply defined.
+
+
+LaTeX Warning: Label `fda' multiply defined.
+
+
+LaTeX Warning: Label `stability' multiply defined.
+
+
+LaTeX Warning: Label `RS-policy' multiply defined.
+
+
+LaTeX Warning: Label `latex-calculus' multiply defined.
+
+
+LaTeX Warning: Label `ref-1' multiply defined.
+
+
+LaTeX Warning: Label `ref-2' multiply defined.
+
+
+LaTeX Warning: Label `ref-3' multiply defined.
+
+
+LaTeX Warning: Label `ref-4' multiply defined.
+
+
+LaTeX Warning: Label `ref-5' multiply defined.
+
+
+LaTeX Warning: Label `ref-6' multiply defined.
+
+
+LaTeX Warning: Label `ref-7' multiply defined.
+
+
+LaTeX Warning: Label `ref-8' multiply defined.
+
+
+LaTeX Warning: Label `ref-9' multiply defined.
+
+
+LaTeX Warning: Label `ref-10' multiply defined.
+
+
+LaTeX Warning: Label `ref-11' multiply defined.
+
+
+LaTeX Warning: Label `ref-12' multiply defined.
+
+
+LaTeX Warning: Label `paper-usesRMarkdown' multiply defined.
+
+
+LaTeX Warning: Label `ref-14' multiply defined.
+
+
+LaTeX Warning: Label `onlyPaperWithChecks' multiply defined.
+
+
+LaTeX Warning: Label `ref-16' multiply defined.
+
+
+LaTeX Warning: Label `ref-17' multiply defined.
+
+
+LaTeX Warning: Label `ethics-paper' multiply defined.
+
+
+LaTeX Warning: Label `ref-19' multiply defined.
+
+
+LaTeX Warning: Label `ref-20' multiply defined.
+
+
+LaTeX Warning: Label `ref-21' multiply defined.
+
+
+LaTeX Warning: Label `ref-22' multiply defined.
+
+
+LaTeX Warning: Label `ref-23' multiply defined.
+
+
+LaTeX Warning: Label `example-numerical-error' multiply defined.
+
+
+LaTeX Warning: Label `ref-25' multiply defined.
+
+
+LaTeX Warning: Label `ref-26' multiply defined.
+
+
+LaTeX Warning: Label `ref-27' multiply defined.
+
+
+LaTeX Warning: Label `ref-28' multiply defined.
+
+
+LaTeX Warning: Label `ref-29' multiply defined.
+
+
+LaTeX Warning: Label `ref-30' multiply defined.
+
+
+LaTeX Warning: Label `ref-31' multiply defined.
+
+
+LaTeX Warning: Label `ref-32' multiply defined.
+
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(./EXappendix.out) (./EXappendix.out)
+(/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd) [36{/usr/local/
+texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [37] [38] [39{/usr/
+local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[40] [41] [42] [43] [44] [45] [46] [47] [48] [49 <./EXbasic.jpg> <./EXexcel.jpg
+>] [50 <./EXimport.jpg>] [51 <./EXnotebook.jpg>] [52] [53] [54] [55] [56]
+Underfull \hbox (badness 10000) in paragraph at lines 1776--1778
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1807--1809
+
+
+LaTeX Warning: Reference `supplementary-journal-policies-section' on page 57 un
+defined on input line 1817.
+
+
+LaTeX Warning: Reference `supplementary-journal-policies-section' on page 57 un
+defined on input line 1818.
+
+[57]
+Underfull \hbox (badness 4518) in paragraph at lines 1859--1860
+\OT1/cmr/m/n/10 ple-men-tal files Rsos192210supp1.docx and
+[58] [59] [60]
+Overfull \hbox (4.13461pt too wide) in paragraph at lines 1903--1904
+[]\OT1/cmr/m/n/10 As an in-for-mal sur-vey, in-tended to es-tab-lish whether th
+e is-sues in epi-demic mod-el-ing were more widespread,
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 1929.
+
+[61] [62]
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/bx/n' instead on input line 2033.
+
+[63]
+Overfull \hbox (0.69447pt too wide) detected at line 2097
+ \OT1/cmr/m/n/10 [130] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2102
+ \OT1/cmr/m/n/10 [131] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2106
+ \OT1/cmr/m/n/10 [132] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2111
+ \OT1/cmr/m/n/10 [133] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2116
+ \OT1/cmr/m/n/10 [134] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2121
+ \OT1/cmr/m/n/10 [135] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2126
+ \OT1/cmr/m/n/10 [136] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2133
+ \OT1/cmr/m/n/10 [137] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2139
+ \OT1/cmr/m/n/10 [138] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2148
+ \OT1/cmr/m/n/10 [139] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2153
+ \OT1/cmr/m/n/10 [140] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2157
+ \OT1/cmr/m/n/10 [141] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2161
+ \OT1/cmr/m/n/10 [142] 
+[64]
+Overfull \hbox (0.69447pt too wide) detected at line 2165
+ \OT1/cmr/m/n/10 [143] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2172
+ \OT1/cmr/m/n/10 [144] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2177
+ \OT1/cmr/m/n/10 [145] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2183
+ \OT1/cmr/m/n/10 [146] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2190
+ \OT1/cmr/m/n/10 [147] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2198
+ \OT1/cmr/m/n/10 [148] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2205
+ \OT1/cmr/m/n/10 [149] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2210
+ \OT1/cmr/m/n/10 [150] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2216
+ \OT1/cmr/m/n/10 [151] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2220
+ \OT1/cmr/m/n/10 [152] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2224
+ \OT1/cmr/m/n/10 [153] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2230
+ \OT1/cmr/m/n/10 [154] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2235
+ \OT1/cmr/m/n/10 [155] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2242
+ \OT1/cmr/m/n/10 [156] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2249
+ \OT1/cmr/m/n/10 [157] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2253
+ \OT1/cmr/m/n/10 [158] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2256
+ \OT1/cmr/m/n/10 [159] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2262
+ \OT1/cmr/m/n/10 [160] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2267
+ \OT1/cmr/m/n/10 [161] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2274
+ \OT1/cmr/m/n/10 [162] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2278
+ \OT1/cmr/m/n/10 [163] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2285
+ \OT1/cmr/m/n/10 [164] 
+[65]
+Overfull \hbox (0.69447pt too wide) detected at line 2292
+ \OT1/cmr/m/n/10 [165] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2297
+ \OT1/cmr/m/n/10 [166] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2302
+ \OT1/cmr/m/n/10 [167] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2308
+ \OT1/cmr/m/n/10 [168] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2313
+ \OT1/cmr/m/n/10 [169] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2317
+ \OT1/cmr/m/n/10 [170] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2324
+ \OT1/cmr/m/n/10 [171] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2330
+ \OT1/cmr/m/n/10 [172] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2336
+ \OT1/cmr/m/n/10 [173] 
+
+Overfull \hbox (0.69447pt too wide) detected at line 2340
+ \OT1/cmr/m/n/10 [174] 
+[66] [67] [68] [69] (./EXappendix.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
+(see the transcript file for additional information)
+pdfTeX warning (dest): name{cite.latex-calculus} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.excel-fiasco} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.prisma} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-32} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-31} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-30} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-29} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-28} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-27} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-26} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-25} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-23} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-22} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-21} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-20} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-19} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-17} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-16} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-14} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-12} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-11} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-10} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-9} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-8} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-7} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-6} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-5} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-4} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-3} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-2} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ref-1} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.RS-policy} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.6.5} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.stability} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.5.3} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.nature-review} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.2} has been referenced but does not exist, re
+placed by a fixed one
+
+
+pdfTeX warning (dest): name{table.1} has been referenced but does not exist, re
+placed by a fixed one
+
+
+pdfTeX warning (dest): name{cite.fda} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.lancet-retracted} has been referenced but does
+ not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.Spiegelhalter} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.1} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.1} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.RMarkdown} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.paper-usesRMarkdown} has been referenced but d
+oes not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.henderson} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.strachey} has been referenced but does not exi
+st, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.viruses} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.harking} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.enigma} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.dunning-kruger-numeracy} has been referenced b
+ut does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.dunning-kruger} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.simon-artificial} has been referenced but does
+ not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.popper-conjectures-refutations} has been refer
+enced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.example-numerical-error} has been referenced b
+ut does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.electronic-evidence} has been referenced but d
+oes not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.Schneier} has been referenced but does not exi
+st, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.cyber-cacm} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.security-engineering} has been referenced but 
+does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.acm-artifacts} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ssi-url} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ssi-report} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.peerReview} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.178C} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.iso} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.flexibility} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.hci2} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.hci1} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.relit} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.LP} has been referenced but does not exist, re
+placed by a fixed one
+
+
+pdfTeX warning (dest): name{cite.assurance-case} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.open-source} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.npm} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.6.7} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.excel2} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.excel1} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.flu-model} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ICmodel} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.avianFluModel} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.NVP} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.5.2} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.reproducibility} has been referenced but does 
+not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.basic-reproducibilty} has been referenced but 
+does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.haskell} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.tweet} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.plos} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.onlyPaperWithChecks} has been referenced but d
+oes not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.heedless} has been referenced but does not exi
+st, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.numerals} has been referenced but does not exi
+st, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.hoare} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.misra} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.spark} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.cbc} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.differential-equations} has been referenced bu
+t does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.managers} has been referenced but does not exi
+st, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.humphrey} has been referenced but does not exi
+st, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.wpf} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.turing-way} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.swebok} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.knight} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.sommerville} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.jvs3} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.jvs2} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.jvs1} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.lancet-learning} has been referenced but does 
+not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.science-lancet2} has been referenced but does 
+not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.science-lancet1} has been referenced but does 
+not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ai-ethics} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.ethics-paper} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.cosmos} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.fixit} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.hamming} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.vancouver} has been referenced but does not ex
+ist, replaced by a fixed one
+
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><
+/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
+texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
+xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
+ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
+2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/202
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2023/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2023/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2023/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2023/texmf-dist/font
+s/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/
+fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on EXappendix.pdf (34 pages, 741541 bytes).
+Transcript written on EXappendix.log.
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./EXpaper.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22> (./comjnl.cls
+Document Class: comjnl 2009/07/27 v0.1c The Computer Journal class (DPC)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/rotating.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amscls/amsthm.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/epsfig.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/ragged2e/ragged2e.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2023/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/local/texlive/2023/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty (/usr/local/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/local/texlive/2023/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+))) (/usr/local/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/moreverb/moreverb.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/tools/verbatim.sty))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./EXpaper.aux
+
+LaTeX Warning: Label `FirstPage' multiply defined.
+
+
+LaTeX Warning: Label `table-overview' multiply defined.
+
+
+LaTeX Warning: Label `table-summary' multiply defined.
+
+
+LaTeX Warning: Label `TOPtable' multiply defined.
+
+
+LaTeX Warning: Label `related-work' multiply defined.
+
+
+LaTeX Warning: Label `computable-papers' multiply defined.
+
+
+LaTeX Warning: Label `RAP-section' multiply defined.
+
+
+LaTeX Warning: Label `fig-pipeline' multiply defined.
+
+
+LaTeX Warning: Label `figure-RAP-summary' multiply defined.
+
+
+LaTeX Warning: Label `statistics-computation-analogy' multiply defined.
+
+
+LaTeX Warning: Label `section-vicious-cycles' multiply defined.
+
+
+LaTeX Warning: Label `over-fit' multiply defined.
+
+
+LaTeX Warning: Label `name-example-footnote' multiply defined.
+
+
+LaTeX Warning: Label `fig-overfit' multiply defined.
+
+
+LaTeX Warning: Label `deceptive-simplicity-of-code' multiply defined.
+
+
+LaTeX Warning: Label `lowCodeStatus' multiply defined.
+
+
+LaTeX Warning: Label `central-role-of-code' multiply defined.
+
+
+LaTeX Warning: Label `PRISMA-statement' multiply defined.
+
+
+LaTeX Warning: Label `knowledge' multiply defined.
+
+
+LaTeX Warning: Label `section-pandemic-modeling' multiply defined.
+
+
+LaTeX Warning: Label `discuss-covid-sim' multiply defined.
+
+
+LaTeX Warning: Label `reproducibility-concerns' multiply defined.
+
+
+LaTeX Warning: Label `section-science-beyond-pandemic-modeling' multiply define
+d.
+
+
+LaTeX Warning: Label `section-discussion' multiply defined.
+
+
+LaTeX Warning: Label `critique-fair' multiply defined.
+
+
+LaTeX Warning: Label `summary' multiply defined.
+
+
+LaTeX Warning: Label `RAPstar-section' multiply defined.
+
+
+LaTeX Warning: Label `paper-as-lab' multiply defined.
+
+
+LaTeX Warning: Label `mentionPLOSandIEEE' multiply defined.
+
+
+LaTeX Warning: Label `technical-debt' multiply defined.
+
+
+LaTeX Warning: Label `benefits-beyond-science' multiply defined.
+
+
+LaTeX Warning: Label `a=b' multiply defined.
+
+
+LaTeX Warning: Label `write-for-life' multiply defined.
+
+
+LaTeX Warning: Label `abelson' multiply defined.
+
+
+LaTeX Warning: Label `nature-chatgpt' multiply defined.
+
+
+LaTeX Warning: Label `sommerville' multiply defined.
+
+
+LaTeX Warning: Label `knight' multiply defined.
+
+
+LaTeX Warning: Label `computational-thinking-wing' multiply defined.
+
+
+LaTeX Warning: Label `computational-thinking' multiply defined.
+
+
+LaTeX Warning: Label `ICmodel' multiply defined.
+
+
+LaTeX Warning: Label `avianFluModel' multiply defined.
+
+
+LaTeX Warning: Label `originalICmodel' multiply defined.
+
+
+LaTeX Warning: Label `reproducibility-crisis' multiply defined.
+
+
+LaTeX Warning: Label `rescience' multiply defined.
+
+
+LaTeX Warning: Label `temperature' multiply defined.
+
+
+LaTeX Warning: Label `form' multiply defined.
+
+
+LaTeX Warning: Label `acm-algorithms' multiply defined.
+
+
+LaTeX Warning: Label `hoare-correctness' multiply defined.
+
+
+LaTeX Warning: Label `jupyter-study' multiply defined.
+
+
+LaTeX Warning: Label `trisovic' multiply defined.
+
+
+LaTeX Warning: Label `machine-learning-reproducibility' multiply defined.
+
+
+LaTeX Warning: Label `no-raw-data' multiply defined.
+
+
+LaTeX Warning: Label `data-access' multiply defined.
+
+
+LaTeX Warning: Label `reproducible-manifesto' multiply defined.
+
+
+LaTeX Warning: Label `joss' multiply defined.
+
+
+LaTeX Warning: Label `TOP' multiply defined.
+
+
+LaTeX Warning: Label `TOP-wiki' multiply defined.
+
+
+LaTeX Warning: Label `MMR-fraud' multiply defined.
+
+
+LaTeX Warning: Label `misconduct-issues' multiply defined.
+
+
+LaTeX Warning: Label `elns' multiply defined.
+
+
+LaTeX Warning: Label `perkel-review' multiply defined.
+
+
+LaTeX Warning: Label `maneage' multiply defined.
+
+
+LaTeX Warning: Label `LP' multiply defined.
+
+
+LaTeX Warning: Label `LP-book' multiply defined.
+
+
+LaTeX Warning: Label `relit' multiply defined.
+
+
+LaTeX Warning: Label `notebook-patent' multiply defined.
+
+
+LaTeX Warning: Label `jupyter-history' multiply defined.
+
+
+LaTeX Warning: Label `knitr' multiply defined.
+
+
+LaTeX Warning: Label `spec-led-design' multiply defined.
+
+
+LaTeX Warning: Label `RAPstandard' multiply defined.
+
+
+LaTeX Warning: Label `rap' multiply defined.
+
+
+LaTeX Warning: Label `goldacre' multiply defined.
+
+
+LaTeX Warning: Label `turing-way' multiply defined.
+
+
+LaTeX Warning: Label `Courtes' multiply defined.
+
+
+LaTeX Warning: Label `apa-statistics' multiply defined.
+
+
+LaTeX Warning: Label `Mariusz-reporting' multiply defined.
+
+
+LaTeX Warning: Label `science-statistics-recommendations' multiply defined.
+
+
+LaTeX Warning: Label `example-stats' multiply defined.
+
+
+LaTeX Warning: Label `Spiegelhalter' multiply defined.
+
+
+LaTeX Warning: Label `paul-hci' multiply defined.
+
+
+LaTeX Warning: Label `pnas-stats' multiply defined.
+
+
+LaTeX Warning: Label `Ben' multiply defined.
+
+
+LaTeX Warning: Label `se-bias' multiply defined.
+
+
+LaTeX Warning: Label `sas9.2' multiply defined.
+
+
+LaTeX Warning: Label `whitty' multiply defined.
+
+
+LaTeX Warning: Label `over-fit' multiply defined.
+
+
+LaTeX Warning: Label `may-simple' multiply defined.
+
+
+LaTeX Warning: Label `dyson' multiply defined.
+
+
+LaTeX Warning: Label `assurance-case' multiply defined.
+
+
+LaTeX Warning: Label `assessing-quality' multiply defined.
+
+
+LaTeX Warning: Label `fixit' multiply defined.
+
+
+LaTeX Warning: Label `Hammurabi' multiply defined.
+
+
+LaTeX Warning: Label `cite-code' multiply defined.
+
+
+LaTeX Warning: Label `prisma' multiply defined.
+
+
+LaTeX Warning: Label `engima' multiply defined.
+
+
+LaTeX Warning: Label `critiques' multiply defined.
+
+
+LaTeX Warning: Label `diagnosis-reviews' multiply defined.
+
+
+LaTeX Warning: Label `knuth' multiply defined.
+
+
+LaTeX Warning: Label `essence-of-software' multiply defined.
+
+
+LaTeX Warning: Label `popper-conjectures-refutations' multiply defined.
+
+
+LaTeX Warning: Label `preventable-book' multiply defined.
+
+
+LaTeX Warning: Label `science-review' multiply defined.
+
+
+LaTeX Warning: Label `tripod' multiply defined.
+
+
+LaTeX Warning: Label `nature-summary' multiply defined.
+
+
+LaTeX Warning: Label `tweet' multiply defined.
+
+
+LaTeX Warning: Label `ferguson-interview' multiply defined.
+
+
+LaTeX Warning: Label `basic-reproducibilty' multiply defined.
+
+
+LaTeX Warning: Label `ferguson-resign' multiply defined.
+
+
+LaTeX Warning: Label `forsyth' multiply defined.
+
+
+LaTeX Warning: Label `Normal-Distributions' multiply defined.
+
+
+LaTeX Warning: Label `misra' multiply defined.
+
+
+LaTeX Warning: Label `spark' multiply defined.
+
+
+LaTeX Warning: Label `haskell' multiply defined.
+
+
+LaTeX Warning: Label `thumbs-up' multiply defined.
+
+
+LaTeX Warning: Label `codecheck' multiply defined.
+
+
+LaTeX Warning: Label `codecheck-certificate' multiply defined.
+
+
+LaTeX Warning: Label `NVP' multiply defined.
+
+
+LaTeX Warning: Label `nvp-ferguson' multiply defined.
+
+
+LaTeX Warning: Label `notebooks' multiply defined.
+
+
+LaTeX Warning: Label `nih-policy' multiply defined.
+
+
+LaTeX Warning: Label `nih-nature' multiply defined.
+
+
+LaTeX Warning: Label `refactoring' multiply defined.
+
+
+LaTeX Warning: Label `bad-code' multiply defined.
+
+
+LaTeX Warning: Label `pseudo' multiply defined.
+
+
+LaTeX Warning: Label `chinese' multiply defined.
+
+
+LaTeX Warning: Label `flu-model' multiply defined.
+
+
+LaTeX Warning: Label `nature-review' multiply defined.
+
+
+LaTeX Warning: Label `psychological-modeling' multiply defined.
+
+
+LaTeX Warning: Label `actr' multiply defined.
+
+
+LaTeX Warning: Label `ourReview' multiply defined.
+
+
+LaTeX Warning: Label `hamming' multiply defined.
+
+
+LaTeX Warning: Label `unfinished' multiply defined.
+
+
+LaTeX Warning: Label `lancet-unfinished' multiply defined.
+
+
+LaTeX Warning: Label `hoare' multiply defined.
+
+
+LaTeX Warning: Label `preclinical-reproducibility' multiply defined.
+
+
+LaTeX Warning: Label `fair' multiply defined.
+
+
+LaTeX Warning: Label `fair-principles' multiply defined.
+
+
+LaTeX Warning: Label `cbc' multiply defined.
+
+
+LaTeX Warning: Label `ethics-code' multiply defined.
+
+
+LaTeX Warning: Label `acm-artifacts' multiply defined.
+
+
+LaTeX Warning: Label `redmill' multiply defined.
+
+
+LaTeX Warning: Label `iec61508' multiply defined.
+
+
+LaTeX Warning: Label `hoare-unreasonable' multiply defined.
+
+
+LaTeX Warning: Label `open-source' multiply defined.
+
+
+LaTeX Warning: Label `ABCs-SE' multiply defined.
+
+
+LaTeX Warning: Label `mrb' multiply defined.
+
+
+LaTeX Warning: Label `Executable-Paper' multiply defined.
+
+
+LaTeX Warning: Label `RMarkdown' multiply defined.
+
+
+LaTeX Warning: Label `lepton' multiply defined.
+
+
+LaTeX Warning: Label `landauer' multiply defined.
+
+
+LaTeX Warning: Label `thimbleby-landauer' multiply defined.
+
+
+LaTeX Warning: Label `debt' multiply defined.
+
+
+LaTeX Warning: Label `jpm' multiply defined.
+
+
+LaTeX Warning: Label `jpm-report' multiply defined.
+
+
+LaTeX Warning: Label `excel-fiasco' multiply defined.
+
+
+LaTeX Warning: Label `science-delays' multiply defined.
+
+
+LaTeX Warning: Label `reproducibility' multiply defined.
+
+
+LaTeX Warning: Label `parliamentary-evidence' multiply defined.
+
+
+LaTeX Warning: Label `my-parliamentary-evidence' multiply defined.
+
+
+LaTeX Warning: Label `assessing-quality-conference' multiply defined.
+
+
+LaTeX Warning: Label `LastPage' multiply defined.
+
+) (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(./EXpaper.out) (./EXpaper.out)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd)
+caffil not> 1
+
+Underfull \vbox (badness 10000) has occurred while \output is active [1{/usr/lo
+cal/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \hbox (badness 10000) in paragraph at lines 1097--1097
+[]\OT1/cmss/m/n/9 Journal en-cour-ages code
+[2] [3] [4]
+Underfull \hbox (badness 5756) in paragraph at lines 1137--1138
+[]\OT1/cmr/m/n/10 These concerns about code are part of the
+
+Underfull \hbox (badness 5681) in paragraph at lines 1139--1140
+[]\OT1/cmr/m/n/10 To start to address code quality issues the
+
+Underfull \vbox (badness 6016) has occurred while \output is active [5]
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbackslash' on input line 1181.
+
+[6{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}]
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \hbox (badness 5050) in paragraph at lines 1232--1233
+[]\OT1/cmr/m/n/10 Table []4[] illustrates the core pipeline of how
+[7]
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \vbox (badness 10000) has occurred while \output is active [8]
+[9]
+Underfull \hbox (badness 5105) in paragraph at lines 1351--1352
+[]\OT1/cmr/m/n/10 Scientists accept that statistics is a distinct,
+[10]
+Underfull \hbox (badness 5592) in paragraph at lines 1383--1387
+\OT1/cmr/m/n/10 Poor code can generate plausible and possibly
+[11]
+Underfull \hbox (badness 5288) in paragraph at lines 1423--1424
+[]\OT1/cmr/m/n/10 Furthermore, scientific support code is rarely
+[12]
+Underfull \vbox (badness 10000) has occurred while \output is active [13 <./EXp
+lot.jpg>] [14] [15] [16]
+Underfull \hbox (badness 5374) in paragraph at lines 1545--1546
+\OT1/cmr/m/n/10 world-leading scientist, with many peer-reviewed
+
+Underfull \hbox (badness 5175) in paragraph at lines 1551--1552
+\OT1/cmr/m/n/10 It is, in fact, hard to imagine how a large
+[17] [18] [19]
+Underfull \vbox (badness 6016) has occurred while \output is active [20]
+[21] [22]
+Underfull \vbox (badness 6016) has occurred while \output is active [23]
+Underfull \vbox (badness 6016) has occurred while \output is active [24]
+Underfull \hbox (badness 5504) in paragraph at lines 1723--1724
+\OT1/cmr/m/n/10 papers (including L[]T[]X) can create conditional
+
+Underfull \vbox (badness 10000) has occurred while \output is active [25]
+Underfull \vbox (badness 6016) has occurred while \output is active
+Underfull \hbox (badness 5119) in paragraph at lines 1757--1758
+[]\OT1/cmr/m/n/10 Journals and funders often require data and
+[26]
+Underfull \vbox (badness 10000) has occurred while \output is active [27]
+Underfull \vbox (badness 10000) has occurred while \output is active [28]
+Overfull \hbox (1.0pt too wide) in paragraph at lines 1874--1875
+[][][][][][] 
+
+Underfull \vbox (badness 10000) has occurred while \output is active [29]
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd)
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 1948--1953
+[]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 1953--1956
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 1956--1960
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 1960--1965
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 1965--1968
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 1968--1972
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 1972--1978
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 1978--1982
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 1982--1988
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 1988--1994
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 1994--2000
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2000--2005
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2005--2010
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2010--2014
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2014--2020
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2020--2024
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2024--2029
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2029--2036
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2036--2042
+[][]  
+[30]
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2042--2049
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2049--2054
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2054--2060
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2060--2067
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2067--2073
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2073--2080
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2080--2086
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2086--2091
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2091--2097
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2097--2103
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2103--2108
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2108--2116
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2116--2121
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2121--2126
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2126--2133
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2133--2138
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2138--2144
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2144--2147
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2147--2154
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2154--2160
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2160--2165
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2165--2171
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2171--2177
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2177--2184
+[][]  
+[31]
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2184--2189
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2189--2195
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2195--2200
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2200--2206
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2206--2210
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2210--2216
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2216--2221
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2221--2227
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2227--2232
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2232--2240
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2240--2245
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2245--2250
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2250--2255
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2255--2260
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2260--2267
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2267--2275
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2275--2279
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2279--2285
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2285--2292
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2292--2298
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2298--2303
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2303--2308
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2308--2314
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2314--2318
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2318--2321
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2321--2325
+[][]  
+[32]
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2325--2329
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2329--2335
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2335--2343
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2343--2348
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2348--2353
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2353--2360
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2360--2365
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2365--2371
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2371--2377
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2377--2383
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2383--2388
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2388--2392
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2392--2397
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2397--2403
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2403--2409
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2409--2417
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2417--2422
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2422--2430
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2430--2436
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2436--2444
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2444--2450
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2450--2455
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2455--2462
+[][]  
+[33]
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2462--2468
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2468--2474
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2474--2481
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2481--2486
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2486--2492
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2492--2496
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2496--2503
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2503--2507
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2507--2513
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2513--2518
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2518--2523
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2523--2529
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2529--2535
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2535--2541
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2541--2547
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2547--2552
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2552--2558
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2558--2565
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2565--2571
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2571--2577
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2577--2583
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2583--2589
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2589--2593
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2593--2598
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2598--2602
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2602--2609
+[][]  
+[34]
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2609--2613
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2613--2618
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2618--2625
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2625--2631
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2631--2635
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2635--2640
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2640--2645
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2645--2651
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2651--2657
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2657--2665
+[][]  
+
+Overfull \hbox (4.2637pt too wide) in paragraph at lines 2665--2671
+[][]  
+[35] (./EXpaper.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
+(see the transcript file for additional information)
+pdfTeX warning (dest): name{figure.3} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.12.4.3} has been referenced but does 
+not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.10} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.12} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.11} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.10.6} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.9} has been referenced but does not exist, re
+placed by a fixed one
+
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></u
+sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb
+></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/
+local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
+exlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
+ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
+/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/20
+23/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/202
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2023/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2023
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2023/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2023/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2023/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2023/texmf-dist/f
+onts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2023/texmf-dist/fon
+ts/type1/public/cm-super/sfrm1000.pfb>
+Output written on EXpaper.pdf (35 pages, 625363 bytes).
+Transcript written on EXpaper.log.

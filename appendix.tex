@@ -334,8 +334,9 @@ A simple fragment of program code might say
 \newcount \magicNumber \magicNumber = 324
 \begin{center}\texttt{x = \the\magicNumber+sin(theta*pi/180);}\end{center}
 
-This is clearly all source code, but the number \the\magicNumber\ above is likely to be some sort of relevant data, though it might be a physical constant whose value does not depend at all on \emph{this\/} experiment. The next hard-coded value mentioned in the calculation is difficult to categorize: is the value of $\pi$ empirical data or is it part of a standard formula? Some programming languages like \emph{Mathematica\/} treat $\pi$ as an exact mathematical constant (e.g., \emph{Mathematica\/} calculates $\tan\pi/4 = 1$ exactly), but $\pi$ is \emph{also\/} definitely an inexact empirical value.\footnote{A record set on 19 August 2021, the most accurate value of $\pi$ then known was 62,831,853,071,796 digits %as calculated by the University of Applied Sciences, Chur, Switzerland 
-\url{www.fhgr.ch/en/specialist-areas/applied-future-technologies/davis-centre/pi-challenge}} 
+This is clearly all source code, but the number \the\magicNumber\ above is likely to be some sort of relevant data, though it might be a physical constant whose value does not depend at all on \emph{this\/} experiment. The next hard-coded value mentioned in the calculation is difficult to categorize: is the value of $\pi$ empirical data or is it part of a standard formula? Some programming languages like \emph{Mathematica\/} treat $\pi$ as an exact mathematical constant (e.g., \emph{Mathematica\/} calculates $\tan\pi/4 = 1$ exactly), but $\pi$ is \emph{also\/} definitely an inexact empirical value.\footnote{A record set on 19 August 2021, the most accurate value of $\pi$ then known was 
+62\xBlockSep 831\xBlockSep 853\xBlockSep 071\xBlockSep 796 digits. %as calculated by the University of Applied Sciences, Chur, Switzerland 
+See \url{www.fhgr.ch/en/specialist-areas/applied-future-technologies/davis-centre/pi-challenge}} 
 
 The point is, the distinctions between data, program and even mathematical constants are purely a matter of perspective.
 
@@ -352,7 +353,7 @@ For example, the magic number \the\magicNumber\ was explicit in the line of code
 
 \begin{center}\texttt{if evenQ(\the\magicNumber) then A; else B;}\end{center}
 
-many programmers would optimize this to \texttt{A}, because they know the condition is true because of their assumptions. This now seems to be a more efficient program because it has avoided a test (which a modern complier would have optimized away anyway). Unfortunately, the previously explicit dependency of the code on the magic number \the\magicNumber\ has completely disappeared.
+many programmers would optimize this to \texttt{A}, because they know the condition is true because of their assumptions. This now seems to be a more efficient program because it has avoided a test (which a modern complier would have optimized away anyway). Unfortunately, the previously explicit dependency of the code on specific the magic number \the\magicNumber\ has completely disappeared.
 
 Obviously this example seems trivial, but it illustrates that programmers do some of their programming while writing code, and many assumptions disappear completely and have no representation in the final code. More complex code will have many facts hard wired into the code --- so in fact the code contains data. Code can even read in formulas from data and compile them to perform further calculations, and so on.  
 
@@ -639,7 +640,7 @@ The two journals \emph{Nature Digital Medicine\/} and \emph{Lancet Digital Healt
 Papers were selected from the journals' July 2020 then new online listings where the paper's title implied that code had been used in the research. Commentary, correspondence, and editorials were excluded. The sample is intended to be large enough and objective enough to avoid the selection bias in the papers that motivated the current paper (the sample excludes the motivating papers discussed above as they were not published in the sampled journals), so that the sample may be considered to fairly represent what the editorial and the broader peer review community in leading journals considers to be good practice for computationally-based science. The selection criterion selected papers where the title implies the authors themselves considered code to be a significant component of the scientific contribution, and, indeed, all sampled papers relied on and assumed the quality of code used in their research. 
 
 
-This convenience sample may be considered to be small given the importance of the research questions and relative to the diversity and huge number of scientific papers,\footnote{Using Google Scholar it is estimated that over 40,000 papers meeting the title criteria were published in the month of July 2020.} but~\ldots
+This convenience sample may be considered to be small given the importance of the research questions and relative to the diversity and huge number of scientific papers,\footnote{Using Google Scholar it is estimated that over \digitBlock{40000} papers meeting the title criteria were published in the month of July 2020.} but~\ldots
 
 \begin{enumerate}
 \item the selected journals are leading peer-reviewed scientific journals that set the standards for scientific publishing practice generally (although the sample shows that code policies are not always enforced); 
@@ -859,7 +860,7 @@ The first and last errors above are examples of the very common error of ``out b
 The middle two errors above are examples of the common error of ``out by one,'' or ``fence post errors'' frequently made by mixing up counting fences or the posts (there is usually one more post than fence panel) \cite{fixit}.
 \end{itemize}
 
-All the discussion and examples above were generated automatically, and have been checked correct for other correct values than \the\countUsesVersionControlRepository. This approach, too, considerably helps defend against common Human Factors errors. For example, if we set \texttt{\bslash countUsesVersionControlRepository}=\the\countUsesVersionControlRepository\ to be 2\hskip .3em 348, say, then all of the subsequent sentences that mention it will say something unexpected and so have to be more carefully proof-read, significantly reducing confirmation bias. The approach turns a possibly-hard-to-spot \emph{single\/} error into \emph{multiple\/} errors spread throughout the paper into different contexts, thus increasing the chances of noticing the error.
+All the discussion and examples above were generated automatically, and have been checked correct for other correct values than \the\countUsesVersionControlRepository. This approach, too, helps defend against common Human Factors errors. For example, if we set \texttt{\bslash countUsesVersionControlRepository}=\the\countUsesVersionControlRepository\ to be \digitBlock{2348} instead, say, then all of the subsequent sentences that mention it will say something unexpected and so have to be more carefully proof-read, significantly reducing confirmation bias. The approach turns a possibly-hard-to-spot \emph{single\/} error into \emph{multiple\/} errors spread throughout the paper into different contexts, thus increasing the chances of noticing the error.
 
 It must be emphasized that an automatically-guaranteed number that is supposed to be the same appearing in multiple different contexts is an extremely effective way of defending against common Human Factors errors. As the number is proof read, the different contexts encourage it to be read more carefully, and in different ways.
 

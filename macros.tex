@@ -1,7 +1,6 @@
 % due to finding out that PDF doesn't work everywhere, here's where we define the image type we're using for imaged created by the Mathematica notebooks
 \def\imageFileSuffix{jpg}
 
-
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
 \usepackage{xcolor}
@@ -57,25 +56,39 @@
 \the\t\%}
 
 % code to make digits into blocks of 3 (as in 1000 -> 1 000)
-\def\xBlockSep{\textcolor{red}{\hskip 0.3em :}\hskip 0.3em} % International Standards are to use a small space. UK typically uses a comma
+\def\xBlockSep{\hskip 0.3em} % International Standards are to use a small space. UK typically uses a comma
 % NOTE currently, the few decimal numbers (eg 0.000 5) use hskip explicitly, since defining \xBlockSep as a comma would definitely be wrong for decimals
 \newcount\xdigitBlockn
 \newcount\xdigitBlocktmp
+\newcount\xdigitBlocktmq
+
 \def\xdigitBlock#1{%
-        \xdigitBlockn=#1\relax
+        \xdigitBlockn = #1 \relax
         \ifnum \xdigitBlockn < 0
                 $-$%
                 \xdigitBlockn = -\xdigitBlockn
         \fi
-        \let \xdigitBlockpptemp \empty
-        \loop \ifnum \xdigitBlockn > 999
+        \let \xdigitblockinternalmacro \empty
+        \loop 
+           \ifnum \xdigitBlockn > 999
                 \xdigitBlocktmp = \xdigitBlockn
                 \divide \xdigitBlockn by 1000
-                \xdigitBlocktmp = \numexpr \xdigitBlocktmp - 1000*\xdigitBlockn \relax
-                \edef \xdigitBlockpptemp{\xBlockSep\ifnum \xdigitBlocktmp < 100  0\ifnum \xdigitBlocktmp < 10 0\fi\fi \the\xdigitBlocktmp \xdigitBlockpptemp}%
-        \repeat
+                
+                % following line rewritten explicitly for old TeX 
+                %\xdigitBlocktmp = \numexpr \xdigitBlocktmp - 1000*\xdigitBlockn \relax           
+                \xdigitBlocktmq = \xdigitBlockn \relax
+                \multiply \xdigitBlocktmq by 1000
+                \advance \xdigitBlocktmp by -\xdigitBlocktmq
+                
+                \edef \xdigitblockinternalmacro{%
+                	\xBlockSep
+					\ifnum \xdigitBlocktmp < 100 0\ifnum \xdigitBlocktmp < 10 0\fi \fi 
+					\the\xdigitBlocktmp
+					\xdigitblockinternalmacro
+				}%
+        \repeat 
         \the\xdigitBlockn
-        \xdigitBlockpptemp
+        \xdigitblockinternalmacro
 }
 
 \def\digitBlock#1{\hbox{\xdigitBlock{#1}}}
