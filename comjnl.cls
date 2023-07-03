@@ -116,6 +116,9 @@
 \let\@revised\@empty
 \def\accepted#1{%
   \gdef\@accepted{{\itshape; accepted #1}}}
+\def\paperdoi#1{%
+  \gdef\@paperdoi{\doi{#1}\par}}
+\def\@paperdoi{}
 \def\@accepted{\CJ@warn{No accepted date}}
 \newbox\absbox
 \def\abstract{\lrbox\absbox\minipage{.75\textwidth}%
@@ -158,9 +161,10 @@
       \addvspace\bigskipamount
       \usebox\absbox\par
      \addvspace\bigskipamount
-     \small\itshape
+     \small{\itshape
      \@keywords\par
-     \@received\@revised\@accepted\par
+     \@received\@revised\@accepted}\par
+     \@paperdoi
      \addvspace\bigskipamount
   }}%
   \hrule\@height.5pt

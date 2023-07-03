@@ -21,13 +21,12 @@
 LATEX = pdflatex
 
 # this must be consistent with programs/expand.js definitions...
-EXPANDED = EX
-# Important: EXPANDED *must* be defined so that patterns say like rm $(EXPANDED)* are not ambiguous
-
+EXPANDEDPREFIX = EX
+# Important: EXPANDEDPREFIX *must* be defined so that patterns say like rm $(EXPANDEDPREFIX)* are not ambiguous
 
 APPENDIX = supplemental material
 
-osversion = Darwin Kernel Version 22.4.0: Mon Mar  6 21:00:17 PST 2023; root:xnu-8796.101.5~3/RELEASE_X86_64
+osversion = Darwin Kernel Version 22.5.0: Mon Apr 24 20:51:50 PDT 2023; root:xnu-8796.121.2~5/RELEASE_X86_64
 			
 help: # Explain how to use \texttt{make}, and list all available options for using it.
 	@echo Use make with any of these options:
@@ -52,10 +51,9 @@ check-versions: # Check that you have the right software and software versions t
 	@$(call checkVersion,wolframscript,WolframScript 1.5.0 for MacOSX-x86-64)
 	@echo
 	@echo "Originally this makefile was run on MacOS $(osversion)"
-	@echo "You are running                           `uname -v`"
-	@if [ "$(osversion)" = "`uname -v`" ]; then echo ... "(These OS versions are the same)"; else echo ... which are different "(you may just have a more recent version)"; fi
+	@if [ "$(osversion)" = "`uname -v`" ]; then echo "... You are running the same OS version"; else echo "***  You are running a DIFFERENT version: `uname -v`"; fi
 	@echo
-	@echo For running interactive notebooks, we used Mathematica 12.2.0.0
+	@echo For running interactive notebooks, we used Mathematica 13.3.0.0
 	@echo
 	
 check-same: # After you have done a \texttt{make data} or \texttt{make pdf}, you can check whether you have reproduced all data and generated files exactly the same (more precisely, it checks that they are the same as they were the last time \texttt{make check-update} was run).
@@ -131,21 +129,21 @@ readme: # Update the \texttt{README.md} file. You only need to do this if you've
 tidyup: # Tidyup typically before doing a Git commit or making a zip file. Remove all easily generated files, and the large Git repositories needed for the pilot survey. Do not remove the main PDFs, or the \LaTeX\ data include files. Do not remove the .aux files, as \LaTeX\ runs much more smoothly with them.
 	@echo Remove all basic files that can easily be regenerated, except the main PDFs and the generated files that are included in Latex files
 	# Don't delete generated/* as it's helpful to keep all the generated files around so Latex can be used directly...
-	rm -rf *.log *.out *.dvi *.blg log 
+	rm -rf *.log *.out *.dvi *.blg log *.aux *.bbl *.toc log
 	@echo This has left these generated PDFs you can either keep or delete manually
 	-@ls paper*.pdf
 	@echo Remove all the recoverable stuff in the models directory
 	cd models; tidyup
-	@echo Finally, remove all $(EXPANDED) files
-	ls $(EXPANDED)*
-	rm -f $(EXPANDED)*
+	@echo Finally, remove all $(EXPANDEDPREFIX) files
+	ls expanded/$(EXPANDEDPREFIX)*
+	rm -f expanded/$(EXPANDEDPREFIX)*
  
 really-tidyup: # More thorough than \texttt{make tidyup} --- remove \emph{all} files that can be recreated. (This will mean next time you run \LaTeX\ you will have to ignore errors as the .aux files are re-created.)
 	@echo Remove all files that can be recreated, including PDFs and files made by processing the JSON data 
 	make tidyup 
 	rm -f *.pdf
 	rm -f generated/* 
-	rm -f $(EXPANDED)*
+	rm -f expanded/$(EXPANDEDPREFIX)*
 		
 all: # Download and analyze the data, then typeset the main files (\texttt{paper.pdf}, \texttt{appendix.pdf} and \texttt{all.pdf}) that import all the data, as well as make the self-contained expanded \texttt{.tex} (and \texttt{.PDF}) files that do not depend on the separate data files in \texttt{data/*}.
 	make data
@@ -208,7 +206,7 @@ one-file: # Make a single PDF file \texttt{all.pdf} (i.e., paper + supplementary
 # this rule has a . in the target name (one.file), so make help doesn't find it (see the grep command in make help)
 one.file: paper.pdf appendix.pdf # concatenate files
 	@echo make single PDF file all.pdf
-	@echo NB use make expand instead to make $(EXPANDED)all.pdf etc
+	@echo NB use make expand instead to make $(EXPANDEDPREFIX)all.pdf etc
 	pdfunite paper.pdf appendix.pdf all.pdf
 
 zip-data: # Just make a zip archive of the data only. This is required for, e.g., uploading to a Dryad repository --- which is quirky as it won't include all the code needed to handle the data!
@@ -218,25 +216,29 @@ zip-data: # Just make a zip archive of the data only. This is required for, e.g.
 	zip dryad-data README.md programs/data.js
 
 expand: # Expand all \LaTeX\ files (to recursively flatten \texttt{input} and \texttt{bibliography} files, etc) to meet \LaTeX\ single-file processing restrictions for journals like \emph{PLOS} and \emph{IEEE Transactions on Software Engineering}, then make new PDFs to upload. (Note that \texttt{make expand} will do a \texttt{make pdf} first to ensure all the data and aux files are around to be expanded.)
+	@echo First make normal unexpanded pdf files so we can compare them with the expanded version to check expansion works correctly
 	make pdf
 	make one-file
 	node programs/expand.js
-	sh $(EXPANDED)copyfiles.sh
-	$(LATEX) $(EXPANDED)appendix.tex > log
-	$(LATEX) $(EXPANDED)paper.tex >> log
+	sh $(EXPANDEDPREFIX)copyfiles.sh
+	$(LATEX) $(EXPANDEDPREFIX)appendix.tex > log
+	$(LATEX) $(EXPANDEDPREFIX)paper.tex >> log
 	@echo The expanded table of contents still defines new labels, so process the new .aux files so there are no errors
-	$(LATEX) $(EXPANDED)appendix.tex > log
-	$(LATEX) $(EXPANDED)paper.tex >> log
+	$(LATEX) $(EXPANDEDPREFIX)appendix.tex > log
+	$(LATEX) $(EXPANDEDPREFIX)paper.tex >> log
 	@echo We kept the logs if you are interested, but thanks to the way expanded files work, every label may seem to be multiply defined
-	pdfunite $(EXPANDED)paper.pdf $(EXPANDED)appendix.pdf $(EXPANDED)all.pdf >> log
-	if diff-pdf all.pdf $(EXPANDED)all.pdf; then echo SAME -- SUCCESS; else echo DIFFERENT -- FIX SOMETHING AND TRY AGAIN; fi
-	@echo You now have PDF files
-	@echo; ls $(EXPANDED)*pdf; echo 
-	@echo as well as the expanded source files 
-	@echo; ls $(EXPANDED)*tex; echo
-	rm -f $(EXPANDED)*.out $(EXPANDED)*.log $(EXPANDED)*.toc $(EXPANDED)*.dvi *.blg
+	pdfunite $(EXPANDEDPREFIX)paper.pdf $(EXPANDEDPREFIX)appendix.pdf $(EXPANDEDPREFIX)all.pdf >> log
+	if diff-pdf all.pdf $(EXPANDEDPREFIX)all.pdf; then echo SAME -- SUCCESS; else echo DIFFERENT -- FIX SOMETHING AND TRY AGAIN; fi
+	rm -f $(EXPANDEDPREFIX)*.out $(EXPANDEDPREFIX)*.log $(EXPANDEDPREFIX)*.aux $(EXPANDEDPREFIX)*.toc $(EXPANDEDPREFIX)*.dvi *.blg
 	@echo NB the PDFs still depend on comjnl.cls
-
+	@echo FINALLY - move all expanded stuff to the directory expanded/
+	mv EX* expanded
+	ls expanded
+	@echo You now have these expanded PDF files
+	@echo; ls expanded/$(EXPANDEDPREFIX)*pdf; echo 
+	@echo as well as the corresponding expanded source files 
+	@echo; ls expanded/$(EXPANDEDPREFIX)*tex; echo
+	
 check-git: # Is there anything on Git that we've lost, or stuff we have got locally but probably don't want on Git, so you can delete it or move it out the way or whatever.
 	@echo "We probably don't want some random stuff added to the Git repo..."
 	@rm -f /tmp/-on-git /tmp/-on-local

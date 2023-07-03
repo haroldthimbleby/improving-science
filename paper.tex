@@ -20,7 +20,7 @@
 \author{Harold Thimbleby}
 \shortauthors{Harold Thimbleby}
 \affiliation{See Change Fellow in Digital Health, Swansea University}
-\email{harold@thimbleby.net}
+\email{h.w.thimbleby@swansea.ac.uk}
 
 %\subject{Computational science (bioinformatics,~medical~computing,~etc)}
 
@@ -29,6 +29,7 @@
 \received{30 April 2022}
 \revised{8 June 2022, 3 January 2023, 31 January 2023, 12~May~2023 \& 7~June~2023} 
 \accepted{30 May 2023}
+\paperdoi{10.1093/comjnl/bxad067}
 \volumenumber{00} \issuenumber{0} \volumeyear{2023}
 
 %\orcid{0000-0003-2222-4243}
@@ -755,8 +756,6 @@ Journals and funders often require data and code access statements, but as this 
 
 As there is no practical distinction between data and code (see \supplement) and methodology (thanks to RAP), and certainly no distinctions that cannot be circumvented, journal and funder policies of code and data access should be reviewed \emph{and unified\/} so that the access and methodology statements apply to all information, regardless of arbitrary classification of it as code or data (or documentation, assurance case, etc).
 
-Finally, there is still a long way to go. The \emph{Computer Journal}, which should be a leading journal for publishing computational science (and which has published this paper) uses poorly documented automated and buggy paper processing software, whose obscure bugs took several weeks of hard work to overcome in order to submit the present paper. Such problems will put authors off using computational papers and \RAPstar\ methodologies.
-
 \subsection{Training to reduce technical debt}\label{technical-debt}
 Science has to work for other people in other places at other times, otherwise they cannot be sure they are studying, developing, or correcting the intended ideas reliably, but while working on a research project, the requirements of reproducibility are tempting to postpone or ignore altogether. It seems more expedient to ``just'' get on and do the science without regard for the extra effort of ensuring reproducibility. This creates the problem known as \emph{technical debt} \cite{debt}: the savings in effort now increase the future cost of reproduction. That is, a debt arises as the authors' savings now create higher costs for scientists later. The authors of a paper may create debt for themselves as shortcuts now increase the effort of retro-fitting reproducibility later. Indeed, what if the \emph{post hoc\/} rigors of reproducibility expose previously unknown problems where the earlier shortcuts have created a now too-late-to-avoid cost authors with integrity will be obliged to pay?
 
@@ -843,6 +842,10 @@ Software Engineering Boards (SEBs), as proposed in this paper, are an initial, s
 This paper's \supplement\ summarizes relevant Software Engineering good practice that Software Engineering Boards would draw on, including discussing how and why Software Engineering helps improve code reliability, dependability, and quality.
 
 \section*{Supporting information}
+
+%NEW
+Updates and errata are included in the \supplement, which is kept up to date at \url{github.com/haroldthimbleby/improving-science}
+
 \newcount\csrefcount \csrefcount=0
 \def\csref{\global\advance\csrefcount by 1}
 \long\def\ethics#1{\paragraph*{Ethics}#1}

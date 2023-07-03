@@ -42,3 +42,4 @@
 \contentsline {subsubsection}{\numberline {12.d.3}Problems of restrictive journal policies}{63}{subsubsection.12.4.3}%
 \contentsline {section}{\numberline {13}Additional references for Supplemental Material}{64}{section.13}%
 \contentsline {section}{\numberline {14}References for surveyed papers}{66}{section.14}%
+\contentsline {section}{\numberline {15}Errata and updates to the paper}{69}{section.15}%

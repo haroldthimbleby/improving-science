@@ -899,13 +899,15 @@ As usual, \LaTeX\ detects any spelling errors in the use of variables, thus help
 For example, the caption of table \ref{supplement-table-repo-summary} in the main paper calculates its ``\plural{\pubdelayinmonths}{month}'' figure from the generated variables recording the repository date of cloning used to provide the data to construct the table. The number of months will of course be correctly updated if the paper's repository \csname cite-PostoperativeOutcomes.RiskNet\endcsname\ is subsequently checked again:
 
 \begin{quote}
-At the time of cloning and checking all repositories in \clonewhen, paper \csname cite-PostoperativeOutcomes.RiskNet\endcsname\ still had nothing in its repository except a single file still saying ``...code coming soon...,'' despite \the\pubdelayinmonths\ months having already elapsed since the submitted paper had claimed the code could be accessed in its repository.\end{quote}
+At the time of cloning and checking all repositories in \clonewhen, paper \csname cite-PostoperativeOutcomes.RiskNet\endcsname\ still had nothing in its repository except a single file still saying ``\texttt{\ldots~code coming soon~\ldots}'' despite \the\pubdelayinmonths\ months having already elapsed since the submitted paper had claimed the code could be accessed in its repository.\end{quote}
 
 Of course, the data generation process itself checks that this surprising statement remains valid, and provides a warning if the wording may need revising.
 
-Unfortunately, although using generated variables and analyses from a paper's data is a very simple technique to help make published papers more reliable, some journals and preprint servers (such as \emph{IEEE Transactions on Software Engineering}, \emph{PLOS ONE}, and \emph{arXiv\/}) do not permit papers to be submitted using \LaTeX\ source code that uses the standard \texttt{\textbackslash input}, \texttt{\textbackslash bibliography}, and other related commands. Typically they also do not support running any data collection or analysis either (which the present paper does when it clones repositories). These policies undermine the drive towards RAP and \RAPstarp.
+Unfortunately, although using generated variables and analyses from a paper's data is a very simple technique to help make published papers more reliable, some journals and preprint servers (such as \emph{IEEE Transactions on Software Engineering}, \emph{PLOS ONE}, \emph{arXiv}, and even the \emph{Computer Journal}, which published this paper) do not permit papers to be submitted using \LaTeX\ source code that uses the standard \texttt{\textbackslash input}, \texttt{\textbackslash bibliography}, and other related commands. Typically they also do not support running any data collection or analysis either (which the present paper does when it clones repositories). These policies undermine the drive towards RAP and \RAPstarp.
 
-Another program (\texttt{programs/expand.js}) was therefore written to recursively expand included files so the expanded version can be submitted adhering to any such restrictive policy. Of course, the expanded version now contains all variables as fixed constants, so the submitted paper is misleading and useless to other researchers if the data is modified --- the effort to ensure all published numbers are automatically correct is defeated. Such restrictive publishing policies undermine reproducibility.
+Another program (\texttt{programs/expand.js}) was therefore written to recursively expand included \LaTeX\ files so the expanded version can be submitted to any journal adhering to any such restrictive policies. It also renames and flattens the file hierarchy (e.g., copying images to be in the same directory as the expanded main \LaTeX\ file), as the journal web site did not cope with standard \LaTeX\ file naming conventions. A consequence is that the published version now contains all generated text and variables as fixed constants, so the published paper is misleading and useless to other researchers if any data is modified --- the effort to ensure all published data are automatically correct is defeated. Such technically limiting publishing policies undermine reproducibility. Fortunately, in the present case the original data and documents are still available on the Github site.
+
+Clearly, there is still a long way to go. Such problems will put authors off using computational papers and \RAPstar\ methodologies.
 
 \makeatletter    
     \renewcommand{\bibitem}[2][DEFAULT]{%
@@ -956,6 +958,12 @@ Another program (\texttt{programs/expand.js}) was therefore written to recursive
 \input generated/survey-references.bbl
 
 \end{thebibliography}
+
+\section{Errata and updates to the paper}
+
+
+\emph{No material added yet.}
+
 
 \immediate\closeout\infofileForSupplement
 \end{document}  
